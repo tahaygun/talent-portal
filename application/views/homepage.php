@@ -364,7 +364,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
               <div class="widget">
   
                   
-                    <a href="#">&nbsp Company Login</a>
+                    <a href="/joinpage">&nbsp Company Login</a>
               
                   
                     <a href="#">&nbsp&nbsp Support</a>
