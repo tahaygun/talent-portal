@@ -7,4 +7,8 @@ class Process extends CI_Controller
 	{
 		$this->load->view('homepage');
 	}
+	public function openjoinpage()
+	{
+		$this->load->view('join_page');
+	}
 }
