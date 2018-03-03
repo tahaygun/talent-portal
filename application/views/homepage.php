@@ -61,13 +61,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
               </button>
               <a class="navbar-brand logo" href="index.html">
                 <img src="assets/img/logov.png"
-                  alt="" width="180px;">
+                  alt="" width="190px;">
               </a>
             </div>
 
             <div class="collapse navbar-collapse" id="navbar">
               <!-- Start Navigation List -->
-              <ul class="nav navbar-nav">
+              <ul class="nav navbar-nav navbar-right">
                 <li>
                   <a class="active" href="index.html">
                     Home
@@ -99,7 +99,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                   </a>
                 </li>
               </ul>
-              <ul class="nav navbar-nav navbar-right float-right">
+              <!-- <ul class="nav navbar-nav navbar-right float-right">
                 <li class="left">
                   <a href="post-job.html">
                     <i class="ti-pencil-alt"></i> Post A Job</a>
@@ -108,7 +108,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                   <a href="my-account.html">
                     <i class="ti-lock"></i> Log In</a>
                 </li>
-              </ul>
+              </ul> -->
             </div>
           </div>
           <!-- Mobile Menu Start -->
@@ -132,14 +132,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
               <a href="blog.html">Blog</a>
 
             </li>
-            <li class="btn-m">
+            <!-- <li class="btn-m">
               <a href="post-job.html">
                 <i class="ti-pencil-alt"></i> Post A Job</a>
             </li>
             <li class="btn-m">
               <a href="my-account.html">
                 <i class="ti-lock"></i> Log In</a>
-            </li>
+            </li> -->
           </ul>
           <!-- Mobile Menu End -->
         </nav>
@@ -158,19 +158,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="content">
                   <form method="" action="">
                     <div class="row">
-                      <div class="col-md-4 col-sm-6">
+                      <div class="col-md-6 col-sm-6">
                         <div class="form-group">
                           <input class="form-control" type="text" placeholder="job title / keywords / company name">
                           <i class="ti-time"></i>
                         </div>
                       </div>
-                      <div class="col-md-4 col-sm-6">
-                        <div class="form-group">
-                          <input class="form-control" type="email" placeholder="city / province / zip code">
-                          <i class="ti-location-pin"></i>
-                        </div>
-                      </div>
-                      <div class="col-md-3 col-sm-6">
+                     
+                      <div class="col-md-5 col-sm-6">
                         <div class="search-category-container">
                           <label class="styled-select">
                             <select class="dropdown-product selectpicker">
@@ -194,12 +189,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                       </div>
                     </div>
                   </form>
-                </div>
-                <div class="popular-jobs">
-                  <b>Popular Keywords: </b>
-                  <a href="#">Web Design</a>
-                  <a href="#">Manager</a>
-                  <a href="#">Programming</a>
                 </div>
               </div>
             </div>
@@ -448,59 +437,33 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <h3 class="block-title">
                   <img src="assets/img/logov.png" class="img-responsive" alt="Footer Logo">
                 </h3>
-                <div class="textwidget">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis tincidunt est, et euismod purus
-                    suscipit quis. Etiam euismod ornare elementum. Sed ex est, consectetur eget facilisis sed.</p>
-                </div>
+               
               </div>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="col-md-6 col-sm-8 col-xs-12">
               <div class="widget">
-                <h3 class="block-title">Quick Links</h3>
-                <ul class="menu">
-                  <li>
-                    <a href="#">About Us</a>
-                  </li>
-                  <li>
-                    <a href="#">Support</a>
-                  </li>
-                  <li>
-                    <a href="#">License</a>
-                  </li>
-                  <li>
-                    <a href="#">Terms & Conditions</a>
-                  </li>
-                  <li>
-                    <a href="#">Contact</a>
-                  </li>
-                </ul>
+  
+                  
+                    <a href="#">&nbsp Company Login</a>
+              
+                  
+                    <a href="#">&nbsp&nbsp Support</a>
+                  
+                
+                    <a href="#">&nbsp&nbsp License</a>
+                  
+             
+                    <a href="#">&nbsp&nbsp Terms & Conditions</a>
+              
+               
+                    <a href="#">&nbsp&nbsp  Contact</a>
+         
               </div>
             </div>
+           
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="widget">
-                <h3 class="block-title">Trending Jobs</h3>
-                <ul class="menu">
-                  <li>
-                    <a href="#">Android Developer</a>
-                  </li>
-                  <li>
-                    <a href="#">Senior Accountant</a>
-                  </li>
-                  <li>
-                    <a href="#">Frontend Developer</a>
-                  </li>
-                  <li>
-                    <a href="#">Junior Tester</a>
-                  </li>
-                  <li>
-                    <a href="#">Project Manager</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="widget">
-                <h3 class="block-title">Follow Us</h3>
+
                 <div class="bottom-social-icons social-icon">
                   <a class="twitter" href="https://twitter.com/GrayGrids">
                     <i class="ti-twitter-alt"></i>
@@ -508,21 +471,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
                   <a class="facebook" href="https://web.facebook.com/GrayGrids">
                     <i class="ti-facebook"></i>
                   </a>
-                  <a class="youtube" href="https://youtube.com">
-                    <i class="ti-youtube"></i>
-                  </a>
                   <a class="dribble" href="https://dribbble.com/GrayGrids">
-                    <i class="ti-dribbble"></i>
+                    <i class="ti-instagram"></i>
                   </a>
                   <a class="linkedin" href="https://www.linkedin.com/GrayGrids">
                     <i class="ti-linkedin"></i>
                   </a>
                 </div>
-                <p>Join our mailing list to stay up to date and get notices about our new releases!</p>
-                <form class="subscribe-box">
-                  <input type="text" placeholder="Your email">
-                  <input type="submit" class="btn-system" value="Send">
-                </form>
               </div>
             </div>
           </div>
@@ -530,23 +485,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
       </section>
       <!-- Footer area End -->
 
-      <!-- Copyright Start  -->
-      <div id="copyright">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="site-info text-center">
-                Shared by
-                <i class="fa fa-love"></i>
-                <a href="https://bootstrapthemes.co">BootstrapThemes</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Copyright End -->
-
     </footer>
+    
     <!-- Footer Section End -->
 
     <!-- Go To Top Link -->
