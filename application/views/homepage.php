@@ -99,17 +99,34 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											<i class="fa fa-angle"></i>
 										</a>
 									</li>
+									<?php if (isset($_SESSION['id'])) { ?>
+										<li>
+										<a href="blog.html">
+											My Page
+											<i class="fa fa-angle-down"></i>
+										</a>
+										 <ul class="dropdown">
+											<li>
+												<a href="">
+												My Page
+												</a>
+											</li>
+											<li>
+												<a href="index-02.html">
+												New Posting
+												</a>                          
+											</li>
+											<li>
+												<a href="/logout">
+												Logout
+												</a>
+											</li>
+											</ul>
+									</li>
+								<?php 
+						} ?>
 								</ul>
-								<!-- <ul class="nav navbar-nav navbar-right float-right">
-                <li class="left">
-                  <a href="post-job.html">
-                    <i class="ti-pencil-alt"></i> Post A Job</a>
-                </li>
-                <li class="right">
-                  <a href="my-account.html">
-                    <i class="ti-lock"></i> Log In</a>
-                </li>
-              </ul> -->
+
 							</div>
 						</div>
 						<!-- Mobile Menu Start -->
@@ -118,7 +135,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<a class="active" href="index.html">Home</a>
 							</li>
 							<li>
-								<a href="about.html">Companies</a>
+								<a href="">Companies</a>
 
 							</li>
 							<li>
@@ -287,16 +304,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<div class="widget">
 
 									<div class="bottom-social-icons social-icon">
-										<a class="twitter" href="https://twitter.com/GrayGrids">
+										<a class="twitter" href="https://twitter.com/VentureCafeRdam">
 											<i class="ti-twitter-alt"></i>
 										</a>
-										<a class="facebook" href="https://web.facebook.com/GrayGrids">
+										<a class="facebook" href="https://www.facebook.com/VentureCafeRotterdam/">
 											<i class="ti-facebook"></i>
 										</a>
-										<a class="dribble" href="https://dribbble.com/GrayGrids">
+										<a class="instagram" href="http://instagram.com/venturecaferotterdam/">
 											<i class="ti-instagram"></i>
 										</a>
-										<a class="linkedin" href="https://www.linkedin.com/GrayGrids">
+										<a class="linkedin" href="https://www.linkedin.com/company/venturecaferotterdam">
 											<i class="ti-linkedin"></i>
 										</a>
 									</div>
