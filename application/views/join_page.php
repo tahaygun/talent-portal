@@ -161,6 +161,54 @@ defined('BASEPATH') or exit('No direct script access allowed');
                       <div class="form-box">
                         <div class="form-top">
                           <div class="form-top-left">
+                            <h3> Do you have  a job to offer? <br>
+                               Sign up now</h3>
+                              <p>Fill in the form below to post your offer: </p>
+                          </div>
+                          <div class="form-top-right">
+                            <i class="fa fa-pencil"></i>
+                          </div>
+                          </div>
+                          <div class="form-bottom">
+                        <form role="form" action="" method="post" class="registration-form">
+                          <div class="form-group">
+                            <label class="sr-only" for="company-name">Company name</label>
+                              <input type="text" name="form-company-name" placeholder="Company name..." class="form-company-name form-control" id="form-first-name">
+                            </div>
+                            <div class="form-group">
+                              <label class="sr-only" for="form-email">Email</label>
+                              <input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+                            </div>
+                            <div class="form-group">
+                              <label class="sr-only" for="form-contact-name"> Contact Person</label>
+                              <input type="text" name="form-contact-name" placeholder="Contact Person" class="form-contact-person-name form-control" id="form-contact">
+                            </div>
+                            <div class="form-group">
+                              <label class="sr-only" for="form-contact-name"> Telephone</label>
+                              <input type="number" name="form-Telephone" placeholder="Telephone" class="form-Telephone form-control" id="form-telephone">
+                            </div>
+                            <div class="form-group">
+                              <label class="sr-only" for="form-password">Password</label>
+                              <input type="password" name="form-password" placeholder="Password" class="form-password form-control" id="form-password">
+                            </div>
+                            <div class="form-group">
+                              <label class="sr-only" for="form-conf-password">Password</label>
+                              <input type="password" name="form-conf-password" placeholder=" Confirm your Password" class="form-conf-password form-control" id="form-password">
+                            </div>
+                            <button type="submit" class="btn btn-common btn-rm">Sign me up!</button>
+                            <!-- <a href="job-details.html" class="btn btn-common btn-rm">More Detail</a> -->
+                        </form>
+                      </div>
+                      </div>
+
+                    </div>
+                    <div class="col-sm-1 middle-border"></div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-5">
+
+                      <div class="form-box">
+                        <div class="form-top">
+                          <div class="form-top-left">
                             <h3>Login to our site</h3>
                               <p>Enter username and password to log on:</p>
                           </div>
@@ -179,52 +227,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
                               <label class="sr-only" for="form-password">Password</label>
                               <input type="password" name="form-password" placeholder="Password" class="form-password form-control" id="form-password">
                             </div>
-                            <button type="submit" class="btn">Sign in!</button>
+                            <button type="submit" class="btn btn-common btn-rm">Sign in!</button>
                         </form>
                       </div>
                     </div>
-
-                    </div>
-
-                    <div class="col-sm-1 middle-border"></div>
-                    <div class="col-sm-1"></div>
-
-                    <div class="col-sm-5">
-
-                      <div class="form-box">
-                        <div class="form-top">
-                          <div class="form-top-left">
-                            <h3> Do you have  a job to offer? <br>
-                               Sign up now</h3>
-                              <p>Fill in the form below to post your offer: </p>
-                          </div>
-                          <div class="form-top-right">
-                            <i class="fa fa-pencil"></i>
-                          </div>
-                          </div>
-                          <div class="form-bottom">
-                        <form role="form" action="" method="post" class="registration-form">
-                          <div class="form-group">
-                            <label class="sr-only" for="form-first-name">First name</label>
-                              <input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
-                            </div>
-                            <div class="form-group">
-                              <label class="sr-only" for="form-last-name">Last name</label>
-                              <input type="text" name="form-last-name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
-                            </div>
-                            <div class="form-group">
-                              <label class="sr-only" for="form-email">Email</label>
-                              <input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
-                            </div>
-                            <div class="form-group">
-                              <label class="sr-only" for="form-about-yourself">About yourself</label>
-                              <textarea name="form-about-yourself" placeholder="About yourself..."
-                                    class="form-about-yourself form-control" id="form-about-yourself"></textarea>
-                            </div>
-                            <button type="submit" class="btn">Sign me up!</button>
-                        </form>
-                      </div>
-                      </div>
 
                     </div>
                 </div>
