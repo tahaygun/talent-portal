@@ -37,7 +37,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <link rel="stylesheet" href="assets/css/slicknav.css" type="text/css">
   <!-- Responsive CSS Styles -->
   <link rel="stylesheet" href="assets/css/responsive.css" type="text/css">
-  
+
   <link rel="stylesheet" href="assets/css/joinpage.css" type="text/css">
 
   <!-- Color CSS Styles  -->
@@ -61,7 +61,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand logo" href="index.html">
+              <a class="navbar-brand logo" href="/">
                 <img src="assets/img/logov.png"
                   alt="" width="190px;">
               </a>
