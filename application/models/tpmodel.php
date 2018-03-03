@@ -12,4 +12,13 @@ class Tpmodel extends CI_Model
         $result = $this->db->query($query)->result_array();
         return $result;
     }
+    public function insertuser($arg)
+    {
+        $query = "INSERT INTO users (companyname, email, phone, contactperson, password) values (?,?,?,?)";
+        $values = [$arg['companyname'], $arg['email'], $arg['phone'], $arg['contactname'], $arg['password']];
+
+        $this->db->query($query, $values);
+
+
+    }
 }
