@@ -118,19 +118,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<a class="active" href="index.html">Home</a>
 							</li>
 							<li>
-								<a href="about.html">Pages</a>
+								<a href="about.html">Companies</a>
 
 							</li>
 							<li>
-								<a href="#">For Candidates</a>
+								<a href="#">Jobs</a>
 
 							</li>
 							<li>
-								<a href="#">For Employers</a>
+								<a href="#">About Us</a>
 
 							</li>
 							<li>
-								<a href="blog.html">Blog</a>
+								<a href="#">Venture Cafe</a>
 
 							</li>
 							<!-- <li class="btn-m">
@@ -252,7 +252,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 			<!-- Footer Section Start -->
-			<footer>
+			<footer id="footerid">
 				<!-- Footer Area Start -->
 				<section class="footer-Content">
 					<div class="container">
