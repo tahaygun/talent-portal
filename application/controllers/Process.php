@@ -11,6 +11,7 @@ class Process extends CI_Controller
 	public function openjoinpage()
 	{
 		$this->load->view('join_page');
+
 	}
 	public function register()
 	{
@@ -25,13 +26,34 @@ class Process extends CI_Controller
 
 		if ($this->form_validation->run() == false) {
 			$validationerror = validation_errors();
-			$this->load->view('join_page', array('reginfo' => $reginfo));
+			$this->load->view('/join_page', array('reginfo' => $reginfo));
 		} else {
 
 
 			$this->tpmodel->insertuser($reginfo);
-			$message = "You are successfully registirated, please login!";
-			$this->load->view('join_page', array('success' => $message));
+			$this->session->set_flashdata('message', 'You are successfully registirated!');
+			redirect('/joinpage');
 		}
+	}
+	public function login()
+	{
+		$loginfo = $this->input->post(null, true);
+
+		$email = $loginfo['email'];
+		$password = $loginfo['password'];
+		$result = $this->tpmodel->login($email, $password);
+		if ($result) {
+			$this->session->set_userdata('id', $result['id']);
+			redirect('/homepage');
+		} else {
+			$this->session->set_flashdata('logerror', 'Wrong password or email!');
+			redirect('/joinpage');
+		}
+	}
+	public function logout()
+	{
+		session_destroy();
+		redirect('/');
+
 	}
 }
