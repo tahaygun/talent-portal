@@ -32,4 +32,15 @@ class Tpmodel extends CI_Model
             return false;
         }
     }
+    public function accountchecker($email, $password)
+    {
+        $myquery = "SELECT * FROM users WHERE email=? AND password = ? AND approved=0  ";
+        $values = array("$email", "$password");
+        $query = $this->db->query($myquery, $values)->row_array();
+        if ($query) {
+            return $query;
+        } else {
+            return false;
+        }
+    }
 }

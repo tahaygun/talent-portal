@@ -42,12 +42,19 @@ class Process extends CI_Controller
 		$email = $loginfo['email'];
 		$password = $loginfo['password'];
 		$result = $this->tpmodel->login($email, $password);
+		$notapproved = $this->tpmodel->accountchecker($email, $password);
 		if ($result) {
 			$this->session->set_userdata('id', $result['id']);
 			redirect('/homepage');
 		} else {
-			$this->session->set_flashdata('logerror', 'Wrong password or email!');
-			redirect('/joinpage');
+			if ($notapproved) {
+				$this->session->set_flashdata('logerror', 'Your account is not comfirmed !');
+				redirect('/joinpage');
+			} else {
+				$this->session->set_flashdata('logerror', 'Wrong password or email !');
+				redirect('/joinpage');
+			}
+
 		}
 	}
 	public function logout()

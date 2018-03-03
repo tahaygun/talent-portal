@@ -101,7 +101,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</li>
 									<?php if (isset($_SESSION['id'])) { ?>
 										<li>
-										<a href="blog.html">
+										<a href="#">
 											My Page
 											<i class="fa fa-angle-down"></i>
 										</a>
