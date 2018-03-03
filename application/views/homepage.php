@@ -213,7 +213,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
               <div class="job-list-content">
                 <h4>
                   <a href="job-details.html">Need a web designer</a>
-                  <span class="full-time">Full-Time</span>
                 </h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quaerat aut veniam molestiae atque dolorum
                   omnis temporibus consequuntur saepe. Nemo atque consectetur saepe corporis odit in dicta reprehenderit,
@@ -226,8 +225,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <a href="browse-categories.html">
                           <i class="ti-brush"></i>Art/Design</a>
                       </span>
-                      <span>
-                        <i class="ti-location-pin"></i>Washington, USA</span>
                       <span>
                         <i class="ti-time"></i>60/Hour</span>
                     </div>
@@ -248,7 +245,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
               <div class="job-list-content">
                 <h4>
                   <a href="job-details.html">Front-end developer needed</a>
-                  <span class="full-time">Full-Time</span>
                 </h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quaerat aut veniam molestiae atque dolorum
                   omnis temporibus consequuntur saepe. Nemo atque consectetur saepe corporis odit in dicta reprehenderit,
@@ -261,8 +257,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <a href="browse-categories.html">
                           <i class="ti-desktop"></i>Technologies</a>
                       </span>
-                      <span>
-                        <i class="ti-location-pin"></i>Cupertino, CA, USA</span>
                       <span>
                         <i class="ti-time"></i>60/Hour</span>
                     </div>
@@ -282,7 +276,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
               <div class="job-list-content">
                 <h4>
                   <a href="job-details.html">Senior Accountant</a>
-                  <span class="part-time">Part-Time</span>
                 </h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quaerat aut veniam molestiae atque dolorum
                   omnis temporibus consequuntur saepe. Nemo atque consectetur saepe corporis odit in dicta reprehenderit,
@@ -293,11 +286,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="meta-tag">
                       <span>
                         <a href="browse-categories.html">
-                          <i class="ti-home"></i>Finance</a>
-                      </span>
-                      <span>
-                        <i class="ti-location-pin"></i>Delaware, USA</span>
-                      <span>
+                          <i class="ti-home"></i>Finance</a> </span>
+                       <span>
                         <i class="ti-time"></i>60/Hour</span>
                     </div>
                   </div>
@@ -317,7 +307,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
               <div class="job-list-content">
                 <h4>
                   <a href="job-details.html">Fullstack web developer needed</a>
-                  <span class="full-time">Full-Time</span>
                 </h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quaerat aut veniam molestiae atque dolorum
                   omnis temporibus consequuntur saepe. Nemo atque consectetur saepe corporis odit in dicta reprehenderit,
@@ -331,7 +320,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                           <i class="ti-desktop"></i>Technologies</a>
                       </span>
                       <span>
-                        <i class="ti-location-pin"></i>New York, USA</span>
                       <span>
                         <i class="ti-time"></i>60/Hour</span>
                     </div>
@@ -343,38 +331,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
               </div>
             </div>
           </div>
-          <div class="col-md-12">
-            <div class="showing pull-left">
-              <a href="#">Showing
-                <span>6-10</span> Of 24 Jobs</a>
-            </div>
-            <ul class="pagination pull-right">
-              <li class="active">
-                <a href="#" class="btn btn-common">
-                  <i class="ti-angle-left"></i> prev</a>
-              </li>
-              <li>
-                <a href="#">1</a>
-              </li>
-              <li>
-                <a href="#">2</a>
-              </li>
-              <li>
-                <a href="#">3</a>
-              </li>
-              <li>
-                <a href="#">4</a>
-              </li>
-              <li>
-                <a href="#">5</a>
-              </li>
-              <li class="active">
-                <a href="#" class="btn btn-common">Next
-                  <i class="ti-angle-right"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
     </section>
@@ -384,43 +340,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 
-    <!-- Clients Section -->
-    <section class="clients section">
-      <div class="container">
-        <h2 class="section-title">
-          Clients & Partners
-        </h2>
-        <div class="row">
-          <div id="clients-scroller">
-            <div class="items">
-              <img src="assets/img/clients/img1.png" alt="">
-            </div>
-            <div class="items">
-              <img src="assets/img/clients/img2.png" alt="">
-            </div>
-            <div class="items">
-              <img src="assets/img/clients/img3.png" alt="">
-            </div>
-            <div class="items">
-              <img src="assets/img/clients/img4.png" alt="">
-            </div>
-            <div class="items">
-              <img src="assets/img/clients/img5.png" alt="">
-            </div>
-            <div class="items">
-              <img src="assets/img/clients/img6.png" alt="">
-            </div>
-            <div class="items">
-              <img src="assets/img/clients/img6.png" alt="">
-            </div>
-            <div class="items">
-              <img src="assets/img/clients/img6.png" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Client Section End -->
+   
 
 
 
@@ -451,9 +371,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                   
                 
                     <a href="#">&nbsp&nbsp License</a>
-                  
-             
-                    <a href="#">&nbsp&nbsp Terms & Conditions</a>
               
                
                     <a href="#">&nbsp&nbsp  Contact</a>
