@@ -11,7 +11,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<meta name="author" content="Jobboard">
 
-		<title>JobBoard - Bootstrap HTML5 Job Portal Template</title>
+		<title>Venture café - Talent Portal</title>
 
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="assets/img/favicon.png">
@@ -87,13 +87,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="https://venturecaferotterdam.org/who-we-are/">
 											About Us
 											<i class="fa fa-angle"></i>
 										</a>
 									</li>
 									<li>
-										<a href="blog.html">
+										<a href="https://venturecaferotterdam.org/">
 											Venture Cafe
 											<i class="fa fa-angle"></i>
 										</a>
@@ -282,7 +282,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										<a class="twitter" href="https://twitter.com/GrayGrids">
 											<i class="ti-twitter-alt"></i>
 										</a>
-										<a class="facebook" href="https://web.facebook.com/GrayGrids">
+										<a class="facebook" href="https://www.facebook.com/VentureCafeRotterdam/">
 											<i class="ti-facebook"></i>
 										</a>
 										<a class="dribble" href="https://dribbble.com/GrayGrids">
