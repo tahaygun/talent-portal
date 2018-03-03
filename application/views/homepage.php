@@ -38,6 +38,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<link rel="stylesheet" href="assets/css/slicknav.css" type="text/css">
 		<!-- Responsive CSS Styles -->
 		<link rel="stylesheet" href="assets/css/responsive.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/homepage.css" type="text/css">
 
 		<!-- Color CSS Styles  -->
 		<link rel="stylesheet" type="text/css" href="assets/css/colors/red.css" media="screen" />
@@ -204,10 +205,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<h2 class="section-title">Highlighted Jobs</h2>
 					<div class="row">
 						<div class="col-md-12">
-							<?php foreach ($data as $posting) {
-								# code...
-						} ?>
-							<div class="job-list">
+							<?php foreach ($data as $posting) { ?>
+								
+
+							<div class="job-list col-md-12">
 								<div class="thumb">
 									<a href="job-details.html">
 										<img src="assets/img/jobs/img-1.jpg" alt="">
@@ -215,17 +216,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								</div>
 								<div class="job-list-content">
 									<h4>
-										<a href="job-details.html">Need a web designer</a>
-									</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quaerat aut veniam molestiae atque dolorum omnis
-										temporibus consequuntur saepe. Nemo atque consectetur saepe corporis odit in dicta reprehenderit, officiis, praesentium?
-									</p>
+										<a href="job-details.html"><?= $posting['title'] ?></a>
+									</h4> <p class="descriptions"><?= $posting['description'] ?> </p>
 									<div class="job-tag">
 										<div class="pull-left">
 											<div class="meta-tag">
 												<span>
-													<a href="browse-categories.html">
-														<i class="ti-brush"></i>Art/Design</a>
+													<a href="browse-categories.html"># Art/Design</a>
+												</span>
+												<span>
+													<a href="browse-categories.html">➦ <?= $posting['companyname'] ?></a>
 												</span>
 											</div>
 										</div>
@@ -236,6 +236,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</div>
 								</div>
 							</div>
+
+
+
+
+						 <?php
+
+					} ?>
+
 						</div>
 					</div>
 				</div>
