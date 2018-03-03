@@ -37,6 +37,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <link rel="stylesheet" href="assets/css/slicknav.css" type="text/css">
   <!-- Responsive CSS Styles -->
   <link rel="stylesheet" href="assets/css/responsive.css" type="text/css">
+  
+  <link rel="stylesheet" href="assets/css/joinpage.css" type="text/css">
 
   <!-- Color CSS Styles  -->
   <link rel="stylesheet" type="text/css" href="assets/css/colors/red.css" media="screen" />
@@ -147,56 +149,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
         <!-- Header Section End -->
 
-        <div class="search-container">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <h1>Find the job that fits your life</h1>
-                <br>
-                <h2>We are building
-                  <strong>network</strong> to help people!</h2>
-                <div class="content">
-                  <form method="" action="">
-                    <div class="row">
-                      <div class="col-md-6 col-sm-6">
-                        <div class="form-group">
-                          <input class="form-control" type="text" placeholder="job title / keywords / company name">
-                          <i class="ti-time"></i>
-                        </div>
-                      </div>
-
-                      <div class="col-md-5 col-sm-6">
-                        <div class="search-category-container">
-                          <label class="styled-select">
-                            <select class="dropdown-product selectpicker">
-                              <option>All Categories</option>
-                              <option>Finance</option>
-                              <option>IT & Engineering</option>
-                              <option>Education/Training</option>
-                              <option>Art/Design</option>
-                              <option>Sale/Markting</option>
-                              <option>Healthcare</option>
-                              <option>Science</option>
-                              <option>Food Services</option>
-                            </select>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="col-md-1 col-sm-6">
-                        <button type="button" class="btn btn-search-icon">
-                          <i class="ti-search"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </section>
-    <!-- end intro section -->
-    </div>
     <!-- Top content -->
     <div class="top-content">
 
@@ -296,53 +248,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <script src="assets/js/jquery-1.11.1.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/scripts.js"></script>
-
-
-
-
-
-
-
-    <!-- Clients Section -->
-    <section class="clients section">
-      <div class="container">
-        <h2 class="section-title">
-          Clients & Partners
-        </h2>
-        <div class="row">
-          <div id="clients-scroller">
-            <div class="items">
-              <img src="assets/img/clients/img1.png" alt="">
-            </div>
-            <div class="items">
-              <img src="assets/img/clients/img2.png" alt="">
-            </div>
-            <div class="items">
-              <img src="assets/img/clients/img3.png" alt="">
-            </div>
-            <div class="items">
-              <img src="assets/img/clients/img4.png" alt="">
-            </div>
-            <div class="items">
-              <img src="assets/img/clients/img5.png" alt="">
-            </div>
-            <div class="items">
-              <img src="assets/img/clients/img6.png" alt="">
-            </div>
-            <div class="items">
-              <img src="assets/img/clients/img6.png" alt="">
-            </div>
-            <div class="items">
-              <img src="assets/img/clients/img6.png" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Client Section End -->
-
-
-
 
 
     <!-- Footer Section Start -->
