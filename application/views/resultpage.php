@@ -246,7 +246,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</div>
 										<div class="pull-right">
 
-											<a href="job-details.html" class="btn btn-common btn-rm">More Detail</a>
+											<a href="/details" class="btn btn-common btn-rm">More Detail</a>
 										</div>
 									</div>
 								</div>

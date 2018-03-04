@@ -57,6 +57,13 @@ class Process extends CI_Controller
 			}
 		}
 	}
+
+	public function opendetailspage()
+	{
+		$this->load->view('detailspage');
+	}
+
+
 	public function openmainpage()
 	{
 		$this->load->view('mainpageuser');
@@ -68,6 +75,7 @@ class Process extends CI_Controller
 		$data = $this->tpmodel->search($result['searchinput']);
 		$this->load->view('resultpage', array('data' => $data));
 	}
+
 	public function logout()
 	{
 		session_destroy();

@@ -71,7 +71,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<!-- Start Navigation List -->
 								<ul class="nav navbar-nav navbar-right">
 									<li>
-										<a class="active" href="index.html">
+										<a class="active" href="/">
 											Home
 											<i class="fa fa-angle"></i>
 										</a>
@@ -248,7 +248,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</div>
 										<div class="pull-right">
 
-											<a href="job-details.html" class="btn btn-common btn-rm">More Detail</a>
+											<a href="/details" class="btn btn-common btn-rm">More Detail</a>
 										</div>
 									</div>
 								</div>

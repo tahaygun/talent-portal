@@ -7,6 +7,7 @@ $route['register'] = 'process/register';
 $route['login'] = 'process/login';
 $route['mainpageuser'] = 'process/openmainpage';
 $route['search'] = 'process/search';
+$route['details'] = 'process/opendetailspage';
 $route['logout'] = 'process/logout';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = false;
