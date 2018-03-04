@@ -50,7 +50,7 @@ p {
 }
 
 a {
-	color: gray;
+	color: rgb(53, 52, 52);
 	-webkit-transition: all .3s linear;
 	-moz-transition: all .3s linear;
 	-ms-transition: all .3s linear;
