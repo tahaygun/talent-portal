@@ -5,6 +5,14 @@ class Process extends CI_Controller
 {
 	public function index()
 	{
+
+		$data = $this->tpmodel->highlightedpostings();
+		$this->load->view('homepage', array('data' => $data));
+	}
+	public function openjoinpage()
+	{
+		$this->load->view('join_page');
+
 		$data = $this->tpmodel->highlightedpostings();
 		$this->load->view('homepage', array('data' => $data));
 	}
@@ -61,6 +69,7 @@ class Process extends CI_Controller
 	{
 		session_destroy();
 		redirect('/');
+
 
 	}
 }
