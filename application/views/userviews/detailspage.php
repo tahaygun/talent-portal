@@ -14,38 +14,38 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<title>Venture café - Talent Portal</title>
 
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="assets/img/favicon.png">
+		<link rel="shortcut icon" href="/assets/img/favicon.png">
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
-		<link rel="stylesheet" href="assets/css/jasny-bootstrap.min.css" type="text/css">
-		<link rel="stylesheet" href="assets/css/bootstrap-select.min.css" type="text/css">
+		<link rel="stylesheet" href="/assets/css/bootstrap.min.css" type="text/css">
+		<link rel="stylesheet" href="/assets/css/jasny-bootstrap.min.css" type="text/css">
+		<link rel="stylesheet" href="/assets/css/bootstrap-select.min.css" type="text/css">
 		<!-- Material CSS -->
-		<link rel="stylesheet" href="assets/css/material-kit.css" type="text/css">
+		<link rel="stylesheet" href="/assets/css/material-kit.css" type="text/css">
 		<!-- Font Awesome CSS -->
-		<link rel="stylesheet" href="assets/fonts/font-awesome.min.css" type="text/css">
-		<link rel="stylesheet" href="assets/fonts/themify-icons.css">
+		<link rel="stylesheet" href="/assets/fonts/font-awesome.min.css" type="text/css">
+		<link rel="stylesheet" href="/assets/fonts/themify-icons.css">
 
 		<!-- Animate CSS -->
-		<link rel="stylesheet" href="assets/extras/animate.css" type="text/css">
+		<link rel="stylesheet" href="/assets/extras/animate.css" type="text/css">
 		<!-- Owl Carousel -->
-		<link rel="stylesheet" href="assets/extras/owl.carousel.css" type="text/css">
-		<link rel="stylesheet" href="assets/extras/owl.theme.css" type="text/css">
+		<link rel="stylesheet" href="/assets/extras/owl.carousel.css" type="text/css">
+		<link rel="stylesheet" href="/assets/extras/owl.theme.css" type="text/css">
 		<!-- Rev Slider CSS -->
-		<link rel="stylesheet" href="assets/extras/settings.css" type="text/css">
+		<link rel="stylesheet" href="/assets/extras/settings.css" type="text/css">
 		<!-- Main Styles -->
-		<link rel="stylesheet" href="assets/css/main.css" type="text/css">
+		<link rel="stylesheet" href="/assets/css/main.css" type="text/css">
 		<!-- Slicknav js -->
-		<link rel="stylesheet" href="assets/css/slicknav.css" type="text/css">
+		<link rel="stylesheet" href="/assets/css/slicknav.css" type="text/css">
 		<!-- Responsive CSS Styles -->
-		<link rel="stylesheet" href="assets/css/responsive.css" type="text/css">
+		<link rel="stylesheet" href="/assets/css/responsive.css" type="text/css">
 		<!-- Color CSS Styles  -->
-		<link rel="stylesheet" type="text/css" href="assets/css/colors/red.css" media="screen" />
-		<link rel="stylesheet" href="assets/css/homepage.css" type="text/css">
+		<link rel="stylesheet" type="text/css" href="/assets/css/colors/red.css" media="screen" />
+		<link rel="stylesheet" href="/assets/css/homepage.css" type="text/css">
 		
 	</head>
 
 	<body>
-		<!-- Header Section Start -->
+	<!-- Header Section Start -->
 		<div class="header">
 			<!-- Start intro section -->
 			<section id="intro" class="section-intro">
@@ -61,7 +61,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<span class="icon-bar"></span>
 								</button>
 								<a class="navbar-brand logo" href="/">
-									<img src="assets/img/logov.png" alt="" width="190px;">
+									<img src="/assets/img/logov.png" alt="" width="190px;">
 								</a>
 							</div>
 
@@ -69,7 +69,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<!-- Start Navigation List -->
 								<ul class="nav navbar-nav navbar-right">
 									<li>
-										<a  href="/">
+										<a class="active" href="/">
 											Home
 											<i class="fa fa-angle"></i>
 										</a>
@@ -123,7 +123,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											</ul>
 									</li>
 								<?php 
-    } ?>
+						} ?>
 								</ul>
 
 							</div>
@@ -149,124 +149,62 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<a href="https://venturecaferotterdam.org/">Venture Cafe</a>
 
 							</li>
-							<!-- <li class="btn-m">
-              <a href="post-job.html">
-                <i class="ti-pencil-alt"></i> Post A Job</a>
-            </li>
-            <li class="btn-m">
-              <a href="my-account.html">
-                <i class="ti-lock"></i> Log In</a>
-            </li> -->
 						</ul>
 						<!-- Mobile Menu End -->
 					</nav>
-
+				</div>
+			</div>
 
 					<!-- Header Section End -->
 
-					<div class="search-container">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-12">
-									<h1>Find the job that fits your life</h1>
-									<br>
-									<h2>We are building
-										<strong>network</strong> to help people!</h2>
-									<div class="content">
-										<form method="post" action="/search">
-											<div class="row">
-												<div class="col-md-6 col-sm-6">
-													<div class="form-group">
-														<input name="searchinput" class="form-control" type="text" placeholder="job title / keywords / company name">
-														<i class="ti-time"></i>
-													</div>
-												</div>
-												<div class="col-md-5 col-sm-6">
-													<div class="search-category-container">
-														<label class="styled-select">
-															<select name="category" class="dropdown-product selectpicker">
-																<option>All Categories</option>
-																<option>Finance</option>
-																<option>IT & Engineering</option>
-																<option>Education/Training</option>
-																<option>Art/Design</option>
-																<option>Sale/Markting</option>
-																<option>Healthcare</option>
-																<option>Science</option>
-																<option>Food Services</option>
-															</select>
-														</label>
-													</div>
-												</div>
-												<div class="col-md-1 col-sm-6">
-													<button type="submit" class="btn btn-search-icon">
-														<i class="ti-search"></i>
-													</button>
-												</div>
-											</div>
-										</form>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-			</section>
-			<!-- end intro section -->
-			</div>
+  <!-- Page Header Start -->
+  <div class="page-header" style="background: url(/assets/img/banner1.jpg);">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="breadcrumb-wrapper">
+            <h2 class="product-title">Details</h2>
+            <ol class="breadcrumb">
+              <li>
+                <a href="/">
+                  <i class="ti-home"></i> Home</a>
+              </li>
+              <li class="current">Details</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Page Header End -->
 
-			<!-- Find Job Section Start -->
-			<section class="find-job section">
-				<div class="container">
-					<h2 class="section-title">Results</h2>
-					<div class="row">
-						<div class="col-md-12">
-							<?php foreach ($data as $posting) { ?>
-
-
-							<div class="job-list col-md-12">
-								<div class="thumb">
-									<a href="job-details.html">
-										<img src="assets/img/jobs/img-1.jpg" alt="">
-									</a>
-								</div>
-								<div class="job-list-content">
-									<h4>
-										<a href="job-details.html"><?= $posting['title'] ?></a>
-									</h4> <p class="descriptions"><?= $posting['description'] ?> </p>
-									<div class="job-tag">
-										<div class="pull-left">
-											<div class="meta-tag">
-												<span>
-													<a href="browse-categories.html"># Art/Design</a>
-												</span>
-												<span>
-													<a href="browse-categories.html">➦ <?= $posting['companyname'] ?></a>
-												</span>
-											</div>
-										</div>
-										<div class="pull-right">
-
-											<a href="/details" class="btn btn-common btn-rm">More Detail</a>
-										</div>
-									</div>
-								</div>
-							</div>
+  <!-- Main container Start -->
+  <div class="about section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <img src="/assets/img/about/img1.jpg" alt="">
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="about-content">
+            <h2 class="medium-title"><?= $data['title'] ?></h2>
+            <p class="desc"><?= $data['description'] ?></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est modi, saepe hic esse maxime quasi, sapiente ex
+              debitis quis dolorum unde, neque quibusdam eveniet nobis enim porro repudiandae nesciunt quidem.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni delectus soluta adipisci beatae ullam quisquam,
+              quia recusandae rem assumenda, praesentium porro sequi eaque doloremque tenetur incidunt officiis explicabo
+              optio perferendis.</p>
+            <a href="#" class="btn btn-common">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Main container End -->
 
 
 
-
-						 <?php
-
-    } ?>
-
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- Find Job Section End -->
-
-
-			<!-- Footer Section Start -->
+  	<!-- Footer Section Start -->
 			<footer id="footerid">
 				<!-- Footer Area Start -->
 				<section class="footer-Content">
@@ -275,7 +213,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="col-md-3 col-sm-6 col-xs-12">
 								<div class="widget">
 									<h3 class="block-title">
-										<img src="assets/img/logov.png" class="img-responsive" alt="Footer Logo">
+										<img src="/assets/img/logov.png" class="img-responsive" alt="Footer Logo">
 									</h3>
 
 								</div>
@@ -326,44 +264,44 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 			<!-- Footer Section End -->
 
-			<!-- Go To Top Link -->
-			<a href="#" class="back-to-top">
-				<i class="ti-arrow-up"></i>
-			</a>
+  <!-- Go To Top Link -->
+  <a href="#" class="back-to-top">
+    <i class="ti-arrow-up"></i>
+  </a>
 
-			<div id="loading">
-				<div id="loading-center">
-					<div id="loading-center-absolute">
-						<div class="object" id="object_one"></div>
-						<div class="object" id="object_two"></div>
-						<div class="object" id="object_three"></div>
-						<div class="object" id="object_four"></div>
-						<div class="object" id="object_five"></div>
-						<div class="object" id="object_six"></div>
-						<div class="object" id="object_seven"></div>
-						<div class="object" id="object_eight"></div>
-					</div>
-				</div>
-			</div>
+  <div id="loading">
+    <div id="loading-center">
+      <div id="loading-center-absolute">
+        <div class="object" id="object_one"></div>
+        <div class="object" id="object_two"></div>
+        <div class="object" id="object_three"></div>
+        <div class="object" id="object_four"></div>
+        <div class="object" id="object_five"></div>
+        <div class="object" id="object_six"></div>
+        <div class="object" id="object_seven"></div>
+        <div class="object" id="object_eight"></div>
+      </div>
+    </div>
+  </div>
 
-			<!-- Main JS  -->
-			<script type="text/javascript" src="assets/js/jquery-min.js"></script>
-			<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-			<script type="text/javascript" src="assets/js/material.min.js"></script>
-			<script type="text/javascript" src="assets/js/material-kit.js"></script>
-			<script type="text/javascript" src="assets/js/jquery.parallax.js"></script>
-			<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
-			<script type="text/javascript" src="assets/js/jquery.slicknav.js"></script>
-			<script type="text/javascript" src="assets/js/main.js"></script>
-			<script type="text/javascript" src="assets/js/jquery.counterup.min.js"></script>
-			<script type="text/javascript" src="assets/js/waypoints.min.js"></script>
-			<script type="text/javascript" src="assets/js/jasny-bootstrap.min.js"></script>
-			<script type="text/javascript" src="assets/js/bootstrap-select.min.js"></script>
-			<script type="text/javascript" src="assets/js/form-validator.min.js"></script>
-			<script type="text/javascript" src="assets/js/contact-form-script.js"></script>
-			<script type="text/javascript" src="assets/js/jquery.themepunch.revolution.min.js"></script>
-			<script type="text/javascript" src="assets/js/jquery.themepunch.tools.min.js"></script>
+  <!-- Main JS  -->
+  <script type="text/javascript" src="/assets/js/jquery-min.js"></script>
+  <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/assets/js/material.min.js"></script>
+  <script type="text/javascript" src="/assets/js/material-kit.js"></script>
+  <script type="text/javascript" src="/assets/js/jquery.parallax.js"></script>
+  <script type="text/javascript" src="/assets/js/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="/assets/js/jquery.slicknav.js"></script>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  <script type="text/javascript" src="/assets/js/jquery.counterup.min.js"></script>
+  <script type="text/javascript" src="/assets/js/waypoints.min.js"></script>
+  <script type="text/javascript" src="/assets/js/jasny-bootstrap.min.js"></script>
+  <script type="text/javascript" src="/assets/js/bootstrap-select.min.js"></script>
+  <script type="text/javascript" src="/assets/js/form-validator.min.js"></script>
+  <script type="text/javascript" src="/assets/js/contact-form-script.js"></script>
+  <script type="text/javascript" src="/assets/js/jquery.themepunch.revolution.min.js"></script>
+  <script type="text/javascript" src="/assets/js/jquery.themepunch.tools.min.js"></script>
 
-	</body>
+</body>
 
 	</html>

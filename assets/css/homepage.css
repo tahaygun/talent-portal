@@ -2,6 +2,10 @@
 	word-wrap: break-word;
 }
 
+p {
+	word-wrap: break-word;
+}
+
 #titles {
 	color: red;
 }
