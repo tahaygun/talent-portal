@@ -163,7 +163,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
       <div class="row">
         <div class="col-md-12">
           <div class="breadcrumb-wrapper">
-            <h2 class="product-title">Details</h2>
+            <h2 class="product-title"><a style="color:white;" href=""><?= $data['companyname'] ?></a></h2>
             <ol class="breadcrumb">
               <li>
                 <a href="/">
@@ -187,14 +187,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </div>
         <div class="col-md-6 col-sm-12">
           <div class="about-content">
-            <h2 class="medium-title"><?= $data['title'] ?></h2>
-            <p class="desc"><?= $data['description'] ?></p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est modi, saepe hic esse maxime quasi, sapiente ex
-              debitis quis dolorum unde, neque quibusdam eveniet nobis enim porro repudiandae nesciunt quidem.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni delectus soluta adipisci beatae ullam quisquam,
-              quia recusandae rem assumenda, praesentium porro sequi eaque doloremque tenetur incidunt officiis explicabo
-              optio perferendis.</p>
-            <a href="#" class="btn btn-common">Learn More</a>
+						<h2 class="medium-title descriptions"><?= $data['title'] ?></h2> <br>
+						<h4>Description</h4>
+						<p class="descriptions"><?= $data['description'] ?></p>
+						<h4>Who are we?</h4>
+						<p class="descriptions"><?= $data['about'] ?></p>
+						<h4>Details:</h4>
+            <ul class="jobdetails">
+							<li>Starting Date: <?= $data['starting_date'] ?></li>
+							<li>Ending Date: <?= $data['enddate'] ?></li>
+							<li>Company Identifies: <?= $data['identifies'] ?></li>
+						</ul> <br>
+						<a href="https://<?= $data['link'] ?>" class="btn btn-common">Apply</a>
+						<?php if (isset($_SESSION['id']) && $_SESSION['id'] == $data['user_id']) { ?>
+						<a href="https://<?= $data['link'] ?>" class="btn btn-common">Edit</a>
+					<?php 
+			} ?>
           </div>
         </div>
       </div>

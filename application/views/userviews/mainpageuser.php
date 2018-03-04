@@ -165,7 +165,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<!-- Find Job Section Start -->
 			<section class="find-job section">
 				<div class="container">
-					<h2 class="section-title">My Postings</h2>
+					<h2 class="section-title">Welcome <?= $data[0]['companyname'] ?></h2>
 					<div class="row">
 						<div class="col-md-12">
 							<?php foreach ($data as $posting) { ?>
@@ -173,13 +173,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 							<div class="job-list col-md-12">
 								<div class="thumb">
-									<a href="job-details.html">
+									<a href="/details/<?= $posting['id'] ?>">
 										<img src="assets/img/jobs/img-1.jpg" alt="">
 									</a>
 								</div>
 								<div class="job-list-content">
 									<h4 id="titles">
-										<a href="job-details.html"><?= $posting['title'] ?></a>
+										<a href="/details/<?= $posting['id'] ?>"><?= $posting['title'] ?></a>
 									</h4> <p class="descriptions"><?= $posting['description'] ?> </p>
 									<div class="job-tag">
 										<div class="pull-left">
