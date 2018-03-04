@@ -5,6 +5,7 @@ $route['homepage'] = 'process';
 $route['joinpage'] = 'process/openjoinpage';
 $route['register'] = 'process/register';
 $route['login'] = 'process/login';
+$route['search'] = 'process/search';
 $route['logout'] = 'process/logout';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = false;

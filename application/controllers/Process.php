@@ -57,6 +57,13 @@ class Process extends CI_Controller
 
 		}
 	}
+
+	public function search()
+	{
+		$result = $this->input->post(null, true);
+		$data = $this->tpmodel->search($result['searchinput']);
+		$this->load->view('resultpage', array('data' => $data));
+	}
 	public function logout()
 	{
 		session_destroy();
