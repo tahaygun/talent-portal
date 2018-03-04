@@ -11,7 +11,7 @@ class Process extends CI_Controller
 	}
 	public function openjoinpage()
 	{
-		$this->load->view('join_page');
+		$this->load->view('postjob_page');
 
 	}
 	public function register()

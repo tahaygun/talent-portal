@@ -38,9 +38,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<link rel="stylesheet" href="assets/css/slicknav.css" type="text/css">
 		<!-- Responsive CSS Styles -->
 		<link rel="stylesheet" href="assets/css/responsive.css" type="text/css">
+
+		<link rel="stylesheet" href="assets/css/homepage.css" type="text/css">
 		<!-- Color CSS Styles  -->
 		<link rel="stylesheet" type="text/css" href="assets/css/colors/red.css" media="screen" />
-		<link rel="stylesheet" href="assets/css/homepage.css" type="text/css">
+		
 		
 	</head>
 
@@ -230,7 +232,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</a>
 								</div>
 								<div class="job-list-content">
-									<h4>
+									<h4 id="titles">
 										<a href="job-details.html"><?= $posting['title'] ?></a>
 									</h4> <p class="descriptions"><?= $posting['description'] ?> </p>
 									<div class="job-tag">
