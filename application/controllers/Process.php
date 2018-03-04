@@ -68,9 +68,10 @@ class Process extends CI_Controller
 		}
 	}
 
-	public function opendetailspage()
+	public function opendetailspage($id)
 	{
-		$this->load->view('userviews/detailspage');
+		$data = $this->tpmodel->details($id);
+		$this->load->view('userviews/detailspage', array('data' => $data));
 	}
 
 
@@ -86,8 +87,6 @@ class Process extends CI_Controller
 		$data = $this->tpmodel->search($result['searchinput']);
 		$this->load->view('userviews/resultpage', array('data' => $data));
 	}
-
-
 
 	public function logout()
 	{
