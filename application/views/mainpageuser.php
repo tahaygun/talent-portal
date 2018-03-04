@@ -19,10 +19,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
 		<link rel="stylesheet" href="assets/css/jasny-bootstrap.min.css" type="text/css">
 		<link rel="stylesheet" href="assets/css/bootstrap-select.min.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/mainpageuser.min.css" type="text/css">
 		<!-- Material CSS -->
 		<link rel="stylesheet" href="assets/css/material-kit.css" type="text/css">
 		<!-- Font Awesome CSS -->
 		<link rel="stylesheet" href="assets/fonts/font-awesome.min.css" type="text/css">
+		<link rel="stylesheet" href="assets/fonts/themify-icons.css">
 		<link rel="stylesheet" href="assets/fonts/themify-icons.css">
 
 		<!-- Animate CSS -->
@@ -166,25 +168,57 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 			<!-- end intro section -->
 			</div>
-
+		</div>
 			<!-- Find Job Section Start -->
 			<section class="find-job section">
 				<div class="container">
-					<h2 class="section-title">Highlighted Jobs</h2>
+					<h2 class="section-title">Welcome to your homepage</h2>
 					<div class="row">
 						<div class="col-md-12">
+											<div class="job-list col-md-12">
+												<div class="thumb">
+													<a href="job-details.html">
+														<img src="assets/img/jobs/img-1.jpg" alt="">
+													</a>
+												</div>
+												<div class="job-list-content">
+													<h4>
+														<a href="job-details.html"><?= $posting['title'] ?></a>
+													</h4> <p class="descriptions"><?= $posting['description'] ?> </p>
+													<div class="job-tag">
+														<div class="pull-left">
+															<div class="meta-tag">
+																<span>
+																	<a href="browse-categories.html"># Art/Design</a>
+																</span>
+
+															</div>
+														</div>
+														<div class="pull-right">
+
+														</div>
+													</div>
+												</div>
+											</div>
 
 
-							<div class="job-list col-md-12">
+							<!-- <div class="job-list col-md-12">
 								<div class="thumb">
 									<a href="job-details.html">
 										<img src="assets/img/jobs/img-1.jpg" alt="">
 									</a>
 								</div>
 								<div class="job-list-content">
+									<h3>
+										<p class="job_title"> here should be a title </p>
+									</h3>
+									<h3>
+										<p class="job_title_user">Here are the jobs that you recently added </p>
+									</h3>
 									<h4>
-										<a href="job-details.html"></a>
-									</h4> <p class="descriptions"> </p>
+										<a href="job_description"></a>
+										<p class="descriptions"> here should be a description </p>
+									</h4>
 									<div class="job-tag">
 										<div class="pull-left">
 											<div class="meta-tag">
@@ -196,17 +230,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</span>
 											</div>
 										</div>
-										<div class="pull-right">
+										<div class="pull-right"> -->
 
-											<a href="job-details.html" class="btn btn-common btn-rm">More Detail</a>
+											<a href="edit_button" class="btn btn-common btn-rm">Edit</a>
+											<a href="delete_button" class="btn btn-common btn-rm">Delete</a>
 										</div>
 									</div>
 								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
 			</section>
 			<!-- Find Job Section End -->
 
