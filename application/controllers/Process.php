@@ -5,13 +5,17 @@ class Process extends CI_Controller
 {
 	public function index()
 	{
-
-		$data = $this->tpmodel->highlightedpostings();
-		$this->load->view('homepage', array('data' => $data));
+		if (isset($_SESSION['level']) && ($_SESSION['level'] == 1)) {
+			redirect('/admin-home');
+		} else {
+			$data = $this->tpmodel->highlightedpostings();
+			$this->load->view('userviews/homepage', array('data' => $data));
+		}
 	}
+
 	public function openjoinpage()
 	{
-		$this->load->view('join_page');
+		$this->load->view('userviews/join_page');
 
 	}
 	public function register()
@@ -27,7 +31,7 @@ class Process extends CI_Controller
 
 		if ($this->form_validation->run() == false) {
 			$validationerror = validation_errors();
-			$this->load->view('/join_page', array('reginfo' => $reginfo));
+			$this->load->view('userviews/join_page', array('reginfo' => $reginfo));
 		} else {
 
 
@@ -46,7 +50,13 @@ class Process extends CI_Controller
 		$notapproved = $this->tpmodel->accountchecker($email, $password);
 		if ($result) {
 			$this->session->set_userdata('id', $result['id']);
-			redirect('/mypage');
+			$this->session->set_userdata('level', $result['adminlevel']);
+			if ($result['adminlevel'] == 1) {
+				redirect('/admin-home');
+			} else {
+				redirect('/mypage');
+			}
+
 		} else {
 			if ($notapproved) {
 				$this->session->set_flashdata('logerror', 'Your account is not confirmed !');
@@ -60,22 +70,24 @@ class Process extends CI_Controller
 
 	public function opendetailspage()
 	{
-		$this->load->view('detailspage');
+		$this->load->view('userviews/detailspage');
 	}
 
 
 	public function openmainpage()
 	{
 		$data = $this->tpmodel->mypage($_SESSION['id']);
-		$this->load->view('mainpageuser', array('data' => $data));
+		$this->load->view('userviews/mainpageuser', array('data' => $data));
 	}
 
 	public function search()
 	{
 		$result = $this->input->post(null, true);
 		$data = $this->tpmodel->search($result['searchinput']);
-		$this->load->view('resultpage', array('data' => $data));
+		$this->load->view('userviews/resultpage', array('data' => $data));
 	}
+
+
 
 	public function logout()
 	{

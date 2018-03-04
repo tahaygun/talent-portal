@@ -9,5 +9,10 @@ $route['mypage'] = 'process/openmainpage';
 $route['search'] = 'process/search';
 $route['details'] = 'process/opendetailspage';
 $route['logout'] = 'process/logout';
+
+$route['admin-home'] = 'adminprocess/adminpostingpage';
+$route['post-requests'] = 'adminprocess/postrequests';
+$route['highlighted-posts'] = 'adminprocess/highlightedposts';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = false;
