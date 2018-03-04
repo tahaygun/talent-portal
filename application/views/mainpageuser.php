@@ -99,17 +99,34 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											<i class="fa fa-angle"></i>
 										</a>
 									</li>
+									<?php if (isset($_SESSION['id'])) { ?>
+										<li>
+										<a href="#">
+											My Page
+											<i class="fa fa-angle-down"></i>
+										</a>
+										 <ul class="dropdown">
+											<li>
+												<a href="">
+												My Page
+												</a>
+											</li>
+											<li>
+												<a href="index-02.html">
+												New Posting
+												</a>
+											</li>
+											<li>
+												<a href="/logout">
+												Logout
+												</a>
+											</li>
+											</ul>
+									</li>
+								<?php
+						} ?>
 								</ul>
-								<!-- <ul class="nav navbar-nav navbar-right float-right">
-                <li class="left">
-                  <a href="post-job.html">
-                    <i class="ti-pencil-alt"></i> Post A Job</a>
-                </li>
-                <li class="right">
-                  <a href="my-account.html">
-                    <i class="ti-lock"></i> Log In</a>
-                </li>
-              </ul> -->
+
 							</div>
 						</div>
 						<!-- Mobile Menu Start -->
@@ -118,19 +135,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<a class="active" href="index.html">Home</a>
 							</li>
 							<li>
-								<a href="about.html">Pages</a>
+								<a href="">Companies</a>
 
 							</li>
 							<li>
-								<a href="#">For Candidates</a>
+								<a href="#">Jobs</a>
 
 							</li>
 							<li>
-								<a href="#">For Employers</a>
+								<a href="https://venturecaferotterdam.org/who-we-are/">About Us</a>
 
 							</li>
 							<li>
-								<a href="blog.html">Blog</a>
+								<a href="https://venturecaferotterdam.org/">Venture Cafe</a>
 
 							</li>
 							<!-- <li class="btn-m">
@@ -146,56 +163,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					</nav>
 
 
-					<!-- Header Section End -->
 
-					<div class="search-container">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-12">
-									<h1>Find the job that fits your life</h1>
-									<br>
-									<h2>We are building
-										<strong>network</strong> to help people!</h2>
-									<div class="content">
-										<form method="" action="">
-											<div class="row">
-												<div class="col-md-6 col-sm-6">
-													<div class="form-group">
-														<input class="form-control" type="text" placeholder="job title / keywords / company name">
-														<i class="ti-time"></i>
-													</div>
-												</div>
-
-												<div class="col-md-5 col-sm-6">
-													<div class="search-category-container">
-														<label class="styled-select">
-															<select class="dropdown-product selectpicker">
-																<option>All Categories</option>
-																<option>Finance</option>
-																<option>IT & Engineering</option>
-																<option>Education/Training</option>
-																<option>Art/Design</option>
-																<option>Sale/Markting</option>
-																<option>Healthcare</option>
-																<option>Science</option>
-																<option>Food Services</option>
-															</select>
-														</label>
-													</div>
-												</div>
-												<div class="col-md-1 col-sm-6">
-													<button type="button" class="btn btn-search-icon">
-														<i class="ti-search"></i>
-													</button>
-												</div>
-											</div>
-										</form>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-			</section>
 			<!-- end intro section -->
 			</div>
 
@@ -205,7 +173,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<h2 class="section-title">Highlighted Jobs</h2>
 					<div class="row">
 						<div class="col-md-12">
-							<?php foreach ($data as $posting) { ?>
 
 
 							<div class="job-list col-md-12">
@@ -216,8 +183,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								</div>
 								<div class="job-list-content">
 									<h4>
-										<a href="job-details.html"><?= $posting['title'] ?></a>
-									</h4> <p class="descriptions"><?= $posting['description'] ?> </p>
+										<a href="job-details.html"></a>
+									</h4> <p class="descriptions"> </p>
 									<div class="job-tag">
 										<div class="pull-left">
 											<div class="meta-tag">
@@ -225,7 +192,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 													<a href="browse-categories.html"># Art/Design</a>
 												</span>
 												<span>
-													<a href="browse-categories.html">➦ <?= $posting['companyname'] ?></a>
+													<a href="browse-categories.html">➦</a>
 												</span>
 											</div>
 										</div>
@@ -237,13 +204,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								</div>
 							</div>
 
-
-
-
-						 <?php
-
-					} ?>
-
 						</div>
 					</div>
 				</div>
@@ -252,7 +212,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 			<!-- Footer Section Start -->
-			<footer>
+			<footer id="footerid">
 				<!-- Footer Area Start -->
 				<section class="footer-Content">
 					<div class="container">
@@ -272,13 +232,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<a href="/joinpage">&nbsp Company Login</a>
 
 
-									<a href="#">&nbsp&nbsp Support</a>
+									<a href="https://venturecaferotterdam.org/sponsor/">&nbsp&nbsp Support</a>
 
 
 									<a href="#">&nbsp&nbsp License</a>
 
 
-									<a href="#">&nbsp&nbsp Contact</a>
+									<a href="https://venturecaferotterdam.org/contact/">&nbsp&nbsp Contact</a>
 
 								</div>
 							</div>
@@ -287,16 +247,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<div class="widget">
 
 									<div class="bottom-social-icons social-icon">
-										<a class="twitter" href="https://twitter.com/GrayGrids">
+										<a class="twitter" href="https://twitter.com/VentureCafeRdam">
 											<i class="ti-twitter-alt"></i>
 										</a>
 										<a class="facebook" href="https://www.facebook.com/VentureCafeRotterdam/">
 											<i class="ti-facebook"></i>
 										</a>
-										<a class="dribble" href="https://dribbble.com/GrayGrids">
+
+										<a class="dribble" href="https://www.instagram.com/venturecaferotterdam/">
 											<i class="ti-instagram"></i>
 										</a>
-										<a class="linkedin" href="https://www.linkedin.com/GrayGrids">
+										<a class="linkedin" href="https://www.linkedin.com/company/venturecaferotterdam">
 											<i class="ti-linkedin"></i>
 										</a>
 									</div>
