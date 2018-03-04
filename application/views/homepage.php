@@ -38,11 +38,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<link rel="stylesheet" href="assets/css/slicknav.css" type="text/css">
 		<!-- Responsive CSS Styles -->
 		<link rel="stylesheet" href="assets/css/responsive.css" type="text/css">
-		<link rel="stylesheet" href="assets/css/homepage.css" type="text/css">
-
 		<!-- Color CSS Styles  -->
 		<link rel="stylesheet" type="text/css" href="assets/css/colors/red.css" media="screen" />
-
+		<link rel="stylesheet" href="assets/css/homepage.css" type="text/css">
+		
 	</head>
 
 	<body>
@@ -310,17 +309,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										<a class="facebook" href="https://www.facebook.com/VentureCafeRotterdam/">
 											<i class="ti-facebook"></i>
 										</a>
-<<<<<<< HEAD
-										<a class="dribble" href="https://www.instagram.com/venturecaferotterdam/">
-											<i class="ti-instagram"></i>
-										</a>
-										<a class="linkedin" href="https://www.linkedin.com/company/venturecaferotterdam/">
-=======
 										<a class="instagram" href="http://instagram.com/venturecaferotterdam/">
 											<i class="ti-instagram"></i>
 										</a>
 										<a class="linkedin" href="https://www.linkedin.com/company/venturecaferotterdam">
->>>>>>> e82eed6eadced13e2b82570d04420da0d9da85ee
 											<i class="ti-linkedin"></i>
 										</a>
 									</div>
