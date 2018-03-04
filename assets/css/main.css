@@ -54,7 +54,7 @@ p {
 }
 
 a {
-	color: rgb(53, 52, 52);
+	color: rgb(117, 116, 116);
 	-webkit-transition: all .3s linear;
 	-moz-transition: all .3s linear;
 	-ms-transition: all .3s linear;
@@ -1846,7 +1846,7 @@ footer .block-title {
 }
 
 footer .footer-Content {
-	background-color: #434343;
+	background-color: #2F3235;
 	padding: 60px 0;
 	color: #fff;
 }
