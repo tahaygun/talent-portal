@@ -49,10 +49,6 @@ p {
 	font-weight: 400;
 }
 
-#titles {
-	color: red;
-}
-
 a {
 	color: rgb(117, 116, 116);
 	-webkit-transition: all .3s linear;
