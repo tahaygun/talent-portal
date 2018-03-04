@@ -1,3 +1,11 @@
 .top-content {
 	margin: 150px;
 }
+
+#text-danger {
+	color: red;
+}
+
+a {
+	color: red;
+}

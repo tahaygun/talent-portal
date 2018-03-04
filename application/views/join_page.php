@@ -100,6 +100,32 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <i class="fa fa-angle"></i>
                   </a>
                 </li>
+                <?php if (isset($_SESSION['id'])) { ?>
+										<li>
+										<a href="blog.html">
+											My Page
+											<i class="fa fa-angle-down"></i>
+										</a>
+										 <ul class="dropdown">
+											<li>
+												<a href="">
+												My Page
+												</a>
+											</li>
+											<li>
+												<a href="index-02.html">
+												New Posting
+												</a>                          
+											</li>
+											<li>
+												<a href="/logout">
+												Logout
+												</a>
+											</li>
+											</ul>
+									</li>
+								<?php 
+      } ?>
               </ul>
               <!-- <ul class="nav navbar-nav navbar-right float-right">
                 <li class="left">
@@ -163,7 +189,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                           <div class="form-top-left">
                             <h3> Do you have  a job to offer? <br>
                                Sign up now</h3>
+                             
                               <p>Fill in the form below to post your offer: </p>
+                              
                           </div>
                           <div class="form-top-right">
                             <i class="fa fa-pencil"></i>
@@ -202,7 +230,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                               <input type="password" name="confpassword" placeholder=" Confirm your Password" class="form-conf-password form-control" id="confpassword">
                               <?= form_error('confpassword') ? form_error('confpassword') : '' ?>
                             </div>
-                            <button type="submit" class="btn btn-common btn-rm">Sign me up!</button>
+                            <button type="submit" class="btn btn-common btn-rm">Sign me up!</button> <br> <br>
+                            <h4> <?= isset($_SESSION['message']) ? $_SESSION['message'] : '' ?></h4>
+                           
                             <!-- <a href="job-details.html" class="btn btn-common btn-rm">More Detail</a> -->
                         </form>
                       </div>
@@ -217,24 +247,25 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <div class="form-top">
                           <div class="form-top-left">
                             <h3>Login to our site</h3>
-                              <p>Enter username and password to log on:</p><br>
+                              <p>Enter email and password to login:</p><br>
                           </div>
                           <div class="form-top-right">
                             <i class="fa fa-key"></i>
                           </div>
                           </div>
                           <div class="form-bottom">
-                        <form role="form" action="" method="post" class="login-form">
+                        <form role="form" action="/login" method="post" class="login-form">
                           <div class="form-group">
                             <label class="sr-only" for="form-email">Email</label>
-                            <input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+                            <input type="text" name="email" placeholder="Email..." class="form-email form-control" id="form-email">
                           </div>
 
                             <div class="form-group">
                               <label class="sr-only" for="form-password">Password</label>
-                              <input type="password" name="form-password" placeholder="Password" class="form-password form-control" id="form-password">
+                              <input type="password" name="password" placeholder="Password" class="form-password form-control" id="form-password">
                             </div>
-                            <button type="submit" class="btn btn-common btn-rm">Sign in!</button>
+                            <button type="submit" class="btn btn-common btn-rm">Sign in!</button> <br><br>
+                            <h4> <?= isset($_SESSION['logerror']) ? $_SESSION['logerror'] : '' ?></h4>
                         </form>
                       </div>
                     </div>

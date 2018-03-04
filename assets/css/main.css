@@ -50,7 +50,7 @@ p {
 }
 
 a {
-	color: #444;
+	color: white;
 	-webkit-transition: all .3s linear;
 	-moz-transition: all .3s linear;
 	-ms-transition: all .3s linear;
@@ -1519,7 +1519,7 @@ label {
 }
 
 /* ==========================================================================
-   purchase 
+   purchase
    ========================================================================== */
 
 .purchase {
@@ -1544,7 +1544,7 @@ label {
 }
 
 /* ==========================================================================
-   Blog 
+   Blog
    ========================================================================== */
 
 #blog .blog-item-wrapper {
@@ -1851,7 +1851,7 @@ footer .footer-Content {
 	font-size: 14px;
 	font-weight: 300;
 	line-height: 24px;
-	color: #fff;
+	color: white;
 }
 
 footer .menu {
@@ -1863,7 +1863,7 @@ footer .menu li {
 }
 
 footer .menu li a {
-	color: #fff;
+	color: white;
 	padding: 0px;
 }
 

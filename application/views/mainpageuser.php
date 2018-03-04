@@ -38,10 +38,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<link rel="stylesheet" href="assets/css/slicknav.css" type="text/css">
 		<!-- Responsive CSS Styles -->
 		<link rel="stylesheet" href="assets/css/responsive.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/homepage.css" type="text/css">
+
 		<!-- Color CSS Styles  -->
 		<link rel="stylesheet" type="text/css" href="assets/css/colors/red.css" media="screen" />
-		<link rel="stylesheet" href="assets/css/homepage.css" type="text/css">
-		
+
 	</head>
 
 	<body>
@@ -98,34 +99,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											<i class="fa fa-angle"></i>
 										</a>
 									</li>
-									<?php if (isset($_SESSION['id'])) { ?>
-										<li>
-										<a href="#">
-											My Page
-											<i class="fa fa-angle-down"></i>
-										</a>
-										 <ul class="dropdown">
-											<li>
-												<a href="">
-												My Page
-												</a>
-											</li>
-											<li>
-												<a href="index-02.html">
-												New Posting
-												</a>                          
-											</li>
-											<li>
-												<a href="/logout">
-												Logout
-												</a>
-											</li>
-											</ul>
-									</li>
-								<?php 
-						} ?>
 								</ul>
-
+								<!-- <ul class="nav navbar-nav navbar-right float-right">
+                <li class="left">
+                  <a href="post-job.html">
+                    <i class="ti-pencil-alt"></i> Post A Job</a>
+                </li>
+                <li class="right">
+                  <a href="my-account.html">
+                    <i class="ti-lock"></i> Log In</a>
+                </li>
+              </ul> -->
 							</div>
 						</div>
 						<!-- Mobile Menu Start -->
@@ -134,19 +118,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<a class="active" href="index.html">Home</a>
 							</li>
 							<li>
-								<a href="">Companies</a>
+								<a href="about.html">Pages</a>
 
 							</li>
 							<li>
-								<a href="#">Jobs</a>
+								<a href="#">For Candidates</a>
 
 							</li>
 							<li>
-								<a href="https://venturecaferotterdam.org/who-we-are/">About Us</a>
+								<a href="#">For Employers</a>
 
 							</li>
 							<li>
-								<a href="https://venturecaferotterdam.org/">Venture Cafe</a>
+								<a href="blog.html">Blog</a>
 
 							</li>
 							<!-- <li class="btn-m">
@@ -268,7 +252,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 			<!-- Footer Section Start -->
-			<footer id="footerid">
+			<footer>
 				<!-- Footer Area Start -->
 				<section class="footer-Content">
 					<div class="container">
@@ -288,13 +272,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<a href="/joinpage">&nbsp Company Login</a>
 
 
-									<a href="https://venturecaferotterdam.org/sponsor/">&nbsp&nbsp Support</a>
+									<a href="#">&nbsp&nbsp Support</a>
 
 
 									<a href="#">&nbsp&nbsp License</a>
 
 
-									<a href="https://venturecaferotterdam.org/contact/">&nbsp&nbsp Contact</a>
+									<a href="#">&nbsp&nbsp Contact</a>
 
 								</div>
 							</div>
@@ -303,16 +287,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<div class="widget">
 
 									<div class="bottom-social-icons social-icon">
-										<a class="twitter" href="https://twitter.com/VentureCafeRdam">
+										<a class="twitter" href="https://twitter.com/GrayGrids">
 											<i class="ti-twitter-alt"></i>
 										</a>
 										<a class="facebook" href="https://www.facebook.com/VentureCafeRotterdam/">
 											<i class="ti-facebook"></i>
 										</a>
-										<a class="instagram" href="http://instagram.com/venturecaferotterdam/">
+										<a class="dribble" href="https://dribbble.com/GrayGrids">
 											<i class="ti-instagram"></i>
 										</a>
-										<a class="linkedin" href="https://www.linkedin.com/company/venturecaferotterdam">
+										<a class="linkedin" href="https://www.linkedin.com/GrayGrids">
 											<i class="ti-linkedin"></i>
 										</a>
 									</div>
