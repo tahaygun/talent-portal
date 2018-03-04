@@ -126,11 +126,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 							</li>
 							<li>
-								<a href="#">About Us</a>
+								<a href="https://venturecaferotterdam.org/who-we-are/">About Us</a>
 
 							</li>
 							<li>
-								<a href="#">Venture Cafe</a>
+								<a href="https://venturecaferotterdam.org/">Venture Cafe</a>
 
 							</li>
 							<!-- <li class="btn-m">
@@ -206,7 +206,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="row">
 						<div class="col-md-12">
 							<?php foreach ($data as $posting) { ?>
-								
+
 
 							<div class="job-list col-md-12">
 								<div class="thumb">
@@ -272,13 +272,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<a href="/joinpage">&nbsp Company Login</a>
 
 
-									<a href="#">&nbsp&nbsp Support</a>
+									<a href="https://venturecaferotterdam.org/sponsor/">&nbsp&nbsp Support</a>
 
 
 									<a href="#">&nbsp&nbsp License</a>
 
 
-									<a href="#">&nbsp&nbsp Contact</a>
+									<a href="https://venturecaferotterdam.org/contact/">&nbsp&nbsp Contact</a>
 
 								</div>
 							</div>
@@ -287,16 +287,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<div class="widget">
 
 									<div class="bottom-social-icons social-icon">
-										<a class="twitter" href="https://twitter.com/GrayGrids">
+										<a class="twitter" href="https://twitter.com/VentureCafeRdam">
 											<i class="ti-twitter-alt"></i>
 										</a>
 										<a class="facebook" href="https://www.facebook.com/VentureCafeRotterdam/">
 											<i class="ti-facebook"></i>
 										</a>
-										<a class="dribble" href="https://dribbble.com/GrayGrids">
+										<a class="dribble" href="https://www.instagram.com/venturecaferotterdam/">
 											<i class="ti-instagram"></i>
 										</a>
-										<a class="linkedin" href="https://www.linkedin.com/GrayGrids">
+										<a class="linkedin" href="https://www.linkedin.com/company/venturecaferotterdam/">
 											<i class="ti-linkedin"></i>
 										</a>
 									</div>
