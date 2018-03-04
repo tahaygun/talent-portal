@@ -100,32 +100,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <i class="fa fa-angle"></i>
                   </a>
                 </li>
-                <?php if (isset($_SESSION['id'])) { ?>
-										<li>
-										<a href="blog.html">
-											My Page
-											<i class="fa fa-angle-down"></i>
-										</a>
-										 <ul class="dropdown">
-											<li>
-												<a href="">
-												My Page
-												</a>
-											</li>
-											<li>
-												<a href="index-02.html">
-												New Posting
-												</a>                          
-											</li>
-											<li>
-												<a href="/logout">
-												Logout
-												</a>
-											</li>
-											</ul>
-									</li>
-								<?php 
-      } ?>
               </ul>
               <!-- <ul class="nav navbar-nav navbar-right float-right">
                 <li class="left">
@@ -187,90 +161,35 @@ defined('BASEPATH') or exit('No direct script access allowed');
                       <div class="form-box">
                         <div class="form-top">
                           <div class="form-top-left">
-                            <h3> Do you have  a job to offer? <br>
-                               Sign up now</h3>
-                             
-                              <p>Fill in the form below to post your offer: </p>
-                              
+                            <h3>Job title</h3>
                           </div>
                           <div class="form-top-right">
                             <i class="fa fa-pencil"></i>
                           </div>
                           </div>
                           <div class="form-bottom">
-                        <form role="form" action="/register" method="post" class="registration-form">
+                        <form role="form" action="" method="post" class="job-descript-form">
                           <div class="form-group">
-                            <label class="sr-only" for="companyname">Company name</label>
-                              <input type="text" name="companyname" placeholder="Company name..." class="companyname form-control" id="form-first-name" value="<?= isset($reginfo['companyname']) ? $reginfo['companyname'] : '' ?>">
-                              <?= form_error('companyname') ? form_error('companyname') : '' ?>
+                            <label class="sr-only" for="Jobtitle">Company name</label>
+                              <input type="text" name="Jobtitle" placeholder="Jobtitle" class="Jobtitle form-control" id="form-first-name" value="<?= isset($reginfo['Jobtitle']) ? $reginfo['Jobtitle'] : '' ?>">
+                              <?= form_error('Jobtitle') ? form_error('Jobtitle') : '' ?>
                             </div>
                             <div class="form-group">
-                              <label class="sr-only" for="email">Email</label>
-                              <input type="text" name="email" placeholder="Email..." class="form-email form-control" id="email" value="<?= isset($reginfo['email']) ? $reginfo['email'] : '' ?>">
-                              <?= form_error('email') ? form_error('email') : '' ?>
+                               <label for="exampleFormControlTextarea1">Job description</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"  placeholder="Job description"></textarea>
                             </div>
                             <div class="form-group">
-                              <label class="sr-only" for="contactname"> Contact Person</label>
-                              <input type="text" name="contactname" placeholder="Contact Person" class="form-contact-person-name form-control" id="contactname" value="<?= isset($reginfo['contactname']) ? $reginfo['contactname'] : '' ?>">
-                              <?= form_error('contactname') ? form_error('contactname') : '' ?>
+                               <label for="exampleFormControlTextarea1">Contact information</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"  placeholder="Contact Information"></textarea>
                             </div>
-                            <div class="form-group">
-                              <label class="sr-only" for="phone"> phone</label>
-                              <input type="number" name="phone" placeholder="Phone" class="form-phone form-control" id="phone" value="<?= isset($reginfo['phone']) ? $reginfo['phone'] : '' ?>">
-                              <?= form_error('phone') ? form_error('phone') : '' ?>
-
-                            </div>
-                            <div class="form-group">
-                              <label class="sr-only" for="password">Password</label>
-                              <input type="password" name="password" placeholder="Password" class="form-password form-control" id="password">
-                              <?= form_error('password') ? form_error('password') : '' ?>
-                            </div>
-                            <div class="form-group">
-                              <label class="sr-only" for="confpassword">Password</label>
-                              <input type="password" name="confpassword" placeholder=" Confirm your Password" class="form-conf-password form-control" id="confpassword">
-                              <?= form_error('confpassword') ? form_error('confpassword') : '' ?>
-                            </div>
-                            <button type="submit" class="btn btn-common btn-rm">Sign me up!</button> <br> <br>
-                            <h4> <?= isset($_SESSION['message']) ? $_SESSION['message'] : '' ?></h4>
-                           
+                            <button type="submit" class="btn btn-common btn-rm">APPLY</button>
                             <!-- <a href="job-details.html" class="btn btn-common btn-rm">More Detail</a> -->
                         </form>
                       </div>
                       </div>
 
                     </div>
-                    <div class="col-sm-1 middle-border"></div>
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-5">
-
-                      <div class="form-box">
-                        <div class="form-top">
-                          <div class="form-top-left">
-                            <h3>Login to our site</h3>
-                              <p>Enter email and password to login:</p><br>
-                          </div>
-                          <div class="form-top-right">
-                            <i class="fa fa-key"></i>
-                          </div>
-                          </div>
-                          <div class="form-bottom">
-                        <form role="form" action="/login" method="post" class="login-form">
-                          <div class="form-group">
-                            <label class="sr-only" for="form-email">Email</label>
-                            <input type="text" name="email" placeholder="Email..." class="form-email form-control" id="form-email">
-                          </div>
-
-                            <div class="form-group">
-                              <label class="sr-only" for="form-password">Password</label>
-                              <input type="password" name="password" placeholder="Password" class="form-password form-control" id="form-password">
-                            </div>
-                            <button type="submit" class="btn btn-common btn-rm">Sign in!</button> <br><br>
-                            <h4> <?= isset($_SESSION['logerror']) ? $_SESSION['logerror'] : '' ?></h4>
-                        </form>
-                      </div>
-                    </div>
-
-                    </div>
+                   
                 </div>
 
             </div>

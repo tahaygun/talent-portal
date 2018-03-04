@@ -43,4 +43,13 @@ class Tpmodel extends CI_Model
             return false;
         }
     }
+    public function search($text)
+    {
+        $query = "SELECT * FROM postings
+                JOIN users 
+                ON postings.user_id = users.id
+                WHERE postings.title LIKE '%$text%'";
+        $result = $this->db->query($query)->result_array();
+        return $result;
+    }
 }

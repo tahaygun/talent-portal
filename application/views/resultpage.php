@@ -69,7 +69,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<!-- Start Navigation List -->
 								<ul class="nav navbar-nav navbar-right">
 									<li>
-										<a class="active" href="index.html">
+										<a  href="/">
 											Home
 											<i class="fa fa-angle"></i>
 										</a>
@@ -217,7 +217,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<!-- Find Job Section Start -->
 			<section class="find-job section">
 				<div class="container">
-					<h2 class="section-title">Highlighted Jobs</h2>
+					<h2 class="section-title">Results</h2>
 					<div class="row">
 						<div class="col-md-12">
 							<?php foreach ($data as $posting) { ?>

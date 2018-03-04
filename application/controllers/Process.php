@@ -5,6 +5,7 @@ class Process extends CI_Controller
 {
 	public function index()
 	{
+
 		$data = $this->tpmodel->highlightedpostings();
 		$this->load->view('homepage', array('data' => $data));
 	}
@@ -54,18 +55,23 @@ class Process extends CI_Controller
 				$this->session->set_flashdata('logerror', 'Wrong password or email !');
 				redirect('/joinpage');
 			}
-
-		}
-	}
+    }
 	public function openmainpage()
 	{
 		$this->load->view('mainpageuser');
+  }
 
+	public function search()
+	{
+		$result = $this->input->post(null, true);
+		$data = $this->tpmodel->search($result['searchinput']);
+		$this->load->view('resultpage', array('data' => $data));
 	}
 	public function logout()
 	{
 		session_destroy();
 		redirect('/');
+
 
 	}
 }
