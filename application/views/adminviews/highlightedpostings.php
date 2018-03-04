@@ -207,8 +207,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</div>
 										<div class="pull-right">
 
-											<a href="/details" class="btn btn-common btn-rm">Edit</a>
-											<a href="/details" class="btn btn-common btn-rm">Delete</a>
+											<a href="#" class="btn btn-common btn-sm">Remove</a>
+											<a href="#" class="btn btn-common btn-sm">Edit</a>
+											<a href="#" class="btn btn-common btn-sm">Delete</a>
 										</div>
 									</div>
 								</div>
@@ -219,7 +220,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 						 <?php
 
-    } ?>
+					} ?>
 
 						</div>
 					</div>

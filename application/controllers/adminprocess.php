@@ -21,6 +21,6 @@ class Adminprocess extends CI_Controller
     public function highlightedposts()
     {
         $data = $this->tpmodel->highlightedpostings();
-        $this->load->view('adminviews/postrequests', array('data' => $data));
+        $this->load->view('adminviews/highlightedpostings', array('data' => $data));
     }
 }

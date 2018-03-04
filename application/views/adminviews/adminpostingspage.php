@@ -178,7 +178,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<!-- Find Job Section Start -->
 			<section class="find-job section">
 				<div class="container">
-					<h2 class="section-title">My Postings</h2>
+					<h2 class="section-title">All Postings</h2>
 					<div class="row">
 						<div class="col-md-12">
 							<?php foreach ($data as $posting) { ?>
@@ -204,17 +204,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 													<a href="browse-categories.html">➦ <?= $posting['companyname'] ?></a>
 												</span>
 												<span>
-													<a href="#">➦ <?= $posting['active'] == 0 ? "Requested" : "Active" ?></a>
+													<a style="color:green" href="#">➦ <?= $posting['active'] == 0 ? "Requested" : "Active" ?></a>
 												</span>
 												<span>
-													<a href="#">➦ <?= $posting['highlighted'] == 1 ? "Highlighted" : "" ?></a>
+													<a style="color:orange" href="#"> <?= $posting['highlighted'] == 1 ? "➦ Highlighted" : "" ?></a>
 												</span>
 											</div>
 										</div>
 										<div class="pull-right">
 
-											<a href="/details" class="btn btn-common btn-rm">Edit</a>
-											<a href="/details" class="btn btn-common btn-rm">Delete</a>
+											<a href="/details" class="btn btn-common btn-sm">Edit</a>
+											<a href="/details" class="btn btn-common btn-sm">Delete</a>
 										</div>
 									</div>
 								</div>
