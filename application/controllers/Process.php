@@ -56,6 +56,7 @@ class Process extends CI_Controller
 				redirect('/joinpage');
 			}
     }
+	}
 	public function openmainpage()
 	{
 		$this->load->view('mainpageuser');
