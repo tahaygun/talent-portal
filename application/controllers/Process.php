@@ -46,7 +46,7 @@ class Process extends CI_Controller
 		$notapproved = $this->tpmodel->accountchecker($email, $password);
 		if ($result) {
 			$this->session->set_userdata('id', $result['id']);
-			redirect('/mainpageuser');
+			redirect('/mypage');
 		} else {
 			if ($notapproved) {
 				$this->session->set_flashdata('logerror', 'Your account is not confirmed !');
@@ -66,7 +66,8 @@ class Process extends CI_Controller
 
 	public function openmainpage()
 	{
-		$this->load->view('mainpageuser');
+		$data = $this->tpmodel->mypage($_SESSION['id']);
+		$this->load->view('mainpageuser', array('data' => $data));
 	}
 
 	public function search()

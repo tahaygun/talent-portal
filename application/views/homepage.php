@@ -108,7 +108,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</a>
 										 <ul class="dropdown">
 											<li>
-												<a href="">
+												<a href="/mypage">
 												My Page
 												</a>
 											</li>
@@ -151,14 +151,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<a href="https://venturecaferotterdam.org/">Venture Cafe</a>
 
 							</li>
-							<!-- <li class="btn-m">
-              <a href="post-job.html">
-                <i class="ti-pencil-alt"></i> Post A Job</a>
-            </li>
-            <li class="btn-m">
-              <a href="my-account.html">
-                <i class="ti-lock"></i> Log In</a>
-            </li> -->
 						</ul>
 						<!-- Mobile Menu End -->
 					</nav>

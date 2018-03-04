@@ -72,7 +72,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<!-- Start Navigation List -->
 								<ul class="nav navbar-nav navbar-right">
 									<li>
-										<a class="active" href="index.html">
+										<a  href="/">
 											Home
 											<i class="fa fa-angle"></i>
 										</a>
@@ -103,13 +103,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</li>
 									<?php if (isset($_SESSION['id'])) { ?>
 										<li>
-										<a href="#">
+										<a class="active" href="#">
 											My Page
-											<i class="fa fa-angle-down"></i>
+											<i class="fa fa-angle-down "></i>
 										</a>
 										 <ul class="dropdown">
 											<li>
-												<a href="">
+												<a class="active" href="#">
 												My Page
 												</a>
 											</li>
@@ -126,6 +126,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											</ul>
 									</li>
 								<?php
+
 						} ?>
 								</ul>
 
@@ -152,14 +153,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<a href="https://venturecaferotterdam.org/">Venture Cafe</a>
 
 							</li>
-							<!-- <li class="btn-m">
-              <a href="post-job.html">
-                <i class="ti-pencil-alt"></i> Post A Job</a>
-            </li>
-            <li class="btn-m">
-              <a href="my-account.html">
-                <i class="ti-lock"></i> Log In</a>
-            </li> -->
 						</ul>
 						<!-- Mobile Menu End -->
 					</nav>
@@ -172,53 +165,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<!-- Find Job Section Start -->
 			<section class="find-job section">
 				<div class="container">
-					<h2 class="section-title">Welcome to your homepage</h2>
+					<h2 class="section-title">My Postings</h2>
 					<div class="row">
 						<div class="col-md-12">
-											<div class="job-list col-md-12">
-												<div class="thumb">
-													<a href="job-details.html">
-														<img src="assets/img/jobs/img-1.jpg" alt="">
-													</a>
-												</div>
-												<div class="job-list-content">
-													<h4>
-														<a href="job-details.html"><?= $posting['title'] ?></a>
-													</h4> <p class="descriptions"><?= $posting['description'] ?> </p>
-													<div class="job-tag">
-														<div class="pull-left">
-															<div class="meta-tag">
-																<span>
-																	<a href="browse-categories.html"># Art/Design</a>
-																</span>
-
-															</div>
-														</div>
-														<div class="pull-right">
-
-														</div>
-													</div>
-												</div>
-											</div>
+							<?php foreach ($data as $posting) { ?>
 
 
-							<!-- <div class="job-list col-md-12">
+							<div class="job-list col-md-12">
 								<div class="thumb">
 									<a href="job-details.html">
 										<img src="assets/img/jobs/img-1.jpg" alt="">
 									</a>
 								</div>
 								<div class="job-list-content">
-									<h3>
-										<p class="job_title"> here should be a title </p>
-									</h3>
-									<h3>
-										<p class="job_title_user">Here are the jobs that you recently added </p>
-									</h3>
-									<h4>
-										<a href="job_description"></a>
-										<p class="descriptions"> here should be a description </p>
-									</h4>
+									<h4 id="titles">
+										<a href="job-details.html"><?= $posting['title'] ?></a>
+									</h4> <p class="descriptions"><?= $posting['description'] ?> </p>
 									<div class="job-tag">
 										<div class="pull-left">
 											<div class="meta-tag">
@@ -226,17 +188,29 @@ defined('BASEPATH') or exit('No direct script access allowed');
 													<a href="browse-categories.html"># Art/Design</a>
 												</span>
 												<span>
-													<a href="browse-categories.html">➦</a>
+													<a href="browse-categories.html">➦ <?= $posting['companyname'] ?></a>
 												</span>
 											</div>
 										</div>
-										<div class="pull-right"> -->
+										<div class="pull-right">
 
-											<a href="edit_button" class="btn btn-common btn-rm">Edit</a>
-											<a href="delete_button" class="btn btn-common btn-rm">Delete</a>
+											<a href="/details" class="btn btn-common btn-rm">Edit</a>
+											<a href="/details" class="btn btn-common btn-rm">Delete</a>
 										</div>
 									</div>
 								</div>
+							</div>
+
+
+
+
+						 <?php
+
+					} ?>
+
+						</div>
+					</div>
+				</div>
 			</section>
 			<!-- Find Job Section End -->
 
