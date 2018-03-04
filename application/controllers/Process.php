@@ -11,7 +11,7 @@ class Process extends CI_Controller
 	}
 	public function openjoinpage()
 	{
-		$this->load->view('postjob_page');
+		$this->load->view('join_page');
 
 	}
 	public function register()
@@ -55,12 +55,12 @@ class Process extends CI_Controller
 				$this->session->set_flashdata('logerror', 'Wrong password or email !');
 				redirect('/joinpage');
 			}
-    }
+		}
 	}
 	public function openmainpage()
 	{
 		$this->load->view('mainpageuser');
-  }
+	}
 
 	public function search()
 	{
