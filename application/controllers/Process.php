@@ -13,13 +13,6 @@ class Process extends CI_Controller
 	{
 		$this->load->view('join_page');
 
-		$data = $this->tpmodel->highlightedpostings();
-		$this->load->view('homepage', array('data' => $data));
-	}
-	public function openjoinpage()
-	{
-		$this->load->view('join_page');
-
 	}
 	public function register()
 	{
