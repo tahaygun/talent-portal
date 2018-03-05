@@ -242,15 +242,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 													<input class="form-control" type="text" name="tp-link" value="<?= isset($postinfo['tp-link']) ? $postinfo['tp-link'] : '' ?>" placeholder="Link">
 													<h6 style="color:#f45342;"><?= form_error('tp-link') ? form_error('tp-link') : '' ?></h6>
 												</div>
-<<<<<<< HEAD
-												<div>
-													<p>Supporting image max 8mb</p>
-													<input type="file" name="image" id="">
-=======
 												<div class="form-group">
 													<p>Supporting image max 8mb</p>
 													<input type="file" name="tp-support-image" id="">
->>>>>>> 9e6bb4c54979edc18bb19ba2b8f753d374a8957b
 												</div>
 												
 												<button type="submit" class="btn btn-common btn-rm">Submit</button> <br>

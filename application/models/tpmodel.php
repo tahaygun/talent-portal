@@ -128,7 +128,7 @@ class Tpmodel extends CI_Model
     public function insertpostings($arg)
     {
         $query = "INSERT INTO `postings`(`user_id`, `title`, `description`, `about`, `identifies`, `tags`, `startdate`, `enddate`, `link`) VALUES (?,?,?,?,?,?,?,?,?)";
-        $values = [$arg['tp-user_id'], $arg['tp-title'], $arg['tp-description'], $arg['tp-about'], $arg['tp-identifies'], $arg['tp-tags'], $arg['tp-startgdate'], $arg['tp-enddate'], $arg['tp-link']];
+        $values = [$arg['tp-user_id'], $arg['tp-title'], $arg['tp-description'], $arg['tp-about'], $arg['tp-identifies'], $arg['tp-tags'], $arg['tp-startdate'], $arg['tp-enddate'], $arg['tp-link']];
 
         $this->db->query($query, $values);
 

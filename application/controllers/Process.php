@@ -5,7 +5,7 @@ class Process extends CI_Controller
 {
 	public function index()
 	{
-		if (isset($_SESSION['level']) && ($_SESSION['level'] == 1)) {
+		if (isset($_SESSION['level']) && ($_SESSION['level'] != 3)) {
 			redirect('/admin-home');
 		} else {
 			$data = $this->tpmodel->highlightedpostings();
