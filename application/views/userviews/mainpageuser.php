@@ -185,10 +185,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										<div class="pull-left">
 											<div class="meta-tag">
 												<span>
-													<a href="browse-categories.html"># Art/Design</a>
+													<a href=""><?= $posting['identifies'] ?></a>
 												</span>
 												<span>
-													<a href="browse-categories.html">➦ <?= $posting['companyname'] ?></a>
+													<a href="">➦ <?= $posting['companyname'] ?></a>
+												</span>
+												<span>
+													<a style="color:green" href="#">➦ <?= $posting['active'] == 0 ? "Requested" : "Active" ?></a>
+												</span>
+												<span>
+													<a style="color:orange" href="#"> <?= $posting['highlighted'] == 1 ? "➦ Highlighted" : "" ?></a>
 												</span>
 											</div>
 										</div>

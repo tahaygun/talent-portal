@@ -912,8 +912,26 @@ nav#menu span.fa.fa-bars:hover {
     intro section style
     ====================================================*/
 
+.backgroundven {
+	background: url("/assets/img/venturecafe.jpg") center center no-repeat;
+	background-size: cover;
+	color: #fff;
+	position: relative;
+	width: 100%;
+}
+
+.backgroundven:before {
+	content: "";
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	background-color: rgba(42, 46, 50, 0.7);
+	position: absolute;
+}
+
 .section-intro {
-	background: url("https://venturecaferotterdam.org/wp-content/uploads/2018/01/Vencaf_15_06_inside_promo_bg.jpg") center center no-repeat;
+	background: url("/assets/img/venturecafe.jpg") center center no-repeat;
 	background-size: cover;
 	color: #fff;
 	position: relative;
