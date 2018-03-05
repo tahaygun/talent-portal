@@ -24,7 +24,8 @@ $route['editnowadmin'] = 'adminprocess/editnow';
 $route['details-admin'] = 'adminprocess/detailspageadmin';
 $route['options-admin'] = 'adminprocess/optionsadmin';
 $route['add-admin'] = 'adminprocess/addadmin';
-
+$route['delete/(:any)'] = 'process/deletepage/$1';
+$route['deletenow'] = 'process/deletenow';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = false;

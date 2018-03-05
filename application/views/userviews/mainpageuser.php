@@ -201,7 +201,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										<div class="pull-right">
 
 											<a href="/edit/<?= $posting['id'] ?>" class="btn btn-common btn-rm">Edit</a>
-											<a href="/details" class="btn btn-common btn-rm">Delete</a>
+											<a href="/delete/<?= $posting['id']?>" class="btn btn-common btn-rm">Delete</a>
 										</div>
 									</div>
 								</div>

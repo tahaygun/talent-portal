@@ -187,4 +187,50 @@ class Process extends CI_Controller
 
 
 	}
+
+	public function deletepage($id)
+	{
+		$postinfo = $this->tpmodel->deleteinfo($id);
+		if ($_SESSION['level'] != 1) {
+			if ($_SESSION['id'] == $postinfo['user_id']) {
+				$this->load->view('userviews/deletepage', array('postinfo' => $postinfo));
+			} else {
+				redirect('/mypage');
+			}
+		} else {
+			$this->load->view('userviews/deletepage', array('postinfo' => $postinfo));
+		}
+
+		
+	public function deletenow($id)
+	{
+		if (isset($_SESSION['id'])) {
+			$postinfo = $this->input->post(null, true);
+			
+			$this->tpmodel->delete($postinfo);
+			redirect('/');
+		}
+
+	}
+
+
+
+
+
+
+
+
+	}
+
+
+
+
+
+
+
+
+
 }
+
+
+

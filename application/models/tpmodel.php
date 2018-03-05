@@ -158,4 +158,15 @@ class Tpmodel extends CI_Model
         $values = [$arg['name'], $arg['email'], $arg['password'], $arg['level'], 1];
         $this->db->query($query, $values);
     }
+
+     public function deleteinfo($id)
+    {
+        $query = "DELETE  FROM postings WHERE id=?";
+                
+        $values = [$id];
+        $result = $this->db->query($query, $values);
+         return $result;
+    }
+
+
 }
