@@ -183,21 +183,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										<div class="form-group">
 											<h4>Job Title
 												<h4>
-													<textarea name="tp-title" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Max 255 characters"><?= isset($postinfo['tp-title']) ? $postinfo['tp-title'] : '' ?></textarea>
+													<textarea name="tp-title" class="form-control" id="title" rows="3" placeholder="Max 255 characters"><?= isset($postinfo['tp-title']) ? $postinfo['tp-title'] : '' ?></textarea>
 													 <h6 style="color:#f45342;"><?= form_error('tp-title') ? form_error('tp-title') : '' ?>
 										</div>
 
 										<div class="form-group">
 											<h4>Job Description
 												<h4>
-													<textarea name="tp-description" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Max 500 characters"><?= isset($postinfo['tp-description']) ? $postinfo['tp-description'] : '' ?></textarea>
+													<textarea name="tp-description" class="form-control" id="" rows="5" placeholder="Max 500 characters"><?= isset($postinfo['tp-description']) ? $postinfo['tp-description'] : '' ?></textarea>
 													<h6 style="color:#f45342;"><?= form_error('tp-description') ? form_error('tp-description') : '' ?></h6>
 										</div>
 
 										<div class="form-group">
 											<h4>Tags
 												<h4>
-													<textarea name="tp-tags" class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="Tags"><?= isset($postinfo['tp-tags']) ? $postinfo['tp-tags'] : '' ?></textarea>
+													<textarea name="tp-tags" class="form-control" id="" rows="1" placeholder="Tags"><?= isset($postinfo['tp-tags']) ? $postinfo['tp-tags'] : '' ?></textarea>
 													<p>growth, international, city, talent, community, resilience, culture, digital, energy, inspiration</p>
 													<h6 style="color:#f45342;"><?= form_error('tp-tags') ? form_error('tp-tags') : '' ?></h6>
 										</div>
@@ -206,14 +206,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											<h4>About company
 												<h4>
 													<label class="sr-only" for="companyinofo">About a company</label>
-													<textarea name="tp-about" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Max 255 characters"><?= isset($postinfo['tp-about']) ? $postinfo['tp-about'] : '' ?></textarea>
+													<textarea name="tp-about" class="form-control" id="" rows="5" placeholder="Max 255 characters"><?= isset($postinfo['tp-about']) ? $postinfo['tp-about'] : '' ?></textarea>
 													<h6 style="color:#f45342;"><?= form_error('tp-about') ? form_error('tp-about') : '' ?></h6>
 													<input type="hidden" name="tp-user_id" value="<?= $_SESSION['id'] ?>">
 										</div>
 										<h4>Identifies
 											<h4>
 											<div class="form-group">
-												<select name="tp-identifies" class="form-control" id="exampleFormControlSelect1">
+												<select name="tp-identifies" class="form-control" id="">
 												<option><?= isset($postinfo['tp-identifies']) ? $postinfo['tp-identifies'] : '' ?></option>
 												<option>Startup</option>
 												<option>Service</option>

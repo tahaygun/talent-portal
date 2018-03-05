@@ -23,4 +23,18 @@ class Adminprocess extends CI_Controller
         $data = $this->tpmodel->highlightedpostings();
         $this->load->view('adminviews/highlightedpostings', array('data' => $data));
     }
+    public function editpageadmin($id)
+    {
+        $postinfo = $this->tpmodel->editinfo($id);
+
+        $this->load->view('adminviews/editpageadmin', array('postinfo' => $postinfo));
+
+    }
+    public function editnow()
+    {
+        $postinfo = $this->input->post(null, true);
+        $this->tpmodel->editadmin($postinfo);
+        redirect('/');
+    }
 }
+

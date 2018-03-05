@@ -117,7 +117,9 @@ class Tpmodel extends CI_Model
     }
     public function editinfo($id)
     {
-        $query = "SELECT * FROM postings
+        $query = "SELECT * FROM users
+                 JOIN postings
+                ON postings.user_id = users.id
                  WHERE postings.id=?";
         $values = [$id];
         $result = $this->db->query($query, $values)->row_array();
@@ -136,6 +138,15 @@ class Tpmodel extends CI_Model
     {
         $query = "UPDATE `postings` SET `title`= ? ,`description`= ?,`about`=?,`identifies`= ?,`tags`=?,`startdate`=?,`enddate`=?,`link`=? WHERE postings.id= ?";
         $values = [$arg['tp-title'], $arg['tp-description'], $arg['tp-about'], $arg['tp-identifies'], $arg['tp-tags'], $arg['tp-startdate'], $arg['tp-enddate'], $arg['tp-link'], $arg['tp-posting_id']];
+
+        $this->db->query($query, $values);
+
+
+    }
+    public function editadmin($arg)
+    {
+        $query = "UPDATE `postings` SET `title`= ? ,`description`= ?,`about`=?,`identifies`= ?,`tags`=?,`startdate`=?,`enddate`=?,`active`=?, `highlighted`=?,`link`=? WHERE postings.id= ?";
+        $values = [$arg['tp-title'], $arg['tp-description'], $arg['tp-about'], $arg['tp-identifies'], $arg['tp-tags'], $arg['tp-startdate'], $arg['tp-enddate'], $arg['tp-active'], $arg['tp-highlighted'], $arg['tp-link'], $arg['tp-posting_id']];
 
         $this->db->query($query, $values);
 

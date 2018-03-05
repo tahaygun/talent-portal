@@ -82,12 +82,20 @@ class Process extends CI_Controller
 	public function editpage($id)
 	{
 		$postinfo = $this->tpmodel->editinfo($id);
-		$this->load->view('userviews/editpage', array('postinfo' => $postinfo));
+		if ($_SESSION['level'] != 1) {
+			if ($_SESSION['id'] == $postinfo['user_id']) {
+				$this->load->view('userviews/editpage', array('postinfo' => $postinfo));
+			} else {
+				redirect('/');
+			}
+		} else {
+			$this->load->view('userviews/editpage', array('postinfo' => $postinfo));
+		}
 	}
 	public function editnow()
 	{
 		$postinfo = $this->input->post(null, true);
-		$this->form_validation->set_rules('tp-title', 'Title', 'required|min_length[12]|max_length[255]');
+		$this->form_validation->set_rules('tp-title', 'Title', 'required|max_length[255]');
 		$this->form_validation->set_rules('tp-description', 'Description', 'required|min_length[80]|max_length[500]');
 		$this->form_validation->set_rules('tp-tags', 'Tags', 'required');
 		$this->form_validation->set_rules('tp-about', 'About Company', 'required|max_length[500]|min_length[20]');

@@ -268,6 +268,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</div>
 			</div>
 		</section>
+		
 		<!-- Find Job Section End -->
 
 

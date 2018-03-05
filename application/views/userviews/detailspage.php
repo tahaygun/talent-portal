@@ -199,9 +199,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<li>Ending Date: <?= $data['enddate'] ?></li>
 							<li>Company Identifies: <?= $data['identifies'] ?></li>
 						</ul> <br>
-						<a href="https://<?= $data['link'] ?>" class="btn btn-common">Apply</a>
+						<a href="<?= $data['link'] ?>" class="btn btn-common">Apply</a>
 						<?php if (isset($_SESSION['id']) && $_SESSION['id'] == $data['user_id']) { ?>
-						<a href="https://<?= $data['link'] ?>" class="btn btn-common">Edit</a>
+						<a href="/edit/<?= $data['id'] ?>" class="btn btn-common">Edit</a>
 					<?php 
 			} ?>
           </div>

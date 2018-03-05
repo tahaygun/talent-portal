@@ -46,6 +46,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<body>
 		<!-- Header Section Start -->
+		<!-- Header Section Start -->
 		<div class="header">
 			<!-- Start intro section -->
 			<section id="intro" class="section-intro">
@@ -61,7 +62,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<span class="icon-bar"></span>
 								</button>
 								<a class="navbar-brand logo" href="/">
-									<img src="/assets/img/logov.png" alt="" width="190px;">
+									<img src="assets/img/logov.png" alt="" width="190px;">
 								</a>
 							</div>
 
@@ -75,43 +76,66 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</a>
 									</li>
 									<li>
-										<a href="about.html">
-											Companies
-											<i class="fa fa-angle"></i>
-										</a>
-									</li>
-									<li>
-										<a href="/jobs">
-											Jobs
-											<i class="fa fa-angle"></i>
-										</a>
-									</li>
-									<li>
-										<a href="https://venturecaferotterdam.org/who-we-are/">
-											About Us
-											<i class="fa fa-angle"></i>
-										</a>
-									</li>
-									<li>
-										<a href="https://venturecaferotterdam.org/">
-											Venture Cafe
-											<i class="fa fa-angle"></i>
-										</a>
-									</li>
-									<?php if (isset($_SESSION['id'])) { ?>
-									<li>
-										<a  href="#">
-											My Page
+										<a class="active" href="#">
+											Postings
 											<i class="fa fa-angle-down"></i>
 										</a>
 										<ul class="dropdown">
 											<li>
-												<a href="/mypage">
+												<a class="active" href="/admin-home">
+													All Postings
+												</a>
+											</li>
+											<li>
+												<a href="/post-requests">
+													Posting Requests
+												</a>
+											</li>
+											<li>
+												<a href="/highlighted-posts">
+													Highlighted Postings
+												</a>
+											</li>
+										</ul>
+
+									</li>
+									<li>
+										<a href="companies">
+											Companies
+											<i class="fa fa-angle-down"></i>
+										</a>
+										<ul class="dropdown">
+											<li>
+												<a href="#">
+													All Companies
+												</a>
+											</li>
+											<li>
+												<a href="">
+													Company Requests
+												</a>
+											</li>
+											<li>
+												<a href="">
+													Trusted Companies
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li>
+										<a href="#">
+											My Page
+											<i class="fa fa-angle-down "></i>
+										</a>
+										<ul class="dropdown">
+											<li>
+												<a href="#">
 													My Page
 												</a>
 											</li>
 											<li>
-												<a href="/new-posting">
+												<a href="index-02.html">
 													New Posting
 												</a>
 											</li>
@@ -122,8 +146,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											</li>
 										</ul>
 									</li>
-									<?php 
-    } ?>
 								</ul>
 
 							</div>
@@ -152,11 +174,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</ul>
 						<!-- Mobile Menu End -->
 					</nav>
+
+
+
+					<!-- end intro section -->
 				</div>
+		</div>
 
-				<!-- Header Section End -->
+		<!-- Header Section End -->
 
-				<!-- end intro section -->
+		<!-- end intro section -->
 		</div>
 
 		<!-- Form Section Start -->
@@ -178,76 +205,128 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</div>
 								</div>
 								<div class="form-bottom">
-									<form role="form" action="/editnow" method="post" class="job-descript-form">
+									<form role="form" action="/editnowadmin" method="post" class="job-descript-form">
 										<br>
 										<div class="form-group">
 											<h4>Job Title
 												<h4>
-													<textarea name="tp-title" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Max 255 characters"><?= isset($postinfo['tp-title']) ? $postinfo['tp-title'] : $postinfo['title'] ?></textarea>
-													 <h6 style="color:#f45342;"><?= form_error('tp-title') ? form_error('tp-title') : '' ?>
+													<textarea name="tp-title" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Max 255 characters">
+														<?= isset($postinfo['tp-title']) ? $postinfo['tp-title'] : $postinfo['title'] ?>
+													</textarea>
+													<h6 style="color:#f45342;">
+														<?= form_error('tp-title') ? form_error('tp-title') : '' ?>
 										</div>
 
 										<div class="form-group">
 											<h4>Job Description
 												<h4>
-													<textarea name="tp-description" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Max 500 characters"><?= isset($postinfo['tp-description']) ? $postinfo['tp-description'] : $postinfo['description'] ?></textarea>
-													<h6 style="color:#f45342;"><?= form_error('tp-description') ? form_error('tp-description') : '' ?></h6>
+													<textarea name="tp-description" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Max 500 characters">
+														<?= isset($postinfo['tp-description']) ? $postinfo['tp-description'] : $postinfo['description'] ?>
+													</textarea>
+													<h6 style="color:#f45342;">
+														<?= form_error('tp-description') ? form_error('tp-description') : '' ?>
+													</h6>
 										</div>
 
 										<div class="form-group">
 											<h4>Tags
 												<h4>
-													<textarea name="tp-tags" class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="Tags"><?= isset($postinfo['tp-tags']) ? $postinfo['tp-tags'] : $postinfo['tags'] ?></textarea>
+													<textarea name="tp-tags" class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="Tags">
+														<?= isset($postinfo['tp-tags']) ? $postinfo['tp-tags'] : $postinfo['tags'] ?>
+													</textarea>
 													<p>growth, international, city, talent, community, resilience, culture, digital, energy, inspiration</p>
-													<h6 style="color:#f45342;"><?= form_error('tp-tags') ? form_error('tp-tags') : '' ?></h6>
+													<h6 style="color:#f45342;">
+														<?= form_error('tp-tags') ? form_error('tp-tags') : '' ?>
+													</h6>
 										</div>
 
 										<div class="form-group">
 											<h4>About company
 												<h4>
 													<label class="sr-only" for="companyinofo">About a company</label>
-													<textarea name="tp-about" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Max 255 characters"><?= isset($postinfo['tp-about']) ? $postinfo['tp-about'] : $postinfo['about'] ?></textarea>
-													<h6 style="color:#f45342;"><?= form_error('tp-about') ? form_error('tp-about') : '' ?></h6>
+													<textarea name="tp-about" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Max 255 characters">
+														<?= isset($postinfo['tp-about']) ? $postinfo['tp-about'] : $postinfo['about'] ?>
+													</textarea>
+													<h6 style="color:#f45342;">
+														<?= form_error('tp-about') ? form_error('tp-about') : '' ?>
+													</h6>
 													<input type="hidden" name="tp-posting_id" value="<?= isset($postinfo['tp-posting_id']) ? $postinfo['tp-posting_id'] : $postinfo['id'] ?>">
 										</div>
 										<h4>Identifies
 											<h4>
-											<div class="form-group">
-												<select name="tp-identifies" class="form-control" id="exampleFormControlSelect1">
-												<option><?= isset($postinfo['tp-identifies']) ? $postinfo['tp-identifies'] : $postinfo['identifies'] ?></option>
-												<option>Startup</option>
-												<option>Service</option>
-												<option>Provider</option>
-												<option>Goverment</option>
-												<option>Academia</option>
-												<option>Corporate</option>
-												</select>
-												<h6 style="color:#f45342;"><?= form_error('tp-identifies') ? form_error('tp-identifies') : '' ?></h6>
-											</div>
+												<div class="form-group">
+													<select name="tp-identifies" class="form-control" id="exampleFormControlSelect1">
+														<option>
+															<?= isset($postinfo['tp-identifies']) ? $postinfo['tp-identifies'] : $postinfo['identifies'] ?>
+														</option>
+														<option>Startup</option>
+														<option>Service</option>
+														<option>Provider</option>
+														<option>Goverment</option>
+														<option>Academia</option>
+														<option>Corporate</option>
+													</select>
+													<h6 style="color:#f45342;">
+														<?= form_error('tp-identifies') ? form_error('tp-identifies') : '' ?>
+													</h6>
+												</div>
 												<br>
 												<div class="form-group">
 													<h4>Starting Date</h4>
-													<input  name="tp-startdate" class="form-control" size="2" type="date" value="<?= isset($postinfo['tp-startdate']) ? $postinfo['tp-startdate'] : $postinfo['startdate'] ?>">
-													<h6 style="color:#f45342;"><?= form_error('tp-startdate') ? form_error('tp-startdate') : '' ?></h6>
+													<input name="tp-startdate" class="form-control" size="2" type="date" value="<?= isset($postinfo['tp-startdate']) ? $postinfo['tp-startdate'] : $postinfo['startdate'] ?>">
+													<h6 style="color:#f45342;">
+														<?= form_error('tp-startdate') ? form_error('tp-startdate') : '' ?>
+													</h6>
 												</div>
 
 												<div class="form-group">
 													<h4>End date</h4>
-													<input  name="tp-enddate" class="form-control" size="2" type="date" value="<?= isset($postinfo['tp-enddate']) ? $postinfo['tp-enddate'] : $postinfo['enddate'] ?>">
-													<h6 style="color:#f45342;"><?= form_error('tp-enddate') ? form_error('tp-enddate') : '' ?></h6>
+													<input name="tp-enddate" class="form-control" size="2" type="date" value="<?= isset($postinfo['tp-enddate']) ? $postinfo['tp-enddate'] : $postinfo['enddate'] ?>">
+													<h6 style="color:#f45342;">
+														<?= form_error('tp-enddate') ? form_error('tp-enddate') : '' ?>
+													</h6>
 												</div>
 												<br>
 												<div class="form-group">
 													<h5>Application Link</h5>
-													<input class="form-control" type="text" name="tp-link" value="<?= isset($postinfo['tp-link']) ? $postinfo['tp-link'] : $postinfo['link'] ?>" placeholder="Link">
-													<h6 style="color:#f45342;"><?= form_error('tp-link') ? form_error('tp-link') : '' ?></h6>
+													<input class="form-control" type="text" name="tp-link" value="<?= isset($postinfo['tp-link']) ? $postinfo['tp-link'] : $postinfo['link'] ?>"
+													placeholder="Link">
+													<h6 style="color:#f45342;">
+														<?= form_error('tp-link') ? form_error('tp-link') : '' ?>
+													</h6>
 												</div>
 												<div class="form-group">
 													<p>Supporting image max 8mb</p>
 													<input type="file" name="tp-support-image" id="">
 												</div>
-												<button type="button" class="btn btn-common btn-rm"><a style="color:white;" href="/mypage">Go Back</a></button>
-												<button type="submit" class="btn btn-common btn-rm">Edit</button> <br>
+												
+												<div class="form-group">
+													<h5>Status</h5>
+													<select name="tp-active" class="form-control" id="exampleFormControlSelect1">
+														<option value="0">Unactive</option>
+														<option value="1">Active</option>
+													</select>
+													<h6 style="color:#f45342;">
+														<?= form_error('tp-identifies') ? form_error('tp-identifies') : '' ?>
+													</h6>
+												</div>
+												<div class="form-group">
+													<h5>Highlighted</h5>
+													<select name="tp-highlighted" class="form-control" id="exampleFormControlSelect1">
+														<option value="0">No</option>
+														<option value="1">Yes</option>
+													</select>
+													<h6 style="color:#f45342;">
+														<?= form_error('tp-identifies') ? form_error('tp-identifies') : '' ?>
+													</h6>
+												</div>
+
+
+												<button type="button" class="btn btn-common btn-rm">
+													<a style="color:white;" href="/mypage">Go Back</a>
+												</button>
+												<button type="submit" class="btn btn-common btn-rm">Edit</button>
+												<br>
 												<!-- <a href="job-details.html" class="btn btn-common btn-rm">More Detail</a> -->
 									</form>
 								</div>
@@ -257,7 +336,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</div>
 			</div>
 		</div>
-<!-- Form Section End -->
+		<!-- Form Section End -->
 
 
 		<!-- Footer Section Start -->
