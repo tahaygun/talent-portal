@@ -84,6 +84,10 @@ class Process extends CI_Controller
 		$postinfo = $this->tpmodel->editinfo($id);
 		$this->load->view('userviews/editpage', array('postinfo' => $postinfo));
 	}
+	public function showcompanylist()
+	{
+		$this->load->view('userviews/companiespage');
+	}
 	public function editnow()
 	{
 		$postinfo = $this->input->post(null, true);

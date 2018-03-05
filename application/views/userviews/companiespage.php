@@ -160,52 +160,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 				<!-- Header Section End -->
 
-				<div class="search-container">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12">
-								<h1>Find the job that fits your life</h1>
-								<br>
-								<h2>We are building
-									<strong>network</strong> to help people!</h2>
-								<div class="content">
-									<form method="post" action="/search">
-										<div class="row">
-											<div class="col-md-6 col-sm-6">
-												<div class="form-group">
-													<input name="searchinput" class="form-control" type="text" placeholder="job title / keywords / company name">
-													<i class="ti-time"></i>
-												</div>
-											</div>
-											<div class="col-md-5 col-sm-6">
-												<div class="search-category-container">
-													<label class="styled-select">
-														<select name="category" class="dropdown-product selectpicker">
-															<option>All Categories</option>
-															<option>Finance</option>
-															<option>IT & Engineering</option>
-															<option>Education/Training</option>
-															<option>Art/Design</option>
-															<option>Sale/Markting</option>
-															<option>Healthcare</option>
-															<option>Science</option>
-															<option>Food Services</option>
-														</select>
-													</label>
-												</div>
-											</div>
-											<div class="col-md-1 col-sm-6">
-												<button type="submit" class="btn btn-search-icon">
-													<i class="ti-search"></i>
-												</button>
-											</div>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+
 			</section>
 			<!-- end intro section -->
 		</div>
@@ -213,56 +168,49 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<!-- Find Job Section Start -->
 		<section class="find-job section">
 			<div class="container">
-				<h2 class="section-title">Highlighted Jobs</h2>
+				<h2 class="section-title">Our partners</h2>
 				<div class="row">
 					<div class="col-md-12">
-						<?php foreach ($data as $posting) { ?>
 
 
 						<div class="job-list col-md-12">
 							<div class="thumb">
-								<a href="/details/<?= $posting['id'] ?>">
+								<a href="/details/">
 									<img src="assets/img/jobs/img-1.jpg" alt="">
 								</a>
 							</div>
 							<div class="job-list-content">
 								<h4 id="titles">
-									<a href="/details/<?= $posting['id'] ?>">
-										<?= $posting['title'] ?>
+									<a href="/details/">
+										Here should be the company name
 									</a>
 								</h4>
 								<p class="descriptions">
-									<?= $posting['description'] ?>
+									Here should be the company description
 								</p>
 								<div class="job-tag">
 									<div class="pull-left">
 										<div class="meta-tag">
 											<span>
 												<a href="browse-categories.html">#
-													<?= $posting['identifies'] ?>
+                          categories
 												</a>
 											</span>
 											<span>
 												<a href="browse-categories.html">➦
-													<?= $posting['companyname'] ?>
+                          company name
 												</a>
 											</span>
 										</div>
 									</div>
 									<div class="pull-right">
 
-										<a href="/details/<?= $posting['id'] ?>" class="btn btn-common btn-rm">More Detail</a>
+										<a href="/details/" class="btn btn-common btn-rm">Read More</a>
 									</div>
 								</div>
 							</div>
 						</div>
 
-
-
-
-						<?php
-
-				} ?>
 
 					</div>
 				</div>

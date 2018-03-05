@@ -10,6 +10,7 @@ $route['jobs'] = 'process/jobspage';
 $route['search'] = 'process/search';
 $route['new-posting'] = 'process/newpostingpage';
 $route['create-new'] = 'process/createnewposting';
+$route['showcompany'] = 'process/showcompanylist';
 $route['details/(:any)'] = 'process/opendetailspage/$1';
 $route['edit/(:any)'] = 'process/editpage/$1';
 $route['editnow'] = 'process/editnow';
