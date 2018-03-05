@@ -113,7 +113,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</a>
 											</li>
 											<li>
-												<a href="index-02.html">
+												<a href="/new-posting">
 												New Posting
 												</a>                          
 											</li>

@@ -7,6 +7,7 @@ $route['register'] = 'process/register';
 $route['login'] = 'process/login';
 $route['mypage'] = 'process/openmainpage';
 $route['search'] = 'process/search';
+$route['new-posting'] = 'process/newpostingpage';
 $route['details/(:any)'] = 'process/opendetailspage/$1';
 $route['logout'] = 'process/logout';
 

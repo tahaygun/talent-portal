@@ -167,35 +167,33 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <h3>Post a Job</h3>
                           </div>
                           <div class="form-top-right">
-                            <i class="fa fa-pencil"></i>
+                
                           </div>
                           </div>
                           <div class="form-bottom">
-                        <form role="form" action="" method="post" class="job-descript-form">
+                        <form role="form" action="" method="post" class="job-descript-form"> 
+                        <br>
                           <div class="form-group">
-                             <input type="text" name="Jobtitle" placeholder="Jobtitle" class="Jobtitle form-control" id="form-first-name" value="<?= isset($reginfo['Jobtitle']) ? $reginfo['Jobtitle'] : '' ?>">
-                              <?= form_error('Jobtitle') ? form_error('Jobtitle') : '' ?>
-                            </div>
-
-                            <div class="container">
-                              <p>Supporting image max 8gb</p>                  
-                              <img src="cinqueterre.jpg" class="img-responsive" alt="Cinque Terre" width="304" height="236"> 
+                            <h4>Job Title<h4>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"  placeholder="Title"></textarea>
                             </div>
 
                             <div class="form-group">
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"  placeholder="Job description"></textarea>
+                            <h4>Job Description<h4>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"  placeholder="Description"></textarea>
                             </div>
 
                             <div class="form-group">
+                            <h4>Tags<h4>
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"  placeholder="Tags"></textarea>
                             </div>
 
                             <div class="form-group">
-                                <h3>About a company<h3>
+                                <h4>About company<h4>
                                 <label class="sr-only" for="companyinofo">About a company</label>
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"  placeholder="Company Information"></textarea>
                             </div>
-                              <h3>Identifies<h3>
+                              <h4>Identifies<h4>
                             <div class="form-check form-check-inline">
                                 
                               <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
@@ -208,28 +206,33 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             </div>
 
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" >
                               <label class="form-check-label" for="inlineCheckbox3">Goverment</label>
                             </div>
 
                             <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" >
                             <label class="form-check-label" for="inlineCheckbox3">Academia</label>
                             </div>
 
                              <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" >
                             <label class="form-check-label" for="inlineCheckbox3">Corporate</label>
-                            </div>
+                            </div> <br>
                             <div class="date">
                                <h6>Starting Date</h6><input size="2" type="date" value="">
                             </div>
 
                              <div class="date">
                                <h6>End date</h6><input size="2" type="date" value="">
-                            </div>
-                              <a application link href="http://"></a>
-                       
+                            </div> <br>
+                             <div>
+                               <input type="text" name="link" placeholder="Application Link" id="">
+                             </div>
+                              <div>
+                              <p>Supporting image max 8gb</p>                  
+                              <input type="file" name="image" id="">
+                            </div> <br>
                             <button type="submit" class="btn btn-common btn-rm">Submit</button>
                             <!-- <a href="job-details.html" class="btn btn-common btn-rm">More Detail</a> -->
                         </form>

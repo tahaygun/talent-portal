@@ -80,6 +80,10 @@ class Process extends CI_Controller
 		$data = $this->tpmodel->mypage($_SESSION['id']);
 		$this->load->view('userviews/mainpageuser', array('data' => $data));
 	}
+	public function newpostingpage()
+	{
+		$this->load->view('userviews/newposting');
+	}
 
 	public function search()
 	{
