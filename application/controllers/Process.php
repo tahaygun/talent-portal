@@ -15,7 +15,12 @@ class Process extends CI_Controller
 
 	public function openjoinpage()
 	{
-		$this->load->view('userviews/join_page');
+		if (isset($_SESSION['id'])) {
+			redirect('/mypage');
+		} else {
+			$this->load->view('userviews/join_page');
+		}
+
 
 	}
 	public function register()
@@ -50,6 +55,7 @@ class Process extends CI_Controller
 		$notapproved = $this->tpmodel->accountchecker($email, $password);
 		if ($result) {
 			$this->session->set_userdata('id', $result['id']);
+			$this->session->set_userdata('name', $result['companyname']);
 			$this->session->set_userdata('level', $result['adminlevel']);
 			if ($result['adminlevel'] == 1) {
 				redirect('/admin-home');

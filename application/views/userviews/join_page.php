@@ -10,7 +10,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="author" content="Jobboard">
 
-  <title>JobBoard - Bootstrap HTML5 Job Portal Template</title>
+  <title>Talent Portal</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="assets/img/favicon.png">
@@ -71,7 +71,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
               <!-- Start Navigation List -->
               <ul class="nav navbar-nav navbar-right">
                 <li>
-                  <a href="index.html">
+                  <a href="/">
                     Home
                     <i class="fa fa-angle"></i>
                   </a>
@@ -108,12 +108,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</a>
 										 <ul class="dropdown">
 											<li>
-												<a href="">
+												<a href="/mypage">
 												My Page
 												</a>
 											</li>
 											<li>
-												<a href="index-02.html">
+												<a href="/new-posting">
 												New Posting
 												</a>                          
 											</li>
