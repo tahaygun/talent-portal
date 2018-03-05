@@ -83,7 +83,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/jobs">
                     Jobs
                     <i class="fa fa-angle"></i>
                   </a>

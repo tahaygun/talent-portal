@@ -51,14 +51,17 @@ class Tpmodel extends CI_Model
     //     $query = $this->db->get('postings');
     //     return $query->result_array();
     // }
-    public function search($text)
+    public function search($text1)
     {
+        $text = $this->db->escape_like_str($text1);
         $query = "SELECT * FROM postings
                 JOIN users 
                 ON postings.user_id = users.id
                 WHERE postings.active = 1 
-                AND
-                postings.title LIKE '%" . $this->db->escape_like_str($text) . "%'";
+                AND 
+                postings.tags LIKE '%$text%'
+                OR
+                postings.title LIKE '%$text%'";
         $result = $this->db->query($query)->result_array();
         return $result;
     }

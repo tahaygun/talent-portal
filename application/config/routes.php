@@ -6,6 +6,7 @@ $route['joinpage'] = 'process/openjoinpage';
 $route['register'] = 'process/register';
 $route['login'] = 'process/login';
 $route['mypage'] = 'process/openmainpage';
+$route['jobs'] = 'process/jobspage';
 $route['search'] = 'process/search';
 $route['new-posting'] = 'process/newpostingpage';
 $route['create-new'] = 'process/createnewposting';
