@@ -43,12 +43,22 @@ class Tpmodel extends CI_Model
             return false;
         }
     }
+    // public function search($match)
+    // {
+    //     $this->db->like('title', $match);
+    //     $this->db->or_like('description', $match);
+    //     $this->db->or_like('about', $match);
+    //     $query = $this->db->get('postings');
+    //     return $query->result_array();
+    // }
     public function search($text)
     {
         $query = "SELECT * FROM postings
                 JOIN users 
                 ON postings.user_id = users.id
-                WHERE postings.title LIKE '%$text%'";
+                WHERE postings.active = 1 
+                AND
+                postings.title LIKE '%" . $this->db->escape_like_str($text) . "%'";
         $result = $this->db->query($query)->result_array();
         return $result;
     }
@@ -91,5 +101,14 @@ class Tpmodel extends CI_Model
         $values = [$id];
         $result = $this->db->query($query, $values)->row_array();
         return $result;
+    }
+    public function insertpostings($arg)
+    {
+        $query = "INSERT INTO `postings`(`user_id`, `title`, `description`, `about`, `identifies`, `tags`, `starting_date`, `enddate`, `link`) VALUES (?,?,?,?,?,?,?,?,?)";
+        $values = [$arg['tp-user_id'], $arg['tp-title'], $arg['tp-description'], $arg['tp-about'], $arg['tp-identifies'], $arg['tp-tags'], $arg['tp-startingdate'], $arg['tp-enddate'], $arg['tp-link']];
+
+        $this->db->query($query, $values);
+
+
     }
 }

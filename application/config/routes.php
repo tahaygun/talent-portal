@@ -8,6 +8,7 @@ $route['login'] = 'process/login';
 $route['mypage'] = 'process/openmainpage';
 $route['search'] = 'process/search';
 $route['new-posting'] = 'process/newpostingpage';
+$route['create-new'] = 'process/createnewposting';
 $route['details/(:any)'] = 'process/opendetailspage/$1';
 $route['logout'] = 'process/logout';
 

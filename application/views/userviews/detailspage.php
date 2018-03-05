@@ -69,7 +69,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<!-- Start Navigation List -->
 								<ul class="nav navbar-nav navbar-right">
 									<li>
-										<a class="active" href="/">
+										<a  href="/">
 											Home
 											<i class="fa fa-angle"></i>
 										</a>
@@ -98,22 +98,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											<i class="fa fa-angle"></i>
 										</a>
 									</li>
-									<?php if (isset($_SESSION['id'])) { ?>
+								<?php if (isset($_SESSION['id'])) { ?>
 										<li>
-										<a href="#">
+										<a  href="#">
 											My Page
-											<i class="fa fa-angle-down"></i>
+											<i class="fa fa-angle-down "></i>
 										</a>
 										 <ul class="dropdown">
 											<li>
-												<a href="">
+												<a  href="/mypage">
 												My Page
 												</a>
 											</li>
 											<li>
-												<a href="index-02.html">
+												<a href="/new-posting">
 												New Posting
-												</a>                          
+												</a>
 											</li>
 											<li>
 												<a href="/logout">
@@ -122,7 +122,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											</li>
 											</ul>
 									</li>
-								<?php 
+								<?php
+
 						} ?>
 								</ul>
 

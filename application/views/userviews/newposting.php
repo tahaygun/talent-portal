@@ -162,7 +162,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<!-- Form Section Start -->
 		<div class="top-content">
 
-			<div class="inner-bg">
+			<div class="inner-bg backgroundven">
 				<div class="container">
 
 					<div class="row">
@@ -178,79 +178,81 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</div>
 								</div>
 								<div class="form-bottom">
-									<form role="form" action="" method="post" class="job-descript-form">
+									<form role="form" action="/create-new" method="post" class="job-descript-form">
 										<br>
 										<div class="form-group">
 											<h4>Job Title
 												<h4>
-													<textarea name="title" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Title"></textarea>
+													<textarea name="tp-title" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Max 255 characters"><?= isset($postinfo['tp-title']) ? $postinfo['tp-title'] : '' ?></textarea>
+													 <h6 style="color:#f45342;"><?= form_error('tp-title') ? form_error('tp-title') : '' ?>
 										</div>
 
 										<div class="form-group">
 											<h4>Job Description
 												<h4>
-													<textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Description"></textarea>
+													<textarea name="tp-description" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Max 500 characters"><?= isset($postinfo['tp-description']) ? $postinfo['tp-description'] : '' ?></textarea>
+													<h6 style="color:#f45342;"><?= form_error('tp-description') ? form_error('tp-description') : '' ?></h6>
 										</div>
 
 										<div class="form-group">
 											<h4>Tags
 												<h4>
-													<textarea name="tags" class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="Tags"></textarea>
+													<textarea name="tp-tags" class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="Tags"><?= isset($postinfo['tp-tags']) ? $postinfo['tp-tags'] : '' ?></textarea>
+													<p>growth, international, city, talent, community, resilience, culture, digital, energy, inspiration</p>
+													<h6 style="color:#f45342;"><?= form_error('tp-tags') ? form_error('tp-tags') : '' ?></h6>
 										</div>
 
 										<div class="form-group">
 											<h4>About company
 												<h4>
 													<label class="sr-only" for="companyinofo">About a company</label>
-													<textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Company Information"></textarea>
+													<textarea name="tp-about" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Max 255 characters"><?= isset($postinfo['tp-about']) ? $postinfo['tp-about'] : '' ?></textarea>
+													<h6 style="color:#f45342;"><?= form_error('tp-about') ? form_error('tp-about') : '' ?></h6>
+													<input type="hidden" name="tp-user_id" value="<?= $_SESSION['id'] ?>">
 										</div>
 										<h4>Identifies
 											<h4>
-												<div class="form-check form-check-inline">
-
-													<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-													<label class="form-check-label" for="inlineCheckbox1">Start up</label>
+											<div class="form-group">
+												<select name="tp-identifies" class="form-control" id="exampleFormControlSelect1">
+												<option><?= isset($postinfo['tp-identifies']) ? $postinfo['tp-identifies'] : '' ?></option>
+												<option>Startup</option>
+												<option>Service</option>
+												<option>Provider</option>
+												<option>Goverment</option>
+												<option>Academia</option>
+												<option>Corporate</option>
+												</select>
+												<h6 style="color:#f45342;"><?= form_error('tp-identifies') ? form_error('tp-identifies') : '' ?></h6>
+											</div>
+												<br>
+												<div class="form-group">
+													<h4>Starting Date</h4>
+													<input  name="tp-startdate" class="form-control" size="2" type="date" value="<?= isset($postinfo['tp-startdate']) ? $postinfo['tp-startdate'] : '' ?>">
+													<h6 style="color:#f45342;"><?= form_error('tp-startdate') ? form_error('tp-startdate') : '' ?></h6>
 												</div>
 
-												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-													<label class="form-check-label" for="inlineCheckbox2">Service provider</label>
-												</div>
-
-												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-													<label class="form-check-label" for="inlineCheckbox3">Goverment</label>
-												</div>
-
-												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-													<label class="form-check-label" for="inlineCheckbox3">Academia</label>
-												</div>
-
-												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-													<label class="form-check-label" for="inlineCheckbox3">Corporate</label>
+												<div class="form-group">
+													<h4>End date</h4>
+													<input  name="tp-enddate" class="form-control" size="2" type="date" value="<?= isset($postinfo['tp-enddate']) ? $postinfo['tp-enddate'] : '' ?>">
+													<h6 style="color:#f45342;"><?= form_error('tp-enddate') ? form_error('tp-enddate') : '' ?></h6>
 												</div>
 												<br>
-												<div class="date">
-													<h6>Starting Date</h6>
-													<input size="2" type="date" value="">
+												<div class="form-group">
+													<h5>Application Link</h5>
+													<input class="form-control" type="text" name="tp-link" value="<?= isset($postinfo['tp-link']) ? $postinfo['tp-link'] : '' ?>" placeholder="Link">
+													<h6 style="color:#f45342;"><?= form_error('tp-link') ? form_error('tp-link') : '' ?></h6>
 												</div>
-
-												<div class="date">
-													<h6>End date</h6>
-													<input size="2" type="date" value="">
-												</div>
-												<br>
-												<div>
-													<h6>Application Link</h6>
-													<input type="text" name="link" value="https://" placeholder="Link">
-												</div>
+<<<<<<< HEAD
 												<div>
 													<p>Supporting image max 8mb</p>
 													<input type="file" name="image" id="">
+=======
+												<div class="form-group">
+													<p>Supporting image max 8mb</p>
+													<input type="file" name="tp-support-image" id="">
+>>>>>>> 9e6bb4c54979edc18bb19ba2b8f753d374a8957b
 												</div>
-												<br>
+												
 												<button type="submit" class="btn btn-common btn-rm">Submit</button> <br>
 												<!-- <a href="job-details.html" class="btn btn-common btn-rm">More Detail</a> -->
 									</form>
