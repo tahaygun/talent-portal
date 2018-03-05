@@ -57,7 +57,7 @@ class Process extends CI_Controller
 			$this->session->set_userdata('id', $result['id']);
 			$this->session->set_userdata('name', $result['companyname']);
 			$this->session->set_userdata('level', $result['adminlevel']);
-			if ($result['adminlevel'] == 1) {
+			if ($result['adminlevel'] != 3) {
 				redirect('/admin-home');
 			} else {
 				redirect('/mypage');
@@ -107,9 +107,9 @@ class Process extends CI_Controller
 		if (isset($_SESSION['id'])) {
 			$postinfo = $this->input->post(null, true);
 			$this->form_validation->set_rules('tp-title', 'Title', 'required|max_length[255]');
-			$this->form_validation->set_rules('tp-description', 'Description', 'required|min_length[80]|max_length[500]');
+			$this->form_validation->set_rules('tp-description', 'Description', 'required|min_length[10]|max_length[500]');
 			$this->form_validation->set_rules('tp-tags', 'Tags', 'required');
-			$this->form_validation->set_rules('tp-about', 'About Company', 'required|max_length[500]|min_length[20]');
+			$this->form_validation->set_rules('tp-about', 'About Company', 'required|max_length[500]|min_length[10]');
 			$this->form_validation->set_rules('tp-identifies', 'Identifies', 'required');
 			$this->form_validation->set_rules('tp-startdate', 'Start Date', 'required');
 			$this->form_validation->set_rules('tp-enddate', 'End Date', 'required');

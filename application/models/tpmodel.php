@@ -152,4 +152,10 @@ class Tpmodel extends CI_Model
 
 
     }
+    public function newadmin($arg)
+    {
+        $query = "INSERT INTO users (companyname, email, password, adminlevel, approved) values (?,?,?,?,?)";
+        $values = [$arg['name'], $arg['email'], $arg['password'], $arg['level'], 1];
+        $this->db->query($query, $values);
+    }
 }

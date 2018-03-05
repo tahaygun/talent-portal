@@ -200,34 +200,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="form-box">
 								<div class="form-top">
 									<div class="form-top-left">
-										<h3>Add new admin</h3>
-									</div>
-								</div>
-								<div class="form-bottom">
-									<form role="form" action="/add-admin" method="post" class="registration-form">
-
-										<div class="form-group">
-											<h5>Email</h5>
-											<input type="text" name="email" placeholder="Email..." class="form-email form-control" id="email" value="">
-										</div>
-										<div class="form-group">
-											<h5>Name</h5>
-											<input type="text" name="name" placeholder="Name" class="form-email form-control" id="name" value="">
-										</div>
-										<div class="form-group">
-													<h5>Admin Type</h5>
-													<select name="level" class="form-control" id="level">
-														<option value="2">Normal Admin</option>
-														<option value="1">Super Admin (can add admins)</option>
-													</select>
-										</div>
-
-										<div class="form-group">
-											<h5>Password</h5>
-											<input type="password" name="password" placeholder="Password" class="form-password form-control" id="password">
-										</div>
-										<button type="submit" class="btn btn-common btn-rm">Add an admin</button>
-										<br>
 									</form>
 									<form role="form" action="/change-password" method="post" class="registration-form">
 										<div class="form-group">
@@ -244,7 +216,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</form>
 								</div>
 							</div>
-
+                         </div>
 						</div>
 					</div>
 				</div>

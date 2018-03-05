@@ -128,12 +128,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</a>
 										 <ul class="dropdown">
 											<li>
-												<a href="#">
-												My Page
+												<a href="/options-admin">
+												Options
 												</a>
 											</li>
 											<li>
-												<a href="index-02.html">
+												<a href="/newposting-admin">
 												New Posting
 												</a>
 											</li>

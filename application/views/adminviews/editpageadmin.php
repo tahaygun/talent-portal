@@ -124,24 +124,24 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</li>
 
 									<li>
-										<a href="#">
+										<a  href="#">
 											My Page
 											<i class="fa fa-angle-down "></i>
 										</a>
-										<ul class="dropdown">
+										 <ul class="dropdown">
 											<li>
-												<a href="#">
-													My Page
+												<a href="/options-admin">
+												Options
 												</a>
 											</li>
 											<li>
-												<a href="index-02.html">
-													New Posting
+												<a href="/newposting-admin">
+												New Posting
 												</a>
 											</li>
 											<li>
 												<a href="/logout">
-													Logout
+												Logout
 												</a>
 											</li>
 										</ul>
@@ -290,7 +290,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 												<button type="button" class="btn btn-common btn-rm">
-													<a style="color:white;" href="/mypage">Go Back</a>
+													<a style="color:white;" href="/">Go Back</a>
 												</button>
 												<button type="submit" class="btn btn-common btn-rm">Edit</button>
 												<br>
