@@ -5,7 +5,7 @@ class Adminprocess extends CI_Controller
 {
     public function adminpostingpage()
     {
-        if ($_SESSION['level'] == 1) {
+        if (isset($_SESSION['level']) && $_SESSION['level'] = !3) {
             $data = $this->tpmodel->allpostings();
             $this->load->view('adminviews/adminpostingspage', array('data' => $data));
         } else {
@@ -15,26 +15,43 @@ class Adminprocess extends CI_Controller
     }
     public function postrequests()
     {
-        $data = $this->tpmodel->requestedpostings();
-        $this->load->view('adminviews/postrequests', array('data' => $data));
+        if (isset($_SESSION['level']) && $_SESSION['level'] = !3) {
+            $data = $this->tpmodel->requestedpostings();
+            $this->load->view('adminviews/postrequests', array('data' => $data));
+        } else {
+            redirect('/');
+        }
     }
     public function highlightedposts()
     {
-        $data = $this->tpmodel->highlightedpostings();
-        $this->load->view('adminviews/highlightedpostings', array('data' => $data));
+        if (isset($_SESSION['level']) && $_SESSION['level'] = !3) {
+            $data = $this->tpmodel->highlightedpostings();
+            $this->load->view('adminviews/highlightedpostings', array('data' => $data));
+        } else {
+            redirect('/');
+        }
     }
     public function editpageadmin($id)
     {
-        $postinfo = $this->tpmodel->editinfo($id);
+        if (isset($_SESSION['level']) && $_SESSION['level'] = !3) {
+            $postinfo = $this->tpmodel->editinfo($id);
 
-        $this->load->view('adminviews/editpageadmin', array('postinfo' => $postinfo));
+            $this->load->view('adminviews/editpageadmin', array('postinfo' => $postinfo));
+        } else {
+            redirect('/');
+        }
+
 
     }
     public function editnow()
     {
-        $postinfo = $this->input->post(null, true);
-        $this->tpmodel->editadmin($postinfo);
-        redirect('/');
+        if (isset($_SESSION['level']) && $_SESSION['level'] = !3) {
+            $postinfo = $this->input->post(null, true);
+            $this->tpmodel->editadmin($postinfo);
+            redirect('/');
+        } else {
+            redirect('/');
+        }
     }
 }
 
