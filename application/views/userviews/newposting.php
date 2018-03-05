@@ -100,18 +100,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</li>
 									<?php if (isset($_SESSION['id'])) { ?>
 									<li>
-										<a href="#">
+										<a class="active" href="#">
 											My Page
 											<i class="fa fa-angle-down"></i>
 										</a>
 										<ul class="dropdown">
 											<li>
-												<a href="">
+												<a href="/mypage">
 													My Page
 												</a>
 											</li>
 											<li>
-												<a href="index-02.html">
+												<a class="active" href="/new-posting">
 													New Posting
 												</a>
 											</li>
