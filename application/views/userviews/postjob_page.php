@@ -2,13 +2,16 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="author" content="Jobboard">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
 
   <title>JobBoard - Bootstrap HTML5 Job Portal Template</title>
 
@@ -161,7 +164,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                       <div class="form-box">
                         <div class="form-top">
                           <div class="form-top-left">
-                            <h3>Job title</h3>
+                            <h3>Post a Job</h3>
                           </div>
                           <div class="form-top-right">
                             <i class="fa fa-pencil"></i>
@@ -170,19 +173,64 @@ defined('BASEPATH') or exit('No direct script access allowed');
                           <div class="form-bottom">
                         <form role="form" action="" method="post" class="job-descript-form">
                           <div class="form-group">
-                            <label class="sr-only" for="Jobtitle">Company name</label>
-                              <input type="text" name="Jobtitle" placeholder="Jobtitle" class="Jobtitle form-control" id="form-first-name" value="<?= isset($reginfo['Jobtitle']) ? $reginfo['Jobtitle'] : '' ?>">
+                             <input type="text" name="Jobtitle" placeholder="Jobtitle" class="Jobtitle form-control" id="form-first-name" value="<?= isset($reginfo['Jobtitle']) ? $reginfo['Jobtitle'] : '' ?>">
                               <?= form_error('Jobtitle') ? form_error('Jobtitle') : '' ?>
                             </div>
+
+                            <div class="container">
+                              <p>Supporting image max 8gb</p>                  
+                              <img src="cinqueterre.jpg" class="img-responsive" alt="Cinque Terre" width="304" height="236"> 
+                            </div>
+
                             <div class="form-group">
-                               <label for="exampleFormControlTextarea1">Job description</label>
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"  placeholder="Job description"></textarea>
                             </div>
+
                             <div class="form-group">
-                               <label for="exampleFormControlTextarea1">Contact information</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"  placeholder="Contact Information"></textarea>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"  placeholder="Tags"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-common btn-rm">APPLY</button>
+
+                            <div class="form-group">
+                                <h3>About a company<h3>
+                                <label class="sr-only" for="companyinofo">About a company</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"  placeholder="Company Information"></textarea>
+                            </div>
+                              <h3>Identifies<h3>
+                            <div class="form-check form-check-inline">
+                                
+                              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                              <label class="form-check-label" for="inlineCheckbox1">Start up</label>
+                            </div>
+                            
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                              <label class="form-check-label" for="inlineCheckbox2">Service provider</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                              <label class="form-check-label" for="inlineCheckbox3">Goverment</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                            <label class="form-check-label" for="inlineCheckbox3">Academia</label>
+                            </div>
+
+                             <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                            <label class="form-check-label" for="inlineCheckbox3">Corporate</label>
+                            </div>
+                            <div class="date">
+                               <h6>Starting Date</h6><input size="2" type="date" value="">
+                            </div>
+
+                             <div class="date">
+                               <h6>End date</h6><input size="2" type="date" value="">
+                            </div>
+                              <a application link href="http://"></a>
+                       
+                            <button type="submit" class="btn btn-common btn-rm">Submit</button>
                             <!-- <a href="job-details.html" class="btn btn-common btn-rm">More Detail</a> -->
                         </form>
                       </div>
