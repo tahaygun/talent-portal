@@ -213,8 +213,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 													<textarea name="tp-title" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Max 255 characters">
 														<?= isset($postinfo['tp-title']) ? $postinfo['tp-title'] : $postinfo['title'] ?>
 													</textarea>
-													<h6 style="color:#f45342;">
-														<?= form_error('tp-title') ? form_error('tp-title') : '' ?>
 										</div>
 
 										<div class="form-group">
@@ -223,9 +221,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 													<textarea name="tp-description" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Max 500 characters">
 														<?= isset($postinfo['tp-description']) ? $postinfo['tp-description'] : $postinfo['description'] ?>
 													</textarea>
-													<h6 style="color:#f45342;">
-														<?= form_error('tp-description') ? form_error('tp-description') : '' ?>
-													</h6>
 										</div>
 
 										<div class="form-group">
@@ -235,9 +230,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 														<?= isset($postinfo['tp-tags']) ? $postinfo['tp-tags'] : $postinfo['tags'] ?>
 													</textarea>
 													<p>growth, international, city, talent, community, resilience, culture, digital, energy, inspiration</p>
-													<h6 style="color:#f45342;">
-														<?= form_error('tp-tags') ? form_error('tp-tags') : '' ?>
-													</h6>
 										</div>
 
 										<div class="form-group">
@@ -247,8 +239,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 													<textarea name="tp-about" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Max 255 characters">
 														<?= isset($postinfo['tp-about']) ? $postinfo['tp-about'] : $postinfo['about'] ?>
 													</textarea>
-													<h6 style="color:#f45342;">
-														<?= form_error('tp-about') ? form_error('tp-about') : '' ?>
+										
 													</h6>
 													<input type="hidden" name="tp-posting_id" value="<?= isset($postinfo['tp-posting_id']) ? $postinfo['tp-posting_id'] : $postinfo['id'] ?>">
 										</div>
@@ -266,34 +257,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
 														<option>Academia</option>
 														<option>Corporate</option>
 													</select>
-													<h6 style="color:#f45342;">
-														<?= form_error('tp-identifies') ? form_error('tp-identifies') : '' ?>
-													</h6>
 												</div>
 												<br>
 												<div class="form-group">
 													<h4>Starting Date</h4>
 													<input name="tp-startdate" class="form-control" size="2" type="date" value="<?= isset($postinfo['tp-startdate']) ? $postinfo['tp-startdate'] : $postinfo['startdate'] ?>">
-													<h6 style="color:#f45342;">
-														<?= form_error('tp-startdate') ? form_error('tp-startdate') : '' ?>
-													</h6>
 												</div>
 
 												<div class="form-group">
 													<h4>End date</h4>
 													<input name="tp-enddate" class="form-control" size="2" type="date" value="<?= isset($postinfo['tp-enddate']) ? $postinfo['tp-enddate'] : $postinfo['enddate'] ?>">
-													<h6 style="color:#f45342;">
-														<?= form_error('tp-enddate') ? form_error('tp-enddate') : '' ?>
-													</h6>
 												</div>
 												<br>
 												<div class="form-group">
 													<h5>Application Link</h5>
 													<input class="form-control" type="text" name="tp-link" value="<?= isset($postinfo['tp-link']) ? $postinfo['tp-link'] : $postinfo['link'] ?>"
 													placeholder="Link">
-													<h6 style="color:#f45342;">
-														<?= form_error('tp-link') ? form_error('tp-link') : '' ?>
-													</h6>
 												</div>
 												<div class="form-group">
 													<p>Supporting image max 8mb</p>
@@ -303,22 +282,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												<div class="form-group">
 													<h5>Status</h5>
 													<select name="tp-active" class="form-control" id="exampleFormControlSelect1">
-														<option value="0">Unactive</option>
+														<option value="<?= $postinfo['active'] ?>">Default</option>
 														<option value="1">Active</option>
+														<option value="0">Unactive</option>
 													</select>
-													<h6 style="color:#f45342;">
-														<?= form_error('tp-identifies') ? form_error('tp-identifies') : '' ?>
-													</h6>
 												</div>
 												<div class="form-group">
 													<h5>Highlighted</h5>
 													<select name="tp-highlighted" class="form-control" id="exampleFormControlSelect1">
-														<option value="0">No</option>
+														<option value="<?= $postinfo['highlighted'] ?>">Default</option>
 														<option value="1">Yes</option>
+														<option value="0">No</option>
 													</select>
-													<h6 style="color:#f45342;">
-														<?= form_error('tp-identifies') ? form_error('tp-identifies') : '' ?>
-													</h6>
 												</div>
 
 
