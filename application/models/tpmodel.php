@@ -84,6 +84,16 @@ class Tpmodel extends CI_Model
         $result = $this->db->query($query)->result_array();
         return $result;
     }
+    public function allcompanies()
+    {
+        $query = "SELECT * FROM users
+        JOIN postings
+        ON users.id = postings.user_id
+        GROUP BY users.companyname
+        ORDER BY postings.id DESC";
+        $result = $this->db->query($query)->result_array();
+        return $result;
+    }
     public function requestedpostings()
     {
         $query = "SELECT * FROM users

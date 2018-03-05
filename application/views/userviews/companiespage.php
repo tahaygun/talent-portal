@@ -71,13 +71,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<!-- Start Navigation List -->
 								<ul class="nav navbar-nav navbar-right">
 									<li>
-										<a class="active" href="/">
+										<a  href="/">
 											Home
 											<i class="fa fa-angle"></i>
 										</a>
 									</li>
 									<li>
-										<a href="showcompany">
+										<a class="active" href="showcompany">
 											Companies
 											<i class="fa fa-angle"></i>
 										</a>
@@ -125,6 +125,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</ul>
 									</li>
 									<?php
+
 							} ?>
 								</ul>
 
@@ -176,15 +177,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 						<div class="job-list col-md-12">
 							<div class="thumb">
-								<a href="/details/">
-									<img src="assets/img/jobs/img-1.jpg" alt="">
-								</a>
+								<a href="/about-company/<?= $posting['user_id'] ?>"><img src="assets/img/jobs/img-1.jpg" alt=""></a>
 							</div>
 							<div class="job-list-content">
 								<h4 id="titles">
-									<a href="/details/">
-										<?= $posting['companyname'] ?>
-									</a>
+									<a href="/about-company/<?= $posting['user_id'] ?>"><?= $posting['companyname'] ?></a>
 								</h4>
 								<p class="descriptions">
 									 <?= $posting['about'] ?>
@@ -211,7 +208,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 					</div>
-					<?php }  ?>
+					<?php 
+			} ?>
 				</div>
 			</div>
 		</section>

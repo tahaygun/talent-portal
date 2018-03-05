@@ -132,12 +132,8 @@ class Process extends CI_Controller
 	}
 	public function showcompanylist()
 	{
-		$data = $this->tpmodel->allpostings();
+		$data = $this->tpmodel->allcompanies();
 		$this->load->view('userviews/companiespage', array('data' => $data));
-
-		// $data = $this->tpmodel->mypage($_SESSION['id']);
-		//$this->load->view('userviews/companiespage', array('data' => $data));
-
 	}
 	public function newpostingpage()
 	{
