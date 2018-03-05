@@ -79,6 +79,31 @@ class Process extends CI_Controller
 		$data = $this->tpmodel->details($id);
 		$this->load->view('userviews/detailspage', array('data' => $data));
 	}
+	public function editpage($id)
+	{
+		$postinfo = $this->tpmodel->editinfo($id);
+		$this->load->view('userviews/editpage', array('postinfo' => $postinfo));
+	}
+	public function editnow()
+	{
+		$postinfo = $this->input->post(null, true);
+		$this->form_validation->set_rules('tp-title', 'Title', 'required|min_length[12]|max_length[255]');
+		$this->form_validation->set_rules('tp-description', 'Description', 'required|min_length[80]|max_length[500]');
+		$this->form_validation->set_rules('tp-tags', 'Tags', 'required');
+		$this->form_validation->set_rules('tp-about', 'About Company', 'required|max_length[500]|min_length[20]');
+		$this->form_validation->set_rules('tp-identifies', 'Identifies', 'required');
+		$this->form_validation->set_rules('tp-startdate', 'Start Date', 'required');
+		$this->form_validation->set_rules('tp-enddate', 'End Date', 'required');
+		$this->form_validation->set_rules('tp-link', 'Application Link', 'required|valid_url');
+
+		if ($this->form_validation->run() == false) {
+			$validationerror = validation_errors();
+			$this->load->view('userviews/editpage', array('postinfo' => $postinfo));
+		} else {
+			$this->tpmodel->edit($postinfo);
+			redirect('/mypage');
+		}
+	}
 
 
 	public function openmainpage()
@@ -122,7 +147,7 @@ class Process extends CI_Controller
 
 	public function jobspage()
 	{
-		$data = $this->tpmodel->allpostings();
+		$data = $this->tpmodel->activepostings();
 		$this->load->view('userviews/jobspage', array('data' => $data));
 	}
 

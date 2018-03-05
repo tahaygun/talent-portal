@@ -195,7 +195,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<p class="descriptions"><?= $data['about'] ?></p>
 						<h4>Details:</h4>
             <ul class="jobdetails">
-							<li>Starting Date: <?= $data['starting_date'] ?></li>
+							<li>Starting Date: <?= $data['startdate'] ?></li>
 							<li>Ending Date: <?= $data['enddate'] ?></li>
 							<li>Company Identifies: <?= $data['identifies'] ?></li>
 						</ul> <br>

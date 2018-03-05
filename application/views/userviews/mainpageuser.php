@@ -174,7 +174,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="job-list col-md-12">
 								<div class="thumb">
 									<a href="/details/<?= $posting['id'] ?>">
-										<img src="assets/img/jobs/img-1.jpg" alt="">
+										<img src="assets/img/jobs/img-3.jpg" alt="">
 									</a>
 								</div>
 								<div class="job-list-content">
@@ -200,7 +200,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</div>
 										<div class="pull-right">
 
-											<a href="/details" class="btn btn-common btn-rm">Edit</a>
+											<a href="/edit/<?= $posting['id'] ?>" class="btn btn-common btn-rm">Edit</a>
 											<a href="/details" class="btn btn-common btn-rm">Delete</a>
 										</div>
 									</div>

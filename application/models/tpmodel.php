@@ -94,21 +94,48 @@ class Tpmodel extends CI_Model
         $result = $this->db->query($query)->result_array();
         return $result;
     }
+    public function activepostings()
+    {
+        $query = "SELECT * FROM users
+        JOIN postings
+        ON users.id = postings.user_id
+        WHERE postings.active=1
+        ORDER BY postings.id DESC";
+        $result = $this->db->query($query)->result_array();
+        return $result;
+    }
 
     public function details($id)
     {
-        $query = "SELECT * FROM postings
-                JOIN users 
+        $query = "SELECT * FROM users
+                JOIN postings
                 ON postings.user_id = users.id
                 WHERE postings.id=?";
         $values = [$id];
         $result = $this->db->query($query, $values)->row_array();
         return $result;
     }
+    public function editinfo($id)
+    {
+        $query = "SELECT * FROM postings
+                 WHERE postings.id=?";
+        $values = [$id];
+        $result = $this->db->query($query, $values)->row_array();
+        return $result;
+    }
     public function insertpostings($arg)
     {
-        $query = "INSERT INTO `postings`(`user_id`, `title`, `description`, `about`, `identifies`, `tags`, `starting_date`, `enddate`, `link`) VALUES (?,?,?,?,?,?,?,?,?)";
-        $values = [$arg['tp-user_id'], $arg['tp-title'], $arg['tp-description'], $arg['tp-about'], $arg['tp-identifies'], $arg['tp-tags'], $arg['tp-startingdate'], $arg['tp-enddate'], $arg['tp-link']];
+        $query = "INSERT INTO `postings`(`user_id`, `title`, `description`, `about`, `identifies`, `tags`, `startdate`, `enddate`, `link`) VALUES (?,?,?,?,?,?,?,?,?)";
+        $values = [$arg['tp-user_id'], $arg['tp-title'], $arg['tp-description'], $arg['tp-about'], $arg['tp-identifies'], $arg['tp-tags'], $arg['tp-startgdate'], $arg['tp-enddate'], $arg['tp-link']];
+
+        $this->db->query($query, $values);
+
+
+    }
+    public function edit($arg)
+    {
+        $query = "UPDATE `postings` SET `title`= ? ,`description`= ?,`about`=?,`identifies`= ?,`tags`=?,`startdate`=?,`enddate`=?,`link`=? WHERE postings.id= ?";
+        $values = [$arg['tp-title'], $arg['tp-description'], $arg['tp-about'], $arg['tp-identifies'], $arg['tp-tags'], $arg['tp-startdate'], $arg['tp-enddate'], $arg['tp-link'], $arg['tp-posting_id']];
 
         $this->db->query($query, $values);
 
