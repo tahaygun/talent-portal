@@ -71,6 +71,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="collapse navbar-collapse" id="navbar">
 								<!-- Start Navigation List -->
 								<ul class="nav navbar-nav navbar-right">
+									<li>
+										<a href="/">
+											Home
+											<i class="fa fa-angle"></i>
+										</a>
+									</li>
 									<li><a class="active" href="#">
 											Postings
 											<i class="fa fa-angle-down"></i>
@@ -186,13 +192,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 							<div class="job-list col-md-12">
 								<div class="thumb">
-									<a href="job-details.html">
+									<a href="/details/<?= $posting['id'] ?>">
 										<img src="assets/img/jobs/img-1.jpg" alt="">
 									</a>
 								</div>
 								<div class="job-list-content">
 									<h4 id="titles">
-										<a href="job-details.html"><?= $posting['title'] ?></a>
+										<a href="/details/<?= $posting['id'] ?>"><?= $posting['title'] ?></a>
 									</h4> <p class="descriptions"><?= $posting['description'] ?> </p>
 									<div class="job-tag">
 										<div class="pull-left">

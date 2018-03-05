@@ -76,8 +76,14 @@ class Process extends CI_Controller
 
 	public function opendetailspage($id)
 	{
-		$data = $this->tpmodel->details($id);
-		$this->load->view('userviews/detailspage', array('data' => $data));
+		if (isset($_SESSION['level']) && $_SESSION['level'] != 3) {
+			$data = $this->tpmodel->details($id);
+			$this->load->view('adminviews/admindetailspage', array('data' => $data));
+		} else {
+			$data = $this->tpmodel->details($id);
+			$this->load->view('userviews/detailspage', array('data' => $data));
+		}
+
 	}
 	public function editpage($id)
 	{

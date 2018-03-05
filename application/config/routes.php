@@ -21,6 +21,7 @@ $route['post-requests'] = 'adminprocess/postrequests';
 $route['highlighted-posts'] = 'adminprocess/highlightedposts';
 $route['editadmin/(:any)'] = 'adminprocess/editpageadmin/$1';
 $route['editnowadmin'] = 'adminprocess/editnow';
+$route['details-admin'] = 'adminprocess/detailspageadmin';
 
 
 $route['404_override'] = '';
