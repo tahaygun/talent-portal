@@ -170,6 +170,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<div class="container">
 				<h2 class="section-title">Our partners</h2>
 				<div class="row">
+					<?php foreach ($data as $posting) { ?>
 					<div class="col-md-12">
 
 
@@ -182,30 +183,27 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="job-list-content">
 								<h4 id="titles">
 									<a href="/details/">
-										Here should be the company name
+										<?= $posting['companyname'] ?>
 									</a>
 								</h4>
 								<p class="descriptions">
-									Here should be the company description
+									 <?= $posting['about'] ?>
 								</p>
 								<div class="job-tag">
 									<div class="pull-left">
 										<div class="meta-tag">
 											<span>
-												<a href="browse-categories.html">#
-                          categories
+												<a href=""># <?= $posting['identifies'] ?>
 												</a>
 											</span>
 											<span>
-												<a href="browse-categories.html">➦
-                          company name
+												<a href="browse-categories.html">➦ <?= $posting['companyname'] ?>
 												</a>
 											</span>
 										</div>
 									</div>
 									<div class="pull-right">
 
-										<a href="/details/" class="btn btn-common btn-rm">Read More</a>
 									</div>
 								</div>
 							</div>
@@ -213,6 +211,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 					</div>
+					<?php }  ?>
 				</div>
 			</div>
 		</section>

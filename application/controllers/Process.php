@@ -98,10 +98,6 @@ class Process extends CI_Controller
 			$this->load->view('userviews/editpage', array('postinfo' => $postinfo));
 		}
 	}
-	public function showcompanylist()
-	{
-		$this->load->view('userviews/companiespage');
-	}
 	public function editnow()
 	{
 		if (isset($_SESSION['id'])) {
@@ -133,6 +129,15 @@ class Process extends CI_Controller
 	{
 		$data = $this->tpmodel->mypage($_SESSION['id']);
 		$this->load->view('userviews/mainpageuser', array('data' => $data));
+	}
+	public function showcompanylist()
+	{
+		$data = $this->tpmodel->allpostings();
+		$this->load->view('userviews/companiespage', array('data' => $data));
+
+		// $data = $this->tpmodel->mypage($_SESSION['id']);
+		//$this->load->view('userviews/companiespage', array('data' => $data));
+
 	}
 	public function newpostingpage()
 	{
