@@ -92,6 +92,10 @@ class Process extends CI_Controller
 			$this->load->view('userviews/editpage', array('postinfo' => $postinfo));
 		}
 	}
+	public function showcompanylist()
+	{
+		$this->load->view('userviews/companiespage');
+	}
 	public function editnow()
 	{
 		$postinfo = $this->input->post(null, true);
