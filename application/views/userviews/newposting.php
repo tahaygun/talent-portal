@@ -254,7 +254,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 													<input type="text" name="link" placeholder="Application Link" id="">
 												</div>
 												<div>
-													<p>Supporting image max 8gb</p>
+													<p>Supporting image max 8mb</p>
 													<input type="file" name="image" id="">
 												</div>
 												<br>
