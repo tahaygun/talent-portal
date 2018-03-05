@@ -149,14 +149,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<a href="https://venturecaferotterdam.org/">Venture Cafe</a>
 
 							</li>
-							<!-- <li class="btn-m">
-              <a href="post-job.html">
-                <i class="ti-pencil-alt"></i> Post A Job</a>
-            </li>
-            <li class="btn-m">
-              <a href="my-account.html">
-                <i class="ti-lock"></i> Log In</a>
-            </li> -->
 						</ul>
 						<!-- Mobile Menu End -->
 					</nav>
@@ -191,19 +183,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										<div class="form-group">
 											<h4>Job Title
 												<h4>
-													<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Title"></textarea>
+													<textarea name="title" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Title"></textarea>
 										</div>
 
 										<div class="form-group">
 											<h4>Job Description
 												<h4>
-													<textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Description"></textarea>
+													<textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Description"></textarea>
 										</div>
 
 										<div class="form-group">
 											<h4>Tags
 												<h4>
-													<textarea class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="Tags"></textarea>
+													<textarea name="tags" class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="Tags"></textarea>
 										</div>
 
 										<div class="form-group">
@@ -251,7 +243,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</div>
 												<br>
 												<div>
-													<input type="text" name="link" placeholder="Application Link" id="">
+													<h6>Application Link</h6>
+													<input type="text" name="link" value="https://" placeholder="Link">
 												</div>
 												<div>
 													<p>Supporting image max 8gb</p>

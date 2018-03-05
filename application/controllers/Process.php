@@ -15,7 +15,12 @@ class Process extends CI_Controller
 
 	public function openjoinpage()
 	{
-		$this->load->view('userviews/join_page');
+		if (isset($_SESSION['id'])) {
+			redirect('/mypage');
+		} else {
+			$this->load->view('userviews/join_page');
+		}
+
 
 	}
 	public function register()
