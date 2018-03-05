@@ -201,7 +201,7 @@ class Process extends CI_Controller
 			$this->load->view('userviews/deletepage', array('postinfo' => $postinfo));
 		}
 
-		
+	}	
 	public function deletenow($id)
 	{
 		if (isset($_SESSION['id'])) {
@@ -209,22 +209,9 @@ class Process extends CI_Controller
 			
 			$this->tpmodel->delete($postinfo);
 			redirect('/');
-		}
-
 	}
 
-
-
-
-
-
-
-
 	}
-
-
-
-
 
 
 
