@@ -120,6 +120,12 @@ class Process extends CI_Controller
 		}
 	}
 
+	public function jobspage()
+	{
+		$data = $this->tpmodel->allpostings();
+		$this->load->view('userviews/jobspage', array('data' => $data));
+	}
+
 
 	public function logout()
 	{
