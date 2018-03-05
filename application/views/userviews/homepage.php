@@ -77,7 +77,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</a>
 									</li>
 									<li>
-										<a href="about.html">
+										<a href="showcompany">
 											Companies
 											<i class="fa fa-angle"></i>
 										</a>
@@ -124,7 +124,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											</li>
 										</ul>
 									</li>
-									<?php 
+									<?php
 							} ?>
 								</ul>
 
