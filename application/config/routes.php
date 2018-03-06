@@ -27,6 +27,8 @@ $route['editnowadmin'] = 'adminprocess/editnow';
 $route['details-admin'] = 'adminprocess/detailspageadmin';
 $route['options-admin'] = 'adminprocess/optionsadmin';
 $route['add-admin'] = 'adminprocess/addadmin';
+$route['new-posting-admin'] = 'adminprocess/newposting';
+$route['create-new-admin'] = 'adminprocess/createnewposting';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = false;
