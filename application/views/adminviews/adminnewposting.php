@@ -74,56 +74,76 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											<i class="fa fa-angle"></i>
 										</a>
 									</li>
-									<li>
-										<a href="/companies">
-											Companies
-											<i class="fa fa-angle"></i>
-										</a>
-									</li>
-									<li>
-										<a href="/jobs">
-											Jobs
-											<i class="fa fa-angle"></i>
-										</a>
-									</li>
-									<li>
-										<a href="https://venturecaferotterdam.org/who-we-are/">
-											About Us
-											<i class="fa fa-angle"></i>
-										</a>
-									</li>
-									<li>
-										<a href="https://venturecaferotterdam.org/">
-											Venture Cafe
-											<i class="fa fa-angle"></i>
-										</a>
-									</li>
-									<?php if (isset($_SESSION['id'])) { ?>
-									<li>
-										<a class="active" href="#">
-											My Page
+									<li><a  href="#">
+											Postings
 											<i class="fa fa-angle-down"></i>
 										</a>
-										<ul class="dropdown">
+											<ul class="dropdown">
 											<li>
-												<a href="/mypage">
-													My Page
+												<a href="/admin-home">
+												All Postings
 												</a>
 											</li>
 											<li>
-												<a class="active" href="/new-posting">
-													New Posting
+												<a href="/post-requests">
+												Posting Requests
+												</a>
+											</li>
+											<li>
+												<a href="/highlighted-posts">
+												Highlighted Postings
+												</a>
+											</li>
+											</ul>
+										
+									</li>
+									<li>
+										<a href="companies">
+											Companies
+											<i class="fa fa-angle-down"></i>
+										</a>
+										 <ul class="dropdown">
+											<li>
+												<a href="showcompany">
+												All Companies
+												</a>
+											</li>
+											<li>
+												<a href="">
+												Company Requests
+												</a>
+											</li>
+											<li>
+												<a href="">
+												Trusted Companies
+												</a>
+											</li>
+											</ul>
+									</li>
+							
+										<li>
+										<a class="active"  href="#">
+											My Page
+											<i class="fa fa-angle-down "></i>
+										</a>
+										 <ul class="dropdown">
+											<li>
+												<a href="/options-admin">
+												Options
+												</a>
+											</li>
+											<li>
+												<a class="active" href="/new-posting-admin">
+												New Posting
 												</a>
 											</li>
 											<li>
 												<a href="/logout">
-													Logout
+												Logout
 												</a>
 											</li>
-										</ul>
+											</ul>
 									</li>
-									<?php 
-							} ?>
 								</ul>
 
 							</div>
@@ -152,11 +172,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</ul>
 						<!-- Mobile Menu End -->
 					</nav>
-				</div>
 
-				<!-- Header Section End -->
 
-				<!-- end intro section -->
+
+			<!-- end intro section -->
+			</div>
 		</div>
 
 		<!-- Form Section Start -->
@@ -178,7 +198,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</div>
 								</div>
 								<div class="form-bottom">
-									<form  enctype="multipart/form-data" accept-charset="utf-8" action="/create-new" method="post" class="job-descript-form" >
+									<form  enctype="multipart/form-data" accept-charset="utf-8" action="/create-new-admin" method="post" class="job-descript-form" >
 										<br>
 										<div class="form-group">
 											<h4>Job Title
@@ -241,6 +261,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
 													<h5>Application Link</h5>
 													<input class="form-control" type="text" name="tp-link" value="<?= isset($postinfo['tp-link']) ? $postinfo['tp-link'] : '' ?>" placeholder="Link">
 													<h6 style="color:#f45342;"><?= form_error('tp-link') ? form_error('tp-link') : '' ?></h6>
+												</div>
+                                                <div class="form-group">
+													<h5>Highlighted</h5>
+													<select name="highlighted" class="form-control" >
+														<option value="0">No</option>
+														<option value="1">Yes</option>
+													</select>
+												</div>
+                                                <div class="form-group">
+													<h5>Highlighted</h5>
+													<select name="active" class="form-control">
+														<option value="1">Yes</option>
+														<option value="0">No</option>
+													</select>
 												</div>
 												<div class="form-group">
 													<h5>Supporting image max 8mb</h5>

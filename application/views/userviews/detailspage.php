@@ -75,7 +75,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</a>
 									</li>
 									<li>
-										<a href="about.html">
+										<a href="/companies">
 											Companies
 											<i class="fa fa-angle"></i>
 										</a>
@@ -164,7 +164,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
       <div class="row">
         <div class="col-md-12">
           <div class="breadcrumb-wrapper">
-            <h2 class="product-title"><a style="color:white;" href=""><?= $data['companyname'] ?></a></h2>
+            <h2 class="product-title"><a style="color:white;" href="/about-company/<?= $data['user_id'] ?>"><?= $data['companyname'] ?></a></h2>
             <ol class="breadcrumb">
               <li>
                 <a href="/">

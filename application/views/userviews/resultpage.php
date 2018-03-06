@@ -75,7 +75,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</a>
 									</li>
 									<li>
-										<a href="about.html">
+										<a href="/companies">
 											Companies
 											<i class="fa fa-angle"></i>
 										</a>
@@ -227,13 +227,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 							<div class="job-list col-md-12">
 								<div class="thumb">
-									<a href="/details/<?= $posting['id'] ?>">
-										<img width="110" src="/assets/img/jobs/<?= $posting['support_image'] ?>" alt="logo">
+									<a href="/about-company/<?= $posting['userid'] ?>">
+										<img width="110" src="/assets/img/jobs/<?= $posting['companylogo'] ?>" alt="logo">
 									</a>
 								</div>
 								<div class="job-list-content">
 									<h4>
-										<a href="/details/<?= $posting['id'] ?>"><?= $posting['title'] ?></a>
+										<a href="/details/<?= $posting['postid'] ?>"><?= $posting['title'] ?></a>
 									</h4> <p class="descriptions"><?= $posting['description'] ?> </p>
 									<div class="job-tag">
 										<div class="pull-left">
@@ -242,13 +242,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 													<a href="browse-categories.html"># Art/Design</a>
 												</span>
 												<span>
-													<a href="browse-categories.html">➦ <?= $posting['companyname'] ?></a>
+													<a href="/about-company/<?= $posting['userid'] ?>">➦ <?= $posting['companyname'] ?></a>
 												</span>
 											</div>
 										</div>
 										<div class="pull-right">
 
-											<a href="/details/<?= $posting['id'] ?>" class="btn btn-common btn-rm">More Detail</a>
+											<a href="/details/<?= $posting['postid'] ?>" class="btn btn-common btn-rm">More Detail</a>
 										</div>
 									</div>
 								</div>

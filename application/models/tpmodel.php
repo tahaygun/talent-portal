@@ -55,8 +55,8 @@ class Tpmodel extends CI_Model
     {
         $text = $this->db->escape_like_str($text1['searchinput']);
         $category = $this->db->escape_like_str($text1['category']);
-        $query = "SELECT * FROM postings
-                JOIN users 
+        $query = "SELECT users.id as userid, users.companyname, users.companylogo, postings.title, postings.id as postid, postings.description, postings.tags, postings.identifies FROM users
+                JOIN  postings
                 ON postings.user_id = users.id
                 WHERE postings.active = 1 
                 AND
@@ -95,10 +95,11 @@ class Tpmodel extends CI_Model
     }
     public function allcompanies()
     {
-        $query = "SELECT * FROM users
-        JOIN postings
+        $query = "SELECT users.id as userid, users.companyname, users.companylogo, postings.title, postings.id as postid, postings.about, postings.description, postings.tags, postings.identifies FROM users
+        LEFT JOIN postings
         ON users.id = postings.user_id
-        GROUP BY users.companyname
+        WHERE users.adminlevel = 3
+        GROUP BY users.id
         ORDER BY postings.id DESC";
         $result = $this->db->query($query)->result_array();
         return $result;
@@ -134,6 +135,16 @@ class Tpmodel extends CI_Model
         $result = $this->db->query($query, $values)->row_array();
         return $result;
     }
+    public function aboutcompany($id)
+    {
+        $query = "SELECT * FROM users
+                JOIN postings
+                ON postings.user_id = users.id
+                WHERE users.id=?";
+        $values = [$id];
+        $result = $this->db->query($query, $values)->row_array();
+        return $result;
+    }
     public function editinfo($id)
     {
         $query = "SELECT * FROM users
@@ -148,6 +159,15 @@ class Tpmodel extends CI_Model
     {
         $query = "INSERT INTO `postings`(`user_id`, `title`, `description`, `about`, `identifies`, `tags`, `startdate`, `enddate`, `link`, `support_image`) VALUES (?,?,?,?,?,?,?,?,?,?)";
         $values = [$arg['tp-user_id'], $arg['tp-title'], $arg['tp-description'], $arg['tp-about'], $arg['tp-identifies'], $arg['tp-tags'], $arg['tp-startdate'], $arg['tp-enddate'], $arg['tp-link'], $path];
+
+        $this->db->query($query, $values);
+
+
+    }
+    public function insertpostingadmin($arg, $path)
+    {
+        $query = "INSERT INTO `postings`(`user_id`, `title`, `description`, `about`, `identifies`, `tags`, `startdate`, `enddate`, `link`, `highlighted`, `active`, `support_image`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+        $values = [$arg['tp-user_id'], $arg['tp-title'], $arg['tp-description'], $arg['tp-about'], $arg['tp-identifies'], $arg['tp-tags'], $arg['tp-startdate'], $arg['tp-enddate'], $arg['tp-link'], $arg['highlighted'], $arg['active'], $path];
 
         $this->db->query($query, $values);
 
@@ -192,6 +212,17 @@ class Tpmodel extends CI_Model
         $query = "DELETE  FROM postings WHERE id=?";
         $values = [$id];
         $result = $this->db->query($query, $values);
+        return $result;
+    }
+
+    public function companypostings($id)
+    {
+        $query = "SELECT * FROM users
+        JOIN postings
+        ON users.id = postings.user_id
+        WHERE users.id=$id
+        ORDER BY postings.id DESC";
+        $result = $this->db->query($query)->result_array();
         return $result;
     }
 

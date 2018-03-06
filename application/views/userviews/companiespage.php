@@ -77,7 +77,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</a>
 									</li>
 									<li>
-										<a class="active" href="showcompany">
+										<a class="active" href="#">
 											Companies
 											<i class="fa fa-angle"></i>
 										</a>
@@ -177,11 +177,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 						<div class="job-list col-md-12">
 							<div class="thumb">
-								<a href="/about-company/<?= $posting['user_id'] ?>"><img width="110" src="/assets/img/jobs/<?= $posting['companylogo'] ?>" alt="logo"></a>
+								<a href="/about-company/<?= $posting['userid'] ?>"><img width="110" src="/assets/img/jobs/<?= $posting['companylogo'] ?>" alt="logo"></a>
 							</div>
 							<div class="job-list-content">
 								<h4 id="titles">
-									<a href="/about-company/<?= $posting['user_id'] ?>"><?= $posting['companyname'] ?></a>
+									<a href="/about-company/<?= $posting['userid'] ?>"><?= $posting['companyname'] ?></a>
 								</h4>
 								<p class="descriptions">
 									 <?= $posting['about'] ?>

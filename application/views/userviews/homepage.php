@@ -77,7 +77,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</a>
 									</li>
 									<li>
-										<a href="showcompany">
+										<a href="/companies">
 											Companies
 											<i class="fa fa-angle"></i>
 										</a>
@@ -224,8 +224,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 						<div class="job-list col-md-12">
 							<div class="thumb">
-								<a href="/details/<?= $posting['id'] ?>">
-									<img width="110" src="/assets/img/jobs/<?= $posting['companylogo'] ?>" alt="logo">
+								<a href="/about-company/<?= $posting['user_id'] ?>">
+									<img width="100" src="/assets/img/jobs/<?= $posting['companylogo'] ?>" alt="logo">
 								</a>
 							</div>
 							<div class="job-list-content">
@@ -246,7 +246,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</a>
 											</span>
 											<span>
-												<a href="browse-categories.html">➦
+												<a href="/about-company/<?= $posting['user_id'] ?>">➦
 													<?= $posting['companyname'] ?>
 												</a>
 											</span>

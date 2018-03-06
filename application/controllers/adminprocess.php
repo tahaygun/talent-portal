@@ -64,6 +64,11 @@ class Adminprocess extends CI_Controller
         }
 
     }
+    public function showcompanylist()
+    {
+        $data = $this->tpmodel->allcompanies();
+        $this->load->view('adminviews/adminshowcompaniespage', array('data' => $data));
+    }
     public function addadmin()
     {
         if ($_SESSION['level'] == 1) {
@@ -71,6 +76,38 @@ class Adminprocess extends CI_Controller
             $this->tpmodel->newadmin($newadmininfo);
             redirect('/');
         } else {
+            redirect('/');
+        }
+    }
+
+    public function newposting()
+    {
+        $this->load->view('adminviews/adminnewposting');
+    }
+    public function createnewposting()
+    {
+        $postinfo = $this->input->post(null, true);
+        $this->form_validation->set_rules('tp-title', 'Title', 'required|max_length[255]');
+        $this->form_validation->set_rules('tp-description', 'Description', 'required|max_length[500]');
+        $this->form_validation->set_rules('tp-tags', 'Tags', 'required');
+        $this->form_validation->set_rules('tp-about', 'About Company', 'required|max_length[500]');
+        $this->form_validation->set_rules('tp-identifies', 'Identifies', 'required');
+        $this->form_validation->set_rules('tp-startdate', 'Start Date', 'required');
+        $this->form_validation->set_rules('tp-enddate', 'End Date', 'required');
+        $this->form_validation->set_rules('tp-link', 'Application Link', 'required|valid_url');
+
+
+        $config['upload_path'] = './assets/img/jobs/';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $this->load->library('upload', $config);
+
+        if ($this->form_validation->run() == false || !$this->upload->do_upload('support-image')) {
+            $error = $this->upload->display_errors();
+            $this->load->view('adminviews/adminnewposting', array('postinfo' => $postinfo, 'error' => $error));
+        } else {
+            $data = $this->upload->data();
+            $path = $data['file_name'];
+            $this->tpmodel->insertpostingadmin($postinfo, $path);
             redirect('/');
         }
     }

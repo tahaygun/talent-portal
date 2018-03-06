@@ -77,7 +77,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                   </a>
                 </li>
                 <li>
-                  <a href="about.html">
+                  <a href="/companies">
                     Companies
                     <i class="fa fa-angle"></i>
                   </a>
@@ -145,7 +145,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
               <a class="active" href="index.html">Home</a>
             </li>
             <li>
-              <a href="about.html">Pages</a>
+              <a href="/companies">Pages</a>
 
             </li>
             <li>

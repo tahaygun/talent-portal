@@ -107,7 +107,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</a>
 										 <ul class="dropdown">
 											<li>
-												<a href="showcompany">
+												<a href="showcompanyadmin">
 												All Companies
 												</a>
 											</li>
@@ -136,7 +136,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</a>
 											</li>
 											<li>
-												<a href="new-posting">
+												<a href="/new-posting-admin">
 												New Posting
 												</a>
 											</li>
@@ -192,8 +192,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 							<div class="job-list col-md-12">
 								<div class="thumb">
-									<a href="/details/<?= $posting['id'] ?>">
-										<img src="assets/img/jobs/img-1.jpg" alt="">
+									<a href="/about-company/<?= $posting['user_id'] ?>">
+										<img width="100" src="/assets/img/jobs/<?= $posting['companylogo'] ?>" alt="logo">
 									</a>
 								</div>
 								<div class="job-list-content">
