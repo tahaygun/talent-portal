@@ -159,7 +159,13 @@ class Process extends CI_Controller
 	}
 	public function newpostingpage()
 	{
-		$this->load->view('userviews/newposting');
+		if (isset($_SESSION['level']) && $_SESSION['level'] != 3) {
+			redirect('/new-posting-admin');
+		} elseif (isset($_SESSION['id'])) {
+			$this->load->view('userviews/newposting');
+		} else {
+			redirect('/');
+		}
 	}
 
 	public function search()
@@ -212,25 +218,20 @@ class Process extends CI_Controller
 
 	}
 
-	public function deletepage($id)
+
+	public function delete($id)
 	{
-		$postinfo = $this->tpmodel->editinfo($id);
-		if ($_SESSION['level'] != 1) {
-			if ($_SESSION['id'] == $postinfo['user_id']) {
-				$this->load->view('userviews/editpage', array('postinfo' => $postinfo));
-			} else {
-				redirect('/mypage');
-			}
-		} else {
-			$this->load->view('userviews/editpage', array('postinfo' => $postinfo));
-		}
-	}
-
-
-	public function deletenow($id)
-	{	
+		$data = $this->tpmodel->details($id);
+		if (isset($_SESSION['level']) && $_SESSION['level'] != 3) {
 			$this->tpmodel->deletenow($id);
-			redirect('/mypage');	
+			redirect('/');
+		} elseif (isset($_SESSION['id']) && ($_SESSION['id'] == $data['user_id'])) {
+			$this->tpmodel->deletenow($id);
+			redirect('/mypage');
+		} else {
+			redirect('/');
+		}
+
 	}
 
 }

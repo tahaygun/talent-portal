@@ -183,7 +183,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="row">
 					<div class="col-md-12">
 						<div class="breadcrumb-wrapper">
-							<img src="/assets/img/jobs/<?= $data['companylogo'] ?>" alt="">
+							<img width="150" src="/assets/img/jobs/<?= $data['companylogo'] ?>" alt="">
 							<ol class="breadcrumb">
 								<li>
 									<a href="/">

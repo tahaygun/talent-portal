@@ -164,7 +164,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="row">
 					<div class="col-md-12">
 						<div class="breadcrumb-wrapper">
-							<img src="/assets/img/jobs/<?= $data['companylogo'] ?>" alt="">
+							<img width="150" src="/assets/img/jobs/<?= $data['companylogo'] ?>" alt="">
 							<ol class="breadcrumb">
 								<li>
 									<a href="/">
@@ -222,12 +222,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<div class="pull-left">
 										<div class="meta-tag">
 											<span>
-												<a href="browse-categories.html"># Art/Design</a>
-											</span>
-											<span>
-												<a href="browse-categories.html">➦
-													<?= $posting['companyname'] ?>
-												</a>
+												<a href="browse-categories.html"><?= $posting['tags'] ?></a>
 											</span>
 										</div>
 									</div>
