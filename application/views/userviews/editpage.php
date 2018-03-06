@@ -75,7 +75,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</a>
 									</li>
 									<li>
-										<a href="about.html">
+										<a href="/companies">
 											Companies
 											<i class="fa fa-angle"></i>
 										</a>

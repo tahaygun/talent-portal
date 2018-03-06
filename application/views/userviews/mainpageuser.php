@@ -78,7 +78,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</a>
 									</li>
 									<li>
-										<a href="about.html">
+										<a href="/companies">
 											Companies
 											<i class="fa fa-angle"></i>
 										</a>
@@ -186,9 +186,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											<div class="meta-tag">
 												<span>
 													<a href=""><?= $posting['identifies'] ?></a>
-												</span>
-												<span>
-													<a href="">➦ <?= $posting['companyname'] ?></a>
 												</span>
 												<span>
 													<a style="color:green" href="#">➦ <?= $posting['active'] == 0 ? "Requested" : "Active" ?></a>

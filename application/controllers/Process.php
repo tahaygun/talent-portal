@@ -88,6 +88,19 @@ class Process extends CI_Controller
 		}
 
 	}
+	public function aboutcompany($id)
+	{
+		if (isset($_SESSION['level']) && $_SESSION['level'] != 3) {
+			$data = $this->tpmodel->aboutcompany($id);
+			$postings = $this->tpmodel->companypostings($id);
+			$this->load->view('adminviews/adminaboutcompany', array('data' => $data, 'postings' => $postings));
+		} else {
+			$data = $this->tpmodel->aboutcompany($id);
+			$postings = $this->tpmodel->companypostings($id);
+			$this->load->view('userviews/aboutcompany', array('data' => $data, 'postings' => $postings));
+		}
+
+	}
 	public function editpage($id)
 	{
 		$postinfo = $this->tpmodel->editinfo($id);
@@ -135,8 +148,14 @@ class Process extends CI_Controller
 	}
 	public function showcompanylist()
 	{
-		$data = $this->tpmodel->allcompanies();
-		$this->load->view('userviews/companiespage', array('data' => $data));
+		if (isset($_SESSION['level']) && $_SESSION['level'] != 3) {
+			$data = $this->tpmodel->allcompanies();
+			$this->load->view('adminviews/admincompaniespage', array('data' => $data));
+		} else {
+			$data = $this->tpmodel->allcompanies();
+			$this->load->view('userviews/companiespage', array('data' => $data));
+		}
+
 	}
 	public function newpostingpage()
 	{

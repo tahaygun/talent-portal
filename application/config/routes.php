@@ -10,13 +10,14 @@ $route['jobs'] = 'process/jobspage';
 $route['search'] = 'process/search';
 $route['new-posting'] = 'process/newpostingpage';
 $route['create-new'] = 'process/createnewposting';
-$route['showcompany'] = 'process/showcompanylist';
+$route['companies'] = 'process/showcompanylist';
 $route['details/(:any)'] = 'process/opendetailspage/$1';
 $route['edit/(:any)'] = 'process/editpage/$1';
 $route['editnow'] = 'process/editnow';
 $route['logout'] = 'process/logout';
 $route['delete/(:any)'] = 'process/deletepage/$1';
 $route['deletenow'] = 'process/deletenow';
+$route['about-company/(:any)'] = 'process/aboutcompany/$1';
 
 $route['admin-home'] = 'adminprocess/adminpostingpage';
 $route['post-requests'] = 'adminprocess/postrequests';

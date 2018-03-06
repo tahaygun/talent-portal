@@ -55,8 +55,8 @@ class Tpmodel extends CI_Model
     {
         $text = $this->db->escape_like_str($text1['searchinput']);
         $category = $this->db->escape_like_str($text1['category']);
-        $query = "SELECT * FROM postings
-                JOIN users 
+        $query = "SELECT users.id as userid, users.companyname, users.companylogo, postings.title, postings.id as postid, postings.description, postings.tags, postings.identifies FROM users
+                JOIN  postings
                 ON postings.user_id = users.id
                 WHERE postings.active = 1 
                 AND
@@ -95,10 +95,11 @@ class Tpmodel extends CI_Model
     }
     public function allcompanies()
     {
-        $query = "SELECT * FROM users
-        JOIN postings
+        $query = "SELECT users.id as userid, users.companyname, users.companylogo, postings.title, postings.id as postid, postings.about, postings.description, postings.tags, postings.identifies FROM users
+        LEFT JOIN postings
         ON users.id = postings.user_id
-        GROUP BY users.companyname
+        WHERE users.adminlevel = 3
+        GROUP BY users.id
         ORDER BY postings.id DESC";
         $result = $this->db->query($query)->result_array();
         return $result;
@@ -130,6 +131,16 @@ class Tpmodel extends CI_Model
                 JOIN postings
                 ON postings.user_id = users.id
                 WHERE postings.id=?";
+        $values = [$id];
+        $result = $this->db->query($query, $values)->row_array();
+        return $result;
+    }
+    public function aboutcompany($id)
+    {
+        $query = "SELECT * FROM users
+                JOIN postings
+                ON postings.user_id = users.id
+                WHERE users.id=?";
         $values = [$id];
         $result = $this->db->query($query, $values)->row_array();
         return $result;
@@ -192,6 +203,17 @@ class Tpmodel extends CI_Model
         $query = "DELETE  FROM postings WHERE id=?";
         $values = [$id];
         $result = $this->db->query($query, $values);
+        return $result;
+    }
+
+    public function companypostings($id)
+    {
+        $query = "SELECT * FROM users
+        JOIN postings
+        ON users.id = postings.user_id
+        WHERE users.id=$id
+        ORDER BY postings.id DESC";
+        $result = $this->db->query($query)->result_array();
         return $result;
     }
 

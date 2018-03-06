@@ -172,10 +172,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</ul>
 						<!-- Mobile Menu End -->
 					</nav>
-
-
-
-			<!-- end intro section -->
 			</div>
 		</div>
 
