@@ -169,8 +169,6 @@ class Process extends CI_Controller
 
 		if ($this->form_validation->run() == false || !$this->upload->do_upload('support-image')) {
 			$error = $this->upload->display_errors();
-			var_dump($error);
-			var_dump($postinfo);
 			$this->load->view('userviews/newposting', array('postinfo' => $postinfo, 'error' => $error));
 		} else {
 			$data = $this->upload->data();

@@ -153,6 +153,15 @@ class Tpmodel extends CI_Model
 
 
     }
+    public function insertpostingadmin($arg, $path)
+    {
+        $query = "INSERT INTO `postings`(`user_id`, `title`, `description`, `about`, `identifies`, `tags`, `startdate`, `enddate`, `link`, `highlighted`, `active`, `support_image`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+        $values = [$arg['tp-user_id'], $arg['tp-title'], $arg['tp-description'], $arg['tp-about'], $arg['tp-identifies'], $arg['tp-tags'], $arg['tp-startdate'], $arg['tp-enddate'], $arg['tp-link'], $arg['highlighted'], $arg['active'], $path];
+
+        $this->db->query($query, $values);
+
+
+    }
     public function edit($arg)
     {
         $query = "UPDATE `postings` SET `title`= ? ,`description`= ?,`about`=?,`identifies`= ?,`tags`=?,`startdate`=?,`enddate`=?,`link`=? WHERE postings.id= ?";

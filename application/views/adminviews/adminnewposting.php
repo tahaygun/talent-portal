@@ -11,7 +11,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<meta name="author" content="Jobboard">
 
-		<title>Talent Portal</title>
+		<title>Venture café - Talent Portal</title>
 
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="assets/img/favicon.png">
@@ -38,18 +38,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<link rel="stylesheet" href="assets/css/slicknav.css" type="text/css">
 		<!-- Responsive CSS Styles -->
 		<link rel="stylesheet" href="assets/css/responsive.css" type="text/css">
-
-		<link rel="stylesheet" href="assets/css/joinpage.css" type="text/css">
-
 		<!-- Color CSS Styles  -->
 		<link rel="stylesheet" type="text/css" href="assets/css/colors/red.css" media="screen" />
-
-		<style>
-			.top-content {
-				margin-left: 500px;
-			}
-
-		</style>
+		<link rel="stylesheet" href="assets/css/homepage.css" type="text/css">
 
 	</head>
 
@@ -83,67 +74,66 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											<i class="fa fa-angle"></i>
 										</a>
 									</li>
-									<li>
-										<a href="#">
+									<li><a  href="#">
 											Postings
 											<i class="fa fa-angle-down"></i>
 										</a>
-										<ul class="dropdown">
+											<ul class="dropdown">
 											<li>
 												<a href="/admin-home">
-													All Postings
+												All Postings
 												</a>
 											</li>
 											<li>
 												<a href="/post-requests">
-													Posting Requests
+												Posting Requests
 												</a>
 											</li>
 											<li>
 												<a href="/highlighted-posts">
-													Highlighted Postings
+												Highlighted Postings
 												</a>
 											</li>
-										</ul>
-
+											</ul>
+										
 									</li>
 									<li>
 										<a href="companies">
 											Companies
 											<i class="fa fa-angle-down"></i>
 										</a>
-										<ul class="dropdown">
+										 <ul class="dropdown">
 											<li>
 												<a href="showcompany">
-													All Companies
+												All Companies
 												</a>
 											</li>
 											<li>
 												<a href="">
-													Company Requests
+												Company Requests
 												</a>
 											</li>
 											<li>
 												<a href="">
-													Trusted Companies
+												Trusted Companies
 												</a>
 											</li>
-										</ul>
+											</ul>
 									</li>
-
-									<li>
-										<a class="active" href="#">
+							
+										<li>
+										<a class="active"  href="#">
 											My Page
 											<i class="fa fa-angle-down "></i>
 										</a>
 										 <ul class="dropdown">
 											<li>
-												<a class="active" href="/options-admin">
+												<a href="/options-admin">
 												Options
 												</a>
 											</li>
 											<li>
-												<a href="/new-posting-admin">
+												<a class="active" href="/new-posting-admin">
 												New Posting
 												</a>
 											</li>
@@ -182,17 +172,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</ul>
 						<!-- Mobile Menu End -->
 					</nav>
-				</div>
-			</section>
-		</div>
-		<!-- Header Section End -->
 
-		<!-- Top content -->
+
+
+			<!-- end intro section -->
+			</div>
+		</div>
+
+		<!-- Form Section Start -->
 		<div class="top-content">
 
-			<div class="inner-bg">
+			<div class="inner-bg backgroundven">
 				<div class="container">
-					<h2 class="section-title">Welcome Administrator</h2>
 
 					<div class="row">
 						<div class="col-sm-5">
@@ -200,37 +191,115 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="form-box">
 								<div class="form-top">
 									<div class="form-top-left">
-									</form>
-									<form role="form" action="/change-password" method="post" class="registration-form">
+										<h3>Post a Job</h3>
+									</div>
+									<div class="form-top-right">
+
+									</div>
+								</div>
+								<div class="form-bottom">
+									<form  enctype="multipart/form-data" accept-charset="utf-8" action="/create-new-admin" method="post" class="job-descript-form" >
+										<br>
 										<div class="form-group">
-											<h3>Change password</h3>
-											<br>
-											<label class="sr-only" for="password">Password</label>
-											<input type="password" name="password" placeholder="Password" class="form-password form-control" id="password">
+											<h4>Job Title
+												<h4>
+													<textarea name="tp-title" class="form-control" id="title" rows="3" placeholder="Max 255 characters"><?= isset($postinfo['tp-title']) ? $postinfo['tp-title'] : '' ?></textarea>
+													 <h6 style="color:#f45342;"><?= form_error('tp-title') ? form_error('tp-title') : '' ?>
 										</div>
+
 										<div class="form-group">
-											<label class="sr-only" for="confpassword">New password Confirm</label>
-											<input type="password" name="confpassword" placeholder=" Confirm your Password" class="form-conf-password form-control" id="confpassword">
+											<h4>Job Description
+												<h4>
+													<textarea name="tp-description" class="form-control" id="" rows="5" placeholder="Max 500 characters"><?= isset($postinfo['tp-description']) ? $postinfo['tp-description'] : '' ?></textarea>
+													<h6 style="color:#f45342;"><?= form_error('tp-description') ? form_error('tp-description') : '' ?></h6>
 										</div>
-										<button type="submit" class="btn btn-common btn-rm">Confirm</button>
+
+										<div class="form-group">
+											<h4>Tags
+												<h4>
+													<textarea name="tp-tags" class="form-control" id="" rows="1" placeholder="Tags"><?= isset($postinfo['tp-tags']) ? $postinfo['tp-tags'] : '' ?></textarea>
+													<p>Growth, International, City, Talent, Community, Resilience, Culture, Digital, Energy, Inspiration</p>
+													<h6 style="color:#f45342;"><?= form_error('tp-tags') ? form_error('tp-tags') : '' ?></h6>
+										</div>
+
+										<div class="form-group">
+											<h4>About company
+												<h4>
+													<label class="sr-only" for="companyinofo">About a company</label>
+													<textarea name="tp-about" class="form-control" id="" rows="5" placeholder="Max 255 characters"><?= isset($postinfo['tp-about']) ? $postinfo['tp-about'] : '' ?></textarea>
+													<h6 style="color:#f45342;"><?= form_error('tp-about') ? form_error('tp-about') : '' ?></h6>
+													<input type="hidden" name="tp-user_id" value="<?= $_SESSION['id'] ?>">
+										</div>
+										<h4>Identifies
+											<h4>
+											<div class="form-group">
+												<select name="tp-identifies" class="form-control" id="">
+												<option><?= isset($postinfo['tp-identifies']) ? $postinfo['tp-identifies'] : '' ?></option>
+												<option>Startup</option>
+												<option>Service</option>
+												<option>Provider</option>
+												<option>Goverment</option>
+												<option>Academia</option>
+												<option>Corporate</option>
+												</select>
+												<h6 style="color:#f45342;"><?= form_error('tp-identifies') ? form_error('tp-identifies') : '' ?></h6>
+											</div>
+												<br>
+												<div class="form-group">
+													<h4>Starting Date</h4>
+													<input  name="tp-startdate" class="form-control" size="2" type="date" value="<?= isset($postinfo['tp-startdate']) ? $postinfo['tp-startdate'] : '' ?>">
+													<h6 style="color:#f45342;"><?= form_error('tp-startdate') ? form_error('tp-startdate') : '' ?></h6>
+												</div>
+
+												<div class="form-group">
+													<h4>End date</h4>
+													<input  name="tp-enddate" class="form-control" size="2" type="date" value="<?= isset($postinfo['tp-enddate']) ? $postinfo['tp-enddate'] : '' ?>">
+													<h6 style="color:#f45342;"><?= form_error('tp-enddate') ? form_error('tp-enddate') : '' ?></h6>
+												</div>
+												<br>
+												<div class="form-group">
+													<h5>Application Link</h5>
+													<input class="form-control" type="text" name="tp-link" value="<?= isset($postinfo['tp-link']) ? $postinfo['tp-link'] : '' ?>" placeholder="Link">
+													<h6 style="color:#f45342;"><?= form_error('tp-link') ? form_error('tp-link') : '' ?></h6>
+												</div>
+                                                <div class="form-group">
+													<h5>Highlighted</h5>
+													<select name="highlighted" class="form-control" >
+														<option value="0">No</option>
+														<option value="1">Yes</option>
+													</select>
+												</div>
+                                                <div class="form-group">
+													<h5>Highlighted</h5>
+													<select name="active" class="form-control">
+														<option value="1">Yes</option>
+														<option value="0">No</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<h5>Supporting image max 8mb</h5>
+													<input type="file" name="support-image" id="">
+													<h6 style="color:#f45342;"><?= isset($error) ? $error : '' ?></h6>
+												</div>
+												
+												<button type="submit" class="btn btn-common btn-rm">Submit</button> <br>
+												<!-- <a href="job-details.html" class="btn btn-common btn-rm">More Detail</a> -->
 									</form>
 								</div>
 							</div>
-                         </div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<!-- Javascript -->
-		<script src="assets/js/jquery-1.11.1.min.js"></script>
-		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-		<script src="assets/js/scripts.js"></script>
+
+
+		<!-- Form Section End -->
 
 
 		<!-- Footer Section Start -->
-		<footer>
+		<footer id="footerid">
 			<!-- Footer Area Start -->
 			<section class="footer-Content">
 				<div class="container">
@@ -247,19 +316,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="widget">
 
 
-								<a href="#">&nbsp Company Login</a>
+								<a href="/joinpage">&nbsp Company Login</a>
 
 
-								<a href="#">&nbsp&nbsp Support</a>
+								<a href="https://venturecaferotterdam.org/sponsor/">&nbsp&nbsp Support</a>
 
 
 								<a href="#">&nbsp&nbsp License</a>
 
 
-								<a href="#">&nbsp&nbsp Terms & Conditions</a>
-
-
-								<a href="#">&nbsp&nbsp Contact</a>
+								<a href="https://venturecaferotterdam.org/contact/">&nbsp&nbsp Contact</a>
 
 							</div>
 						</div>
@@ -268,16 +334,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="widget">
 
 								<div class="bottom-social-icons social-icon">
-									<a class="twitter" href="https://twitter.com/GrayGrids">
+									<a class="twitter" href="https://twitter.com/VentureCafeRdam">
 										<i class="ti-twitter-alt"></i>
 									</a>
-									<a class="facebook" href="https://web.facebook.com/GrayGrids">
+									<a class="facebook" href="https://www.facebook.com/VentureCafeRotterdam/">
 										<i class="ti-facebook"></i>
 									</a>
-									<a class="dribble" href="https://dribbble.com/GrayGrids">
+									<a class="instagram" href="http://instagram.com/venturecaferotterdam/">
 										<i class="ti-instagram"></i>
 									</a>
-									<a class="linkedin" href="https://www.linkedin.com/GrayGrids">
+									<a class="linkedin" href="https://www.linkedin.com/company/venturecaferotterdam">
 										<i class="ti-linkedin"></i>
 									</a>
 								</div>

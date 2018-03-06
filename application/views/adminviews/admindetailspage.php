@@ -207,7 +207,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-sm-12">
-          <img src="/assets/img/about/img1.jpg" alt="">
+            <img  src="/assets/img/jobs/<?= $data['support_image'] ?>" alt="">
         </div>
         <div class="col-md-6 col-sm-12">
           <div class="about-content">
