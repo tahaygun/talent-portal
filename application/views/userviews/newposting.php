@@ -178,7 +178,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</div>
 								</div>
 								<div class="form-bottom">
-									<form role="form" action="/create-new" method="post" class="job-descript-form">
+									<form action="/create-new" method="post" class="job-descript-form" enctype="multipart/form-data" accept-charset="utf-8">
 										<br>
 										<div class="form-group">
 											<h4>Job Title
@@ -243,8 +243,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 													<h6 style="color:#f45342;"><?= form_error('tp-link') ? form_error('tp-link') : '' ?></h6>
 												</div>
 												<div class="form-group">
-													<p>Supporting image max 8mb</p>
-													<input type="file" name="tp-support-image" id="">
+													<h5>Supporting image max 8mb</h5>
+													<input type="file" name="support-image" id="">
+													<h6 style="color:#f45342;"><?= isset($error) ? $error : '' ?></h6>
 												</div>
 												
 												<button type="submit" class="btn btn-common btn-rm">Submit</button> <br>

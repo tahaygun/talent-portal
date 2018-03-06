@@ -33,14 +33,17 @@ class Process extends CI_Controller
 		$this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
 		$this->form_validation->set_rules('confpassword', 'Password Confirm', 'required|matches[password]');
 
+		$config['upload_path'] = './assets/img/jobs/';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$this->load->library('upload', $config);
 
-		if ($this->form_validation->run() == false) {
-			$validationerror = validation_errors();
-			$this->load->view('userviews/join_page', array('reginfo' => $reginfo));
+		if ($this->form_validation->run() == false || !$this->upload->do_upload('support-image')) {
+			$error = $this->upload->display_errors();
+			$this->load->view('userviews/join_page', array('reginfo' => $reginfo, 'error' => $error));
 		} else {
-
-
-			$this->tpmodel->insertuser($reginfo);
+			$data = $this->upload->data();
+			$path = $data['file_name'];
+			$this->tpmodel->insertuser($reginfo, $path);
 			$this->session->set_flashdata('message', 'You are successfully registirated!');
 			redirect('/joinpage');
 		}
@@ -159,12 +162,18 @@ class Process extends CI_Controller
 		$this->form_validation->set_rules('tp-enddate', 'End Date', 'required');
 		$this->form_validation->set_rules('tp-link', 'Application Link', 'required|valid_url');
 
-		if ($this->form_validation->run() == false) {
-			$validationerror = validation_errors();
-			$this->load->view('userviews/newposting', array('postinfo' => $postinfo));
-		} else {
+		$config['upload_path'] = './assets/img/jobs/';
+		$config['allowed_types'] = 'gif|jpg|png';
 
-			$this->tpmodel->insertpostings($postinfo);
+		$this->load->library('upload', $config);
+
+		if ($this->form_validation->run() == false || !$this->upload->do_upload('support-image')) {
+			$error = $this->upload->display_errors();
+			$this->load->view('userviews/newposting', array('postinfo' => $postinfo, 'error' => $error));
+		} else {
+			$data = $this->upload->data();
+			$path = $data['file_name'];
+			$this->tpmodel->insertpostings($postinfo, $path);
 			redirect('/mypage');
 		}
 	}

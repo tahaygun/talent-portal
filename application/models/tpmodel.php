@@ -12,10 +12,10 @@ class Tpmodel extends CI_Model
         $result = $this->db->query($query)->result_array();
         return $result;
     }
-    public function insertuser($arg)
+    public function insertuser($arg, $path)
     {
-        $query = "INSERT INTO users (companyname, email, phone, contactperson, password) values (?,?,?,?,?)";
-        $values = [$arg['companyname'], $arg['email'], $arg['phone'], $arg['contactname'], $arg['password']];
+        $query = "INSERT INTO users (companyname, email, phone, contactperson, companylogo, password) values (?,?,?,?,?,?)";
+        $values = [$arg['companyname'], $arg['email'], $arg['phone'], $arg['contactname'], $path, $arg['password']];
 
         $this->db->query($query, $values);
 
@@ -135,10 +135,10 @@ class Tpmodel extends CI_Model
         $result = $this->db->query($query, $values)->row_array();
         return $result;
     }
-    public function insertpostings($arg)
+    public function insertpostings($arg, $path)
     {
-        $query = "INSERT INTO `postings`(`user_id`, `title`, `description`, `about`, `identifies`, `tags`, `startdate`, `enddate`, `link`) VALUES (?,?,?,?,?,?,?,?,?)";
-        $values = [$arg['tp-user_id'], $arg['tp-title'], $arg['tp-description'], $arg['tp-about'], $arg['tp-identifies'], $arg['tp-tags'], $arg['tp-startdate'], $arg['tp-enddate'], $arg['tp-link']];
+        $query = "INSERT INTO `postings`(`user_id`, `title`, `description`, `about`, `identifies`, `tags`, `startdate`, `enddate`, `link`, `support_image`) VALUES (?,?,?,?,?,?,?,?,?,?)";
+        $values = [$arg['tp-user_id'], $arg['tp-title'], $arg['tp-description'], $arg['tp-about'], $arg['tp-identifies'], $arg['tp-tags'], $arg['tp-startdate'], $arg['tp-enddate'], $arg['tp-link'], $path];
 
         $this->db->query($query, $values);
 

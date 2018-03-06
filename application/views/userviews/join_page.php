@@ -198,7 +198,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                           </div>
                           </div>
                           <div class="form-bottom">
-                        <form role="form" action="/register" method="post" class="registration-form">
+                        <form enctype="multipart/form-data" accept-charset="utf-8" action="/register" method="post" class="registration-form">
                           <div class="form-group">
                             <label class="sr-only" for="companyname">Company name</label>
                               <input type="text" name="companyname" placeholder="Company name..." class="companyname form-control" id="form-first-name" value="<?= isset($reginfo['companyname']) ? $reginfo['companyname'] : '' ?>">
@@ -216,7 +216,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             </div>
                             <div class="form-group">
                               <label class="sr-only" for="phone"> phone</label>
-                              <input type="number" name="phone" placeholder="Phone" class="form-phone form-control" id="phone" value="<?= isset($reginfo['phone']) ? $reginfo['phone'] : '' ?>">
+                              <input type="text" name="phone" placeholder="Phone" class="form-phone form-control" id="phone" value="<?= isset($reginfo['phone']) ? $reginfo['phone'] : '' ?>">
                               <?= form_error('phone') ? form_error('phone') : '' ?>
 
                             </div>
@@ -230,6 +230,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
                               <input type="password" name="confpassword" placeholder=" Confirm your Password" class="form-conf-password form-control" id="confpassword">
                               <?= form_error('confpassword') ? form_error('confpassword') : '' ?>
                             </div>
+
+                            <div class="form-group">
+                              <h5>Company Logo max 512kb </h5>
+                              <input type="file" name="support-image" id="">
+                            <?= isset($error) ? $error : '' ?>
+												    </div>
+
                             <button type="submit" class="btn btn-common btn-rm">Sign me up!</button> <br> <br>
                             <h4> <?= isset($_SESSION['message']) ? $_SESSION['message'] : '' ?></h4>
                            
