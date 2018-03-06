@@ -178,7 +178,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</div>
 								</div>
 								<div class="form-bottom">
-									<form action="/create-new" method="post" class="job-descript-form" enctype="multipart/form-data" accept-charset="utf-8">
+									<form  enctype="multipart/form-data" accept-charset="utf-8" action="/create-new" method="post" class="job-descript-form" >
 										<br>
 										<div class="form-group">
 											<h4>Job Title
