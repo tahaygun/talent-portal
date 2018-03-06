@@ -19,7 +19,6 @@ $route['editnow'] = 'process/editnow';
 $route['logout'] = 'process/logout';
 $route['delete/(:any)'] = 'process/deletepage/$1';
 $route['deletenow/(:any)'] = 'process/deletenow/$1';
-$route['deletenow'] = 'process/deletenow';
 $route['about-company/(:any)'] = 'process/aboutcompany/$1';
 
 $route['admin-home'] = 'adminprocess/adminpostingpage';
