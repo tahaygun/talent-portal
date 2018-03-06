@@ -41,7 +41,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<!-- Color CSS Styles  -->
 		<link rel="stylesheet" type="text/css" href="/assets/css/colors/red.css" media="screen" />
 		<link rel="stylesheet" href="/assets/css/homepage.css" type="text/css">
-		
+
 	</head>
 
 	<body>
@@ -95,7 +95,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</a>
 											</li>
 											</ul>
-										
+
 									</li>
 									<li>
 										<a href="companies">
@@ -104,7 +104,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</a>
 										 <ul class="dropdown">
 											<li>
-												<a href="#">
+												<a href="showcompany">
 												All Companies
 												</a>
 											</li>
@@ -120,7 +120,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											</li>
 											</ul>
 									</li>
-							
+
 										<li>
 										<a  href="#">
 											My Page
@@ -133,7 +133,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</a>
 											</li>
 											<li>
-												<a href="/newposting-admin">
+												<a href="new-posting">
 												New Posting
 												</a>
 											</li>

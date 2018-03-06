@@ -107,7 +107,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</a>
 										 <ul class="dropdown">
 											<li>
-												<a href="#">
+												<a href="showcompany">
 												All Companies
 												</a>
 											</li>
@@ -136,7 +136,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</a>
 											</li>
 											<li>
-												<a href="/newposting-admin">
+												<a href="new-posting">
 												New Posting
 												</a>
 											</li>
