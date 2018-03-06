@@ -178,7 +178,16 @@ class Tpmodel extends CI_Model
         $this->db->query($query, $values);
     }
 
-    public function deleteinfo($id)
+    //    public function deleteinfo($id)
+    // {
+    //     $query = "SELECT id FROM users WHERE id=?";        
+    //     $values = [$id];
+    //     $result = $this->db->query($query, $values)->row_array();
+    //     return $result;
+    // }
+
+
+    public function deletenow($id)
     {
         $query = "DELETE  FROM postings WHERE id=?";
         $values = [$id];
