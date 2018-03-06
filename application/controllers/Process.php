@@ -198,6 +198,7 @@ class Process extends CI_Controller
 		}
 	}
 
+
 	public function deletenow($id)
 	{
 		if (isset($_SESSION['id'])) {
@@ -210,3 +211,7 @@ class Process extends CI_Controller
 	}
 
 }
+
+
+
+
