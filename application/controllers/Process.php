@@ -155,6 +155,7 @@ class Process extends CI_Controller
 		$postinfo = $this->input->post(null, true);
 		$this->form_validation->set_rules('tp-title', 'Title', 'required|max_length[255]');
 		$this->form_validation->set_rules('tp-description', 'Description', 'required|max_length[500]');
+		$this->form_validation->set_rules('tags[]', 'Tags', 'required');
 		$this->form_validation->set_rules('tp-about', 'About Company', 'required|max_length[500]');
 		$this->form_validation->set_rules('tp-identifies', 'Identifies', 'required');
 		$this->form_validation->set_rules('tp-startdate', 'Start Date', 'required');
