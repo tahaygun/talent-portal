@@ -182,15 +182,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												<div class="search-category-container">
 													<label class="styled-select">
 														<select name="category" class="dropdown-product selectpicker">
-															<option>All Categories</option>
-															<option>Finance</option>
-															<option>IT & Engineering</option>
-															<option>Education/Training</option>
-															<option>Art/Design</option>
-															<option>Sale/Markting</option>
-															<option>Healthcare</option>
-															<option>Science</option>
-															<option>Food Services</option>
+															<option value="">All Categories</option>
+															<option>Growth</option>
+															<option>International</option>
+															<option>City</option>
+															<option value="talent">Talent</option>
+															<option>Community</option>
+															<option>Resilience</option>
+															<option>Culture</option>
+															<option>Digital</option>
+															<option>Energy</option>
+															<option>Inspiration</option>
 														</select>
 													</label>
 												</div>

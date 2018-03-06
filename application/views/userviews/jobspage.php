@@ -224,41 +224,36 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <h3>Categories</h3>
                     <ul class="cat-list">
                       <li>
-                        <a href="#">Finance <span class="num-posts">4,287 Jobs</span></a>                    
+                        <a href="#">Growth</a>                    
                       </li>
                       <li>
-                        <a href="#">Techonologies <span class="num-posts">4,256 Jobs</span></a>                    
+                       <a href="#">International</a>                      
                       </li>
                       <li>
-                        <a href="#">Art/Design<span class="num-posts">3,245 Jobs</span></a>                    
+                        <a href="#">City</a>                    
                       </li>
                       <li>
-                        <a href="#">Science <span class="num-posts">4,256 Jobs</span></a>                    
+                        <a href="#">Talent </a>                    
                       </li>
                       <li>
-                        <a href="#">Education Training <span class="num-posts">4,560 Jobs</span></a>                    
+                        <a href="#">Community</a>                    
                       </li>
                       <li>
-                        <a href="#">Logistics <span class="num-posts">3,256 Jobs</span></a>                    
+                        <a href="#">Resilience</a>                    
                       </li>
                       <li>
-                        <a href="#">Food Services <span class="num-posts">1,256 Jobs</span></a>                   
+                        <a href="#">Culture</a>                    
                       </li>
                       <li>
-                        <a href="#">Food Services <span class="num-posts">1,256 Jobs</span></a>                   
+                        <a href="#">Digital</a>                    
                       </li>
                       <li>
-                        <a href="#">Food Services <span class="num-posts">1,256 Jobs</span></a>                   
+                        <a href="#">Energy</a>                    
                       </li>
                       <li>
-                        <a href="#">Food Services <span class="num-posts">1,256 Jobs</span></a>                   
+                        <a href="#">Inspiration</a>
                       </li>
-                      <li>
-                        <a href="#">Food Services <span class="num-posts">1,256 Jobs</span></a>                   
-                      </li>
-                      <li>
-                        <a href="#">Food Services <span class="num-posts">1,256 Jobs</span></a>                   
-                      </li>
+                     
                     </ul>
                   </div>
                   

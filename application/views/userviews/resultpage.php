@@ -173,39 +173,41 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<h2>We are building
 										<strong>network</strong> to help people!</h2>
 									<div class="content">
-										<form method="post" action="/search">
-											<div class="row">
-												<div class="col-md-6 col-sm-6">
-													<div class="form-group">
-														<input name="searchinput" class="form-control" type="text" placeholder="job title / keywords / company name">
-														<i class="ti-time"></i>
-													</div>
-												</div>
-												<div class="col-md-5 col-sm-6">
-													<div class="search-category-container">
-														<label class="styled-select">
-															<select name="category" class="dropdown-product selectpicker">
-																<option>All Categories</option>
-																<option>Finance</option>
-																<option>IT & Engineering</option>
-																<option>Education/Training</option>
-																<option>Art/Design</option>
-																<option>Sale/Markting</option>
-																<option>Healthcare</option>
-																<option>Science</option>
-																<option>Food Services</option>
-															</select>
-														</label>
-													</div>
-												</div>
-												<div class="col-md-1 col-sm-6">
-													<button type="submit" class="btn btn-search-icon">
-														<i class="ti-search"></i>
-													</button>
+									<form method="post" action="/search">
+										<div class="row">
+											<div class="col-md-6 col-sm-6">
+												<div class="form-group">
+													<input name="searchinput" value="<?= isset($inputs['searchinput']) ? $inputs['searchinput'] : '' ?>" class="form-control" type="text" placeholder="job title / keywords / company name">
+													<i class="ti-time"></i>
 												</div>
 											</div>
-										</form>
-									</div>
+											<div class="col-md-5 col-sm-6">
+												<div class="search-category-container">
+													<label class="styled-select">
+														<select name="category" class="dropdown-product selectpicker">
+															<option value="">All Categories</option>
+															<option>Growth</option>
+															<option>International</option>
+															<option>City</option>
+															<option>Talent</option>
+															<option>Community</option>
+															<option>Resilience</option>
+															<option>Culture</option>
+															<option>Digital</option>
+															<option>Energy</option>
+															<option>Inspiration</option>
+														</select>
+													</label>
+												</div>
+											</div>
+											<div class="col-md-1 col-sm-6">
+												<button type="submit" class="btn btn-search-icon">
+													<i class="ti-search"></i>
+												</button>
+											</div>
+										</div>
+									</form>
+								</div>
 								</div>
 							</div>
 						</div>

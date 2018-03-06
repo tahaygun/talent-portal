@@ -198,7 +198,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											<h4>Tags
 												<h4>
 													<textarea name="tp-tags" class="form-control" id="" rows="1" placeholder="Tags"><?= isset($postinfo['tp-tags']) ? $postinfo['tp-tags'] : '' ?></textarea>
-													<p>growth, international, city, talent, community, resilience, culture, digital, energy, inspiration</p>
+													<p>Growth, International, City, Talent, Community, Resilience, Culture, Digital, Energy, Inspiration</p>
 													<h6 style="color:#f45342;"><?= form_error('tp-tags') ? form_error('tp-tags') : '' ?></h6>
 										</div>
 
