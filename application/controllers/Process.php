@@ -41,6 +41,7 @@ class Process extends CI_Controller
 			$error = $this->upload->display_errors();
 			$this->load->view('userviews/join_page', array('reginfo' => $reginfo, 'error' => $error));
 		} else {
+			$reginfo['password'] = do_hash($reginfo['password']);
 			$data = $this->upload->data();
 			$path = $data['file_name'];
 			$this->tpmodel->insertuser($reginfo, $path);
@@ -53,7 +54,7 @@ class Process extends CI_Controller
 		$loginfo = $this->input->post(null, true);
 
 		$email = $loginfo['email'];
-		$password = $loginfo['password'];
+		$password = do_hash($loginfo['password']);
 		$result = $this->tpmodel->login($email, $password);
 		$notapproved = $this->tpmodel->accountchecker($email, $password);
 		if ($result) {

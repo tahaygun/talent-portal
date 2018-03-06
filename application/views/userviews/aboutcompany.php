@@ -164,13 +164,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="row">
 					<div class="col-md-12">
 						<div class="breadcrumb-wrapper">
-							<img width="150" src="/assets/img/jobs/<?= $data['companylogo'] ?>" alt="">
+							<img width="150" src="/assets/img/jobs/<?= $data['companylogo'] ?>" alt="logo">
 							<ol class="breadcrumb">
 								<li>
 									<a href="/">
 										<i class="ti-home"></i> Home</a>
 								</li>
-								<li class="current">Details</li>
+								<li class="current">About Company</li>
 							</ol>
 						</div>
 					</div>

@@ -86,7 +86,7 @@ class Tpmodel extends CI_Model
     }
     public function allpostings()
     {
-        $query = "SELECT * FROM users
+        $query = "SELECT users.id as userid, users.companyname, users.companylogo, postings.title, postings.id as postid, postings.about, postings.description, postings.tags, postings.identifies, postings.active, postings.highlighted FROM users
         JOIN postings
         ON users.id = postings.user_id
         ORDER BY postings.id DESC";

@@ -239,7 +239,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										<div class="pull-left">
 											<div class="meta-tag">
 												<span>
-													<a href="browse-categories.html"># Art/Design</a>
+													<a href="browse-categories.html"><?= $posting['identifies'] ?></a>
 												</span>
 												<span>
 													<a href="/about-company/<?= $posting['userid'] ?>">➦ <?= $posting['companyname'] ?></a>

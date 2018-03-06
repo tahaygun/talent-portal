@@ -187,7 +187,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<!-- Find Job Section Start -->
 		<section class="find-job section">
 			<div class="container">
-				<h2 class="section-title">Our partners</h2>
+				<h2 class="section-title">Companies</h2>
 				<div class="row">
 					<?php foreach ($data as $posting) { ?>
 					<div class="col-md-12">
