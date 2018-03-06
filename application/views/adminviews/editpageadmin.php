@@ -111,7 +111,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</a>
 											</li>
 											<li>
-												<a href="showcompany">
+												<a href="showcompanyadmin">
 													Company Requests
 												</a>
 											</li>

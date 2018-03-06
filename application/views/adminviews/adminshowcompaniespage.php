@@ -11,7 +11,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<meta name="author" content="Jobboard">
 
-		<title>Talent Portal</title>
+		<title>Venture café - Talent Portal</title>
 
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="assets/img/favicon.png">
@@ -39,17 +39,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<!-- Responsive CSS Styles -->
 		<link rel="stylesheet" href="assets/css/responsive.css" type="text/css">
 
-		<link rel="stylesheet" href="assets/css/joinpage.css" type="text/css">
-
+		<link rel="stylesheet" href="assets/css/homepage.css" type="text/css">
 		<!-- Color CSS Styles  -->
 		<link rel="stylesheet" type="text/css" href="assets/css/colors/red.css" media="screen" />
 
-		<style>
-			.top-content {
-				margin-left: 500px;
-			}
-
-		</style>
 
 	</head>
 
@@ -78,82 +71,51 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<!-- Start Navigation List -->
 								<ul class="nav navbar-nav navbar-right">
 									<li>
-										<a href="/">
+										<a  href="/">
 											Home
 											<i class="fa fa-angle"></i>
 										</a>
 									</li>
 									<li>
-										<a href="#">
-											Postings
-											<i class="fa fa-angle-down"></i>
-										</a>
-										<ul class="dropdown">
-											<li>
-												<a href="/admin-home">
-													All Postings
-												</a>
-											</li>
-											<li>
-												<a href="/post-requests">
-													Posting Requests
-												</a>
-											</li>
-											<li>
-												<a href="/highlighted-posts">
-													Highlighted Postings
-												</a>
-											</li>
-										</ul>
-
-									</li>
-									<li>
-										<a href="companies">
+										<a class="active" href="showcompanyadmin">
 											Companies
+											<i class="fa fa-angle"></i>
+										</a>
+									</li>
+									<li>
+										<a href="/jobs">
+											Jobs
+											<i class="fa fa-angle"></i>
+										</a>
+									</li>
+									
+									<?php if (isset($_SESSION['id'])) { ?>
+									<li>
+										<a href="#">
+											My Page
 											<i class="fa fa-angle-down"></i>
 										</a>
 										<ul class="dropdown">
 											<li>
-												<a href="showcompanyadmin">
-													All Companies
+												<a href="/mypage">
+													My Page
 												</a>
 											</li>
 											<li>
-												<a href="">
-													Company Requests
-												</a>
-											</li>
-											<li>
-												<a href="">
-													Trusted Companies
-												</a>
-											</li>
-										</ul>
-									</li>
-
-									<li>
-										<a class="active" href="#">
-											My Page
-											<i class="fa fa-angle-down "></i>
-										</a>
-										 <ul class="dropdown">
-											<li>
-												<a class="active" href="/options-admin">
-												Options
-												</a>
-											</li>
-											<li>
-												<a href="new-posting">
-												New Posting
+												<a href="/new-posting">
+													New Posting
 												</a>
 											</li>
 											<li>
 												<a href="/logout">
-												Logout
+													Logout
 												</a>
 											</li>
-											</ul>
+										</ul>
 									</li>
+									<?php
+
+							} ?>
 								</ul>
 
 							</div>
@@ -171,66 +133,72 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<a href="#">Jobs</a>
 
 							</li>
-							<li>
-								<a href="https://venturecaferotterdam.org/who-we-are/">About Us</a>
-
-							</li>
-							<li>
-								<a href="https://venturecaferotterdam.org/">Venture Cafe</a>
-
-							</li>
 						</ul>
 						<!-- Mobile Menu End -->
 					</nav>
 				</div>
+
+
+
+				<!-- Header Section End -->
+
+
 			</section>
+			<!-- end intro section -->
 		</div>
-		<!-- Header Section End -->
 
-		<!-- Top content -->
-		<div class="top-content">
+		<!-- Find Job Section Start -->
+		<section class="find-job section">
+			<div class="container">
+				<h2 class="section-title">Our partners</h2>
+				<div class="row">
+					<?php foreach ($data as $posting) { ?>
+					<div class="col-md-12">
 
-			<div class="inner-bg">
-				<div class="container">
-					<h2 class="section-title">Welcome Administrator</h2>
 
-					<div class="row">
-						<div class="col-sm-5">
-
-							<div class="form-box">
-								<div class="form-top">
-									<div class="form-top-left">
-									</form>
-									<form role="form" action="/change-password" method="post" class="registration-form">
-										<div class="form-group">
-											<h3>Change password</h3>
-											<br>
-											<label class="sr-only" for="password">Password</label>
-											<input type="password" name="password" placeholder="Password" class="form-password form-control" id="password">
+						<div class="job-list col-md-12">
+							<div class="thumb">
+								<a href="/about-company/<?= $posting['user_id'] ?>"><img width="110" src="/assets/img/jobs/<?= $posting['companylogo'] ?>" alt="logo"></a>
+							</div>
+							<div class="job-list-content">
+								<h4 id="titles">
+									<a href="/about-company/<?= $posting['user_id'] ?>"><?= $posting['companyname'] ?></a>
+								</h4>
+								<p class="descriptions">
+									 <?= $posting['about'] ?>
+								</p>
+								<div class="job-tag">
+									<div class="pull-left">
+										<div class="meta-tag">
+											<span>
+												<a href=""># <?= $posting['identifies'] ?>
+												</a>
+											</span>
+											<span>
+												<a href="browse-categories.html">➦ <?= $posting['companyname'] ?>
+												</a>
+											</span>
 										</div>
-										<div class="form-group">
-											<label class="sr-only" for="confpassword">New password Confirm</label>
-											<input type="password" name="confpassword" placeholder=" Confirm your Password" class="form-conf-password form-control" id="confpassword">
-										</div>
-										<button type="submit" class="btn btn-common btn-rm">Confirm</button>
-									</form>
+									</div>
+									<div class="pull-right">
+
+									</div>
 								</div>
 							</div>
-                         </div>
 						</div>
+
+
 					</div>
+					<?php 
+			} ?>
 				</div>
 			</div>
-		</div>
-
-		<!-- Javascript -->
-		<script src="assets/js/jquery-1.11.1.min.js"></script>
-		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-		<script src="assets/js/scripts.js"></script>
+		</section>
+		<!-- Find Job Section End -->
 
 
 		<!-- Footer Section Start -->
-		<footer>
+		<footer id="footerid">
 			<!-- Footer Area Start -->
 			<section class="footer-Content">
 				<div class="container">
@@ -247,19 +215,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="widget">
 
 
-								<a href="#">&nbsp Company Login</a>
+								<a href="/joinpage">&nbsp Company Login</a>
 
 
-								<a href="#">&nbsp&nbsp Support</a>
+								<a href="https://venturecaferotterdam.org/sponsor/">&nbsp&nbsp Support</a>
 
 
 								<a href="#">&nbsp&nbsp License</a>
 
 
-								<a href="#">&nbsp&nbsp Terms & Conditions</a>
-
-
-								<a href="#">&nbsp&nbsp Contact</a>
+								<a href="https://venturecaferotterdam.org/contact/">&nbsp&nbsp Contact</a>
 
 							</div>
 						</div>
@@ -268,16 +233,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="widget">
 
 								<div class="bottom-social-icons social-icon">
-									<a class="twitter" href="https://twitter.com/GrayGrids">
+									<a class="twitter" href="https://twitter.com/VentureCafeRdam">
 										<i class="ti-twitter-alt"></i>
 									</a>
-									<a class="facebook" href="https://web.facebook.com/GrayGrids">
+									<a class="facebook" href="https://www.facebook.com/VentureCafeRotterdam/">
 										<i class="ti-facebook"></i>
 									</a>
-									<a class="dribble" href="https://dribbble.com/GrayGrids">
+									<a class="instagram" href="http://instagram.com/venturecaferotterdam/">
 										<i class="ti-instagram"></i>
 									</a>
-									<a class="linkedin" href="https://www.linkedin.com/GrayGrids">
+									<a class="linkedin" href="https://www.linkedin.com/company/venturecaferotterdam">
 										<i class="ti-linkedin"></i>
 									</a>
 								</div>

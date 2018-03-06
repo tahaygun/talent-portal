@@ -107,7 +107,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</a>
 										 <ul class="dropdown">
 											<li>
-												<a href="#">
+												<a href="showcompanyadmin">
 												All Companies
 												</a>
 											</li>

@@ -64,6 +64,11 @@ class Adminprocess extends CI_Controller
         }
 
     }
+    public function showcompanylist()
+    {
+        $data = $this->tpmodel->allcompanies();
+        $this->load->view('adminviews/adminshowcompaniespage', array('data' => $data));
+    }
     public function addadmin()
     {
         if ($_SESSION['level'] == 1) {
