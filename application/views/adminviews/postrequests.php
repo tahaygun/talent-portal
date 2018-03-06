@@ -101,13 +101,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										
 									</li>
 									<li>
-										<a href="companies">
+										<a href="/companies">
 											Companies
 											<i class="fa fa-angle-down"></i>
 										</a>
 										 <ul class="dropdown">
 											<li>
-												<a href="showcompanyadmin">
+												<a href="/companies">
 												All Companies
 												</a>
 											</li>
@@ -213,7 +213,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</div>
 										<div class="pull-right">
 
-											<a href="#" class="btn btn-common btn-sm">Approve</a>
+											<a href="/approve/<?= $posting['id'] ?>" class="btn btn-common btn-sm">Approve</a>
 											<a href="/editadmin/<?= $posting['id'] ?>" class="btn btn-common btn-sm">Edit</a>
 											<a href="#" class="btn btn-common btn-sm">Delete</a>
 										</div>

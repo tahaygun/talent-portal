@@ -198,15 +198,6 @@ class Tpmodel extends CI_Model
         $this->db->query($query, $values);
     }
 
-    //    public function deleteinfo($id)
-    // {
-    //     $query = "SELECT id FROM users WHERE id=?";        
-    //     $values = [$id];
-    //     $result = $this->db->query($query, $values)->row_array();
-    //     return $result;
-    // }
-
-
     public function deletenow($id)
     {
         $query = "DELETE  FROM postings WHERE id=?";
@@ -226,5 +217,20 @@ class Tpmodel extends CI_Model
         return $result;
     }
 
+    public function unhighlight($id)
+    {
+        $query = "UPDATE `postings` SET `highlighted`=0 WHERE postings.id= $id";
+        $this->db->query($query);
+    }
+    public function highlight($id)
+    {
+        $query = "UPDATE `postings` SET `highlighted`=1 WHERE postings.id= $id";
+        $this->db->query($query);
+    }
+    public function approve($id)
+    {
+        $query = "UPDATE `postings` SET `active`=1 WHERE postings.id= $id";
+        $this->db->query($query);
+    }
 
 }

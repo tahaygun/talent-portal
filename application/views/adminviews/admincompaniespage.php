@@ -100,13 +100,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 									</li>
 									<li>
-										<a href="/companies">
+										<a class="active" href="#">
 											Companies
 											<i class="fa fa-angle-down"></i>
 										</a>
 										 <ul class="dropdown">
 											<li>
-												<a href="/companies">
+												<a  class="active" href="/companies">
 												All Companies
 												</a>
 											</li>
@@ -227,7 +227,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 					</div>
 					<?php 
-} ?>
+			} ?>
 				</div>
 			</div>
 		</section>

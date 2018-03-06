@@ -100,18 +100,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 									</li>
 									<li>
-										<a href="companies">
+										<a href="/companies">
 											Companies
 											<i class="fa fa-angle-down"></i>
 										</a>
 										<ul class="dropdown">
 											<li>
-												<a href="#">
+												<a href="/companies">
 													All Companies
 												</a>
 											</li>
 											<li>
-												<a href="showcompanyadmin">
+												<a href="/companies">
 													Company Requests
 												</a>
 											</li>
@@ -292,9 +292,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												<button type="button" class="btn btn-common btn-rm">
 													<a style="color:white;" href="/">Back</a>
 												</button>
-												<button type="submit" class="btn btn-common btn-rm">Edit</button>
-												<br>
 												<button type="button" class="btn btn-common btn-rm"><a style="color:white;" href="/delete/<?= $postinfo['id'] ?>">delete</a></button>
+												<button type="submit" class="btn btn-common btn-rm">Edit</button>
 												<!-- <a href="job-details.html" class="btn btn-common btn-rm">More Detail</a> -->
 									</form>
 								</div>

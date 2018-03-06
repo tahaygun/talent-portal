@@ -98,13 +98,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 									</li>
 									<li>
-										<a href="companies">
+										<a href="/companies">
 											Companies
 											<i class="fa fa-angle-down"></i>
 										</a>
 										 <ul class="dropdown">
 											<li>
-												<a href="showcompanyadmin">
+												<a href="/companies">
 												All Companies
 												</a>
 											</li>

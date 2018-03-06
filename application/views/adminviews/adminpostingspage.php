@@ -101,13 +101,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										
 									</li>
 									<li>
-										<a href="companies">
+										<a href="/companies">
 											Companies
 											<i class="fa fa-angle-down"></i>
 										</a>
 										 <ul class="dropdown">
 											<li>
-												<a href="showcompanyadmin">
+												<a href="/companies">
 												All Companies
 												</a>
 											</li>
@@ -204,7 +204,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										<div class="pull-left">
 											<div class="meta-tag">
 												<span>
-													<a href="browse-categories.html"># Art/Design</a>
+													<a href="browse-categories.html">➦ <?= $posting['identifies'] ?></a>
 												</span>
 												<span>
 													<a href="browse-categories.html">➦ <?= $posting['companyname'] ?></a>
@@ -218,7 +218,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											</div>
 										</div>
 										<div class="pull-right">
-
+											<?php if ($posting['highlighted'] == 0) { ?>
+												<a href="/highlight/<?= $posting['id'] ?>" class="btn btn-common btn-sm">Highlight</a>
+										<?php 
+								} else { ?>
+									<a href="/unhighlight/<?= $posting['id'] ?>" class="btn btn-common btn-sm">unhighlight</a>
+								<?php 
+						} ?>
 											<a href="/editadmin/<?= $posting['id'] ?>" class="btn btn-common btn-sm">Edit</a>
 											<a href="/editadmin/<?= $posting['id'] ?>" class="btn btn-common btn-sm">Delete</a>
 										</div>

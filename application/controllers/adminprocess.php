@@ -111,5 +111,35 @@ class Adminprocess extends CI_Controller
             redirect('/');
         }
     }
+    public function unhighlight($id)
+    {
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $this->tpmodel->unhighlight($id);
+            redirect('/admin-home');
+        } else {
+            redirect('/');
+        }
+
+    }
+    public function highlight($id)
+    {
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $this->tpmodel->highlight($id);
+            redirect('/admin-home');
+        } else {
+            redirect('/');
+        }
+
+    }
+    public function approve($id)
+    {
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $this->tpmodel->approve($id);
+            redirect('/admin-home');
+        } else {
+            redirect('/');
+        }
+
+    }
 }
 
