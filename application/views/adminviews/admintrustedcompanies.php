@@ -47,7 +47,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	</head>
 
 	<body>
-		<!-- Header Section Start -->
+<!-- Header Section Start -->
 		<div class="header">
 			<!-- Start intro section -->
 			<section id="intro" class="section-intro">
@@ -70,52 +70,82 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="collapse navbar-collapse" id="navbar">
 								<!-- Start Navigation List -->
 								<ul class="nav navbar-nav navbar-right">
-									<li>
-										<a  href="/">
+								<li>
+										<a href="/">
 											Home
 											<i class="fa fa-angle"></i>
 										</a>
 									</li>
-									<li>
-										<a class="active" href="showcompanyadmin">
-											Companies
-											<i class="fa fa-angle"></i>
-										</a>
-									</li>
-									<li>
-										<a href="/jobs">
-											Jobs
-											<i class="fa fa-angle"></i>
-										</a>
-									</li>
-									
-									<?php if (isset($_SESSION['id'])) { ?>
-									<li>
-										<a href="#">
-											My Page
+									<li><a href="#">
+											Postings
 											<i class="fa fa-angle-down"></i>
 										</a>
-										<ul class="dropdown">
+											<ul class="dropdown">
 											<li>
-												<a href="/mypage">
-													My Page
+												<a  href="/admin-home">
+												All Postings
+												</a>
+											</li>
+											<li>
+												<a href="/post-requests">
+												Posting Requests
+												</a>
+											</li>
+											<li>
+												<a href="/highlighted-posts">
+												Highlighted Postings
+												</a>
+											</li>
+											</ul>
+
+									</li>
+									<li>
+										<a class="active" href="#">
+											Companies
+											<i class="fa fa-angle-down"></i>
+										</a>
+										 <ul class="dropdown">
+											<li>
+												<a  href="/companies">
+												All Companies
+												</a>
+											</li>
+											<li>
+												<a href="/company-requests">
+												Company Requests
+												</a>
+											</li>
+											<li>
+												<a  class="active" href="#">
+												Trusted Companies
+												</a>
+											</li>
+											</ul>
+									</li>
+
+										<li>
+										<a  href="#">
+											My Page
+											<i class="fa fa-angle-down "></i>
+										</a>
+										 <ul class="dropdown">
+											<li>
+												<a href="/options-admin">
+												Options
 												</a>
 											</li>
 											<li>
 												<a href="/new-posting">
-													New Posting
+												New Posting
 												</a>
 											</li>
 											<li>
 												<a href="/logout">
-													Logout
+												Logout
 												</a>
 											</li>
-										</ul>
+											</ul>
 									</li>
-									<?php
-
-							} ?>
 								</ul>
 
 							</div>
@@ -133,14 +163,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<a href="#">Jobs</a>
 
 							</li>
+							<li>
+								<a href="https://venturecaferotterdam.org/who-we-are/">About Us</a>
+
+							</li>
+							<li>
+								<a href="https://venturecaferotterdam.org/">Venture Cafe</a>
+
+							</li>
 						</ul>
 						<!-- Mobile Menu End -->
 					</nav>
-				</div>
+			</div>
+		</div>
 
-
-
-				<!-- Header Section End -->
+					<!-- Header Section End -->
 
 
 			</section>
@@ -150,7 +187,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<!-- Find Job Section Start -->
 		<section class="find-job section">
 			<div class="container">
-				<h2 class="section-title">Our partners</h2>
+				<h2 class="section-title">Trusted Companies</h2>
 				<div class="row">
 					<?php foreach ($data as $posting) { ?>
 					<div class="col-md-12">
@@ -158,11 +195,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 						<div class="job-list col-md-12">
 							<div class="thumb">
-								<a href="/about-company/<?= $posting['user_id'] ?>"><img width="110" src="/assets/img/jobs/<?= $posting['companylogo'] ?>" alt="logo"></a>
+								<a href="/about-company/<?= $posting['userid'] ?>"><img width="110" src="/assets/img/jobs/<?= $posting['companylogo'] ?>" alt="logo"></a>
 							</div>
 							<div class="job-list-content">
 								<h4 id="titles">
-									<a href="/about-company/<?= $posting['user_id'] ?>"><?= $posting['companyname'] ?></a>
+									<a href="/about-company/<?= $posting['userid'] ?>"><?= $posting['companyname'] ?></a>
 								</h4>
 								<p class="descriptions">
 									 <?= $posting['about'] ?>
@@ -181,7 +218,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</div>
 									</div>
 									<div class="pull-right">
-
+                                        <a href="/approve-company/<?= $posting['userid'] ?>" class="btn btn-common btn-sm">Approve</a>
+                                        <a href="/edit-company/<?= $posting['userid'] ?>" class="btn btn-common btn-sm">Details/Edit</a>
 									</div>
 								</div>
 							</div>
@@ -190,7 +228,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 					</div>
 					<?php 
-			} ?>
+} ?>
 				</div>
 			</div>
 		</section>

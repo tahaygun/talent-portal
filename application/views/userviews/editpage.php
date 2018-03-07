@@ -246,12 +246,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
 													<p>Supporting image max 8mb</p>
 													<input type="file" name="tp-support-image" id="">
 												</div>
-												<button type="button" class="btn btn-common btn-rm"><a style="color:white;" href="/mypage">Go Back</a></button>
+												<button type="button" class="btn btn-common btn-rm"><a style="color:white;" href="/mypage">Back</a></button>
+												<a class="btn btn-common btn-rm"  onclick="return checkDelete()" style="color:white;" href="/delete/<?= $postinfo['id'] ?>">Delete</a>
+													<script language="JavaScript" type="text/javascript">
+														function checkDelete(){
+															if (confirm('Are you sure?')) {
+																return true;
+															}else{return false}
+														
+														}
+													</script>
 												<button type="submit" class="btn btn-common btn-rm">Edit</button> 
-												
 												<!-- <a href="job-details.html" class="btn btn-common btn-rm">More Detail</a> -->
 									</form>
-									<button type="button" class="btn btn-common btn-rm"><a style="color:white;" href="/deletenow/<?= $postinfo['id'] ?>">delete</a></button> <br>
+									 <br>
 								</div>
 							</div>                                                         
 						</div>

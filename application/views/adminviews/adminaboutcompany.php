@@ -69,7 +69,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<!-- Start Navigation List -->
 								<ul class="nav navbar-nav navbar-right">
 								<li>
-										<a href="/">
+										<a href="#">
 											Home
 											<i class="fa fa-angle"></i>
 										</a>
@@ -109,12 +109,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</a>
 											</li>
 											<li>
-												<a href="">
+												<a href="/company-requests">
 												Company Requests
 												</a>
 											</li>
 											<li>
-												<a href="">
+												<a href="/trusted-companies">
 												Trusted Companies
 												</a>
 											</li>
@@ -183,7 +183,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="row">
 					<div class="col-md-12">
 						<div class="breadcrumb-wrapper">
-							<img src="/assets/img/jobs/<?= $data['companylogo'] ?>" alt="">
+							<img width="150" src="/assets/img/jobs/<?= $data['companylogo'] ?>" alt="">
 							<ol class="breadcrumb">
 								<li>
 									<a href="/">
@@ -204,7 +204,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="row">
 					<div class="about-content">
 						<h2 class="medium-title descriptions">
-							<?= $data['companyname'] ?>
+							<?= $data['companyname'] ?> 
+								<div class="pull-right">
+
+										<a href="/edit-company/<?= $data['user_id'] ?>" class="btn btn-common btn-sm">Details/Edit</a>
+								</div>
+							
+							
 						</h2>
 						<br>
 						<h4>Who are we?</h4>
@@ -252,7 +258,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</div>
 									<div class="pull-right">
 
-										<a href="/details/<?= $posting['id'] ?>" class="btn btn-common btn-rm">More Detail</a>
+										<a href="/details/<?= $posting['id'] ?>" class="btn btn-common btn-sm">More Detail</a>
 									</div>
 								</div>
 							</div>

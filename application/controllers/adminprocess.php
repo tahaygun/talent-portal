@@ -64,10 +64,73 @@ class Adminprocess extends CI_Controller
         }
 
     }
-    public function showcompanylist()
+    public function companyrequests()
     {
-        $data = $this->tpmodel->allcompanies();
-        $this->load->view('adminviews/adminshowcompaniespage', array('data' => $data));
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $data = $this->tpmodel->companyrequests();
+            $this->load->view('adminviews/admincompanyrequests', array('data' => $data));
+        } else {
+            redirect('/');
+        }
+    }
+    public function trustedcompanies()
+    {
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $data = $this->tpmodel->trustedcompanies();
+            $this->load->view('adminviews/admintrustedcompanies', array('data' => $data));
+        } else {
+            redirect('/');
+        }
+    }
+
+    public function approvecompany($id)
+    {
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $data = $this->tpmodel->approvecompany($id);
+            redirect('/company-requests');
+        } else {
+            redirect('/');
+        }
+    }
+    public function editcompanypage($id)
+    {
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $data = $this->tpmodel->companyeditpage($id);
+            $this->load->view('adminviews/admincompanyedit', array('data' => $data));
+        } else {
+            redirect('/');
+        }
+    }
+    public function editcompany()
+    {
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $postinfo = $this->input->post(null, true);
+            $config['upload_path'] = './assets/img/jobs/';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload('companylogo')) {
+                $this->tpmodel->editcompany($postinfo);
+                redirect('/companies');
+            } else {
+                $data = $this->upload->data();
+                $path = $data['file_name'];
+                $this->tpmodel->editcompanywlogo($postinfo, $path);
+                redirect('/companies');
+            }
+
+        } else {
+            redirect('/');
+        }
+    }
+    public function deletecompany($id)
+    {
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $this->tpmodel->deletecompanypostings($id);
+            $this->tpmodel->deletecompany($id);
+            redirect('/companies');
+        } else {
+            redirect('/');
+        }
     }
     public function addadmin()
     {
@@ -82,7 +145,12 @@ class Adminprocess extends CI_Controller
 
     public function newposting()
     {
-        $this->load->view('adminviews/adminnewposting');
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $this->load->view('adminviews/adminnewposting');
+        } else {
+            redirect('/');
+        }
+
     }
     public function createnewposting()
     {
@@ -112,6 +180,7 @@ class Adminprocess extends CI_Controller
         }
     }
 
+
     public function listadmins($id)
     {
         if($_SESSION['level'] == 1){
@@ -119,6 +188,37 @@ class Adminprocess extends CI_Controller
         $query['admindetail'] = $this->tpmodel->adminlists($id);
         $this->load->view('adminviews/Superadmin_listadmin', $query);
         }   
+    }
+    public function unhighlight($id)
+    {
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $this->tpmodel->unhighlight($id);
+            redirect('/admin-home');
+        } else {
+            redirect('/');
+        }
+
+    }
+    public function highlight($id)
+    {
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $this->tpmodel->highlight($id);
+            redirect('/admin-home');
+        } else {
+            redirect('/');
+        }
+
+    }
+    public function approve($id)
+    {
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $this->tpmodel->approve($id);
+            redirect('/admin-home');
+        } else {
+            redirect('/');
+        }
+
+
     }
 }
 

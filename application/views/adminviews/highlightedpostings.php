@@ -101,18 +101,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										
 									</li>
 									<li>
-										<a href="companies">
+										<a href="/companies">
 											Companies
 											<i class="fa fa-angle-down"></i>
 										</a>
 										 <ul class="dropdown">
 											<li>
-												<a href="#">
+												<a href="/companies">
 												All Companies
 												</a>
 											</li>
 											<li>
-												<a href="showcompanyadmin">
+												<a href="/companies">
 												Company Requests
 												</a>
 											</li>
@@ -193,7 +193,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="job-list col-md-12">
 								<div class="thumb">
 									<a href="/details/<?= $posting['id'] ?>">
-										<img src="assets/img/jobs/img-1.jpg" alt="">
+										<img width="100" src="/assets/img/jobs/<?= $posting['companylogo'] ?>" alt="">
 									</a>
 								</div>
 								<div class="job-list-content">
@@ -213,9 +213,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</div>
 										<div class="pull-right">
 
-											<a href="#" class="btn btn-common btn-sm">Remove</a>
+											<a href="/unhighlight/<?= $posting['id'] ?>" class="btn btn-common btn-sm">Remove</a>
 											<a href="/editadmin/<?= $posting['id'] ?>" class="btn btn-common btn-sm">Edit</a>
-											<a href="#" class="btn btn-common btn-sm">Delete</a>
+											<a href="/editadmin/<?= $posting['id'] ?>" class="btn btn-common btn-sm">Delete</a>
 										</div>
 									</div>
 								</div>

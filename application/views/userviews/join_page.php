@@ -127,16 +127,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<?php 
       } ?>
               </ul>
-              <!-- <ul class="nav navbar-nav navbar-right float-right">
-                <li class="left">
-                  <a href="post-job.html">
-                    <i class="ti-pencil-alt"></i> Post A Job</a>
-                </li>
-                <li class="right">
-                  <a href="my-account.html">
-                    <i class="ti-lock"></i> Log In</a>
-                </li>
-              </ul> -->
             </div>
           </div>
           <!-- Mobile Menu Start -->
@@ -211,11 +201,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             </div>
                             <div class="form-group">
                               <label class="sr-only" for="contactname"> Contact Person</label>
-                              <input type="text" name="contactname" placeholder="Contact Person" class="form-contact-person-name form-control" id="contactname" value="<?= isset($reginfo['contactname']) ? $reginfo['contactname'] : '' ?>">
-                              <?= form_error('contactname') ? form_error('contactname') : '' ?>
+                              <input type="text" name="contactperson" placeholder="Contact Person" class="form-contact-person-name form-control" id="contactperson" value="<?= isset($reginfo['contactperson']) ? $reginfo['contactperson'] : '' ?>">
+                              <?= form_error('contactperson') ? form_error('contactperson') : '' ?>
                             </div>
                             <div class="form-group">
-                              <label class="sr-only" for="phone"> phone</label>
+                              <label class="sr-only" for="phone"> Phone</label>
                               <input type="text" name="phone" placeholder="Phone" class="form-phone form-control" id="phone" value="<?= isset($reginfo['phone']) ? $reginfo['phone'] : '' ?>">
                               <?= form_error('phone') ? form_error('phone') : '' ?>
 
@@ -233,14 +223,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                             <div class="form-group">
                               <h5>Company Logo max 512kb </h5>
-                              <input type="file" name="support-image" id="">
+                              <input type="file" name="company-logo" id="">
                             <?= isset($error) ? $error : '' ?>
 												    </div>
 
                             <button type="submit" class="btn btn-common btn-rm">Sign me up!</button> <br> <br>
                             <h4> <?= isset($_SESSION['message']) ? $_SESSION['message'] : '' ?></h4>
-                           
-                            <!-- <a href="job-details.html" class="btn btn-common btn-rm">More Detail</a> -->
                         </form>
                       </div>
                       </div>

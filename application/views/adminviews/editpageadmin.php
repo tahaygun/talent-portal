@@ -100,18 +100,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 									</li>
 									<li>
-										<a href="companies">
+										<a href="/companies">
 											Companies
 											<i class="fa fa-angle-down"></i>
 										</a>
 										<ul class="dropdown">
 											<li>
-												<a href="#">
+												<a href="/companies">
 													All Companies
 												</a>
 											</li>
 											<li>
-												<a href="showcompanyadmin">
+												<a href="/companies">
 													Company Requests
 												</a>
 											</li>
@@ -287,14 +287,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 														<option value="0">No</option>
 													</select>
 												</div>
+											
+													<a type="button" class="btn btn-common btn-rm" style="color:white;"  href="/">Back</a>
 
-
-												<button type="button" class="btn btn-common btn-rm">
-													<a style="color:white;" href="/">Go Back</a>
-												</button>
-												<button type="submit" class="btn btn-common btn-rm">Edit</button>
-												<br>
-												<!-- <a href="job-details.html" class="btn btn-common btn-rm">More Detail</a> -->
+													<a class="btn btn-common btn-rm"  onclick="return checkDelete()" style="color:white;" href="/delete/<?= $postinfo['id'] ?>">Delete</a>
+													<script language="JavaScript" type="text/javascript">
+														function checkDelete(){
+															if (confirm('Are you sure?')) {
+																return true;
+															}else{return false}
+														
+														}
+														</script>
+													<button type="submit" class="btn btn-common btn-rm">Edit</button>
 									</form>
 								</div>
 							</div>

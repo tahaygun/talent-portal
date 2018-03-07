@@ -101,13 +101,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										
 									</li>
 									<li>
-										<a href="companies">
+										<a href="/companies">
 											Companies
 											<i class="fa fa-angle-down"></i>
 										</a>
 										 <ul class="dropdown">
 											<li>
-												<a href="showcompanyadmin">
+												<a href="/companies">
 												All Companies
 												</a>
 											</li>
@@ -197,22 +197,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 							<div class="job-list col-md-12">
 								<div class="thumb">
-									<a href="/about-company/<?= $posting['user_id'] ?>">
-										<img width="100" src="/assets/img/jobs/<?= $posting['companylogo'] ?>" alt="logo">
+									<a href="/about-company/<?= $posting['userid'] ?>">
+										<img width="110" src="/assets/img/jobs/<?= $posting['companylogo'] ?>" alt="logo">
 									</a>
 								</div>
 								<div class="job-list-content">
 									<h4 id="titles">
-										<a href="/details/<?= $posting['id'] ?>"><?= $posting['title'] ?></a>
+										<a href="/details/<?= $posting['postid'] ?>"><?= $posting['title'] ?></a>
 									</h4> <p class="descriptions"><?= $posting['description'] ?> </p>
 									<div class="job-tag">
 										<div class="pull-left">
 											<div class="meta-tag">
 												<span>
-													<a href="browse-categories.html"># Art/Design</a>
+													<a href="browse-categories.html">➦ <?= $posting['identifies'] ?></a>
 												</span>
 												<span>
-													<a href="browse-categories.html">➦ <?= $posting['companyname'] ?></a>
+													<a href="/about-company/<?= $posting['userid'] ?>">➦ <?= $posting['companyname'] ?></a>
 												</span>
 												<span>
 													<a style="color:green" href="#">➦ <?= $posting['active'] == 0 ? "Requested" : "Active" ?></a>
@@ -223,9 +223,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											</div>
 										</div>
 										<div class="pull-right">
-
-											<a href="/editadmin/<?= $posting['id'] ?>" class="btn btn-common btn-sm">Edit</a>
-											<a href="/details" class="btn btn-common btn-sm">Delete</a>
+											<?php if ($posting['highlighted'] == 0) { ?>
+												<a href="/highlight/<?= $posting['postid'] ?>" class="btn btn-common btn-sm">Highlight</a>
+										<?php 
+								} else { ?>
+									<a href="/unhighlight/<?= $posting['postid'] ?>" class="btn btn-common btn-sm">unhighlight</a>
+								<?php 
+						} ?>
+											<a href="/editadmin/<?= $posting['postid'] ?>" class="btn btn-common btn-sm">Edit</a>
+											<a href="/editadmin/<?= $posting['postid'] ?>" class="btn btn-common btn-sm">Delete</a>
 										</div>
 									</div>
 								</div>

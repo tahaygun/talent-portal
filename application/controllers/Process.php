@@ -29,7 +29,7 @@ class Process extends CI_Controller
 		$this->form_validation->set_rules('companyname', 'Company Name', 'required');
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
 		$this->form_validation->set_rules('phone', 'Phone', 'required');
-		$this->form_validation->set_rules('contactname', 'Contact Person', 'required');
+		$this->form_validation->set_rules('contactperson', 'Contact Person', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
 		$this->form_validation->set_rules('confpassword', 'Password Confirm', 'required|matches[password]');
 
@@ -37,10 +37,11 @@ class Process extends CI_Controller
 		$config['allowed_types'] = 'gif|jpg|png';
 		$this->load->library('upload', $config);
 
-		if ($this->form_validation->run() == false || !$this->upload->do_upload('support-image')) {
+		if ($this->form_validation->run() == false || !$this->upload->do_upload('company-logo')) {
 			$error = $this->upload->display_errors();
 			$this->load->view('userviews/join_page', array('reginfo' => $reginfo, 'error' => $error));
 		} else {
+			$reginfo['password'] = do_hash($reginfo['password']);
 			$data = $this->upload->data();
 			$path = $data['file_name'];
 			$this->tpmodel->insertuser($reginfo, $path);
@@ -53,7 +54,7 @@ class Process extends CI_Controller
 		$loginfo = $this->input->post(null, true);
 
 		$email = $loginfo['email'];
-		$password = $loginfo['password'];
+		$password = do_hash($loginfo['password']);
 		$result = $this->tpmodel->login($email, $password);
 		$notapproved = $this->tpmodel->accountchecker($email, $password);
 		if ($result) {
@@ -159,7 +160,13 @@ class Process extends CI_Controller
 	}
 	public function newpostingpage()
 	{
-		$this->load->view('userviews/newposting');
+		if (isset($_SESSION['level']) && $_SESSION['level'] != 3) {
+			redirect('/new-posting-admin');
+		} elseif (isset($_SESSION['id'])) {
+			$this->load->view('userviews/newposting');
+		} else {
+			redirect('/');
+		}
 	}
 
 	public function search()
@@ -212,25 +219,20 @@ class Process extends CI_Controller
 
 	}
 
-	public function deletepage($id)
+
+	public function delete($id)
 	{
-		$postinfo = $this->tpmodel->editinfo($id);
-		if ($_SESSION['level'] != 1) {
-			if ($_SESSION['id'] == $postinfo['user_id']) {
-				$this->load->view('userviews/editpage', array('postinfo' => $postinfo));
-			} else {
-				redirect('/mypage');
-			}
-		} else {
-			$this->load->view('userviews/editpage', array('postinfo' => $postinfo));
-		}
-	}
-
-
-	public function deletenow($id)
-	{	
+		$data = $this->tpmodel->details($id);
+		if (isset($_SESSION['level']) && $_SESSION['level'] != 3) {
 			$this->tpmodel->deletenow($id);
-			redirect('/mypage');	
+			redirect('/');
+		} elseif (isset($_SESSION['id']) && ($_SESSION['id'] == $data['user_id'])) {
+			$this->tpmodel->deletenow($id);
+			redirect('/mypage');
+		} else {
+			redirect('/');
+		}
+
 	}
 
 }
