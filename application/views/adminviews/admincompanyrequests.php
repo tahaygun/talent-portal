@@ -106,17 +106,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</a>
 										 <ul class="dropdown">
 											<li>
-												<a  class="active" href="/companies">
+												<a  href="/companies">
 												All Companies
 												</a>
 											</li>
 											<li>
-												<a href="">
+												<a class="active" href="#">
 												Company Requests
 												</a>
 											</li>
 											<li>
-												<a href="">
+												<a  href="/trusted-companies">
 												Trusted Companies
 												</a>
 											</li>
@@ -187,7 +187,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<!-- Find Job Section Start -->
 		<section class="find-job section">
 			<div class="container">
-				<h2 class="section-title">Companies</h2>
+				<h2 class="section-title">Company Requests</h2>
 				<div class="row">
 					<?php foreach ($data as $posting) { ?>
 					<div class="col-md-12">
@@ -218,7 +218,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</div>
 									</div>
 									<div class="pull-right">
-                                        <a href="/edit-company/<?= $posting['userid'] ?>" class="btn btn-common btn-sm">Approve</a>
                                         <a href="/edit-company/<?= $posting['userid'] ?>" class="btn btn-common btn-sm">Details/Edit</a>
 									</div>
 								</div>
@@ -228,7 +227,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 					</div>
 					<?php 
-} ?>
+			} ?>
 				</div>
 			</div>
 		</section>

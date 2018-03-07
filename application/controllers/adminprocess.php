@@ -41,7 +41,7 @@ class Adminprocess extends CI_Controller
             redirect('/');
         }
 
-
+ 
     }
     public function editnow()
     {
@@ -64,11 +64,6 @@ class Adminprocess extends CI_Controller
         }
 
     }
-    public function showcompanylist()
-    {
-        $data = $this->tpmodel->allcompanies();
-        $this->load->view('adminviews/adminshowcompaniespage', array('data' => $data));
-    }
     public function companyrequests()
     {
         if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
@@ -78,10 +73,64 @@ class Adminprocess extends CI_Controller
             redirect('/');
         }
     }
-
-    public function editcompany($id)
+    public function trustedcompanies()
     {
-        # code...
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $data = $this->tpmodel->trustedcompanies();
+            $this->load->view('adminviews/admintrustedcompanies', array('data' => $data));
+        } else {
+            redirect('/');
+        }
+    }
+
+    public function approvecompany($id)
+    {
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $data = $this->tpmodel->approvecompany($id);
+            redirect('/company-requests');
+        } else {
+            redirect('/');
+        }
+    }
+    public function editcompanypage($id)
+    {
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $data = $this->tpmodel->companyeditpage($id);
+            $this->load->view('adminviews/admincompanyedit', array('data' => $data));
+        } else {
+            redirect('/');
+        }
+    }
+    public function editcompany()
+    {
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $postinfo = $this->input->post(null, true);
+            $config['upload_path'] = './assets/img/jobs/';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload('companylogo')) {
+                $this->tpmodel->editcompany($postinfo);
+                redirect('/companies');
+            } else {
+                $data = $this->upload->data();
+                $path = $data['file_name'];
+                $this->tpmodel->editcompanywlogo($postinfo, $path);
+                redirect('/companies');
+            }
+
+        } else {
+            redirect('/');
+        }
+    }
+    public function deletecompany($id)
+    {
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $this->tpmodel->deletecompanypostings($id);
+            $this->tpmodel->deletecompany($id);
+            redirect('/companies');
+        } else {
+            redirect('/');
+        }
     }
     public function addadmin()
     {
@@ -130,6 +179,16 @@ class Adminprocess extends CI_Controller
             redirect('/');
         }
     }
+
+
+    public function listadmins($id)
+    {
+        if($_SESSION['level'] == 1){
+        $this->load->model('tpmodel');
+        $query['admindetail'] = $this->tpmodel->adminlists($id);
+        $this->load->view('adminviews/Superadmin_listadmin', $query);
+        }   
+    }
     public function unhighlight($id)
     {
         if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
@@ -159,6 +218,10 @@ class Adminprocess extends CI_Controller
             redirect('/');
         }
 
+
     }
 }
+
+  
+
 

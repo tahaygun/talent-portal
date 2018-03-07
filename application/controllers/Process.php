@@ -29,7 +29,7 @@ class Process extends CI_Controller
 		$this->form_validation->set_rules('companyname', 'Company Name', 'required');
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
 		$this->form_validation->set_rules('phone', 'Phone', 'required');
-		$this->form_validation->set_rules('contactname', 'Contact Person', 'required');
+		$this->form_validation->set_rules('contactperson', 'Contact Person', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
 		$this->form_validation->set_rules('confpassword', 'Password Confirm', 'required|matches[password]');
 
@@ -37,7 +37,7 @@ class Process extends CI_Controller
 		$config['allowed_types'] = 'gif|jpg|png';
 		$this->load->library('upload', $config);
 
-		if ($this->form_validation->run() == false || !$this->upload->do_upload('support-image')) {
+		if ($this->form_validation->run() == false || !$this->upload->do_upload('company-logo')) {
 			$error = $this->upload->display_errors();
 			$this->load->view('userviews/join_page', array('reginfo' => $reginfo, 'error' => $error));
 		} else {

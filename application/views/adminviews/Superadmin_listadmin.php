@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 	<!DOCTYPE html>
 	<html lang="en">
-
+ 
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<meta name="author" content="Jobboard">
 
 		<title>Venture café - Talent Portal</title>
-
+ 
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="/assets/img/favicon.png">
 		<!-- Bootstrap CSS -->
@@ -45,8 +45,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	</head>
 
 	<body>
-		<!-- Header Section Start -->
-		<!-- Header Section Start -->
+<!-- Header Section Start -->
 		<div class="header">
 			<!-- Start intro section -->
 			<section id="intro" class="section-intro">
@@ -69,34 +68,33 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="collapse navbar-collapse" id="navbar">
 								<!-- Start Navigation List -->
 								<ul class="nav navbar-nav navbar-right">
-									<li>
+								<li>
 										<a href="/">
 											Home
 											<i class="fa fa-angle"></i>
 										</a>
 									</li>
-									<li>
-										<a class="active" href="#">
+									<li><a href="#">
 											Postings
 											<i class="fa fa-angle-down"></i>
 										</a>
-										<ul class="dropdown">
+											<ul class="dropdown">
 											<li>
-												<a class="active" href="/admin-home">
-													All Postings
+												<a  href="/admin-home">
+												All Postings
 												</a>
 											</li>
 											<li>
 												<a href="/post-requests">
-													Posting Requests
+												Posting Requests
 												</a>
 											</li>
 											<li>
 												<a href="/highlighted-posts">
-													Highlighted Postings
+												Highlighted Postings
 												</a>
 											</li>
-										</ul>
+											</ul>
 
 									</li>
 									<li>
@@ -104,26 +102,26 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											Companies
 											<i class="fa fa-angle-down"></i>
 										</a>
-										<ul class="dropdown">
+										 <ul class="dropdown">
 											<li>
 												<a href="/companies">
-													All Companies
-												</a>
-											</li>
-											<li>
-												<a href="/companies">
-													Company Requests
+												All Companies
 												</a>
 											</li>
 											<li>
 												<a href="">
-													Trusted Companies
+												Company Requests
 												</a>
 											</li>
-										</ul>
+											<li>
+												<a href="">
+												Trusted Companies
+												</a>
+											</li>
+											</ul>
 									</li>
 
-									<li>
+										<li>
 										<a  href="#">
 											My Page
 											<i class="fa fa-angle-down "></i>
@@ -135,7 +133,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</a>
 											</li>
 											<li>
-												<a href="new-posting">
+												<a href="/new-posting">
 												New Posting
 												</a>
 											</li>
@@ -144,7 +142,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												Logout
 												</a>
 											</li>
-										</ul>
+											</ul>
 									</li>
 								</ul>
 
@@ -174,142 +172,38 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</ul>
 						<!-- Mobile Menu End -->
 					</nav>
-
-
-
-					<!-- end intro section -->
-				</div>
+			</div>
 		</div>
+		
+<!-- Find Job Section Start -->
+		<section class="find-job section">
+			<div class="container">
+				<h2 class="section-title">List of admin</h2>
+				<div class="row">
+					<?php foreach ($admindetail as $admin) { ?>
+					<div class="col-md-12">
 
-		<!-- Header Section End -->
 
-		<!-- end intro section -->
-		</div>
-
-		<!-- Form Section Start -->
-		<div class="top-content">
-
-			<div class="inner-bg backgroundven">
-				<div class="container">
-
-					<div class="row">
-						<div class="col-sm-5">
-
-							<div class="form-box">
-								<div class="form-top">
-									<div class="form-top-left">
-										<h3>Post a Job</h3>
-									</div>
-									<div class="form-top-right">
-
-									</div>
-								</div>
-								<div class="form-bottom">
-									<form role="form" action="/editnowadmin" method="post" class="job-descript-form">
-										<br>
-										<div class="form-group">
-											<h4>Job Title
-												<h4>
-													<textarea name="tp-title" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Max 255 characters"><?= isset($postinfo['tp-title']) ? $postinfo['tp-title'] : $postinfo['title'] ?></textarea>
-										</div>
-
-										<div class="form-group">
-											<h4>Job Description
-												<h4>
-													<textarea name="tp-description" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Max 500 characters"><?= isset($postinfo['tp-description']) ? $postinfo['tp-description'] : $postinfo['description'] ?></textarea>
-										</div>
-
-										<div class="form-group">
-											<h4>Tags
-												<h4>
-													<textarea name="tp-tags" class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="Tags"><?= isset($postinfo['tp-tags']) ? $postinfo['tp-tags'] : $postinfo['tags'] ?></textarea>
-													<p>growth, international, city, talent, community, resilience, culture, digital, energy, inspiration</p>
-										</div>
-
-										<div class="form-group">
-											<h4>About company
-												<h4>
-													<label class="sr-only" for="companyinofo">About a company</label>
-													<textarea name="tp-about" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Max 255 characters"><?= isset($postinfo['tp-about']) ? $postinfo['tp-about'] : $postinfo['about'] ?></textarea>
-										
-													</h6>
-													<input type="hidden" name="tp-posting_id" value="<?= isset($postinfo['tp-posting_id']) ? $postinfo['tp-posting_id'] : $postinfo['id'] ?>">
-										</div>
-										<h4>Identifies
-											<h4>
-												<div class="form-group">
-													<select name="tp-identifies" class="form-control" id="exampleFormControlSelect1">
-														<option>
-															<?= isset($postinfo['tp-identifies']) ? $postinfo['tp-identifies'] : $postinfo['identifies'] ?>
-														</option>
-														<option>Startup</option>
-														<option>Service</option>
-														<option>Provider</option>
-														<option>Goverment</option>
-														<option>Academia</option>
-														<option>Corporate</option>
-													</select>
-												</div>
-												<br>
-												<div class="form-group">
-													<h4>Starting Date</h4>
-													<input name="tp-startdate" class="form-control" size="2" type="date" value="<?= isset($postinfo['tp-startdate']) ? $postinfo['tp-startdate'] : $postinfo['startdate'] ?>">
-												</div>
-
-												<div class="form-group">
-													<h4>End date</h4>
-													<input name="tp-enddate" class="form-control" size="2" type="date" value="<?= isset($postinfo['tp-enddate']) ? $postinfo['tp-enddate'] : $postinfo['enddate'] ?>">
-												</div>
-												<br>
-												<div class="form-group">
-													<h5>Application Link</h5>
-													<input class="form-control" type="text" name="tp-link" value="<?= isset($postinfo['tp-link']) ? $postinfo['tp-link'] : $postinfo['link'] ?>"
-													placeholder="Link">
-												</div>
-												<div class="form-group">
-													<p>Supporting image max 8mb</p>
-													<input type="file" name="tp-support-image" id="">
-												</div>
-												
-												<div class="form-group">
-													<h5>Status</h5>
-													<select name="tp-active" class="form-control" id="exampleFormControlSelect1">
-														<option value="<?= $postinfo['active'] ?>">Default</option>
-														<option value="1">Active</option>
-														<option value="0">Unactive</option>
-													</select>
-												</div>
-												<div class="form-group">
-													<h5>Highlighted</h5>
-													<select name="tp-highlighted" class="form-control" id="exampleFormControlSelect1">
-														<option value="<?= $postinfo['highlighted'] ?>">Default</option>
-														<option value="1">Yes</option>
-														<option value="0">No</option>
-													</select>
-												</div>
-											
-													<a type="button" class="btn btn-common btn-rm" style="color:white;"  href="/">Back</a>
-
-													<a class="btn btn-common btn-rm"  onclick="return checkDelete()" style="color:white;" href="/delete/<?= $postinfo['id'] ?>">Delete</a>
-													<script language="JavaScript" type="text/javascript">
-														function checkDelete(){
-															if (confirm('Are you sure?')) {
-																return true;
-															}else{return false}
-														
-														}
-														</script>
-													<button type="submit" class="btn btn-common btn-rm">Edit</button>
-									</form>
+						<div class="job-list col-md-12">
+							
+							<div class="job-list-content">
+								<h4 id="titles">
+										<?= $admin['companyname'] ?>
+								</h4>
+								<p class="descriptions">
+									 <?= $admin['email'] ?>
+								</p>
+								
 								</div>
 							</div>
 						</div>
-					</div>
+					<?php 
+			} ?>
 				</div>
-			</div>
-		</div>
-		<!-- Form Section End -->
 
+				</div>
+			
+		</section>
 
 		<!-- Footer Section Start -->
 		<footer id="footerid">

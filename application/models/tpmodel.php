@@ -15,7 +15,7 @@ class Tpmodel extends CI_Model
     public function insertuser($arg, $path)
     {
         $query = "INSERT INTO users (companyname, email, phone, contactperson, companylogo, password) values (?,?,?,?,?,?)";
-        $values = [$arg['companyname'], $arg['email'], $arg['phone'], $arg['contactname'], $path, $arg['password']];
+        $values = [$arg['companyname'], $arg['email'], $arg['phone'], $arg['contactperson'], $path, $arg['password']];
 
         $this->db->query($query, $values);
 
@@ -115,6 +115,25 @@ class Tpmodel extends CI_Model
         $result = $this->db->query($query)->result_array();
         return $result;
     }
+    public function trustedcompanies()
+    {
+        $query = "SELECT users.id as userid, users.companyname, users.companylogo, postings.title, postings.id as postid, postings.about, postings.description, postings.tags, postings.identifies FROM users
+        LEFT JOIN postings
+        ON users.id = postings.user_id
+        WHERE users.trusted = 1
+        GROUP BY users.id
+        ORDER BY postings.id DESC";
+        $result = $this->db->query($query)->result_array();
+        return $result;
+    }
+    public function companyeditpage($id)
+    {
+        $query = "SELECT * FROM users
+        WHERE users.id =$id
+        ORDER BY users.id DESC";
+        $result = $this->db->query($query)->row_array();
+        return $result;
+    }
     public function requestedpostings()
     {
         $query = "SELECT * FROM users
@@ -190,9 +209,8 @@ class Tpmodel extends CI_Model
         $values = [$arg['tp-title'], $arg['tp-description'], $arg['tp-about'], $arg['tp-identifies'], $arg['tp-tags'], $arg['tp-startdate'], $arg['tp-enddate'], $arg['tp-link'], $arg['tp-posting_id']];
 
         $this->db->query($query, $values);
-
-
     }
+
     public function editadmin($arg)
     {
         $query = "UPDATE `postings` SET `title`= ? ,`description`= ?,`about`=?,`identifies`= ?,`tags`=?,`startdate`=?,`enddate`=?,`active`=?, `highlighted`=?,`link`=? WHERE postings.id= ?";
@@ -228,6 +246,15 @@ class Tpmodel extends CI_Model
         return $result;
     }
 
+<<<<<<< HEAD
+     public function adminlists($id)
+    {
+        $query = "SELECT * FROM users
+        WHERE adminlevel = ?";
+        $values=2;
+        $result = $this->db->query($query, $values)->result_array();
+        return $result;     
+=======
     public function unhighlight($id)
     {
         $query = "UPDATE `postings` SET `highlighted`=0 WHERE postings.id= $id";
@@ -243,5 +270,40 @@ class Tpmodel extends CI_Model
         $query = "UPDATE `postings` SET `active`=1 WHERE postings.id= $id";
         $this->db->query($query);
     }
+    public function approvecompany($id)
+    {
+        $query = "UPDATE `users` SET `approved`=1 WHERE users.id= $id";
+        $this->db->query($query);
+    }
+    public function editcompanywlogo($arg, $path)
+    {
+        $query = "UPDATE `users` SET `companyname`= ? ,`email`= ?,`contactperson`=?,`phone`= ?, `approved`=?, `trusted`=?, `companylogo`=? WHERE users.id= ?";
+        $values = [$arg['companyname'], $arg['email'], $arg['contactperson'], $arg['phone'], $arg['approved'], $arg['trusted'], $path, $arg['userid']];
 
+        $this->db->query($query, $values);
+    }
+    public function editcompany($arg)
+    {
+        $query = "UPDATE `users` SET `companyname`= ? ,`email`= ?,`contactperson`=?,`phone`= ?, `approved`=?, `trusted`=?  WHERE users.id= ?";
+        $values = [$arg['companyname'], $arg['email'], $arg['contactperson'], $arg['phone'], $arg['approved'], $arg['trusted'], $arg['userid']];
+
+        $this->db->query($query, $values);
+    }
+    public function deletecompany($id)
+    {
+        $query = "DELETE FROM users WHERE id=?";
+        $values = [$id];
+        $result = $this->db->query($query, $values);
+    }
+    public function deletecompanypostings($id)
+    {
+        $query = "DELETE FROM postings WHERE user_id=?";
+        $values = [$id];
+        $result = $this->db->query($query, $values);
+        return $result;
+>>>>>>> 0dfd450e75fb46ed808c14cafb5207da9b6eec7a
+    }
 }
+
+
+ 
