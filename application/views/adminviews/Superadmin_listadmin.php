@@ -12,7 +12,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<meta name="author" content="Jobboard">
 
 		<title>Venture café - Talent Portal</title>
- 
+  
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="/assets/img/favicon.png">
 		<!-- Bootstrap CSS -->
