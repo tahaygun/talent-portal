@@ -141,7 +141,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</a>
 											</li>
 											<li> 
-												<?php if ($_SESSION['level'] == 1){?>
+												<?php if ($_SESSION['level'] == 1) {?>
 												<a href="/view-admins-list">
 												Admins
 												</a>
