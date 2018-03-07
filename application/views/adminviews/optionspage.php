@@ -148,6 +148,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</a>
 											</li>
 											<li>
+												<a href="/view-admins-list">
+												Admins
+												</a>
+											</li>
+											<li>
 												<a href="/logout">
 												Logout
 												</a>
