@@ -69,6 +69,20 @@ class Adminprocess extends CI_Controller
         $data = $this->tpmodel->allcompanies();
         $this->load->view('adminviews/adminshowcompaniespage', array('data' => $data));
     }
+    public function companyrequests()
+    {
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $data = $this->tpmodel->companyrequests();
+            $this->load->view('adminviews/admincompanyrequests', array('data' => $data));
+        } else {
+            redirect('/');
+        }
+    }
+
+    public function editcompany($id)
+    {
+        # code...
+    }
     public function addadmin()
     {
         if ($_SESSION['level'] == 1) {
@@ -82,7 +96,12 @@ class Adminprocess extends CI_Controller
 
     public function newposting()
     {
-        $this->load->view('adminviews/adminnewposting');
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $this->load->view('adminviews/adminnewposting');
+        } else {
+            redirect('/');
+        }
+
     }
     public function createnewposting()
     {

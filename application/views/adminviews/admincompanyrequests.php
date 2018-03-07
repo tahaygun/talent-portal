@@ -111,7 +111,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</a>
 											</li>
 											<li>
-												<a href="/company-requests">
+												<a href="">
 												Company Requests
 												</a>
 											</li>
@@ -218,7 +218,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</div>
 									</div>
 									<div class="pull-right">
-
+                                        <a href="/edit-company/<?= $posting['userid'] ?>" class="btn btn-common btn-sm">Approve</a>
+                                        <a href="/edit-company/<?= $posting['userid'] ?>" class="btn btn-common btn-sm">Details/Edit</a>
 									</div>
 								</div>
 							</div>
@@ -227,7 +228,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 					</div>
 					<?php 
-			} ?>
+} ?>
 				</div>
 			</div>
 		</section>
