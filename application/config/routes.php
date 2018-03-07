@@ -31,6 +31,7 @@ $route['options-admin'] = 'adminprocess/optionsadmin';
 $route['add-admin'] = 'adminprocess/addadmin';
 $route['new-posting-admin'] = 'adminprocess/newposting';
 $route['create-new-admin'] = 'adminprocess/createnewposting';
+$route['view-admins-list'] = 'adminprocess/listadmins/$1';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = false;

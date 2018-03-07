@@ -218,5 +218,15 @@ class Tpmodel extends CI_Model
         return $result;
     }
 
-
+     public function adminlists($id)
+    {
+        $query = "SELECT * FROM users
+        WHERE adminlevel = ?";
+        $values=2;
+        $result = $this->db->query($query, $values)->result_array();
+        return $result;     
+    }
 }
+
+
+ 
