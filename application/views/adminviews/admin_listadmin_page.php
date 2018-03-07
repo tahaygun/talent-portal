@@ -12,7 +12,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<meta name="author" content="Jobboard">
 
 		<title>Venture café - Talent Portal</title>
- 
+  
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="/assets/img/favicon.png">
 		<!-- Bootstrap CSS -->
@@ -198,6 +198,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<p class="descriptions">
 									 <?= $admin['email'] ?>
 								</p>
+								<a href="/sadmin-editlist/<?=$admin['id']?>" class="btn btn-common btn-sm">Edit</a>
+								<a href="/" class="btn btn-common btn-sm">Delete</a>
 								
 								</div>
 							</div>
