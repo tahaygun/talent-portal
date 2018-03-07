@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 	<!DOCTYPE html>
 	<html lang="en">
- 
+
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<meta name="author" content="Jobboard">
 
 		<title>Venture café - Talent Portal</title>
- 
+
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="/assets/img/favicon.png">
 		<!-- Bootstrap CSS -->
@@ -69,7 +69,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<!-- Start Navigation List -->
 								<ul class="nav navbar-nav navbar-right">
 								<li>
-										<a href="/">
+										<a href="#">
 											Home
 											<i class="fa fa-angle"></i>
 										</a>
@@ -109,12 +109,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</a>
 											</li>
 											<li>
-												<a href="">
+												<a href="/company-requests">
 												Company Requests
 												</a>
 											</li>
 											<li>
-												<a href="">
+												<a href="/trusted-companies">
 												Trusted Companies
 												</a>
 											</li>
@@ -174,36 +174,140 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					</nav>
 			</div>
 		</div>
-		
-<!-- Find Job Section Start -->
-		<section class="find-job section">
+
+					<!-- Header Section End -->
+
+
+		<!-- Main container Start -->
+		<div class="about section">
 			<div class="container">
-				<h2 class="section-title">List of admin</h2>
+				
+
+			
+
 				<div class="row">
-					<?php foreach ($admindetail as $admin) { ?>
-					<div class="col-md-12">
+					<div class="col-md-12">						
+						<div class="row">
+						<?php foreach($admindetail as $data){?>
+						<?=$data['companyname']; ?>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			<?php
+
+			} ?>
 
 
-						<div class="job-list col-md-12">
-							
-							<div class="job-list-content">
-								<h4 id="titles">
-										<?= $admin['companyname'] ?>
-								</h4>
-								<p class="descriptions">
-									 <?= $admin['email'] ?>
-								</p>
-								
+		<!-- Top content -->
+		<div class="top-content">
+
+			<div class="inner-bg">
+				<div class="container">
+
+					<div class="row">
+						<div class="col-sm-5">
+
+							<div class="form-box">
+								<div class="form-top">
+									<div class="form-top-left">
+										<h3>Edit <?= $data['companyname'] ?> </h3> <br>
+									</div>
+								</div>
+								<div class="form-bottom">
+									<form enctype="multipart/form-data" accept-charset="utf-8" action="/edit-company-now" method="post" class="registration-form">
+										<div class="form-group">
+											<label class="sr-only" for="companyname">Company name</label>
+											<input type="text" name="companyname" placeholder="Company name..." class="companyname form-control" id="form-first-name"
+											value="<?= isset($data['companyname']) ? $data['companyname'] : '' ?>">
+										</div>
+										<div class="form-group">
+											<label class="sr-only" for="email">Email</label>
+											<input type="text" name="email" placeholder="Email..." class="form-email form-control" id="email" value="<?= isset($data['email']) ? $data['email'] : '' ?>">
+										</div>
+										<div class="form-group">
+											<label class="sr-only" for="contactperson"> Contact Person</label>
+											<input type="text" name="contactperson" placeholder="Contact Person" class="form-contact-person-name form-control" id="contactperson"
+											value="<?= isset($data['contactperson']) ? $data['contactperson'] : '' ?>">
+										</div>
+										<div class="form-group">
+											<label class="sr-only" for="phone"> phone</label>
+											<input type="text" name="phone" placeholder="Phone" class="form-phone form-control" id="phone" value="<?= isset($data['phone']) ? $data['phone'] : '' ?>">
+											<input type="hidden" name="userid" id="userid" value="<?= $data['id'] ?>">
+										</div>
+										<div class="form-group">
+											<h5>Status</h5>
+											<select name="approved" class="form-control" id="approved">
+												<option value="<?= $data['approved'] ?>">Default: <?= ($data['approved'] == 1) ? "Approved" : "Not Approved" ?></option>
+												<option value="1">Approved</option>
+												<option value="0">Not Approved</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<h5>Trusted</h5>
+											<select name="trusted" class="form-control" id="approved">
+												<option value="<?= $data['trusted'] ?>">Default: <?= ($data['trusted'] == 1) ? "Trusted" : "Not Trusted" ?></option>
+												<option value="1">Trusted</option>
+												<option value="0">Not Trusted</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<h5>Company Logo max 512kb </h5> <br>
+											<input type="file" name="companylogo" id=""> <br>
+											<?php if (isset($data['companylogo'])) { ?>
+												<img width="100" src="/assets/img/jobs/<?= $data['companylogo'] ?>" alt="logo"> <br>
+												<input id="companylogo" checked type="checkbox" name="companylogo" value="<?= $data['companylogo'] ?>">
+												<label for="companylogo">Default Logo</label>
+										<?php
+
+								} ?>
+										</div>
+										<button type="button" class="btn btn-common btn-sm"><a style="color:white;" href="/companies">Back</a></button>
+										<a class="btn btn-common btn-sm"  onclick="return checkDelete()" style="color:white;" href="/delete-company/<?= $data['id'] ?>">Delete</a>
+										<script language="JavaScript" type="text/javascript">
+											function checkDelete(){
+												if (confirm('Are you sure?')) {
+													return true;
+												}else{return false}
+											
+											}
+										</script>
+										<button type="submit" class="btn btn-common btn-sm">Update</button>
+									</form>
 								</div>
 							</div>
 						</div>
-					<?php 
-			} ?>
+					</div>
 				</div>
+			</div>
+		</div>
+		< <!-- Javascript -->
+			<script src="/assets/js/jquery-1.11.1.min.js"></script>
+			<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+			<script src="/assets/js/scripts.js"></script>
 
-				</div>
-			
-		</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- Main container End -->
+
+
 
 		<!-- Footer Section Start -->
 		<footer id="footerid">
