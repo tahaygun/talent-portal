@@ -73,6 +73,15 @@ class Adminprocess extends CI_Controller
             redirect('/');
         }
     }
+    public function trustedcompanies()
+    {
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $data = $this->tpmodel->trustedcompanies();
+            $this->load->view('adminviews/admintrustedcompanies', array('data' => $data));
+        } else {
+            redirect('/');
+        }
+    }
 
     public function approvecompany($id)
     {
@@ -116,6 +125,7 @@ class Adminprocess extends CI_Controller
     public function deletecompany($id)
     {
         if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $this->tpmodel->deletecompanypostings($id);
             $this->tpmodel->deletecompany($id);
             redirect('/companies');
         } else {

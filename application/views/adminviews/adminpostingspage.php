@@ -193,7 +193,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="job-list col-md-12">
 								<div class="thumb">
 									<a href="/about-company/<?= $posting['userid'] ?>">
-										<img width="100" src="/assets/img/jobs/<?= $posting['companylogo'] ?>" alt="logo">
+										<img width="110" src="/assets/img/jobs/<?= $posting['companylogo'] ?>" alt="logo">
 									</a>
 								</div>
 								<div class="job-list-content">

@@ -245,7 +245,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								} ?>
 										</div>
 										<button type="button" class="btn btn-common btn-sm"><a style="color:white;" href="/companies">Back</a></button>
-										<button type="button" class="btn btn-common btn-sm"><a style="color:white;" href="/delete-company/<?= $data['id'] ?>">Delete</a></button>
+										<a class="btn btn-common btn-sm"  onclick="return checkDelete()" style="color:white;" href="/delete-company/<?= $data['id'] ?>">Delete</a>
+										<script language="JavaScript" type="text/javascript">
+											function checkDelete(){
+												if (confirm('Are you sure?')) {
+													return true;
+												}else{return false}
+											
+											}
+										</script>
 										<button type="submit" class="btn btn-common btn-sm">Update</button>
 									</form>
 								</div>

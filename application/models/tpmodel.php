@@ -115,6 +115,17 @@ class Tpmodel extends CI_Model
         $result = $this->db->query($query)->result_array();
         return $result;
     }
+    public function trustedcompanies()
+    {
+        $query = "SELECT users.id as userid, users.companyname, users.companylogo, postings.title, postings.id as postid, postings.about, postings.description, postings.tags, postings.identifies FROM users
+        LEFT JOIN postings
+        ON users.id = postings.user_id
+        WHERE users.trusted = 1
+        GROUP BY users.id
+        ORDER BY postings.id DESC";
+        $result = $this->db->query($query)->result_array();
+        return $result;
+    }
     public function companyeditpage($id)
     {
         $query = "SELECT * FROM users
@@ -274,5 +285,12 @@ class Tpmodel extends CI_Model
         $query = "DELETE FROM users WHERE id=?";
         $values = [$id];
         $result = $this->db->query($query, $values);
+    }
+    public function deletecompanypostings($id)
+    {
+        $query = "DELETE FROM postings WHERE user_id=?";
+        $values = [$id];
+        $result = $this->db->query($query, $values);
+        return $result;
     }
 }

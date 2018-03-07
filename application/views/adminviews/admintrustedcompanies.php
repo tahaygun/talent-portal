@@ -14,33 +14,35 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<title>Venture café - Talent Portal</title>
 
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="/assets/img/favicon.png">
+		<link rel="shortcut icon" href="assets/img/favicon.png">
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="/assets/css/bootstrap.min.css" type="text/css">
-		<link rel="stylesheet" href="/assets/css/jasny-bootstrap.min.css" type="text/css">
-		<link rel="stylesheet" href="/assets/css/bootstrap-select.min.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/jasny-bootstrap.min.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/bootstrap-select.min.css" type="text/css">
 		<!-- Material CSS -->
-		<link rel="stylesheet" href="/assets/css/material-kit.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/material-kit.css" type="text/css">
 		<!-- Font Awesome CSS -->
-		<link rel="stylesheet" href="/assets/fonts/font-awesome.min.css" type="text/css">
-		<link rel="stylesheet" href="/assets/fonts/themify-icons.css">
+		<link rel="stylesheet" href="assets/fonts/font-awesome.min.css" type="text/css">
+		<link rel="stylesheet" href="assets/fonts/themify-icons.css">
 
 		<!-- Animate CSS -->
-		<link rel="stylesheet" href="/assets/extras/animate.css" type="text/css">
+		<link rel="stylesheet" href="assets/extras/animate.css" type="text/css">
 		<!-- Owl Carousel -->
-		<link rel="stylesheet" href="/assets/extras/owl.carousel.css" type="text/css">
-		<link rel="stylesheet" href="/assets/extras/owl.theme.css" type="text/css">
+		<link rel="stylesheet" href="assets/extras/owl.carousel.css" type="text/css">
+		<link rel="stylesheet" href="assets/extras/owl.theme.css" type="text/css">
 		<!-- Rev Slider CSS -->
-		<link rel="stylesheet" href="/assets/extras/settings.css" type="text/css">
+		<link rel="stylesheet" href="assets/extras/settings.css" type="text/css">
 		<!-- Main Styles -->
-		<link rel="stylesheet" href="/assets/css/main.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/main.css" type="text/css">
 		<!-- Slicknav js -->
-		<link rel="stylesheet" href="/assets/css/slicknav.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/slicknav.css" type="text/css">
 		<!-- Responsive CSS Styles -->
-		<link rel="stylesheet" href="/assets/css/responsive.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/responsive.css" type="text/css">
+
+		<link rel="stylesheet" href="assets/css/homepage.css" type="text/css">
 		<!-- Color CSS Styles  -->
-		<link rel="stylesheet" type="text/css" href="/assets/css/colors/red.css" media="screen" />
-		<link rel="stylesheet" href="/assets/css/homepage.css" type="text/css">
+		<link rel="stylesheet" type="text/css" href="assets/css/colors/red.css" media="screen" />
+
 
 	</head>
 
@@ -69,7 +71,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<!-- Start Navigation List -->
 								<ul class="nav navbar-nav navbar-right">
 								<li>
-										<a href="#">
+										<a href="/">
 											Home
 											<i class="fa fa-angle"></i>
 										</a>
@@ -98,13 +100,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 									</li>
 									<li>
-										<a href="/companies">
+										<a class="active" href="#">
 											Companies
 											<i class="fa fa-angle-down"></i>
 										</a>
 										 <ul class="dropdown">
 											<li>
-												<a href="/companies">
+												<a  href="/companies">
 												All Companies
 												</a>
 											</li>
@@ -114,7 +116,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</a>
 											</li>
 											<li>
-												<a href="/trusted-companies">
+												<a  class="active" href="#">
 												Trusted Companies
 												</a>
 											</li>
@@ -177,106 +179,60 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 					<!-- Header Section End -->
 
-		<!-- Page Header Start -->
-		<div class="page-header" style="background: url(/assets/img/banner1.jpg);">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="breadcrumb-wrapper">
-							<img width="150" src="/assets/img/jobs/<?= $data['companylogo'] ?>" alt="">
-							<ol class="breadcrumb">
-								<li>
-									<a href="/">
-										<i class="ti-home"></i> Home</a>
-								</li>
-								<li class="current">Details</li>
-							</ol>
-						</div>
-					</div>
-				</div>
-			</div>
+
+			</section>
+			<!-- end intro section -->
 		</div>
-		<!-- Page Header End -->
 
-		<!-- Main container Start -->
-		<div class="about section">
+		<!-- Find Job Section Start -->
+		<section class="find-job section">
 			<div class="container">
+				<h2 class="section-title">Trusted Companies</h2>
 				<div class="row">
-					<div class="about-content">
-						<h2 class="medium-title descriptions">
-							<?= $data['companyname'] ?> 
-								<div class="pull-right">
-
-										<a href="/edit-company/<?= $data['user_id'] ?>" class="btn btn-common btn-sm">Details/Edit</a>
-								</div>
-							
-							
-						</h2>
-						<br>
-						<h4>Who are we?</h4>
-						<p class="descriptions">
-							<?= $data['about'] ?>
-						</p>
-					</div>
-				</div>
-
-				<div class="row">
+					<?php foreach ($data as $posting) { ?>
 					<div class="col-md-12">
-						<h2 class="medium-title descriptions">
-							Jobs
-						</h2>
-						<?php foreach ($postings as $posting) { ?>
 
 
 						<div class="job-list col-md-12">
 							<div class="thumb">
-								<a href="/details/<?= $posting['id'] ?>">
-									<img width="110" src="/assets/img/jobs/<?= $posting['companylogo'] ?>" alt="logo">
-								</a>
+								<a href="/about-company/<?= $posting['userid'] ?>"><img width="110" src="/assets/img/jobs/<?= $posting['companylogo'] ?>" alt="logo"></a>
 							</div>
 							<div class="job-list-content">
-								<h4>
-									<a href="/details/<?= $posting['id'] ?>">
-										<?= $posting['title'] ?>
-									</a>
+								<h4 id="titles">
+									<a href="/about-company/<?= $posting['userid'] ?>"><?= $posting['companyname'] ?></a>
 								</h4>
 								<p class="descriptions">
-									<?= $posting['description'] ?>
+									 <?= $posting['about'] ?>
 								</p>
 								<div class="job-tag">
 									<div class="pull-left">
 										<div class="meta-tag">
 											<span>
-												<a href="browse-categories.html"># Art/Design</a>
+												<a href=""># <?= $posting['identifies'] ?>
+												</a>
 											</span>
 											<span>
-												<a href="browse-categories.html">➦
-													<?= $posting['companyname'] ?>
+												<a href="browse-categories.html">➦ <?= $posting['companyname'] ?>
 												</a>
 											</span>
 										</div>
 									</div>
 									<div class="pull-right">
-
-										<a href="/details/<?= $posting['id'] ?>" class="btn btn-common btn-sm">More Detail</a>
+                                        <a href="/approve-company/<?= $posting['userid'] ?>" class="btn btn-common btn-sm">Approve</a>
+                                        <a href="/edit-company/<?= $posting['userid'] ?>" class="btn btn-common btn-sm">Details/Edit</a>
 									</div>
 								</div>
 							</div>
 						</div>
 
 
-
-
-						<?php
-
-				} ?>
-
 					</div>
+					<?php 
+} ?>
 				</div>
 			</div>
-		</div>
-		<!-- Main container End -->
-
+		</section>
+		<!-- Find Job Section End -->
 
 
 		<!-- Footer Section Start -->
@@ -288,7 +244,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<div class="col-md-3 col-sm-6 col-xs-12">
 							<div class="widget">
 								<h3 class="block-title">
-									<img src="/assets/img/logov.png" class="img-responsive" alt="Footer Logo">
+									<img src="assets/img/logov.png" class="img-responsive" alt="Footer Logo">
 								</h3>
 
 							</div>
@@ -360,22 +316,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		</div>
 
 		<!-- Main JS  -->
-		<script type="text/javascript" src="/assets/js/jquery-min.js"></script>
-		<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="/assets/js/material.min.js"></script>
-		<script type="text/javascript" src="/assets/js/material-kit.js"></script>
-		<script type="text/javascript" src="/assets/js/jquery.parallax.js"></script>
-		<script type="text/javascript" src="/assets/js/owl.carousel.min.js"></script>
-		<script type="text/javascript" src="/assets/js/jquery.slicknav.js"></script>
-		<script type="text/javascript" src="/assets/js/main.js"></script>
-		<script type="text/javascript" src="/assets/js/jquery.counterup.min.js"></script>
-		<script type="text/javascript" src="/assets/js/waypoints.min.js"></script>
-		<script type="text/javascript" src="/assets/js/jasny-bootstrap.min.js"></script>
-		<script type="text/javascript" src="/assets/js/bootstrap-select.min.js"></script>
-		<script type="text/javascript" src="/assets/js/form-validator.min.js"></script>
-		<script type="text/javascript" src="/assets/js/contact-form-script.js"></script>
-		<script type="text/javascript" src="/assets/js/jquery.themepunch.revolution.min.js"></script>
-		<script type="text/javascript" src="/assets/js/jquery.themepunch.tools.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery-min.js"></script>
+		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/material.min.js"></script>
+		<script type="text/javascript" src="assets/js/material-kit.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.parallax.js"></script>
+		<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.slicknav.js"></script>
+		<script type="text/javascript" src="assets/js/main.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.counterup.min.js"></script>
+		<script type="text/javascript" src="assets/js/waypoints.min.js"></script>
+		<script type="text/javascript" src="assets/js/jasny-bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/bootstrap-select.min.js"></script>
+		<script type="text/javascript" src="assets/js/form-validator.min.js"></script>
+		<script type="text/javascript" src="assets/js/contact-form-script.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.themepunch.revolution.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.themepunch.tools.min.js"></script>
 
 	</body>
 
