@@ -246,15 +246,16 @@ class Tpmodel extends CI_Model
         return $result;
     }
 
-<<<<<<< HEAD
+
      public function adminlists($id)
     {
         $query = "SELECT * FROM users
         WHERE adminlevel = ?";
         $values=2;
         $result = $this->db->query($query, $values)->result_array();
-        return $result;     
-=======
+        return $result;    
+    } 
+
     public function unhighlight($id)
     {
         $query = "UPDATE `postings` SET `highlighted`=0 WHERE postings.id= $id";
@@ -301,7 +302,6 @@ class Tpmodel extends CI_Model
         $values = [$id];
         $result = $this->db->query($query, $values);
         return $result;
->>>>>>> 0dfd450e75fb46ed808c14cafb5207da9b6eec7a
     }
 }
 
