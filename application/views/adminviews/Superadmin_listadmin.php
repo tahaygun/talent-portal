@@ -122,7 +122,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</li>
 
 										<li>
-										<a  href="#">
+										<a class="active" href="#">
 											My Page
 											<i class="fa fa-angle-down "></i>
 										</a>
@@ -138,7 +138,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</a>
 											</li>
 											<li>
-												<a href="/view-admins-list">
+												<a class="active" href="/view-admins-list">
 												Admins
 												</a>
 											</li>
