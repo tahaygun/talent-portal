@@ -15,7 +15,7 @@ class Tpmodel extends CI_Model
     public function insertuser($arg, $path)
     {
         $query = "INSERT INTO users (companyname, email, phone, contactperson, companylogo, password) values (?,?,?,?,?,?)";
-        $values = [$arg['companyname'], $arg['email'], $arg['phone'], $arg['contactname'], $path, $arg['password']];
+        $values = [$arg['companyname'], $arg['email'], $arg['phone'], $arg['contactperson'], $path, $arg['password']];
 
         $this->db->query($query, $values);
 
@@ -113,6 +113,14 @@ class Tpmodel extends CI_Model
         GROUP BY users.id
         ORDER BY postings.id DESC";
         $result = $this->db->query($query)->result_array();
+        return $result;
+    }
+    public function companyeditpage($id)
+    {
+        $query = "SELECT * FROM users
+        WHERE users.id =$id
+        ORDER BY users.id DESC";
+        $result = $this->db->query($query)->row_array();
         return $result;
     }
     public function requestedpostings()
@@ -241,6 +249,11 @@ class Tpmodel extends CI_Model
     public function approve($id)
     {
         $query = "UPDATE `postings` SET `active`=1 WHERE postings.id= $id";
+        $this->db->query($query);
+    }
+    public function approvecompany($id)
+    {
+        $query = "UPDATE `users` SET `approved`=1 WHERE users.id= $id";
         $this->db->query($query);
     }
 

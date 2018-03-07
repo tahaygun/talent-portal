@@ -64,11 +64,6 @@ class Adminprocess extends CI_Controller
         }
 
     }
-    public function showcompanylist()
-    {
-        $data = $this->tpmodel->allcompanies();
-        $this->load->view('adminviews/adminshowcompaniespage', array('data' => $data));
-    }
     public function companyrequests()
     {
         if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
@@ -79,9 +74,24 @@ class Adminprocess extends CI_Controller
         }
     }
 
+    public function approvecompany($id)
+    {
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $data = $this->tpmodel->approvecompany($id);
+            redirect('/company-requests');
+        } else {
+            redirect('/');
+        }
+    }
     public function editcompany($id)
     {
-        # code...
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $data = $this->tpmodel->companyeditpage($id);
+            $data['password'] = $this->encrypt->decode($data['password']);
+            $this->load->view('adminviews/admincompanyedit', array('data' => $data));
+        } else {
+            redirect('/');
+        }
     }
     public function addadmin()
     {

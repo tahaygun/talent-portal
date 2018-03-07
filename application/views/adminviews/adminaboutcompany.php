@@ -204,7 +204,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="row">
 					<div class="about-content">
 						<h2 class="medium-title descriptions">
-							<?= $data['companyname'] ?>
+							<?= $data['companyname'] ?> 
+								<div class="pull-right">
+
+										<a href="/edit-company/<?= $data['user_id'] ?>" class="btn btn-common btn-sm">Details/Edit</a>
+								</div>
+							
+							
 						</h2>
 						<br>
 						<h4>Who are we?</h4>
@@ -252,7 +258,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</div>
 									<div class="pull-right">
 
-										<a href="/details/<?= $posting['id'] ?>" class="btn btn-common btn-rm">More Detail</a>
+										<a href="/details/<?= $posting['id'] ?>" class="btn btn-common btn-sm">More Detail</a>
 									</div>
 								</div>
 							</div>
