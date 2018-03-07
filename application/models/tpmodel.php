@@ -266,6 +266,12 @@ class Tpmodel extends CI_Model
         $query = "UPDATE `users` SET `approved`=1 WHERE users.id= $id";
         $this->db->query($query);
     }
+    public function updateabout($arg)
+    {
+        $query = "UPDATE `users` SET `about`=? WHERE id= ?";
+        $values = [$arg['tp-about'], $arg['tp-user_id']];
+        $this->db->query($query, $values);
+    }
     public function editcompanywlogo($arg, $path)
     {
         $query = "UPDATE `users` SET `companyname`= ? ,`email`= ?,`contactperson`=?,`phone`= ?, `approved`=?, `trusted`=?, `companylogo`=? WHERE users.id= ?";
