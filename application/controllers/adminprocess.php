@@ -83,12 +83,41 @@ class Adminprocess extends CI_Controller
             redirect('/');
         }
     }
-    public function editcompany($id)
+    public function editcompanypage($id)
     {
         if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
             $data = $this->tpmodel->companyeditpage($id);
-            $data['password'] = $this->encrypt->decode($data['password']);
             $this->load->view('adminviews/admincompanyedit', array('data' => $data));
+        } else {
+            redirect('/');
+        }
+    }
+    public function editcompany()
+    {
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $postinfo = $this->input->post(null, true);
+            $config['upload_path'] = './assets/img/jobs/';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload('companylogo')) {
+                $this->tpmodel->editcompany($postinfo);
+                redirect('/companies');
+            } else {
+                $data = $this->upload->data();
+                $path = $data['file_name'];
+                $this->tpmodel->editcompanywlogo($postinfo, $path);
+                redirect('/companies');
+            }
+
+        } else {
+            redirect('/');
+        }
+    }
+    public function deletecompany($id)
+    {
+        if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
+            $this->tpmodel->deletecompany($id);
+            redirect('/companies');
         } else {
             redirect('/');
         }

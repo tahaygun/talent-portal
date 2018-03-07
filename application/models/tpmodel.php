@@ -198,9 +198,8 @@ class Tpmodel extends CI_Model
         $values = [$arg['tp-title'], $arg['tp-description'], $arg['tp-about'], $arg['tp-identifies'], $arg['tp-tags'], $arg['tp-startdate'], $arg['tp-enddate'], $arg['tp-link'], $arg['tp-posting_id']];
 
         $this->db->query($query, $values);
-
-
     }
+
     public function editadmin($arg)
     {
         $query = "UPDATE `postings` SET `title`= ? ,`description`= ?,`about`=?,`identifies`= ?,`tags`=?,`startdate`=?,`enddate`=?,`active`=?, `highlighted`=?,`link`=? WHERE postings.id= ?";
@@ -256,5 +255,24 @@ class Tpmodel extends CI_Model
         $query = "UPDATE `users` SET `approved`=1 WHERE users.id= $id";
         $this->db->query($query);
     }
+    public function editcompanywlogo($arg, $path)
+    {
+        $query = "UPDATE `users` SET `companyname`= ? ,`email`= ?,`contactperson`=?,`phone`= ?, `approved`=?, `trusted`=?, `companylogo`=? WHERE users.id= ?";
+        $values = [$arg['companyname'], $arg['email'], $arg['contactperson'], $arg['phone'], $arg['approved'], $arg['trusted'], $path, $arg['userid']];
 
+        $this->db->query($query, $values);
+    }
+    public function editcompany($arg)
+    {
+        $query = "UPDATE `users` SET `companyname`= ? ,`email`= ?,`contactperson`=?,`phone`= ?, `approved`=?, `trusted`=?  WHERE users.id= ?";
+        $values = [$arg['companyname'], $arg['email'], $arg['contactperson'], $arg['phone'], $arg['approved'], $arg['trusted'], $arg['userid']];
+
+        $this->db->query($query, $values);
+    }
+    public function deletecompany($id)
+    {
+        $query = "DELETE FROM users WHERE id=?";
+        $values = [$id];
+        $result = $this->db->query($query, $values);
+    }
 }

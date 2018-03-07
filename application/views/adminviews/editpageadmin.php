@@ -294,7 +294,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</button>
 												<button type="button" class="btn btn-common btn-rm"><a style="color:white;" href="/delete/<?= $postinfo['id'] ?>">delete</a></button>
 												<button type="submit" class="btn btn-common btn-rm">Edit</button>
-												<!-- <a href="job-details.html" class="btn btn-common btn-rm">More Detail</a> -->
 									</form>
 								</div>
 							</div>

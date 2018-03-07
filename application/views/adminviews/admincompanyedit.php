@@ -193,11 +193,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="form-box">
 								<div class="form-top">
 									<div class="form-top-left">
-										<h3>Edit <?= $data['companyname'] ?> </h3>
+										<h3>Edit <?= $data['companyname'] ?> </h3> <br>
 									</div>
 								</div>
 								<div class="form-bottom">
-									<form enctype="multipart/form-data" accept-charset="utf-8" action="/register" method="post" class="registration-form">
+									<form enctype="multipart/form-data" accept-charset="utf-8" action="/edit-company-now" method="post" class="registration-form">
 										<div class="form-group">
 											<label class="sr-only" for="companyname">Company name</label>
 											<input type="text" name="companyname" placeholder="Company name..." class="companyname form-control" id="form-first-name"
@@ -215,25 +215,38 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										<div class="form-group">
 											<label class="sr-only" for="phone"> phone</label>
 											<input type="text" name="phone" placeholder="Phone" class="form-phone form-control" id="phone" value="<?= isset($data['phone']) ? $data['phone'] : '' ?>">
+											<input type="hidden" name="userid" id="userid" value="<?= $data['id'] ?>">
 										</div>
 										<div class="form-group">
-											<label class="sr-only" for="password"></label>
-											<input type="text" name="password" value="<?= isset($data['password']) ? $data['password'] : '' ?>" placeholder="Password" class="form-password form-control" id="password">
+											<h5>Status</h5>
+											<select name="approved" class="form-control" id="approved">
+												<option value="<?= $data['approved'] ?>">Default: <?= ($data['approved'] == 1) ? "Approved" : "Not Approved" ?></option>
+												<option value="1">Approved</option>
+												<option value="0">Not Approved</option>
+											</select>
 										</div>
-
+										<div class="form-group">
+											<h5>Trusted</h5>
+											<select name="trusted" class="form-control" id="approved">
+												<option value="<?= $data['trusted'] ?>">Default: <?= ($data['trusted'] == 1) ? "Trusted" : "Not Trusted" ?></option>
+												<option value="1">Trusted</option>
+												<option value="0">Not Trusted</option>
+											</select>
+										</div>
 										<div class="form-group">
 											<h5>Company Logo max 512kb </h5> <br>
 											<input type="file" name="companylogo" id=""> <br>
 											<?php if (isset($data['companylogo'])) { ?>
 												<img width="100" src="/assets/img/jobs/<?= $data['companylogo'] ?>" alt="logo"> <br>
 												<input id="companylogo" checked type="checkbox" name="companylogo" value="<?= $data['companylogo'] ?>">
-												<label for="companylogo">Default</label>
+												<label for="companylogo">Default Logo</label>
 										<?php
 
 								} ?>
 										</div>
-
-										<button type="submit" class="btn btn-common btn-rm">Update</button>
+										<button type="button" class="btn btn-common btn-sm"><a style="color:white;" href="/companies">Back</a></button>
+										<button type="button" class="btn btn-common btn-sm"><a style="color:white;" href="/delete-company/<?= $data['id'] ?>">Delete</a></button>
+										<button type="submit" class="btn btn-common btn-sm">Update</button>
 									</form>
 								</div>
 							</div>
