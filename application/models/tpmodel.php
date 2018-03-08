@@ -247,24 +247,24 @@ class Tpmodel extends CI_Model
     }
 
 
-     public function adminlists($id) 
-
+    public function adminlists()
     {
-     	$query = "SELECT * FROM users
+        $query = "SELECT * FROM users
         WHERE adminlevel = ?";
-        $values=2;
+        $values = 2;
         $result = $this->db->query($query, $values)->result_array();
-        return $result;    
-    } 
+        return $result;
+    }
 
-         public function admininfo($id)
+
+    public function admininfo($id)
     {
         $query = "SELECT * FROM users
         WHERE users.id = ?";
-        $values= $id;
-        $result = $this->db->query($query, $values)->result_array();
-        return $result;    
-    } 
+        $values = $id;
+        $result = $this->db->query($query, $values)->row_array();
+        return $result;
+    }
 
     public function unhighlight($id)
     {
@@ -285,6 +285,12 @@ class Tpmodel extends CI_Model
     {
         $query = "UPDATE `users` SET `approved`=1 WHERE users.id= $id";
         $this->db->query($query);
+    }
+    public function updateabout($arg)
+    {
+        $query = "UPDATE `users` SET `about`=? WHERE id= ?";
+        $values = [$arg['tp-about'], $arg['tp-user_id']];
+        $this->db->query($query, $values);
     }
     public function editcompanywlogo($arg, $path)
     {
@@ -314,6 +320,5 @@ class Tpmodel extends CI_Model
         return $result;
     }
 }
-
 
  

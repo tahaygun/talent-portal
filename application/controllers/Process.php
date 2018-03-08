@@ -163,7 +163,8 @@ class Process extends CI_Controller
 		if (isset($_SESSION['level']) && $_SESSION['level'] != 3) {
 			redirect('/new-posting-admin');
 		} elseif (isset($_SESSION['id'])) {
-			$this->load->view('userviews/newposting');
+			$data = $this->tpmodel->companyeditpage($_SESSION['id']);
+			$this->load->view('userviews/newposting', array('data' => $data));
 		} else {
 			redirect('/');
 		}
@@ -199,6 +200,7 @@ class Process extends CI_Controller
 		} else {
 			$data = $this->upload->data();
 			$path = $data['file_name'];
+			$this->tpmodel->updateabout($postinfo);
 			$this->tpmodel->insertpostings($postinfo, $path);
 			redirect('/mypage');
 		}

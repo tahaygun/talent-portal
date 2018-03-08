@@ -179,30 +179,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 		<!-- Main container Start -->
-		<div class="about section">
-			<div class="container">
-				
-
-			
-
-				<div class="row">
-					<div class="col-md-12">						
-						<div class="row">
-						<?php foreach($admindetail as $data){?>
-						<?=$data['companyname']; ?>
-
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-			<?php
-
-			} ?>
-
 
 		<!-- Top content -->
-		<div class="top-content">
+		<div class="top-content editadminpage">
 
 			<div class="inner-bg">
 				<div class="container">
@@ -237,33 +216,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											<input type="text" name="phone" placeholder="Phone" class="form-phone form-control" id="phone" value="<?= isset($data['phone']) ? $data['phone'] : '' ?>">
 											<input type="hidden" name="userid" id="userid" value="<?= $data['id'] ?>">
 										</div>
-										<div class="form-group">
-											<h5>Status</h5>
-											<select name="approved" class="form-control" id="approved">
-												<option value="<?= $data['approved'] ?>">Default: <?= ($data['approved'] == 1) ? "Approved" : "Not Approved" ?></option>
-												<option value="1">Approved</option>
-												<option value="0">Not Approved</option>
-											</select>
-										</div>
-										<div class="form-group">
-											<h5>Trusted</h5>
-											<select name="trusted" class="form-control" id="approved">
-												<option value="<?= $data['trusted'] ?>">Default: <?= ($data['trusted'] == 1) ? "Trusted" : "Not Trusted" ?></option>
-												<option value="1">Trusted</option>
-												<option value="0">Not Trusted</option>
-											</select>
-										</div>
-										<div class="form-group">
-											<h5>Company Logo max 512kb </h5> <br>
-											<input type="file" name="companylogo" id=""> <br>
-											<?php if (isset($data['companylogo'])) { ?>
-												<img width="100" src="/assets/img/jobs/<?= $data['companylogo'] ?>" alt="logo"> <br>
-												<input id="companylogo" checked type="checkbox" name="companylogo" value="<?= $data['companylogo'] ?>">
-												<label for="companylogo">Default Logo</label>
-										<?php
-
-								} ?>
-										</div>
+										
 										<button type="button" class="btn btn-common btn-sm"><a style="color:white;" href="/companies">Back</a></button>
 										<a class="btn btn-common btn-sm"  onclick="return checkDelete()" style="color:white;" href="/delete-company/<?= $data['id'] ?>">Delete</a>
 										<script language="JavaScript" type="text/javascript">

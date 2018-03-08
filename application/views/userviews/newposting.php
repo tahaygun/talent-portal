@@ -206,7 +206,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											<h4>About company
 												<h4>
 													<label class="sr-only" for="companyinofo">About a company</label>
-													<textarea name="tp-about" class="form-control" id="" rows="5" placeholder="Max 255 characters"><?= isset($postinfo['tp-about']) ? $postinfo['tp-about'] : '' ?></textarea>
+													<textarea name="tp-about" class="form-control" id="" rows="5" placeholder="Max 255 characters"><?= isset($postinfo['tp-about']) ? $postinfo['tp-about'] : $data['about'] ?></textarea>
 													<h6 style="color:#f45342;"><?= form_error('tp-about') ? form_error('tp-about') : '' ?></h6>
 													<input type="hidden" name="tp-user_id" value="<?= $_SESSION['id'] ?>">
 										</div>

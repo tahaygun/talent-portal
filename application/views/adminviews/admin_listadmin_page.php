@@ -198,8 +198,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<p class="descriptions">
 									 <?= $admin['email'] ?>
 								</p>
-								<a href="/sadmin-editlist/<?=$admin['id']?>" class="btn btn-common btn-sm">Edit</a>
-								<a href="/" class="btn btn-common btn-sm">Delete</a>
+								<a href="/edit-admins/<?= $admin['id'] ?>" class="btn btn-common btn-sm">Edit / Delete</a>
 								
 								</div>
 							</div>

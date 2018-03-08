@@ -199,7 +199,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<div class="job-list col-md-12">
 							<div class="thumb">
 								<a href="/details/<?= $posting['id'] ?>">
-									<img src="/assets/img/jobs/<?= $posting['companylogo'] ?>" alt="">
+									<img width= "110 " src="/assets/img/jobs/<?= $posting['companylogo'] ?>" alt="">
 								</a>
 							</div>
 							<div class="job-list-content">
@@ -215,14 +215,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<div class="pull-left">
 										<div class="meta-tag">
 											<span>
-												<a href="browse-categories.html">#
-													<?= $posting['identifies'] ?>
-												</a>
+												<a> # <?= $posting['identifies'] ?> </a>
 											</span>
 											<span>
-												<a href="browse-categories.html">➦
-													<?= $posting['companyname'] ?>
-												</a>
+												<a> ➦ <?= $posting['companyname'] ?> </a>
 											</span>
 										</div>
 									</div>
