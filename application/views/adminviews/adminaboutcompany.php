@@ -138,11 +138,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</a>
 											</li>
 											<li> 
-												<?php if ($_SESSION['level'] == 1) {?>
+												<?php if ($_SESSION['level'] == 1) { ?>
 												<a href="/view-admins-list">
 												Admins
 												</a>
-												<?php } ?>
+												<?php 
+										} ?>
 											</li>
 											<li>
 												<a href="/logout">
@@ -213,8 +214,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<h2 class="medium-title descriptions">
 							<?= $data['companyname'] ?> 
 								<div class="pull-right">
-
-										<a href="/edit-company/<?= $data['user_id'] ?>" class="btn btn-common btn-sm">Details/Edit</a>
+										<a href="/edit-company/<?= $data['id'] ?>" class="btn btn-common btn-sm">Details/Edit</a>
 								</div>
 							
 							
