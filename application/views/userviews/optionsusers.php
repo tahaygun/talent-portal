@@ -11,7 +11,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<meta name="author" content="Jobboard">
 
-		<title>Talent Portal</title>
+		<title>Talent Portal - Options page</title>
 
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="assets/img/favicon.png">
@@ -39,16 +39,23 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<!-- Responsive CSS Styles -->
 		<link rel="stylesheet" href="assets/css/responsive.css" type="text/css">
 
-		<link rel="stylesheet" href="assets/css/homepage.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/joinpage.css" type="text/css">
+
 		<!-- Color CSS Styles  -->
 		<link rel="stylesheet" type="text/css" href="assets/css/colors/red.css" media="screen" />
 
+		<style>
+			.top-content {
+				margin-left: 500px;
+			}
+
+		</style>
 
 	</head>
 
 	<body>
 		<!-- Header Section Start -->
-		<div class="header">
+			<div class="header">
 			<!-- Start intro section -->
 			<section id="intro" class="section-intro">
 				<div class="logo-menu">
@@ -71,7 +78,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<!-- Start Navigation List -->
 								<ul class="nav navbar-nav navbar-right">
 									<li>
-										<a class="active" href="/">
+										<a  href="/">
 											Home
 											<i class="fa fa-angle"></i>
 										</a>
@@ -101,37 +108,37 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</a>
 									</li>
 									<?php if (isset($_SESSION['id'])) { ?>
-									<li>
-										<a href="#">
+										<li>
+										<a class="active" href="#">
 											My Page
-											<i class="fa fa-angle-down"></i>
+											<i class="fa fa-angle-down "></i>
 										</a>
-										<ul class="dropdown">
+										 <ul class="dropdown">
 											<li>
-												<a href="/mypage">
-													My Page
+												<a href="#">
+												My Page
 												</a>
 											</li>
 											<li>
 												<a href="/new-posting">
-													New Posting
+												New Posting
 												</a>
 											</li>
 											<li>
-												<a href="/options">
+												<a class="active" href="/options">
 												Options
 												</a>
 											</li>
 											<li>
 												<a href="/logout">
-													Logout
+												Logout
 												</a>
 											</li>
-										</ul>
+											</ul>
 									</li>
-									<?php
+								<?php
 
-							} ?>
+						} ?>
 								</ul>
 
 							</div>
@@ -160,129 +167,62 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</ul>
 						<!-- Mobile Menu End -->
 					</nav>
-				</div>
+			<!-- end intro section -->
+			</div>
+		</div>
+		<!-- Header Section End -->
 
+		<!-- Top content -->
+		<div class="top-content">
 
+			<div class="inner-bg">
+				<div class="container">
+					<h2 class="section-title">Options</h2>
 
-				<!-- Header Section End -->
+					<div class="row">
+						<div class="col-sm-5">
 
-				<div class="search-container">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12">
-								<h1>Find the job that fits your life</h1>
-								<br>
-								<h2>We are building
-									<strong>network</strong> to help people!</h2>
-								<div class="content">
-									<form method="post" action="/search">
-										<div class="row">
-											<div class="col-md-6 col-sm-6">
-												<div class="form-group">
-													<input name="searchinput" class="form-control" type="text" placeholder="job title / keywords / company name">
-													<i class="ti-time"></i>
-												</div>
-											</div>
-											<div class="col-md-5 col-sm-6">
-												<div class="search-category-container">
-													<label class="styled-select">
-														<select name="category" class="dropdown-product selectpicker">
-															<option value="">All Categories</option>
-															<option>Growth</option>
-															<option>International</option>
-															<option>City</option>
-															<option value="talent">Talent</option>
-															<option>Community</option>
-															<option>Resilience</option>
-															<option>Culture</option>
-															<option>Digital</option>
-															<option>Energy</option>
-															<option>Inspiration</option>
-														</select>
-													</label>
-												</div>
-											</div>
-											<div class="col-md-1 col-sm-6">
-												<button type="submit" class="btn btn-search-icon">
-													<i class="ti-search"></i>
-												</button>
-											</div>
+							<div class="form-box">
+								<div class="form-top">
+									<div class="form-top-left">
+									</form>
+									<form role="form" action="/change-password" method="post" class="registration-form">
+										<div class="form-group">
+											<h5 style="color:#f45342;"><?= isset($_SESSION['success']) ? $_SESSION['success'] : '' ?></h5>
+											<h3>Change password</h3>
+											<br>
+											<h5>Current Password</h5><br>
+											<input type="password" name="oldpassword" placeholder="Current Password" class="form-password form-control" id="password">
+											<h5 style="color:#f45342;"><?= isset($_SESSION['oldpassword']) ? $_SESSION['oldpassword'] : '' ?></h5>
 										</div>
+										<div class="form-group">
+											<h5>New Password</h5> <br>
+											<input type="password" name="newpassword" placeholder=" New Password" class="form-conf-password form-control" id="newpassword">
+											<h5 style="color:#f45342;"><?= form_error('newpassword') ? form_error('newpassword') : '' ?></h5>
+										</div>
+										<div class="form-group">
+											<input type="password" name="confpassword" placeholder=" Confirm your Password" class="form-conf-password form-control" id="confpassword">
+											<h5 style="color:#f45342;"><?= form_error('confpassword') ? form_error('confpassword') : '' ?></h5>
+										</div>
+										<button type="submit" class="btn btn-common btn-rm">Confirm</button>
 									</form>
 								</div>
 							</div>
+                         </div>
 						</div>
-					</div>
-				</div>
-			</section>
-			<!-- end intro section -->
-		</div>
-
-		<!-- Find Job Section Start -->
-		<section class="find-job section">
-			<div class="container">
-				<h2 class="section-title">Highlighted Jobs</h2>
-				<div class="row">
-					<div class="col-md-12">
-						<?php foreach ($data as $posting) { ?>
-
-
-						<div class="job-list col-md-12">
-							<div class="thumb">
-								<a href="/about-company/<?= $posting['user_id'] ?>">
-									<img width="100" src="/assets/img/jobs/<?= $posting['companylogo'] ?>" alt="logo">
-								</a>
-							</div>
-							<div class="job-list-content">
-								<h4 id="titles">
-									<a href="/details/<?= $posting['id'] ?>">
-										<?= $posting['title'] ?>
-									</a>
-								</h4>
-								<p class="descriptions">
-									<?= $posting['description'] ?>
-								</p>
-								<div class="job-tag">
-									<div class="pull-left">
-										<div class="meta-tag">
-											<span>
-                                                <?php $arr = explode(' ', trim($posting['tags'])); ?>
-                                                 <?php foreach ($arr as $tag) { ?>
-                                                   <a  href="/category/<?= $tag ?>"> #<?= $tag ?></a> <?php 
-																																																																																																				} ?> 
-                                            </span>
-											<span>
-												<a href="/about-company/<?= $posting['user_id'] ?>">➦
-													<?= $posting['companyname'] ?>
-												</a>
-											</span>
-										</div>
-									</div>
-									<div class="pull-right">
-
-										<a href="/details/<?= $posting['id'] ?>" class="btn btn-common btn-rm">More Detail</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-
-
-						<?php
-
-				} ?>
-
 					</div>
 				</div>
 			</div>
-		</section>
-		
-		<!-- Find Job Section End -->
+		</div>
+
+		<!-- Javascript -->
+		<script src="assets/js/jquery-1.11.1.min.js"></script>
+		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+		<script src="assets/js/scripts.js"></script>
 
 
 		<!-- Footer Section Start -->
-		<footer id="footerid">
+		<footer>
 			<!-- Footer Area Start -->
 			<section class="footer-Content">
 				<div class="container">
@@ -299,16 +239,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="widget">
 
 
-								<a href="/joinpage">&nbsp Company Login</a>
+								<a href="#">&nbsp Company Login</a>
 
 
-								<a href="https://venturecaferotterdam.org/sponsor/">&nbsp&nbsp Support</a>
+								<a href="#">&nbsp&nbsp Support</a>
 
 
 								<a href="#">&nbsp&nbsp License</a>
 
 
-								<a href="https://venturecaferotterdam.org/contact/">&nbsp&nbsp Contact</a>
+								<a href="#">&nbsp&nbsp Terms & Conditions</a>
+
+
+								<a href="#">&nbsp&nbsp Contact</a>
 
 							</div>
 						</div>
@@ -317,16 +260,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="widget">
 
 								<div class="bottom-social-icons social-icon">
-									<a class="twitter" href="https://twitter.com/VentureCafeRdam">
+									<a class="twitter" href="https://twitter.com/GrayGrids">
 										<i class="ti-twitter-alt"></i>
 									</a>
-									<a class="facebook" href="https://www.facebook.com/VentureCafeRotterdam/">
+									<a class="facebook" href="https://web.facebook.com/GrayGrids">
 										<i class="ti-facebook"></i>
 									</a>
-									<a class="instagram" href="http://instagram.com/venturecaferotterdam/">
+									<a class="dribble" href="https://dribbble.com/GrayGrids">
 										<i class="ti-instagram"></i>
 									</a>
-									<a class="linkedin" href="https://www.linkedin.com/company/venturecaferotterdam">
+									<a class="linkedin" href="https://www.linkedin.com/GrayGrids">
 										<i class="ti-linkedin"></i>
 									</a>
 								</div>

@@ -117,6 +117,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                                 </a>                          
                                             </li>
                                             <li>
+												<a href="/options">
+												Options
+												</a>
+											</li>
+                                            <li>
                                                 <a href="/logout">
                                                 Logout
                                                 </a>

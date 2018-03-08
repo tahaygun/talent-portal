@@ -92,6 +92,9 @@ class Adminprocess extends CI_Controller
                 if ($_SESSION['level'] == 2) {
                     $this->load->view('adminviews/optionspagenormal', array('postinfo' => $postinfo));
                 }
+                if ($_SESSION['level'] == 3) {
+                    $this->load->view('userviews/optionsusers', array('postinfo' => $postinfo));
+                }
 
             } else {
                 $newpass = do_hash($postinfo['newpassword']);

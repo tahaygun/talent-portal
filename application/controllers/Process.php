@@ -302,7 +302,10 @@ class Process extends CI_Controller
 		}
 	}
 
-
+	public function optionspage()
+	{
+		$this->load->view('userviews/optionsusers');
+	}
 	public function logout()
 	{
 		session_destroy();
