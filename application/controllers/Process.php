@@ -303,37 +303,6 @@ class Process extends CI_Controller
 	}
 
 
-	public function change_password()
-	{
-		if (isset($_SESSION['id'])) {
-			$postinfo = $this->input->post(null, true);
-			$oldpass = do_hash($postinfo['oldpassword']);
-			$data2 = $this->tpmodel->checkpassword($oldpass);
-			if ($data2 == false) {
-				$this->session->set_flashdata('oldpassword', 'Your current password is not correct!');
-			}
-			$this->form_validation->set_rules('newpassword', 'Password', 'required');
-			$this->form_validation->set_rules('confpassword', 'Confirm Password', 'matches[newpassword]');
-			if ($this->form_validation->run() == false) {
-				if ($_SESSION['level'] == 1) {
-					$this->load->view('adminviews/optionspage', array('postinfo' => $postinfo));
-				}
-				if ($_SESSION['level'] == 2) {
-					$this->load->view('adminviews/optionspagenormal', array('postinfo' => $postinfo));
-				}
-
-			} else {
-				$newpass = do_hash($postinfo['newpassword']);
-				$data2 = $this->tpmodel->changepassword($newpass);
-				$this->session->set_flashdata('success', 'Your password is successfuly changed!');
-
-				redirect('/options-admin');
-
-
-			}
-		}
-	}
-
 	public function logout()
 	{
 		session_destroy();
