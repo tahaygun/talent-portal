@@ -212,7 +212,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											<h4>Job Title
 												<h4>
 													<textarea name="title" class="form-control" id="title" rows="3" maxlength="255" placeholder="Max 255 characters"><?= isset($postinfo['title']) ? $postinfo['title'] : '' ?></textarea>
-													 <h6 style="color:#f45342;"><?= form_error('title') ? form_error('title') : '' ?>
+													 <h6 style="color:#f45342;"><?= form_error('title') ? form_error('title') : '' ?></h6>
 										</div>
 
 										<div class="form-group">

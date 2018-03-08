@@ -43,14 +43,24 @@ class Tpmodel extends CI_Model
             return false;
         }
     }
-    // public function search($match)
-    // {
-    //     $this->db->like('title', $match);
-    //     $this->db->or_like('description', $match);
-    //     $this->db->or_like('about', $match);
-    //     $query = $this->db->get('postings');
-    //     return $query->result_array();
-    // }
+    public function checkpassword($arg)
+    {
+        $myquery = "SELECT * FROM users WHERE password = ?  ";
+        $values = [$arg];
+        $query = $this->db->query($myquery, $values)->row_array();
+        if ($query) {
+            return $query;
+        } else {
+            return false;
+        }
+    }
+    public function changepassword($arg)
+    {
+        $query = "UPDATE `users` SET `password`=? WHERE id= ?";
+        $values = [$arg['about'], $arg['user_id']];
+        $this->db->query($query, $values);
+    }
+
     public function search($text1)
     {
         $text = $this->db->escape_like_str($text1['searchinput']);

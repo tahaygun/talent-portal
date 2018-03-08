@@ -211,14 +211,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</form>
 									<form role="form" action="/change-password" method="post" class="registration-form">
 										<div class="form-group">
+											<h5 style="color:#f45342;"><?= isset($_SESSION['success']) ? $_SESSION['success'] : '' ?></h5>
 											<h3>Change password</h3>
 											<br>
-											<label class="sr-only" for="password">Password</label>
-											<input type="password" name="password" placeholder="Password" class="form-password form-control" id="password">
+											<h5>Current Password</h5><br>
+											<input type="password" name="oldpassword" placeholder="Current Password" class="form-password form-control" id="password">
+											<h5 style="color:#f45342;"><?= isset($_SESSION['oldpassword']) ? $_SESSION['oldpassword'] : '' ?></h5>
 										</div>
 										<div class="form-group">
-											<label class="sr-only" for="confpassword">New password Confirm</label>
+											<h5>New Password</h5> <br>
+											<input type="password" name="newpassword" placeholder=" New Password" class="form-conf-password form-control" id="newpassword">
+											<h5 style="color:#f45342;"><?= form_error('newpassword') ? form_error('newpassword') : '' ?></h5>
+										</div>
+										<div class="form-group">
 											<input type="password" name="confpassword" placeholder=" Confirm your Password" class="form-conf-password form-control" id="confpassword">
+											<h5 style="color:#f45342;"><?= form_error('confpassword') ? form_error('confpassword') : '' ?></h5>
 										</div>
 										<button type="submit" class="btn btn-common btn-rm">Confirm</button>
 									</form>

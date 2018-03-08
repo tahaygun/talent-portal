@@ -18,6 +18,7 @@ $route['editnow'] = 'process/editnow';
 $route['logout'] = 'process/logout';
 $route['delete/(:any)'] = 'process/delete/$1';
 $route['about-company/(:any)'] = 'process/aboutcompany/$1';
+$route['change-password'] = 'process/change_password';
 
 $route['admin-home'] = 'adminprocess/homepage';
 $route['admin-postings'] = 'adminprocess/adminpostingpage';
@@ -30,6 +31,8 @@ $route['options-admin'] = 'adminprocess/optionsadmin';
 $route['add-admin'] = 'adminprocess/addadmin';
 $route['new-posting-admin'] = 'adminprocess/newposting';
 $route['create-new-admin'] = 'adminprocess/createnewposting';
+
+
 
 $route['view-admins-list'] = 'adminprocess/listadmins';
 
