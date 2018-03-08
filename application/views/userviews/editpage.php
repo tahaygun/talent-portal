@@ -256,7 +256,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 														
 														}
 													</script>
-												<button type="submit" class="btn btn-common btn-rm">Edit</button> 
+												<button type="submit" onclick="return checkDelete()" class="btn btn-common btn-rm">Edit</button> 
 												<!-- <a href="job-details.html" class="btn btn-common btn-rm">More Detail</a> -->
 									</form>
 									 <br>

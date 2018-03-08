@@ -180,6 +180,9 @@ class Process extends CI_Controller
 	public function createnewposting()
 	{
 		$postinfo = $this->input->post(null, true);
+		$postinfo['tags'] = implode(", ", $postinfo['tags']);
+		var_dump($postinfo);
+		die();
 		$this->form_validation->set_rules('tp-title', 'Title', 'required|max_length[255]');
 		$this->form_validation->set_rules('tp-description', 'Description', 'required|max_length[500]');
 		$this->form_validation->set_rules('tp-tags', 'Tags', 'required');

@@ -196,10 +196,34 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 										<div class="form-group">
 											<h4>Tags
-												<h4>
-													<textarea name="tp-tags" class="form-control" id="" rows="1" placeholder="Tags"><?= isset($postinfo['tp-tags']) ? $postinfo['tp-tags'] : '' ?></textarea>
-													<p>Growth, International, City, Talent, Community, Resilience, Culture, Digital, Energy, Inspiration</p>
-													<h6 style="color:#f45342;"><?= form_error('tp-tags') ? form_error('tp-tags') : '' ?></h6>
+												<h4><br>
+													<div class="form-check form-check-inline">
+													<input class="form-check-input" type="checkbox" name="tags[]" id="Growth" value="Growth">
+													<label class="form-check-label" for="Growth">Growth</label>
+													<input class="form-check-input" type="checkbox" name="tags[]" id="International" value="International">
+													<label class="form-check-label" for="International">International</label>
+													<input class="form-check-input" type="checkbox" name="tags[]" id="City" value="City">
+													<label class="form-check-label" for="City">City</label>
+													<input class="form-check-input" type="checkbox" name="tags[]" id="Talent" value="Talent">
+													<label class="form-check-label" for="Talent">Talent</label>
+													<input class="form-check-input" type="checkbox" name="tags[]" id="Community" value="Community">
+													<label class="form-check-label" for="Community">Community</label>
+													<input type="hidden" name="tags[]" value="">
+													
+												
+													</div>
+													<input class="form-check-input" type="checkbox" name="tags[]" id="Resilience" value="Resilience">
+													<label class="form-check-label" for="Resilience">Resilience</label>
+													<input class="form-check-input" type="checkbox" name="tags[]" id="Culture" value="Culture">
+													<label class="form-check-label" for="Culture">Culture</label>
+													<input class="form-check-input" type="checkbox" name="tags[]" id="Digital" value="Digital">
+													<label class="form-check-label" for="Digital">Digital</label>
+													<input class="form-check-input" type="checkbox" name="tags[]" id="Energy" value="Energy">
+													<label class="form-check-label" for="Energy">Energy</label>
+													<input class="form-check-input" type="checkbox" name="tags[]" id="Inspiration" value="Inspiration">
+													<label class="form-check-label" for="Inspiration">Inspiration</label>
+													</div>
+													<h6 style="color:#f45342;"><?= form_error('tags') ? form_error('tags') : '' ?></h6>
 										</div>
 
 										<div class="form-group">

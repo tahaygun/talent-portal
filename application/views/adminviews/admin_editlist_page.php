@@ -40,7 +40,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<link rel="stylesheet" href="/assets/css/responsive.css" type="text/css">
 		<!-- Color CSS Styles  -->
 		<link rel="stylesheet" type="text/css" href="/assets/css/colors/red.css" media="screen" />
-		<link rel="stylesheet" href="/assets/css/homepage.css" type="text/css">
+		<link rel="stylesheet"  href="/assets/css/homepage.css" type="text/css">
 
 	</head>
 
