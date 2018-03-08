@@ -29,7 +29,7 @@ $route['add-admin'] = 'adminprocess/addadmin';
 $route['new-posting-admin'] = 'adminprocess/newposting';
 $route['create-new-admin'] = 'adminprocess/createnewposting';
 
-$route['view-admins-list'] = 'adminprocess/listadmins/$1';
+$route['view-admins-list'] = 'adminprocess/listadmins';
 
 $route['unhighlight/(:any)'] = 'adminprocess/unhighlight/$1';
 $route['highlight/(:any)'] = 'adminprocess/highlight/$1';
@@ -41,7 +41,7 @@ $route['company-requests'] = 'adminprocess/companyrequests';
 $route['trusted-companies'] = 'adminprocess/trustedcompanies';
 $route['delete-company/(:any)'] = 'adminprocess/deletecompany/$1';
 
-$route['sadmin-editlist/(:any)'] = 'adminprocess/Editlistadmins/$1';
+$route['edit-admins/(:any)'] = 'adminprocess/Editlistadmins/$1';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = false;

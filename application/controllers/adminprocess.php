@@ -180,17 +180,6 @@ class Adminprocess extends CI_Controller
         }
     }
 
-
-    public function listadmins($id)
-    {
-        if ($_SESSION['level'] == 1) {
-            $this->load->model('tpmodel');
-            $query['admindetail'] = $this->tpmodel->adminlists($id);
-            $this->load->view('adminviews/admin_listadmin_page', $query);
-        } else {
-            redirect('/');
-        }
-    }
     public function unhighlight($id)
     {
         if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
@@ -220,12 +209,25 @@ class Adminprocess extends CI_Controller
             redirect('/');
         }
     }
+
+    public function listadmins()
+    {
+        if ($_SESSION['level'] == 1) {
+            $this->load->model('tpmodel');
+            $query['admindetail'] = $this->tpmodel->adminlists();
+            $this->load->view('adminviews/admin_listadmin_page', $query);
+        } else {
+            redirect('/');
+        }
+    }
     public function Editlistadmins($id)
     {
         if ($_SESSION['level'] == 1) {
             $this->load->model('tpmodel');
-            $query['admindetail'] = $this->tpmodel->adminlists($id);
+            $query['data'] = $this->tpmodel->admininfo($id);
             $this->load->view('adminviews/admin_editlist_page', $query);
+        } else {
+            redirect('/');
         }
     }
 
