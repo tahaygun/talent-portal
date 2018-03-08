@@ -19,7 +19,8 @@ $route['logout'] = 'process/logout';
 $route['delete/(:any)'] = 'process/delete/$1';
 $route['about-company/(:any)'] = 'process/aboutcompany/$1';
 
-$route['admin-home'] = 'adminprocess/adminpostingpage';
+$route['admin-home'] = 'adminprocess/homepage';
+$route['admin-postings'] = 'adminprocess/adminpostingpage';
 $route['post-requests'] = 'adminprocess/postrequests';
 $route['highlighted-posts'] = 'adminprocess/highlightedposts';
 $route['editadmin/(:any)'] = 'adminprocess/editpageadmin/$1';

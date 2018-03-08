@@ -6,7 +6,7 @@ class Process extends CI_Controller
 	public function index()
 	{
 		if (isset($_SESSION['level']) && ($_SESSION['level'] != 3)) {
-			redirect('/admin-home');
+			redirect('/admin-postings');
 		} else {
 			$data = $this->tpmodel->highlightedpostings();
 			$this->load->view('userviews/homepage', array('data' => $data));
@@ -209,9 +209,16 @@ class Process extends CI_Controller
 
 	public function search()
 	{
-		$result = $this->input->post(null, true);
-		$data = $this->tpmodel->search($result);
-		$this->load->view('userviews/resultpage', array('data' => $data, 'inputs' => $result));
+		if (isset($_SESSION['level']) && $_SESSION['level'] != 3) {
+			$result = $this->input->post(null, true);
+			$data = $this->tpmodel->search($result);
+			$this->load->view('adminviews/adminresultpage', array('data' => $data, 'inputs' => $result));
+		} else {
+			$result = $this->input->post(null, true);
+			$data = $this->tpmodel->search($result);
+			$this->load->view('userviews/resultpage', array('data' => $data, 'inputs' => $result));
+		}
+
 	}
 
 	public function createnewposting()
@@ -286,8 +293,13 @@ class Process extends CI_Controller
 	}
 	public function jobspagecategory($ct)
 	{
-		$data = $this->tpmodel->jobsbycategory($ct);
-		$this->load->view('userviews/jobsbycategory', array('data' => $data, 'category' => $ct));
+		if (isset($_SESSION['level']) && $_SESSION['level'] != 3) {
+			$data = $this->tpmodel->jobsbycategory($ct);
+			$this->load->view('adminviews/admincategorypage', array('data' => $data, 'category' => $ct));
+		} else {
+			$data = $this->tpmodel->jobsbycategory($ct);
+			$this->load->view('userviews/jobsbycategory', array('data' => $data, 'category' => $ct));
+		}
 	}
 
 

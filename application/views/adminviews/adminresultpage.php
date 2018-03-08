@@ -19,12 +19,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
 		<link rel="stylesheet" href="assets/css/jasny-bootstrap.min.css" type="text/css">
 		<link rel="stylesheet" href="assets/css/bootstrap-select.min.css" type="text/css">
-		<link rel="stylesheet" href="assets/css/mainpageuser.min.css" type="text/css">
 		<!-- Material CSS -->
 		<link rel="stylesheet" href="assets/css/material-kit.css" type="text/css">
 		<!-- Font Awesome CSS -->
 		<link rel="stylesheet" href="assets/fonts/font-awesome.min.css" type="text/css">
-		<link rel="stylesheet" href="assets/fonts/themify-icons.css">
 		<link rel="stylesheet" href="assets/fonts/themify-icons.css">
 
 		<!-- Animate CSS -->
@@ -40,16 +38,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<link rel="stylesheet" href="assets/css/slicknav.css" type="text/css">
 		<!-- Responsive CSS Styles -->
 		<link rel="stylesheet" href="assets/css/responsive.css" type="text/css">
-		<link rel="stylesheet" href="assets/css/homepage.css" type="text/css">
-
 		<!-- Color CSS Styles  -->
 		<link rel="stylesheet" type="text/css" href="assets/css/colors/red.css" media="screen" />
-
+		<link rel="stylesheet" href="assets/css/homepage.css" type="text/css">
+		
 	</head>
 
 	<body>
 		<!-- Header Section Start -->
-		<div class="header">
+				<div class="header">
 			<!-- Start intro section -->
 			<section id="intro" class="section-intro">
 				<div class="logo-menu">
@@ -77,83 +74,84 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											<i class="fa fa-angle"></i>
 										</a>
 									</li>
-									<li><a class="active">
+									<li>
+										<a>
 											Postings
 											<i class="fa fa-angle-down"></i>
 										</a>
-											<ul class="dropdown">
+										<ul class="dropdown">
 											<li>
-												<a class="active"  href="/admin-postings">
-												All Postings
+												<a href="/admin-postings">
+													All Postings
 												</a>
 											</li>
 											<li>
 												<a href="/post-requests">
-												Posting Requests
+													Posting Requests
 												</a>
 											</li>
 											<li>
 												<a href="/highlighted-posts">
-												Highlighted Postings
+													Highlighted Postings
 												</a>
 											</li>
-											</ul>
-										
+										</ul>
+
 									</li>
 									<li>
 										<a>
 											Companies
 											<i class="fa fa-angle-down"></i>
 										</a>
-										 <ul class="dropdown">
+										<ul class="dropdown">
 											<li>
 												<a href="/companies">
-												All Companies
+													All Companies
 												</a>
 											</li>
 											<li>
 												<a href="/company-requests">
-												Company Requests
+													Company Requests
 												</a>
 											</li>
 											<li>
 												<a href="/trusted-companies">
-												Trusted Companies
+													Trusted Companies
 												</a>
 											</li>
-											</ul>
+										</ul>
 									</li>
-							
-										<li>
+
+									<li>
 										<a>
 											My Page
 											<i class="fa fa-angle-down "></i>
 										</a>
-										 <ul class="dropdown">
+										<ul class="dropdown">
 											<li>
 												<a href="/options-admin">
-												Options
+													Options
 												</a>
 											</li>
 											<li>
-												<a href="/new-posting-admin">
-												New Posting
+												<a href="new-posting">
+													New Posting
 												</a>
 											</li>
-											<li> 
+											<li>
 												<?php if ($_SESSION['level'] == 1) { ?>
 												<a href="/view-admins-list">
-												Admins
+													Admins
 												</a>
 												<?php 
-										} ?>
+        } ?>
 											</li>
 											<li>
 												<a href="/logout">
-												Logout
+													Logout
 												</a>
 											</li>
-											</ul>
+										</ul>
 									</li>
 								</ul>
 
@@ -183,16 +181,67 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</ul>
 						<!-- Mobile Menu End -->
 					</nav>
+				</div>
 
 
+					<!-- Header Section End -->
 
+					<div class="search-container">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12">
+									<h1>Find the job that fits your life</h1>
+									<br>
+									<h2>We are building
+										<strong>network</strong> to help people!</h2>
+									<div class="content">
+									<form method="post" action="/search">
+										<div class="row">
+											<div class="col-md-6 col-sm-6">
+												<div class="form-group">
+													<input name="searchinput" value="<?= isset($inputs['searchinput']) ? $inputs['searchinput'] : '' ?>" class="form-control" type="text" placeholder="job title / keywords / company name">
+													<i class="ti-time"></i>
+												</div>
+											</div>
+											<div class="col-md-5 col-sm-6">
+												<div class="search-category-container">
+													<label class="styled-select">
+														<select name="category" class="dropdown-product selectpicker">
+															<option value="">All Categories</option>
+															<option>Growth</option>
+															<option>International</option>
+															<option>City</option>
+															<option>Talent</option>
+															<option>Community</option>
+															<option>Resilience</option>
+															<option>Culture</option>
+															<option>Digital</option>
+															<option>Energy</option>
+															<option>Inspiration</option>
+														</select>
+													</label>
+												</div>
+											</div>
+											<div class="col-md-1 col-sm-6">
+												<button type="submit" class="btn btn-search-icon">
+													<i class="ti-search"></i>
+												</button>
+											</div>
+										</div>
+									</form>
+								</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			</section>
 			<!-- end intro section -->
 			</div>
-		</div>
+
 			<!-- Find Job Section Start -->
 			<section class="find-job section">
 				<div class="container">
-					<h2 class="section-title">All Postings</h2>
+					<h2 class="section-title">Results</h2>
 					<div class="row">
 						<div class="col-md-12">
 							<?php foreach ($data as $posting) { ?>
@@ -205,7 +254,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</a>
 								</div>
 								<div class="job-list-content">
-									<h4 id="titles">
+									<h4>
 										<a href="/details/<?= $posting['postid'] ?>"><?= $posting['title'] ?></a>
 									</h4> <p class="descriptions"><?= $posting['description'] ?> </p>
 									<div class="job-tag">
@@ -215,34 +264,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                                 <?php $arr = explode(' ', trim($posting['tags'])); ?>
                                                  <?php foreach ($arr as $tag) { ?>
                                                    <a  href="/category/<?= $tag ?>"> #<?= $tag ?></a> <?php 
-																																																																																																				} ?> 
+                                                                                                    } ?> 
                                             </span>
 												<span>
-													<a href="/about-company/<?= $posting['userid'] ?>">➦ <?= $posting['companyname'] ?> </a>
-												</span>
-												<span>
-													<a style="color:green">➦ <?= $posting['active'] == 0 ? "Requested" : "Active" ?></a>
-												</span>
-												<span>
-													<a style="color:orange" > <?= $posting['highlighted'] == 1 ? "➦ Highlighted" : "" ?></a>
+													<a href="/about-company/<?= $posting['userid'] ?>">➦ <?= $posting['companyname'] ?></a>
 												</span>
 											</div>
 										</div>
 										<div class="pull-right">
-													<?php if ($posting['active'] == 0) { ?>
-												<a href="/approve/<?= $posting['postid'] ?>" class="btn btn-common btn-sm">Approve</a>
-										<?php 
-								} ?>
-											<?php if ($posting['highlighted'] == 0 && $posting['active'] == 1) { ?>
-												<a href="/highlight/<?= $posting['postid'] ?>" class="btn btn-common btn-sm">highlight</a>
-										<?php 
-								} elseif ($posting['highlighted'] == 1 && $posting['active'] == 1) { ?>
-									<a href="/unhighlight/<?= $posting['postid'] ?>" class="btn btn-common btn-sm">unHighlight</a>
-								<?php 
-						} ?>
-									
-											<a href="/editadmin/<?= $posting['postid'] ?>" class="btn btn-common btn-sm">Edit / Delete</a>
 
+											<a href="/details/<?= $posting['postid'] ?>" class="btn btn-common btn-rm">More Detail</a>
 										</div>
 									</div>
 								</div>
@@ -253,7 +284,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 						 <?php
 
-					} ?>
+    } ?>
 
 						</div>
 					</div>
@@ -304,8 +335,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										<a class="facebook" href="https://www.facebook.com/VentureCafeRotterdam/">
 											<i class="ti-facebook"></i>
 										</a>
-
-										<a class="dribble" href="https://www.instagram.com/venturecaferotterdam/">
+										<a class="instagram" href="http://instagram.com/venturecaferotterdam/">
 											<i class="ti-instagram"></i>
 										</a>
 										<a class="linkedin" href="https://www.linkedin.com/company/venturecaferotterdam">

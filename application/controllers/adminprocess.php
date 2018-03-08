@@ -3,6 +3,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Adminprocess extends CI_Controller
 {
+    public function homepage()
+    {
+        if (isset($_SESSION['level']) && $_SESSION['level'] != 3) {
+            $data = $this->tpmodel->highlightedpostings();
+            $this->load->view('adminviews/adminhomepage', array('data' => $data));
+        } else {
+            redirect('/');
+        }
+    }
     public function adminpostingpage()
     {
         if (isset($_SESSION['level']) && $_SESSION['level'] != 3) {
@@ -187,7 +196,7 @@ class Adminprocess extends CI_Controller
     {
         if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
             $this->tpmodel->unhighlight($id);
-            redirect('/admin-home');
+            redirect('/admin-postings');
         } else {
             redirect('/');
         }
@@ -197,7 +206,7 @@ class Adminprocess extends CI_Controller
     {
         if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
             $this->tpmodel->highlight($id);
-            redirect('/admin-home');
+            redirect('/admin-postings');
         } else {
             redirect('/');
         }
@@ -207,7 +216,7 @@ class Adminprocess extends CI_Controller
     {
         if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
             $this->tpmodel->approve($id);
-            redirect('/admin-home');
+            redirect('/admin-postings');
         } else {
             redirect('/');
         }

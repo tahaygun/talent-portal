@@ -47,7 +47,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	</head>
 
 	<body>
-<!-- Header Section Start -->
+		<!-- Header Section Start -->
 		<div class="header">
 			<!-- Start intro section -->
 			<section id="intro" class="section-intro">
@@ -70,89 +70,90 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="collapse navbar-collapse" id="navbar">
 								<!-- Start Navigation List -->
 								<ul class="nav navbar-nav navbar-right">
-								<li>
-									<a href="/admin-home">
+									<li>
+										<a class="active" href="/admin-home">
 											Home
 											<i class="fa fa-angle"></i>
 										</a>
 									</li>
-									<li><a>
+									<li>
+										<a>
 											Postings
 											<i class="fa fa-angle-down"></i>
 										</a>
-											<ul class="dropdown">
+										<ul class="dropdown">
 											<li>
-												<a  href="/admin-postings">
-												All Postings
+												<a href="/admin-postings">
+													All Postings
 												</a>
 											</li>
 											<li>
 												<a href="/post-requests">
-												Posting Requests
+													Posting Requests
 												</a>
 											</li>
 											<li>
 												<a href="/highlighted-posts">
-												Highlighted Postings
+													Highlighted Postings
 												</a>
 											</li>
-											</ul>
+										</ul>
 
 									</li>
 									<li>
-										<a class="active">
+										<a>
 											Companies
 											<i class="fa fa-angle-down"></i>
 										</a>
-										 <ul class="dropdown">
+										<ul class="dropdown">
 											<li>
-												<a  class="active" href="/companies">
-												All Companies
+												<a href="/companies">
+													All Companies
 												</a>
 											</li>
 											<li>
 												<a href="/company-requests">
-												Company Requests
+													Company Requests
 												</a>
 											</li>
 											<li>
 												<a href="/trusted-companies">
-												Trusted Companies
+													Trusted Companies
 												</a>
 											</li>
-											</ul>
+										</ul>
 									</li>
 
-										<li>
+									<li>
 										<a>
 											My Page
 											<i class="fa fa-angle-down "></i>
 										</a>
-										 <ul class="dropdown">
+										<ul class="dropdown">
 											<li>
 												<a href="/options-admin">
-												Options
+													Options
 												</a>
 											</li>
 											<li>
-												<a href="/new-posting">
-												New Posting
+												<a href="new-posting">
+													New Posting
 												</a>
 											</li>
-											<li> 
+											<li>
 												<?php if ($_SESSION['level'] == 1) { ?>
 												<a href="/view-admins-list">
-												Admins
+													Admins
 												</a>
 												<?php 
 										} ?>
 											</li>
 											<li>
 												<a href="/logout">
-												Logout
+													Logout
 												</a>
 											</li>
-											</ul>
+										</ul>
 									</li>
 								</ul>
 
@@ -182,12 +183,61 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</ul>
 						<!-- Mobile Menu End -->
 					</nav>
-			</div>
-		</div>
-
-					<!-- Header Section End -->
+				</div>
 
 
+
+
+				<!-- Header Section End -->
+
+				<div class="search-container">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<h1>Find the job that fits your life</h1>
+								<br>
+								<h2>We are building
+									<strong>network</strong> to help people!</h2>
+								<div class="content">
+									<form method="post" action="/search">
+										<div class="row">
+											<div class="col-md-6 col-sm-6">
+												<div class="form-group">
+													<input name="searchinput" class="form-control" type="text" placeholder="job title / keywords / company name">
+													<i class="ti-time"></i>
+												</div>
+											</div>
+											<div class="col-md-5 col-sm-6">
+												<div class="search-category-container">
+													<label class="styled-select">
+														<select name="category" class="dropdown-product selectpicker">
+															<option value="">All Categories</option>
+															<option>Growth</option>
+															<option>International</option>
+															<option>City</option>
+															<option value="talent">Talent</option>
+															<option>Community</option>
+															<option>Resilience</option>
+															<option>Culture</option>
+															<option>Digital</option>
+															<option>Energy</option>
+															<option>Inspiration</option>
+														</select>
+													</label>
+												</div>
+											</div>
+											<div class="col-md-1 col-sm-6">
+												<button type="submit" class="btn btn-search-icon">
+													<i class="ti-search"></i>
+												</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</section>
 			<!-- end intro section -->
 		</div>
@@ -195,50 +245,66 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<!-- Find Job Section Start -->
 		<section class="find-job section">
 			<div class="container">
-				<h2 class="section-title">Companies</h2>
+				<h2 class="section-title">Highlighted Jobs</h2>
 				<div class="row">
-					<?php foreach ($data as $posting) { ?>
 					<div class="col-md-12">
+						<?php foreach ($data as $posting) { ?>
 
 
 						<div class="job-list col-md-12">
 							<div class="thumb">
-								<a href="/about-company/<?= $posting['userid'] ?>"><img width="110" src="/assets/img/jobs/<?= $posting['companylogo'] ?>" alt="logo"></a>
+								<a href="/about-company/<?= $posting['user_id'] ?>">
+									<img width="100" src="/assets/img/jobs/<?= $posting['companylogo'] ?>" alt="logo">
+								</a>
 							</div>
 							<div class="job-list-content">
 								<h4 id="titles">
-									<a href="/about-company/<?= $posting['userid'] ?>"><?= $posting['companyname'] ?></a>
+									<a href="/details/<?= $posting['id'] ?>">
+										<?= $posting['title'] ?>
+									</a>
 								</h4>
 								<p class="descriptions">
-									 <?= $posting['about'] ?>
+									<?= $posting['description'] ?>
 								</p>
 								<div class="job-tag">
 									<div class="pull-left">
 										<div class="meta-tag">
 											<span>
-												<a href=""># <?= $posting['identifies'] ?>
+												<?php $arr = explode(' ', trim($posting['tags'])); ?>
+												<?php foreach ($arr as $tag) { ?>
+												<a href="/category/<?= $tag ?>"> #
+													<?= $tag ?>
 												</a>
+												<?php 
+										} ?>
 											</span>
 											<span>
-												<a href="browse-categories.html">➦ <?= $posting['companyname'] ?>
+												<a href="/about-company/<?= $posting['user_id'] ?>">➦
+													<?= $posting['companyname'] ?>
 												</a>
 											</span>
 										</div>
 									</div>
 									<div class="pull-right">
-										<a href="/edit-company/<?= $posting['userid'] ?>" class="btn btn-common btn-sm">Details/Edit</a>
+
+										<a href="/details/<?= $posting['id'] ?>" class="btn btn-common btn-rm">More Detail</a>
 									</div>
 								</div>
 							</div>
 						</div>
 
 
+
+
+						<?php
+
+				} ?>
+
 					</div>
-					<?php 
-			} ?>
 				</div>
 			</div>
 		</section>
+
 		<!-- Find Job Section End -->
 
 

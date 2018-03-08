@@ -82,7 +82,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</a>
 										<ul class="dropdown">
 											<li>
-												<a class="active" href="/admin-home">
+												<a class="active" href="/admin-postings">
 													All Postings
 												</a>
 											</li>
@@ -307,7 +307,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												<div class="form-group">
 													<h5>Status</h5>
 													<select name="active" class="form-control" id="exampleFormControlSelect1">
-														<option value="<?= $postinfo['active'] ?>">Default</option>
+														<option value="<?= $postinfo['active'] ?>">Default: <?= $postinfo['active'] == 1 ? 'Active' : 'Unactive' ?></option>
 														<option value="1">Active</option>
 														<option value="0">Unactive</option>
 													</select>
@@ -315,7 +315,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												<div class="form-group">
 													<h5>Highlighted</h5>
 													<select name="highlighted" class="form-control" id="exampleFormControlSelect1">
-														<option value="<?= $postinfo['highlighted'] ?>">Default</option>
+														<option value="<?= $postinfo['highlighted'] ?>">Default: <?= $postinfo['highlighted'] == 1 ? 'Highlighted' : 'Unhighlighted' ?></option>
 														<option value="1">Yes</option>
 														<option value="0">No</option>
 													</select>
