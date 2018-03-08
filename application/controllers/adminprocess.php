@@ -81,10 +81,16 @@ class Adminprocess extends CI_Controller
             $oldpass = do_hash($postinfo['oldpassword']);
             $data2 = $this->tpmodel->checkpassword($oldpass);
             if ($data2 == false) {
+                $this->form_validation->set_rules('oldpassword', 'Password', 'exact_length[81]');
                 $this->session->set_flashdata('oldpassword', 'Your current password is not correct!');
+                if ($_SESSION['level'] == 3) {
+                    redirect('/options');
+                } else {
+                    redirect('/options-admin');
+                }
             }
-            $this->form_validation->set_rules('newpassword', 'Password', 'required');
-            $this->form_validation->set_rules('confpassword', 'Confirm Password', 'matches[newpassword]');
+            $this->form_validation->set_rules('newpassword', 'Password', 'required|min_length[8]');
+            $this->form_validation->set_rules('confpassword', 'Confirm Password', 'matches[newpassword]|min_length[8]');
             if ($this->form_validation->run() == false) {
                 if ($_SESSION['level'] == 1) {
                     $this->load->view('adminviews/optionspage', array('postinfo' => $postinfo));
@@ -98,11 +104,14 @@ class Adminprocess extends CI_Controller
 
             } else {
                 $newpass = do_hash($postinfo['newpassword']);
-                $data2 = $this->tpmodel->changepassword($newpass);
+                $data3 = $this->tpmodel->changepassword($newpass, $_SESSION['id']);
+
                 $this->session->set_flashdata('success', 'Your password is successfuly changed!');
-
-                redirect('/options-admin');
-
+                if ($_SESSION['level'] == 3) {
+                    redirect('/options');
+                } else {
+                    redirect('/options-admin');
+                }
 
             }
         }

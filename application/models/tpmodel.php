@@ -54,10 +54,10 @@ class Tpmodel extends CI_Model
             return false;
         }
     }
-    public function changepassword($arg)
+    public function changepassword($arg, $id)
     {
         $query = "UPDATE `users` SET `password`=? WHERE id= ?";
-        $values = [$arg['about'], $arg['user_id']];
+        $values = [$arg, $id];
         $this->db->query($query, $values);
     }
 
