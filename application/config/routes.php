@@ -41,5 +41,7 @@ $route['company-requests'] = 'adminprocess/companyrequests';
 $route['trusted-companies'] = 'adminprocess/trustedcompanies';
 $route['delete-company/(:any)'] = 'adminprocess/deletecompany/$1';
 
+$route['sadmin-editlist/(:any)'] = 'adminprocess/Editlistadmins/$1';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = false;

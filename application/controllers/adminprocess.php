@@ -186,7 +186,7 @@ class Adminprocess extends CI_Controller
         if ($_SESSION['level'] == 1) {
             $this->load->model('tpmodel');
             $query['admindetail'] = $this->tpmodel->adminlists($id);
-            $this->load->view('adminviews/Superadmin_listadmin', $query);
+            $this->load->view('adminviews/admin_listadmin_page', $query);
         } else {
             redirect('/');
         }
@@ -219,11 +219,19 @@ class Adminprocess extends CI_Controller
         } else {
             redirect('/');
         }
-
-
     }
+    public function Editlistadmins($id)
+    {
+        if ($_SESSION['level'] == 1) {
+            $this->load->model('tpmodel');
+            $query['admindetail'] = $this->tpmodel->adminlists($id);
+            $this->load->view('adminviews/admin_editlist_page', $query);
+        }
+    }
+
 }
 
+ 
   
 
 
