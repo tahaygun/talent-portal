@@ -210,14 +210,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										<div class="form-group">
 											<h4>Job Title
 												<h4>
-													<textarea name="title" class="form-control" id="title" rows="3" placeholder="Max 255 characters"><?= isset($postinfo['title']) ? $postinfo['title'] : '' ?></textarea>
+													<textarea name="title" class="form-control" id="title" rows="3" maxlength="255" placeholder="Max 255 characters"><?= isset($postinfo['title']) ? $postinfo['title'] : '' ?></textarea>
 													 <h6 style="color:#f45342;"><?= form_error('title') ? form_error('title') : '' ?>
 										</div>
 
 										<div class="form-group">
 											<h4>Job Description
 												<h4>
-													<textarea name="description" class="form-control" id="" rows="5" placeholder="Max 500 characters"><?= isset($postinfo['description']) ? $postinfo['description'] : '' ?></textarea>
+													<textarea name="description" class="form-control" id="" rows="5" maxlength="500" placeholder="Max 500 characters"><?= isset($postinfo['description']) ? $postinfo['description'] : '' ?></textarea>
 													<h6 style="color:#f45342;"><?= form_error('description') ? form_error('description') : '' ?></h6>
 										</div>
 
@@ -233,7 +233,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											<h4>About company
 												<h4>
 													<label class="sr-only" for="companyinofo">About a company</label>
-													<textarea name="about" class="form-control" id="" rows="5" placeholder="Max 255 characters"><?= isset($postinfo['about']) ? $postinfo['about'] : '' ?></textarea>
+													<textarea name="about" class="form-control" id="" rows="5" maxlength="255" placeholder="Max 255 characters"><?= isset($postinfo['about']) ? $postinfo['about'] : '' ?></textarea>
 													<h6 style="color:#f45342;"><?= form_error('about') ? form_error('about') : '' ?></h6>
 													<input type="hidden" name="user_id" value="<?= $_SESSION['id'] ?>">
 										</div>

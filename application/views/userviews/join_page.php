@@ -191,7 +191,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <form enctype="multipart/form-data" accept-charset="utf-8" action="/register" method="post" class="registration-form">
                           <div class="form-group">
                             <label class="sr-only" for="companyname">Company name</label>
-                              <input type="text" name="companyname" placeholder="Company name..." class="companyname form-control" id="form-first-name" value="<?= isset($reginfo['companyname']) ? $reginfo['companyname'] : '' ?>">
+                              <input type="text" name="companyname" maxlength="255" placeholder="Company name..." class="companyname form-control" id="form-first-name" value="<?= isset($reginfo['companyname']) ? $reginfo['companyname'] : '' ?>">
                               <?= form_error('companyname') ? form_error('companyname') : '' ?>
                             </div>
                             <div class="form-group">
