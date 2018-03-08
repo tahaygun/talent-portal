@@ -41,7 +41,7 @@ class Adminprocess extends CI_Controller
             redirect('/');
         }
 
- 
+
     }
     public function editnow()
     {
@@ -183,11 +183,13 @@ class Adminprocess extends CI_Controller
 
     public function listadmins($id)
     {
-        if($_SESSION['level'] == 1){
-        $this->load->model('tpmodel');
-        $query['admindetail'] = $this->tpmodel->adminlists($id);
-        $this->load->view('adminviews/Superadmin_listadmin', $query);
-        }   
+        if ($_SESSION['level'] == 1) {
+            $this->load->model('tpmodel');
+            $query['admindetail'] = $this->tpmodel->adminlists($id);
+            $this->load->view('adminviews/Superadmin_listadmin', $query);
+        } else {
+            redirect('/');
+        }
     }
     public function unhighlight($id)
     {
