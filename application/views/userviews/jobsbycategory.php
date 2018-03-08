@@ -11,7 +11,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="author" content="Jobboard">
     
-    <title>JobBoard - Bootstrap HTML5 Job Portal Template</title>    
+   <title>Talent Portal - Categories</title>
+      
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="/assets/img/favicon.png">
