@@ -69,12 +69,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<!-- Start Navigation List -->
 								<ul class="nav navbar-nav navbar-right">
 								<li>
-										<a href="#">
+										<a href="/admin-home">
 											Home
 											<i class="fa fa-angle"></i>
 										</a>
 									</li>
-									<li><a href="#">
+									<li><a>
 											Postings
 											<i class="fa fa-angle-down"></i>
 										</a>
@@ -98,7 +98,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 									</li>
 									<li>
-										<a href="/companies">
+										<a>
 											Companies
 											<i class="fa fa-angle-down"></i>
 										</a>
@@ -122,7 +122,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</li>
 
 										<li>
-										<a  href="#">
+										<a>
 											My Page
 											<i class="fa fa-angle-down "></i>
 										</a>
@@ -132,10 +132,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												Options
 												</a>
 											</li>
+
 											<li>
 												<a href="/new-posting">
 												New Posting
 												</a>
+											</li>
+											<li> 
+												<?php if ($_SESSION['level'] == 1) {?>
+												<a href="/view-admins-list">
+												Admins
+												</a>
+												<?php } ?>
 											</li>
 											<li>
 												<a href="/logout">
