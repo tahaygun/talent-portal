@@ -241,10 +241,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<div class="pull-left">
 										<div class="meta-tag">
 											<span>
-												<a href="browse-categories.html">#
-													<?= $posting['identifies'] ?>
-												</a>
-											</span>
+                                                <?php $arr = explode(' ', trim($posting['tags'])); ?>
+                                                 <?php foreach ($arr as $tag) { ?>
+                                                   <a  href="/category/<?= $tag ?>"> #<?= $tag ?></a> <?php 
+																																																																																																				} ?> 
+                                            </span>
 											<span>
 												<a href="/about-company/<?= $posting['user_id'] ?>">➦
 													<?= $posting['companyname'] ?>

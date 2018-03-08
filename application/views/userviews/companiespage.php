@@ -190,11 +190,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<div class="pull-left">
 										<div class="meta-tag">
 											<span>
-												<a href=""># <?= $posting['identifies'] ?>
-												</a>
-											</span>
-											<span>
-												<a href="browse-categories.html">➦ <?= $posting['companyname'] ?>
+												<a># <?= $posting['identifies'] ?>
 												</a>
 											</span>
 										</div>

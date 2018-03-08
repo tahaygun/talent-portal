@@ -105,31 +105,29 @@ class Process extends CI_Controller
 	public function editpage($id)
 	{
 		$postinfo = $this->tpmodel->editinfo($id);
-		if ($_SESSION['level'] != 1) {
-			if ($_SESSION['id'] == $postinfo['user_id']) {
-				$this->load->view('userviews/editpage', array('postinfo' => $postinfo));
-			} else {
-				redirect('/');
-			}
-		} else {
+		if ($_SESSION['id'] == $postinfo['user_id']) {
 			$this->load->view('userviews/editpage', array('postinfo' => $postinfo));
+		} else {
+			redirect('/');
+
 		}
 	}
 	public function editnow()
 	{
 		if (isset($_SESSION['id'])) {
 			$postinfo = $this->input->post(null, true);
-			$this->form_validation->set_rules('tp-title', 'Title', 'required|max_length[255]');
-			$this->form_validation->set_rules('tp-description', 'Description', 'required|min_length[10]|max_length[500]');
-			$this->form_validation->set_rules('tp-tags', 'Tags', 'required');
-			$this->form_validation->set_rules('tp-about', 'About Company', 'required|max_length[500]|min_length[10]');
-			$this->form_validation->set_rules('tp-identifies', 'Identifies', 'required');
-			$this->form_validation->set_rules('tp-startdate', 'Start Date', 'required');
-			$this->form_validation->set_rules('tp-enddate', 'End Date', 'required');
-			$this->form_validation->set_rules('tp-link', 'Application Link', 'required|valid_url');
-
+			$postinfo['tags'] = implode(" ", $postinfo['tags']);
+			$this->form_validation->set_rules('title', 'Title', 'required|max_length[255]');
+			$this->form_validation->set_rules('description', 'Description', 'required|max_length[500]');
+			$this->form_validation->set_rules('about', 'About Company', 'required|max_length[500]');
+			$this->form_validation->set_rules('identifies', 'Identifies', 'required');
+			$this->form_validation->set_rules('startdate', 'Start Date', 'required');
+			$this->form_validation->set_rules('enddate', 'End Date', 'required');
+			$this->form_validation->set_rules('link', 'Application Link', 'required|valid_url');
+			if (strlen($postinfo['tags']) < 3) {
+				$this->form_validation->set_rules('tags', 'Tags', 'required');
+			}
 			if ($this->form_validation->run() == false) {
-				$validationerror = validation_errors();
 				$this->load->view('userviews/editpage', array('postinfo' => $postinfo));
 			} else {
 				$this->tpmodel->edit($postinfo);
@@ -164,6 +162,7 @@ class Process extends CI_Controller
 			redirect('/new-posting-admin');
 		} elseif (isset($_SESSION['id'])) {
 			$data = $this->tpmodel->companyeditpage($_SESSION['id']);
+			$data['today'] = date('Y-m-d');
 			$this->load->view('userviews/newposting', array('data' => $data));
 		} else {
 			redirect('/');
@@ -180,18 +179,17 @@ class Process extends CI_Controller
 	public function createnewposting()
 	{
 		$postinfo = $this->input->post(null, true);
-		$postinfo['tags'] = implode(", ", $postinfo['tags']);
-		var_dump($postinfo);
-		die();
-		$this->form_validation->set_rules('tp-title', 'Title', 'required|max_length[255]');
-		$this->form_validation->set_rules('tp-description', 'Description', 'required|max_length[500]');
-		$this->form_validation->set_rules('tp-tags', 'Tags', 'required');
-		$this->form_validation->set_rules('tp-about', 'About Company', 'required|max_length[500]');
-		$this->form_validation->set_rules('tp-identifies', 'Identifies', 'required');
-		$this->form_validation->set_rules('tp-startdate', 'Start Date', 'required');
-		$this->form_validation->set_rules('tp-enddate', 'End Date', 'required');
-		$this->form_validation->set_rules('tp-link', 'Application Link', 'required|valid_url');
-
+		$postinfo['tags'] = implode(" ", $postinfo['tags']);
+		$this->form_validation->set_rules('title', 'Title', 'required|max_length[255]');
+		$this->form_validation->set_rules('description', 'Description', 'required|max_length[500]');
+		$this->form_validation->set_rules('about', 'About Company', 'required|max_length[500]');
+		$this->form_validation->set_rules('identifies', 'Identifies', 'required');
+		$this->form_validation->set_rules('startdate', 'Start Date', 'required');
+		$this->form_validation->set_rules('enddate', 'End Date', 'required');
+		$this->form_validation->set_rules('link', 'Application Link', 'required|valid_url');
+		if (strlen($postinfo['tags']) < 3) {
+			$this->form_validation->set_rules('tags', 'Tags', 'required');
+		}
 
 		$config['upload_path'] = './assets/img/jobs/';
 		$config['allowed_types'] = 'gif|jpg|png';
@@ -199,7 +197,8 @@ class Process extends CI_Controller
 
 		if ($this->form_validation->run() == false || !$this->upload->do_upload('support-image')) {
 			$error = $this->upload->display_errors();
-			$this->load->view('userviews/newposting', array('postinfo' => $postinfo, 'error' => $error));
+			$data = $this->tpmodel->companyeditpage($_SESSION['id']);
+			$this->load->view('userviews/newposting', array('postinfo' => $postinfo, 'data' => $data, 'error' => $error));
 		} else {
 			$data = $this->upload->data();
 			$path = $data['file_name'];
@@ -214,6 +213,13 @@ class Process extends CI_Controller
 		$data = $this->tpmodel->activepostings();
 		$this->load->view('userviews/jobspage', array('data' => $data));
 	}
+	public function jobspagecategory($ct)
+	{
+		$data = $this->tpmodel->jobsbycategory($ct);
+		$this->load->view('userviews/jobsbycategory', array('data' => $data, 'category' => $ct));
+	}
+
+
 
 
 	public function logout()

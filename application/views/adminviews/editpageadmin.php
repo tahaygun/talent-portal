@@ -6,9 +6,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<head>
 		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta htequiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta htequiv="content-type" content="text/html; charset=utf-8">
 		<meta name="author" content="Jobboard">
 
 		<title>Venture café - Talent Portal</title>
@@ -215,19 +215,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										<div class="form-group">
 											<h4>Job Title
 												<h4>
-													<textarea name="tp-title" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Max 255 characters"><?= isset($postinfo['tp-title']) ? $postinfo['tp-title'] : $postinfo['title'] ?></textarea>
+													<textarea name="title" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Max 255 characters"><?= isset($postinfo['title']) ? $postinfo['title'] : $postinfo['title'] ?></textarea>
 										</div>
 
 										<div class="form-group">
 											<h4>Job Description
 												<h4>
-													<textarea name="tp-description" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Max 500 characters"><?= isset($postinfo['tp-description']) ? $postinfo['tp-description'] : $postinfo['description'] ?></textarea>
+													<textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Max 500 characters"><?= isset($postinfo['description']) ? $postinfo['description'] : $postinfo['description'] ?></textarea>
 										</div>
 
 										<div class="form-group">
 											<h4>Tags
 												<h4>
-													<textarea name="tp-tags" class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="Tags"><?= isset($postinfo['tp-tags']) ? $postinfo['tp-tags'] : $postinfo['tags'] ?></textarea>
+													<textarea name="tags" class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="Tags"><?= isset($postinfo['tags']) ? $postinfo['tags'] : $postinfo['tags'] ?></textarea>
 													<p>growth, international, city, talent, community, resilience, culture, digital, energy, inspiration</p>
 										</div>
 
@@ -235,17 +235,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											<h4>About company
 												<h4>
 													<label class="sr-only" for="companyinofo">About a company</label>
-													<textarea name="tp-about" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Max 255 characters"><?= isset($postinfo['tp-about']) ? $postinfo['tp-about'] : $postinfo['about'] ?></textarea>
+													<textarea name="about" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Max 255 characters"><?= isset($postinfo['about']) ? $postinfo['about'] : $postinfo['about'] ?></textarea>
 										
 													</h6>
-													<input type="hidden" name="tp-posting_id" value="<?= isset($postinfo['tp-posting_id']) ? $postinfo['tp-posting_id'] : $postinfo['id'] ?>">
+													<input type="hidden" name="posting_id" value="<?= isset($postinfo['posting_id']) ? $postinfo['posting_id'] : $postinfo['id'] ?>">
 										</div>
 										<h4>Identifies
 											<h4>
 												<div class="form-group">
-													<select name="tp-identifies" class="form-control" id="exampleFormControlSelect1">
+													<select name="identifies" class="form-control" id="exampleFormControlSelect1">
 														<option>
-															<?= isset($postinfo['tp-identifies']) ? $postinfo['tp-identifies'] : $postinfo['identifies'] ?>
+															<?= isset($postinfo['identifies']) ? $postinfo['identifies'] : $postinfo['identifies'] ?>
 														</option>
 														<option>Startup</option>
 														<option>Service</option>
@@ -258,27 +258,27 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												<br>
 												<div class="form-group">
 													<h4>Starting Date</h4>
-													<input name="tp-startdate" class="form-control" size="2" type="date" value="<?= isset($postinfo['tp-startdate']) ? $postinfo['tp-startdate'] : $postinfo['startdate'] ?>">
+													<input name="startdate" class="form-control" size="2" type="date" value="<?= isset($postinfo['startdate']) ? $postinfo['startdate'] : $postinfo['startdate'] ?>">
 												</div>
 
 												<div class="form-group">
 													<h4>End date</h4>
-													<input name="tp-enddate" class="form-control" size="2" type="date" value="<?= isset($postinfo['tp-enddate']) ? $postinfo['tp-enddate'] : $postinfo['enddate'] ?>">
+													<input name="enddate" class="form-control" size="2" type="date" value="<?= isset($postinfo['enddate']) ? $postinfo['enddate'] : $postinfo['enddate'] ?>">
 												</div>
 												<br>
 												<div class="form-group">
 													<h5>Application Link</h5>
-													<input class="form-control" type="text" name="tp-link" value="<?= isset($postinfo['tp-link']) ? $postinfo['tp-link'] : $postinfo['link'] ?>"
+													<input class="form-control" type="text" name="link" value="<?= isset($postinfo['link']) ? $postinfo['link'] : $postinfo['link'] ?>"
 													placeholder="Link">
 												</div>
 												<div class="form-group">
 													<p>Supporting image max 8mb</p>
-													<input type="file" name="tp-support-image" id="">
+													<input type="file" name="support-image" id="">
 												</div>
 												
 												<div class="form-group">
 													<h5>Status</h5>
-													<select name="tp-active" class="form-control" id="exampleFormControlSelect1">
+													<select name="active" class="form-control" id="exampleFormControlSelect1">
 														<option value="<?= $postinfo['active'] ?>">Default</option>
 														<option value="1">Active</option>
 														<option value="0">Unactive</option>
@@ -286,7 +286,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</div>
 												<div class="form-group">
 													<h5>Highlighted</h5>
-													<select name="tp-highlighted" class="form-control" id="exampleFormControlSelect1">
+													<select name="highlighted" class="form-control" id="exampleFormControlSelect1">
 														<option value="<?= $postinfo['highlighted'] ?>">Default</option>
 														<option value="1">Yes</option>
 														<option value="0">No</option>

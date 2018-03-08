@@ -74,81 +74,56 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											<i class="fa fa-angle"></i>
 										</a>
 									</li>
-									<li><a  href="#">
-											Postings
-											<i class="fa fa-angle-down"></i>
-										</a>
-											<ul class="dropdown">
-											<li>
-												<a href="/admin-home">
-												All Postings
-												</a>
-											</li>
-											<li>
-												<a href="/post-requests">
-												Posting Requests
-												</a>
-											</li>
-											<li>
-												<a href="/highlighted-posts">
-												Highlighted Postings
-												</a>
-											</li>
-											</ul>
-										
-									</li>
 									<li>
 										<a href="/companies">
 											Companies
+											<i class="fa fa-angle"></i>
+										</a>
+									</li>
+									<li>
+										<a href="/jobs">
+											Jobs
+											<i class="fa fa-angle"></i>
+										</a>
+									</li>
+									<li>
+										<a href="https://venturecaferotterdam.org/who-we-are/">
+											About Us
+											<i class="fa fa-angle"></i>
+										</a>
+									</li>
+									<li>
+										<a href="https://venturecaferotterdam.org/">
+											Venture Cafe
+											<i class="fa fa-angle"></i>
+										</a>
+									</li>
+									<?php if (isset($_SESSION['id'])) { ?>
+									<li>
+										<a class="active" href="#">
+											My Page
 											<i class="fa fa-angle-down"></i>
 										</a>
-										 <ul class="dropdown">
+										<ul class="dropdown">
 											<li>
-												<a href="/companies">
-												All Companies
+												<a href="/mypage">
+													My Page
 												</a>
 											</li>
 											<li>
-												<a href="">
-												Company Requests
-												</a>
-											</li>
-											<li>
-												<a href="">
-												Trusted Companies
-												</a>
-											</li>
-											</ul>
-									</li>
-							
-										<li>
-										<a class="active"  href="#">
-											My Page
-											<i class="fa fa-angle-down "></i>
-										</a>
-										 <ul class="dropdown">
-											<li>
-												<a href="/options-admin">
-												Options
-												</a>
-											</li>
-											<li>
-												<a class="active" href="/new-posting-admin">
-												New Posting
-												</a>
-											</li>
-											<li>
-												<a href="/view-admins-list">
-												Admins
+												<a class="active" href="/new-posting">
+													New Posting
 												</a>
 											</li>
 											<li>
 												<a href="/logout">
-												Logout
+													Logout
 												</a>
 											</li>
-											</ul>
+										</ul>
 									</li>
+									<?php 
+    } ?>
 								</ul>
 
 							</div>
@@ -177,11 +152,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</ul>
 						<!-- Mobile Menu End -->
 					</nav>
+				</div>
 
+				<!-- Header Section End -->
 
-
-			<!-- end intro section -->
-			</div>
+				<!-- end intro section -->
 		</div>
 
 		<!-- Form Section Start -->
@@ -203,7 +178,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</div>
 								</div>
 								<div class="form-bottom">
-									<form  enctype="multipart/form-data" accept-charset="utf-8" action="/create-new-admin" method="post" class="job-descript-form" >
+									<form  enctype="multipart/form-data" accept-charset="utf-8" action="/create-new" method="post" class="job-descript-form" >
 										<br>
 										<div class="form-group">
 											<h4>Job Title
@@ -221,17 +196,42 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 										<div class="form-group">
 											<h4>Tags
-												<h4>
-													<textarea name="tags" class="form-control" id="" rows="1" placeholder="Tags"><?= isset($postinfo['tags']) ? $postinfo['tags'] : '' ?></textarea>
-													<p>Growth, International, City, Talent, Community, Resilience, Culture, Digital, Energy, Inspiration</p>
+												<h4><br>
+													<div class="form-check form-check-inline">
+													<input class="form-check-input" type="checkbox" <?= isset($postinfo) ? (strpos($postinfo['tags'], 'Growth') !== false ? 'checked' : '') : '' ?> name="tags[]" id="Growth" value="Growth">
+													<label class="form-check-label" for="Growth">Growth</label>
+													<input class="form-check-input" <?= isset($postinfo) ? (strpos($postinfo['tags'], 'International') !== false ? 'checked' : '') : '' ?> type="checkbox" name="tags[]" id="International" value="International">
+													<label class="form-check-label" for="International">International</label>
+													<input class="form-check-input" <?= isset($postinfo) ? (strpos($postinfo['tags'], 'City') !== false ? 'checked' : '') : '' ?> type="checkbox" name="tags[]" id="City" value="City">
+													<label class="form-check-label" for="City">City</label>
+													<input class="form-check-input" <?= isset($postinfo) ? (strpos($postinfo['tags'], 'Talent') !== false ? 'checked' : '') : '' ?> type="checkbox" name="tags[]" id="Talent" value="Talent">
+													<label class="form-check-label" for="Talent">Talent</label>
+													<input class="form-check-input" <?= isset($postinfo) ? (strpos($postinfo['tags'], 'Community') !== false ? 'checked' : '') : '' ?> type="checkbox" name="tags[]" id="Community" value="Community">
+													<label class="form-check-label" for="Community">Community</label>
+													<input type="hidden" name="tags[]" value="">
+													
+												
+													</div>
+													<input class="form-check-input" <?= isset($postinfo) ? (strpos($postinfo['tags'], 'Resilience') !== false ? 'checked' : '') : '' ?> type="checkbox" name="tags[]" id="Resilience" value="Resilience">
+													<label class="form-check-label" for="Resilience">Resilience</label>
+													<input class="form-check-input" <?= isset($postinfo) ? (strpos($postinfo['tags'], 'Culture') !== false ? 'checked' : '') : '' ?> type="checkbox" name="tags[]" id="Culture" value="Culture">
+													<label class="form-check-label" for="Culture">Culture</label>
+													<input class="form-check-input" <?= isset($postinfo) ? (strpos($postinfo['tags'], 'Digital') !== false ? 'checked' : '') : '' ?> type="checkbox" name="tags[]" id="Digital" value="Digital">
+													<label class="form-check-label" for="Digital">Digital</label>
+													<input class="form-check-input" <?= isset($postinfo) ? (strpos($postinfo['tags'], 'Energy') !== false ? 'checked' : '') : '' ?> type="checkbox" name="tags[]" id="Energy" value="Energy">
+													<label class="form-check-label" for="Energy">Energy</label>
+													<input class="form-check-input" <?= isset($postinfo) ? (strpos($postinfo['tags'], 'Inspiration') !== false ? 'checked' : '') : '' ?> type="checkbox" name="tags[]" id="Inspiration" value="Inspiration">
+													<label class="form-check-label" for="Inspiration">Inspiration</label>
 													<h6 style="color:#f45342;"><?= form_error('tags') ? form_error('tags') : '' ?></h6>
+													</div>
+													
 										</div>
 
 										<div class="form-group">
 											<h4>About company
 												<h4>
 													<label class="sr-only" for="companyinofo">About a company</label>
-													<textarea name="about" class="form-control" id="" rows="5" placeholder="Max 255 characters"><?= isset($postinfo['about']) ? $postinfo['about'] : '' ?></textarea>
+													<textarea name="about" class="form-control" id="" rows="5" placeholder="Max 255 characters"><?= isset($postinfo['about']) ? $postinfo['about'] : $data['about'] ?></textarea>
 													<h6 style="color:#f45342;"><?= form_error('about') ? form_error('about') : '' ?></h6>
 													<input type="hidden" name="user_id" value="<?= $_SESSION['id'] ?>">
 										</div>
@@ -259,27 +259,23 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												<div class="form-group">
 													<h4>End date</h4>
 													<input  name="enddate" class="form-control" size="2" type="date" value="<?= isset($postinfo['enddate']) ? $postinfo['enddate'] : '' ?>">
-													<h6 style="color:#f45342;"><?= form_error('enddate') ? form_error('enddate') : '' ?></h6>
+													<h6 style="color:#f45342;"><?= form_error('enddate') ? form_error('enddate') : date("m.d.y"); ?></h6>
 												</div>
 												<br>
+												<div class="form-group">
+													<h5>How many position available</h5>
+													<input class="form-control" type="text" name="position" value="<?= isset($postinfo['position']) ? $postinfo['position'] : '' ?>" placeholder="Available">
+													<h6 style="color:#f45342;"><?= form_error('filled') ? form_error('filled') : '' ?></h6>
+												</div>
+												<div class="form-group">
+													<h5>How many position filled</h5>
+													<input class="form-control" type="text" name="filled" value="<?= isset($postinfo['filled']) ? $postinfo['filled'] : '' ?>" placeholder="Filled">
+													<h6 style="color:#f45342;"><?= form_error('filled') ? form_error('filled') : '' ?></h6>
+												</div>
 												<div class="form-group">
 													<h5>Application Link</h5>
 													<input class="form-control" type="text" name="link" value="<?= isset($postinfo['link']) ? $postinfo['link'] : '' ?>" placeholder="Link">
 													<h6 style="color:#f45342;"><?= form_error('link') ? form_error('link') : '' ?></h6>
-												</div>
-                                                <div class="form-group">
-													<h5>Highlighted</h5>
-													<select name="highlighted" class="form-control" >
-														<option value="0">No</option>
-														<option value="1">Yes</option>
-													</select>
-												</div>
-                                                <div class="form-group">
-													<h5>Highlighted</h5>
-													<select name="active" class="form-control">
-														<option value="1">Yes</option>
-														<option value="0">No</option>
-													</select>
 												</div>
 												<div class="form-group">
 													<h5>Supporting image max 8mb</h5>

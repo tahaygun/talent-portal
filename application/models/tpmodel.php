@@ -95,7 +95,7 @@ class Tpmodel extends CI_Model
     }
     public function allcompanies()
     {
-        $query = "SELECT users.id as userid, users.companyname, users.companylogo, postings.title, postings.id as postid, postings.about, postings.description, postings.tags, postings.identifies FROM users
+        $query = "SELECT users.id as userid, users.companyname, users.companylogo, postings.title, postings.id as postid, users.about, postings.description, postings.tags, postings.identifies FROM users
         LEFT JOIN postings
         ON users.id = postings.user_id
         WHERE users.adminlevel = 3
@@ -154,6 +154,18 @@ class Tpmodel extends CI_Model
         $result = $this->db->query($query)->result_array();
         return $result;
     }
+    public function jobsbycategory($arg)
+    {
+        $text = $this->db->escape_like_str($arg);
+        $query = "SELECT * FROM users
+        JOIN postings
+        ON users.id = postings.user_id
+        WHERE postings.active=1
+        AND postings.tags LIKE  '%$text%'
+        ORDER BY postings.id DESC";
+        $result = $this->db->query($query)->result_array();
+        return $result;
+    }
 
     public function details($id)
     {
@@ -188,7 +200,7 @@ class Tpmodel extends CI_Model
     public function insertpostings($arg, $path)
     {
         $query = "INSERT INTO `postings`(`user_id`, `title`, `description`, `about`, `identifies`, `tags`, `startdate`, `enddate`, `link`, `support_image`) VALUES (?,?,?,?,?,?,?,?,?,?)";
-        $values = [$arg['tp-user_id'], $arg['tp-title'], $arg['tp-description'], $arg['tp-about'], $arg['tp-identifies'], $arg['tp-tags'], $arg['tp-startdate'], $arg['tp-enddate'], $arg['tp-link'], $path];
+        $values = [$arg['user_id'], $arg['title'], $arg['description'], $arg['about'], $arg['identifies'], $arg['tags'], $arg['startdate'], $arg['enddate'], $arg['link'], $path];
 
         $this->db->query($query, $values);
 
@@ -197,7 +209,7 @@ class Tpmodel extends CI_Model
     public function insertpostingadmin($arg, $path)
     {
         $query = "INSERT INTO `postings`(`user_id`, `title`, `description`, `about`, `identifies`, `tags`, `startdate`, `enddate`, `link`, `highlighted`, `active`, `support_image`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
-        $values = [$arg['tp-user_id'], $arg['tp-title'], $arg['tp-description'], $arg['tp-about'], $arg['tp-identifies'], $arg['tp-tags'], $arg['tp-startdate'], $arg['tp-enddate'], $arg['tp-link'], $arg['highlighted'], $arg['active'], $path];
+        $values = [$arg['user_id'], $arg['title'], $arg['description'], $arg['about'], $arg['identifies'], $arg['tags'], $arg['startdate'], $arg['enddate'], $arg['link'], $arg['highlighted'], $arg['active'], $path];
 
         $this->db->query($query, $values);
 
@@ -205,8 +217,8 @@ class Tpmodel extends CI_Model
     }
     public function edit($arg)
     {
-        $query = "UPDATE `postings` SET `title`= ? ,`description`= ?,`about`=?,`identifies`= ?,`tags`=?,`startdate`=?,`enddate`=?,`link`=? WHERE postings.id= ?";
-        $values = [$arg['tp-title'], $arg['tp-description'], $arg['tp-about'], $arg['tp-identifies'], $arg['tp-tags'], $arg['tp-startdate'], $arg['tp-enddate'], $arg['tp-link'], $arg['tp-posting_id']];
+        $query = "UPDATE `postings` SET `title`= ? ,`description`= ?,`about`=?,`identifies`= ?,`active`= ?,`tags`=?,`startdate`=?,`enddate`=?,`link`=? WHERE postings.id= ?";
+        $values = [$arg['title'], $arg['description'], $arg['about'], $arg['identifies'], $arg['active'], $arg['tags'], $arg['startdate'], $arg['enddate'], $arg['link'], $arg['posting_id']];
 
         $this->db->query($query, $values);
     }
@@ -214,7 +226,7 @@ class Tpmodel extends CI_Model
     public function editadmin($arg)
     {
         $query = "UPDATE `postings` SET `title`= ? ,`description`= ?,`about`=?,`identifies`= ?,`tags`=?,`startdate`=?,`enddate`=?,`active`=?, `highlighted`=?,`link`=? WHERE postings.id= ?";
-        $values = [$arg['tp-title'], $arg['tp-description'], $arg['tp-about'], $arg['tp-identifies'], $arg['tp-tags'], $arg['tp-startdate'], $arg['tp-enddate'], $arg['tp-active'], $arg['tp-highlighted'], $arg['tp-link'], $arg['tp-posting_id']];
+        $values = [$arg['title'], $arg['description'], $arg['about'], $arg['identifies'], $arg['tags'], $arg['startdate'], $arg['enddate'], $arg['active'], $arg['highlighted'], $arg['link'], $arg['posting_id']];
 
         $this->db->query($query, $values);
 
@@ -289,7 +301,7 @@ class Tpmodel extends CI_Model
     public function updateabout($arg)
     {
         $query = "UPDATE `users` SET `about`=? WHERE id= ?";
-        $values = [$arg['tp-about'], $arg['tp-user_id']];
+        $values = [$arg['about'], $arg['user_id']];
         $this->db->query($query, $values);
     }
     public function editcompanywlogo($arg, $path)
