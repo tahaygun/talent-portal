@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 07, 2018 at 11:00 AM
+-- Generation Time: Mar 08, 2018 at 02:25 PM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.1.5
 
@@ -50,8 +50,9 @@ CREATE TABLE `postings` (
 --
 
 INSERT INTO `postings` (`id`, `user_id`, `title`, `description`, `about`, `identifies`, `active`, `highlighted`, `tags`, `startdate`, `enddate`, `link`, `support_image`, `created_at`) VALUES
-(17, 1, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, cumque magnam, veniam possimus voluptate voluptatibus autem quaerat odio dolorem consectetur eum! Beatae obcaecati, sed et atque mollitia impedit ratione quae!', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, cumque magnam, veniam possimus voluptate voluptatibus autem quaerat odio dolorem consectetur eum! Beatae obcaecati, sed et atque mollitia impedit ratione quae!', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, cumque magnam, veniam possimus voluptate voluptatibus autem quaerat odio dolorem consectetur eum! Beatae obcaecati, sed et atque mollitia impedit ratione quae!', 'Startup', 1, 1, 'International', '2018-03-01', '2018-03-09', 'aaaaa', 'img-23.jpg', '2018-03-06 17:05:46'),
-(20, 33, 'Trainee (e) Visual Design', 'As a trainee visual design you work together with our designers, strategists, front-end and back-end developers on the development of beautiful online applications. You translate the wishes of the customer and / or of the team into visual designs that translate the UX design or prototype into clear and clear interaction.', 'Hoppinger is a full service internet agency in Rotterdam. We use our knowledge in the field of online strategy, user centered design, open source technology and online marketing to bring our customers and their target groups closer together.', 'Startup', 1, 1, 'Digital', '2018-03-09', '2018-03-24', 'https://www.hoppinger.com/vacatures/stagiair-visual-design/', 'Hoppinger-stockbeeld_50-02-square-e1513242365868-650x0-c-default.jpg', '2018-03-06 19:06:13');
+(21, 37, 'Business economics part-time', 'The Business Economics program continues under the name Finance & Control per academic year 2018-2019.', 'Hogeschool Rotterdam is doing its utmost to keep the information on this site as up-to-date and complete as possible.', 'Academia', 1, 0, 'City', '2018-03-09', '2018-03-23', 'https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/bedrijfseconomie/deeltijd/', 'fca7d6c543f149898ca6cb942eff0b00_(1).png', '2018-03-07 11:16:46'),
+(22, 37, 'Architecture part time\r\nFour-year master in Dutch, starts in September and February', 'The Master\'s program in Architecture focuses on graduated bachelor\'s students who want to deepen and develop their design skills.', 'Of course to develop in the profession, but also to use your design expertise and other professional skills for society. If you have graduated, you can register directly in the Architects Register as an architect.', 'Academia', 1, 1, 'International', '2018-03-02', '2018-03-17', 'https://www.hogeschoolrotterdam.nl/opleidingen/master/architectuur/deeltijd/', 'ddbfafc2803742e6ad55feaa7388a6b4.png', '2018-03-07 11:18:30'),
+(29, 1, 'aa', 'aaaa', 'aaaa', 'Startup', 1, 1, 'International  Resilience Digital', '2018-03-08', '2018-03-16', 'aaaa', 'map-marker.png', '2018-03-08 13:07:15');
 
 -- --------------------------------------------------------
 
@@ -69,6 +70,7 @@ CREATE TABLE `users` (
   `password` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `trusted` tinyint(1) NOT NULL DEFAULT '0',
+  `about` varchar(255) NOT NULL,
   `approved` tinyint(4) DEFAULT '0',
   `adminlevel` int(11) DEFAULT '3'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -77,10 +79,11 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `companyname`, `email`, `phone`, `contactperson`, `companylogo`, `password`, `created_at`, `trusted`, `approved`, `adminlevel`) VALUES
-(1, 'Coolblueaa', 'coolblue@gmail.com', '01561511561', 'Cool', '', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441', '2018-03-03 16:00:27', 0, 1, 1),
-(2, 'Company2222', 'Company2@gmail.com', '5465132156', 'Company2CP', 'thumb1.png', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441', '2018-03-03 16:01:21', 0, 1, 3),
-(33, 'Coolblue', 'coolblue@gmail.com', '01561511561', 'CoolBoy', 'green.jpg', 'a6370ffbf3a54406aefcabf7d375c5bf64bb1e34', '2018-03-06 11:27:15', 0, 1, 3);
+INSERT INTO `users` (`id`, `companyname`, `email`, `phone`, `contactperson`, `companylogo`, `password`, `created_at`, `trusted`, `about`, `approved`, `adminlevel`) VALUES
+(1, 'Admin', 'company1@gmail.com', '01561511561', 'Cool', 'author.jpg', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441', '2018-03-03 16:00:27', 0, '', 1, 1),
+(2, 'Company2222', 'Company2@gmail.com', '5465132156', 'Company2CP', 'thumb1.png', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441', '2018-03-03 16:01:21', 0, 'afdfsdfsdfsdfsdf', 1, 3),
+(33, 'Coolblue', 'coolblue@gmail.com', '01561511561', 'CoolBoy', '_my_posts_page21.png', 'a6370ffbf3a54406aefcabf7d375c5bf64bb1e34', '2018-03-06 11:27:15', 1, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 1, 3),
+(37, 'Hogeschool Rotterdam', 'hog@gmail.com', '01565131231', 'Person2', 'features-img-11.png', 'a6370ffbf3a54406aefcabf7d375c5bf64bb1e34', '2018-03-07 11:12:30', 1, 'fsdfsdfsdfsfsdfsd', 1, 3);
 
 --
 -- Indexes for dumped tables
@@ -107,12 +110,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `postings`
 --
 ALTER TABLE `postings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 --
 -- Constraints for dumped tables
 --
