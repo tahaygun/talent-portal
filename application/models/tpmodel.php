@@ -170,7 +170,7 @@ class Tpmodel extends CI_Model
     public function details($id)
     {
         $query = "SELECT * FROM users
-                JOIN postings
+                  JOIN postings
                 ON postings.user_id = users.id
                 WHERE postings.id=?";
         $values = [$id];
@@ -195,14 +195,19 @@ class Tpmodel extends CI_Model
         $result = $this->db->query($query, $values)->row_array();
         return $result;
     }
-    public function insertpostings($arg, $path)
+    public function insertposting($arg, $path)
     {
-        $query = "INSERT INTO `postings`(`user_id`, `title`, `description`, `about`, `identifies`, `tags`, `startdate`, `enddate`, `link`, `support_image`) VALUES (?,?,?,?,?,?,?,?,?,?)";
+        $query = "INSERT INTO `postings`(`user_id`, `title`, `description`, `about`, `identifies`, `tags`, `startdate`, `enddate`, `link`, `support_image`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         $values = [$arg['user_id'], $arg['title'], $arg['description'], $arg['about'], $arg['identifies'], $arg['tags'], $arg['startdate'], $arg['enddate'], $arg['link'], $path];
 
         $this->db->query($query, $values);
+    }
+    public function insertpostingtrusted($arg, $path)
+    {
+        $query = "INSERT INTO `postings`(`user_id`, `title`, `description`, `about`, `identifies`, `tags`, `startdate`, `enddate`, `vacancy`, `link`, `support_image`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+        $values = [$arg['user_id'], $arg['title'], $arg['description'], $arg['about'], $arg['identifies'], $arg['tags'], $arg['startdate'], $arg['enddate'], $arg['vacancy'], $arg['link'], $path];
 
-
+        $this->db->query($query, $values);
     }
     public function insertpostingadmin($arg, $path)
     {
@@ -213,10 +218,17 @@ class Tpmodel extends CI_Model
 
 
     }
-    public function edit($arg)
+    public function editpost($arg)
     {
         $query = "UPDATE `postings` SET `title`= ? ,`description`= ?,`about`=?,`identifies`= ?,`active`= ?,`tags`=?,`startdate`=?,`enddate`=?,`link`=? WHERE postings.id= ?";
         $values = [$arg['title'], $arg['description'], $arg['about'], $arg['identifies'], $arg['active'], $arg['tags'], $arg['startdate'], $arg['enddate'], $arg['link'], $arg['posting_id']];
+
+        $this->db->query($query, $values);
+    }
+    public function editposttrusted($arg)
+    {
+        $query = "UPDATE `postings` SET `title`= ? ,`description`= ?,`about`=?,`identifies`= ?,`active`= ?,`tags`=?,`startdate`=?,`enddate`=?,`vacancy`=?,`filled_vacancy`=?,`link`=? WHERE postings.id= ?";
+        $values = [$arg['title'], $arg['description'], $arg['about'], $arg['identifies'], $arg['active'], $arg['tags'], $arg['startdate'], $arg['enddate'], $arg['vacancy'], $arg['filled_vacancy'], $arg['link'], $arg['posting_id']];
 
         $this->db->query($query, $values);
     }

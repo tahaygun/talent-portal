@@ -123,7 +123,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</ul>
 									</li>
 									<?php 
-    } ?>
+							} ?>
 								</ul>
 
 							</div>
@@ -249,28 +249,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</select>
 												<h6 style="color:#f45342;"><?= form_error('identifies') ? form_error('identifies') : '' ?></h6>
 											</div>
-												<br>
 												<div class="form-group">
 													<h4>Starting Date</h4>
-													<input  name="startdate" class="form-control" size="2" type="date" value="<?= isset($postinfo['startdate']) ? $postinfo['startdate'] : '' ?>">
+													<input  name="startdate" class="form-control" size="2" type="date" value="<?= isset($postinfo['startdate']) ? $postinfo['startdate'] : $data['today'] ?>">
 													<h6 style="color:#f45342;"><?= form_error('startdate') ? form_error('startdate') : '' ?></h6>
 												</div>
 
 												<div class="form-group">
 													<h4>End date</h4>
 													<input  name="enddate" class="form-control" size="2" type="date" value="<?= isset($postinfo['enddate']) ? $postinfo['enddate'] : '' ?>">
-													<h6 style="color:#f45342;"><?= form_error('enddate') ? form_error('enddate') : date("m.d.y"); ?></h6>
+													<h6 style="color:#f45342;"><?= form_error('enddate') ? form_error('enddate') : ''; ?></h6>
 												</div>
-												<br>
 												<div class="form-group">
 													<h5>How many position available</h5>
-													<input class="form-control" type="text" name="position" value="<?= isset($postinfo['position']) ? $postinfo['position'] : '' ?>" placeholder="Available">
-													<h6 style="color:#f45342;"><?= form_error('filled') ? form_error('filled') : '' ?></h6>
-												</div>
-												<div class="form-group">
-													<h5>How many position filled</h5>
-													<input class="form-control" type="text" name="filled" value="<?= isset($postinfo['filled']) ? $postinfo['filled'] : '' ?>" placeholder="Filled">
-													<h6 style="color:#f45342;"><?= form_error('filled') ? form_error('filled') : '' ?></h6>
+													<input class="form-control" type="number" name="vacancy" value="<?= isset($postinfo['vacancy']) ? $postinfo['vacancy'] : '' ?>" placeholder="Vacancy">
+													<h6 style="color:#f45342;"><?= form_error('vacancy') ? form_error('vacancy') : '' ?></h6>
 												</div>
 												<div class="form-group">
 													<h5>Application Link</h5>

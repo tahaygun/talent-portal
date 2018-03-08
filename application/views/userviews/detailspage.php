@@ -198,6 +198,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<li>Starting Date: <?= $data['startdate'] ?></li>
 							<li>Ending Date: <?= $data['enddate'] ?></li>
 							<li>Company Identifies: <?= $data['identifies'] ?></li>
+							<?php if (!null == $data['filled_vacancy']) { ?>
+							 <li>Available positions: <?= $data['filled_vacancy'] ?></li>
+						<?php 
+				} ?><?php if (!null == $data['vacancy']) { ?>
+							 <li>Filled positions: <?= $data['vacancy'] ?></li>
+						<?php 
+				} ?>
 						</ul> <br>
 						<a href="<?= $data['link'] ?>" class="btn btn-common">Apply</a>
 						<?php if (isset($_SESSION['id']) && $_SESSION['id'] == $data['user_id']) { ?>
