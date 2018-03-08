@@ -72,12 +72,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<!-- Start Navigation List -->
 								<ul class="nav navbar-nav navbar-right">
 									<li>
-										<a href="/">
+										<a href="/admin-home">
 											Home
 											<i class="fa fa-angle"></i>
 										</a>
 									</li>
-									<li><a class="active" href="#">
+									<li><a class="active">
 											Postings
 											<i class="fa fa-angle-down"></i>
 										</a>
@@ -101,7 +101,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										
 									</li>
 									<li>
-										<a href="/companies">
+										<a>
 											Companies
 											<i class="fa fa-angle-down"></i>
 										</a>
@@ -111,13 +111,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												All Companies
 												</a>
 											</li>
-											<li>
-												<a href="/companies">
+<li>
+												<a href="/company-requests">
 												Company Requests
 												</a>
 											</li>
 											<li>
-												<a href="">
+												<a href="/trusted-companies">
 												Trusted Companies
 												</a>
 											</li>
@@ -125,7 +125,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</li>
 							
 										<li>
-										<a  href="#">
+										<a>
 											My Page
 											<i class="fa fa-angle-down "></i>
 										</a>
