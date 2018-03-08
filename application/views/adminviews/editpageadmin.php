@@ -11,7 +11,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<meta htequiv="content-type" content="text/html; charset=utf-8">
 		<meta name="author" content="Jobboard">
 
-		<title>Venture café - Talent Portal</title>
+		<title>Talent Portal - Edit Admin</title>
 
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="/assets/img/favicon.png">
