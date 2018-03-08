@@ -170,7 +170,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<a href="/">
 										<i class="ti-home"></i> Home</a>
 								</li>
-								<li class="current">About Company</li>
+								<li class="current">About <?= $data['companyname'] ?></li>
 							</ol>
 						</div>
 					</div>

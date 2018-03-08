@@ -47,6 +47,7 @@ class Adminprocess extends CI_Controller
     {
         if ($_SESSION['level'] == 2 || $_SESSION['level'] == 1) {
             $postinfo = $this->input->post(null, true);
+            $postinfo['tags'] = implode(" ", $postinfo['tags']);
             $this->tpmodel->editadmin($postinfo);
             redirect('/');
         } else {
@@ -155,15 +156,17 @@ class Adminprocess extends CI_Controller
     public function createnewposting()
     {
         $postinfo = $this->input->post(null, true);
+        $postinfo['tags'] = implode(" ", $postinfo['tags']);
         $this->form_validation->set_rules('title', 'Title', 'required|max_length[255]');
         $this->form_validation->set_rules('description', 'Description', 'required|max_length[500]');
-        $this->form_validation->set_rules('tags', 'Tags', 'required');
         $this->form_validation->set_rules('about', 'About Company', 'required|max_length[500]');
         $this->form_validation->set_rules('identifies', 'Identifies', 'required');
         $this->form_validation->set_rules('startdate', 'Start Date', 'required');
         $this->form_validation->set_rules('enddate', 'End Date', 'required');
         $this->form_validation->set_rules('link', 'Application Link', 'required|valid_url');
-
+        if (strlen($postinfo['tags']) < 3) {
+            $this->form_validation->set_rules('tags', 'Tags', 'required');
+        }
 
         $config['upload_path'] = './assets/img/jobs/';
         $config['allowed_types'] = 'gif|jpg|png';

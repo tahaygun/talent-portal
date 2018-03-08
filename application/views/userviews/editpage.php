@@ -178,7 +178,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</div>
 								</div>
 								<div class="form-bottom">
-									<form role="form" action="/editnow" method="post" class="job-descript-form">
+									<form enctype="multipart/form-data" accept-charset="utf-8" action="/editnow" method="post" class="job-descript-form">
 										<br>
 										<div class="form-group">
 											<h4>Job Title
@@ -266,10 +266,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 													<h5>Application Link</h5>
 													<input class="form-control" type="text" name="link" value="<?= isset($postinfo['link']) ? $postinfo['link'] : $postinfo['link'] ?>" placeholder="Link">
 													<h6 style="color:#f45342;"><?= form_error('link') ? form_error('link') : '' ?></h6>
-												</div>
-												<div class="form-group">
-													<p>Supporting image max 8mb</p>
-													<input type="file" name="support-image" id="">
 												</div>
 												<button type="button" class="btn btn-common btn-rm"><a style="color:white;" href="/mypage">Back</a></button>
 												<a class="btn btn-common btn-rm"  onclick="return checkDelete()" style="color:white;" href="/delete/<?= isset($postinfo['posting_id']) ? $postinfo['posting_id'] : $postinfo['id'] ?>">Delete</a>

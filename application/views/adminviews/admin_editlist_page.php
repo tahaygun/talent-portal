@@ -61,7 +61,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<span class="icon-bar"></span>
 								</button>
 								<a class="navbar-brand logo" href="/">
-									<img src="assets/img/logov.png" alt="" width="190px;">
+									<img src="/assets/img/logov.png" alt="" width="190px;">
 								</a>
 							</div>
 
@@ -139,11 +139,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</a>
 											</li>
 											<li> 
-												<?php if ($_SESSION['level'] == 1) {?>
+												<?php if ($_SESSION['level'] == 1) { ?>
 												<a href="/view-admins-list">
 												Admins
 												</a>
-												<?php } ?>
+												<?php 
+										} ?>
 											</li>
 											<li>
 												<a href="/logout">
@@ -191,7 +192,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<!-- Top content -->
 		<div class="top-content editadminpage">
 
-			<div class="inner-bg">
+			<div class="find-job section">
 				<div class="container">
 
 					<div class="row">
@@ -244,7 +245,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</div>
 			</div>
 		</div>
-		< <!-- Javascript -->
+		 <!-- Javascript -->
 			<script src="/assets/js/jquery-1.11.1.min.js"></script>
 			<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
 			<script src="/assets/js/scripts.js"></script>

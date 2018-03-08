@@ -180,8 +180,6 @@ class Tpmodel extends CI_Model
     public function aboutcompany($id)
     {
         $query = "SELECT * FROM users
-                JOIN postings
-                ON postings.user_id = users.id
                 WHERE users.id=?";
         $values = [$id];
         $result = $this->db->query($query, $values)->row_array();
@@ -191,7 +189,7 @@ class Tpmodel extends CI_Model
     {
         $query = "SELECT * FROM users
                  JOIN postings
-                ON postings.user_id = users.id
+                 ON postings.user_id = users.id
                  WHERE postings.id=?";
         $values = [$id];
         $result = $this->db->query($query, $values)->row_array();
