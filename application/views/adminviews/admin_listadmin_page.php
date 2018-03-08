@@ -137,10 +137,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												New Posting
 												</a>
 											</li>
-											<li>
+											<li> 
+												<?php if ($_SESSION['level'] == 1) {?>
 												<a class="active" href="/view-admins-list">
 												Admins
 												</a>
+												<?php } ?>
 											</li>
 											<li>
 												<a href="/logout">
