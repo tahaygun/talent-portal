@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 08, 2018 at 02:25 PM
+-- Generation Time: Mar 08, 2018 at 03:29 PM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.1.5
 
@@ -40,6 +40,8 @@ CREATE TABLE `postings` (
   `tags` varchar(255) DEFAULT NULL,
   `startdate` date DEFAULT NULL,
   `enddate` date DEFAULT NULL,
+  `vacancy` int(11) DEFAULT NULL,
+  `filled_vacancy` int(11) DEFAULT NULL,
   `link` varchar(255) DEFAULT NULL,
   `support_image` text NOT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
@@ -49,10 +51,11 @@ CREATE TABLE `postings` (
 -- Dumping data for table `postings`
 --
 
-INSERT INTO `postings` (`id`, `user_id`, `title`, `description`, `about`, `identifies`, `active`, `highlighted`, `tags`, `startdate`, `enddate`, `link`, `support_image`, `created_at`) VALUES
-(21, 37, 'Business economics part-time', 'The Business Economics program continues under the name Finance & Control per academic year 2018-2019.', 'Hogeschool Rotterdam is doing its utmost to keep the information on this site as up-to-date and complete as possible.', 'Academia', 1, 0, 'City', '2018-03-09', '2018-03-23', 'https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/bedrijfseconomie/deeltijd/', 'fca7d6c543f149898ca6cb942eff0b00_(1).png', '2018-03-07 11:16:46'),
-(22, 37, 'Architecture part time\r\nFour-year master in Dutch, starts in September and February', 'The Master\'s program in Architecture focuses on graduated bachelor\'s students who want to deepen and develop their design skills.', 'Of course to develop in the profession, but also to use your design expertise and other professional skills for society. If you have graduated, you can register directly in the Architects Register as an architect.', 'Academia', 1, 1, 'International', '2018-03-02', '2018-03-17', 'https://www.hogeschoolrotterdam.nl/opleidingen/master/architectuur/deeltijd/', 'ddbfafc2803742e6ad55feaa7388a6b4.png', '2018-03-07 11:18:30'),
-(29, 1, 'aa', 'aaaa', 'aaaa', 'Startup', 1, 1, 'International  Resilience Digital', '2018-03-08', '2018-03-16', 'aaaa', 'map-marker.png', '2018-03-08 13:07:15');
+INSERT INTO `postings` (`id`, `user_id`, `title`, `description`, `about`, `identifies`, `active`, `highlighted`, `tags`, `startdate`, `enddate`, `vacancy`, `filled_vacancy`, `link`, `support_image`, `created_at`) VALUES
+(21, 37, 'Business economics part-time', 'The Business Economics program continues under the name Finance & Control per academic year 2018-2019.', 'Hogeschool Rotterdam is doing its utmost to keep the information on this site as up-to-date and complete as possible.', 'Academia', 1, 0, 'City', '2018-03-09', '2018-03-23', 0, NULL, 'https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/bedrijfseconomie/deeltijd/', 'fca7d6c543f149898ca6cb942eff0b00_(1).png', '2018-03-07 11:16:46'),
+(22, 37, 'Architecture part time\r\nFour-year master in Dutch, starts in September and February', 'The Master\'s program in Architecture focuses on graduated bachelor\'s students who want to deepen and develop their design skills.', 'Of course to develop in the profession, but also to use your design expertise and other professional skills for society. If you have graduated, you can register directly in the Architects Register as an architect.', 'Academia', 1, 1, 'International', '2018-03-02', '2018-03-17', 0, NULL, 'https://www.hogeschoolrotterdam.nl/opleidingen/master/architectuur/deeltijd/', 'ddbfafc2803742e6ad55feaa7388a6b4.png', '2018-03-07 11:18:30'),
+(29, 1, 'aa', 'aaaa', 'aaaa', 'Startup', 1, 1, 'International  Resilience Digital', '2018-03-08', '2018-03-16', 1, 1, 'aaaa', 'map-marker.png', '2018-03-08 13:07:15'),
+(30, 33, 'zaza', 'zaza', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'Startup', 0, 0, ' Resilience Energy', '2018-03-08', '2018-03-10', 12, 35, '1212', 'venturecafe2.jpg', '2018-03-08 15:01:41');
 
 -- --------------------------------------------------------
 
@@ -110,7 +113,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `postings`
 --
 ALTER TABLE `postings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT for table `users`
 --
