@@ -207,7 +207,7 @@ class Tpmodel extends CI_Model
     }
     public function insertposting($arg, $path)
     {
-        $query = "INSERT INTO `postings`(`user_id`, `title`, `description`, `about`, `identifies`, `tags`, `startdate`, `enddate`, `link`, `support_image`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+        $query = "INSERT INTO `postings`(`user_id`, `title`, `description`, `about`, `identifies`, `tags`, `startdate`, `enddate`, `link`, `support_image`) VALUES (?,?,?,?,?,?,?,?,?,?)";
         $values = [$arg['user_id'], $arg['title'], $arg['description'], $arg['about'], $arg['identifies'], $arg['tags'], $arg['startdate'], $arg['enddate'], $arg['link'], $path];
 
         $this->db->query($query, $values);
@@ -231,7 +231,7 @@ class Tpmodel extends CI_Model
     public function editpost($arg)
     {
         $query = "UPDATE `postings` SET `title`= ? ,`description`= ?,`about`=?,`identifies`= ?,`active`= ?,`tags`=?,`startdate`=?,`enddate`=?,`link`=? WHERE postings.id= ?";
-        $values = [$arg['title'], $arg['description'], $arg['about'], $arg['identifies'], $arg['active'], $arg['tags'], $arg['startdate'], $arg['enddate'], $arg['link'], $arg['posting_id']];
+        $values = [$arg['title'], $arg['description'], $arg['about'], $arg['identifies'], 0 , $arg['tags'], $arg['startdate'], $arg['enddate'], $arg['link'], $arg['posting_id']];
 
         $this->db->query($query, $values);
     }

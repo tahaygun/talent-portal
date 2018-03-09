@@ -61,7 +61,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<span class="icon-bar"></span>
 								</button>
 								<a class="navbar-brand logo" href="/">
-									<img src="assets/img/logov.png" alt="" width="190px;">
+									<img src="/assets/img/logov.png" alt="" width="190px;">
 								</a>
 							</div>
 

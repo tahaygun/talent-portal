@@ -238,7 +238,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 													<textarea name="about" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Max 255 characters"><?= isset($postinfo['about']) ? $postinfo['about'] : $postinfo['about'] ?></textarea>
 													<h6 style="color:#f45342;"><?= form_error('about') ? form_error('about') : '' ?></h6>
 													<input type="hidden" name="posting_id" value="<?= isset($postinfo['posting_id']) ? $postinfo['posting_id'] : $postinfo['id'] ?>">
-													<input type="hidden" name="active" value="0">
 										</div>
 										<h4>Identifies
 											<h4>
