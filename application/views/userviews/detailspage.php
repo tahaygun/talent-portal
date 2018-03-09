@@ -204,10 +204,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<li>Ending Date: <?= $data['enddate'] ?></li>
 							<li>Company Identifies: <?= $data['identifies'] ?></li>
 							<?php if (!null == $data['filled_vacancy']) { ?>
-							 <li>Available positions: <?= $data['filled_vacancy'] ?></li>
+							 <li>Available positions: <?= $data['vacancy'] ?></li>
 						<?php 
 				} ?><?php if (!null == $data['vacancy']) { ?>
-							 <li>Filled positions: <?= $data['vacancy'] ?></li>
+							 <li>Filled positions: <?= $data['filled_vacancy'] ?></li>
 						<?php 
 				} ?>
 						</ul> <br>

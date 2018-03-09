@@ -188,9 +188,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<div class="job-tag">
 										<div class="pull-left">
 											<div class="meta-tag">
-												<span>
-													<a href=""><?= $posting['identifies'] ?></a>
-												</span>
+											<span>
+                                                <?php $arr = explode(' ', trim($posting['tags'])); ?>
+                                                 <?php foreach ($arr as $tag) { ?>
+                                                   <a  href="/category/<?= $tag ?>"># <?= $tag ?></a> <?php 
+																																																																																																				} ?> 
+                                            </span>
 												<span>
 													<a style="color:green" href="#">➦ <?= $posting['active'] == 0 ? "Requested" : "Active" ?></a>
 												</span>
