@@ -62,7 +62,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<span class="icon-bar"></span>
 								</button>
 								<a class="navbar-brand logo" href="/">
-									<img src="assets/img/logov.png" alt="" width="190px;">
+									<img src="/assets/img/logov.png" alt="" width="190px;">
 								</a>
 							</div>
 
@@ -135,7 +135,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</a>
 											</li>
 											<li>
-												<a href="new-posting">
+												<a href="/new-posting">
 												New Posting
 												</a>
 											</li>
@@ -298,10 +298,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 													<h5>Application Link</h5>
 													<input class="form-control" type="text" name="link" value="<?= isset($postinfo['link']) ? $postinfo['link'] : $postinfo['link'] ?>"
 													placeholder="Link">
-												</div>
-												<div class="form-group">
-													<p>Supporting image max 8mb</p>
-													<input type="file" name="support-image" id="">
 												</div>
 												
 												<div class="form-group">
