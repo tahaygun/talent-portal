@@ -270,6 +270,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 													<input class="form-control" type="number" name="vacancy" value="<?= isset($postinfo['vacancy']) ? $postinfo['vacancy'] : '' ?>" placeholder="Vacancy">
 													<h6 style="color:#f45342;"><?= form_error('vacancy') ? form_error('vacancy') : '' ?></h6>
 												</div>
+												
 												<div class="form-group">
 													<h5>Application Link</h5>
 													<input class="form-control" type="text" name="link" value="<?= isset($postinfo['link']) ? $postinfo['link'] : '' ?>" placeholder="Link">

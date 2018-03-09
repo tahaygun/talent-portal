@@ -226,7 +226,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</div>
 									</div>
 									<div class="pull-right">
-                                        <a href="/approve-company/<?= $posting['userid'] ?>" class="btn btn-common btn-sm">Approve</a>
+                                        
                                         <a href="/edit-company/<?= $posting['userid'] ?>" class="btn btn-common btn-sm">Details/Edit</a>
 									</div>
 								</div>
