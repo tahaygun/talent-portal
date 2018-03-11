@@ -6,10 +6,10 @@ $query_builder = true;
 
 $db['default'] = array(
 	'dsn' => '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => 'root',
-	'database' => 'talentportal',
+	'hostname' => 'us-cdbr-iron-east-05.cleardb.net',
+	'username' => 'be75c76b2deb68',
+	'password' => '682a15b8',
+	'database' => 'heroku_a423113ca79b44b',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => false,
